@@ -49,7 +49,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The following actors comprise the System Actors: EHRs, Backend Service App and the NCHS data stores. 
 
-* System Actors (EHRs, Backend Service App, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/authorization/index.html) specification.
+* System Actors (EHRs, Backend Service App, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkig }}/authorization/index.html) specification.
 
 * System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}) specification.
 
