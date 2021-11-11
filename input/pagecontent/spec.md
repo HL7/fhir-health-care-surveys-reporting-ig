@@ -49,13 +49,13 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The following actors comprise the System Actors: EHRs, Backend Service App and the NCHS data stores. 
 
-* System Actors (EHRs, Backend Service App, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+* System Actors (EHRs, Backend Service App, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
 
-* System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+* System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
 
-* When System Actors act as clients, they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+* When System Actors act as clients, they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
 
-* Client System Actors SHALL obtain the access token as defined in the [Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+* Client System Actors SHALL obtain the access token as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
 
 * For the healthcare survey use cases, EHRs SHALL support the system/*.read scopes. The Healthcare organization processes along with the EHRs authorization server SHALL verify consent and other policy requirements before allowing the Backend Service App to access the data to be included in the healthcare survey report. 
  
