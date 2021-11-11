@@ -43,13 +43,13 @@
     <version value="1.0.0"/>
   </dependsOn>
   
-  <dependsOn id="medmorph">
+  <dependsOn id="medmorphig">
     <uri value="http://hl7.org/fhir/us/medmorph/ImplementationGuide/hl7.fhir.us.medmorph"/>
     <packageId value="hl7.fhir.us.medmorph"/>
     <version value="0.1.0"/>
   </dependsOn>
   
-  <dependsOn id="subscriptions">
+  <dependsOn id="subscriptionsig">
     <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>
     <packageId value="hl7.fhir.uv.subscriptions-backport"/>
     <version value="0.1.0"/>

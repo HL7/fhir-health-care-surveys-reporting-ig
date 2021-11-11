@@ -75,5 +75,8 @@ This section describes the requirements of the healthcare survey reporting Knowl
 ### NCHS Data Store Requirements 
 
 
+[MedMorph IG]({{site.data.fhir.ver.medmorphig}}/contentig.html)
 
+
+[MedMorph IG]({{site.data.fhir.ver.medmorphig}}/StructureDefinition-us-ph-reporting-bundle.html)
 
