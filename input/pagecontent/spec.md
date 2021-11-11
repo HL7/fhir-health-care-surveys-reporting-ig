@@ -38,7 +38,7 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 #### US Core Usage
 
-This IG leverages the [US Core](http://hl7.org/fhir/us/core) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
+This IG leverages the [US Core]({{ site.data.fhir.ver.uscoreR4 }}) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
 
 Where US Core profiles do not yet exist (e.g., for PlanDefinition, Bundle), US Public Health profiles and MedMorph Reference Architecture IG profiles will be used. 
 
@@ -49,9 +49,9 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The following actors comprise the System Actors: EHRs, Backend Service App and the NCHS data stores. 
 
-* System Actors (EHRs, Backend Service App, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
+* System Actors (EHRs, Backend Service App, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/authorization/index.html) specification.
 
-* System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
+* System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}) specification.
 
 * When System Actors act as clients, they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
 
