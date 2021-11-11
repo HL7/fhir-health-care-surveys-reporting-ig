@@ -53,7 +53,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}) specification.
 
-* When System Actors act as clients, they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
+* When System Actors act as clients, they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG Export Section]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
 
 * Client System Actors SHALL obtain the access token as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
 
