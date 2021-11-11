@@ -40,13 +40,13 @@
    <dependsOn id="bulkig">
     <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
     <packageId value="hl7.fhir.uv.bulkdata"/>
-    <version value="1.0.0"/>
+    <version value="1.0.1"/>
   </dependsOn>
   
   <dependsOn id="medmorphig">
     <uri value="http://hl7.org/fhir/us/medmorph/ImplementationGuide/hl7.fhir.us.medmorph"/>
     <packageId value="hl7.fhir.us.medmorph"/>
-    <version value="0.1.0"/>
+    <version value="current"/>
   </dependsOn>
   
   <dependsOn id="subscriptionsig">
