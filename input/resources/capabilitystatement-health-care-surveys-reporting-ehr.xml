@@ -61,7 +61,7 @@
           </thead>
           <tbody>
            <tr>
-              <th><a href="{{site.data.fhir.ver.subscriptionsig}}/StructureDefinition-backport-subscription.html">Backported Subscription</a></th>
+              <th><a href="{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription.html">Backported Subscription</a></th>
               <td>
               </td>
               <td>
@@ -83,8 +83,8 @@
                 <a title="Allows deletion of a specific Subscription Resource instance" href="#Subscription-delete">SHALL</a>
               </td>
               <td>
-                <a href="{{site.data.fhir.ver.subscriptionsig}}/OperationDefinition-backport-subscriptiontopic-list.html">$topic-list</a>
-                <a href="{{site.data.fhir.ver.subscriptionsig}}/OperationDefinition-backport-subscription-status.html">$status</a>
+                <a href="{{site.data.fhir.ver.subscriptionsIg}}/OperationDefinition-backport-subscriptiontopic-list.html">$topic-list</a>
+                <a href="{{site.data.fhir.ver.subscriptionsIg}}/OperationDefinition-backport-subscription-status.html">$status</a>
               </td>
             </tr>
             <tr>
