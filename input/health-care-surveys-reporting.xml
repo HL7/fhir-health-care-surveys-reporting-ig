@@ -37,19 +37,19 @@
     <version value="3.1.1"/>
   </dependsOn>
   
-   <dependsOn id="bulkig">
+   <dependsOn id="bulkIg">
     <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
     <packageId value="hl7.fhir.uv.bulkdata"/>
     <version value="1.0.1"/>
   </dependsOn>
   
-  <dependsOn id="medmorphig">
+  <dependsOn id="medmorphIg">
     <uri value="http://hl7.org/fhir/us/medmorph/ImplementationGuide/hl7.fhir.us.medmorph"/>
     <packageId value="hl7.fhir.us.medmorph"/>
     <version value="current"/>
   </dependsOn>
   
-  <dependsOn id="subscriptionsig">
+  <dependsOn id="subscriptionsIg">
     <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>
     <packageId value="hl7.fhir.uv.subscriptions-backport"/>
     <version value="current"/>
@@ -59,12 +59,88 @@
   
   <resource>
       <reference>
+        <reference value="Bundle/reporting-bundle-example"/>
+      </reference>
+      <name value="HCS Reporting Bundle Example"/>
+      <description value="An example showing a Reporting Bundle for HCS"/>
+      <exampleBoolean value="true"/>
+   </resource>
+   
+   <resource>
+      <reference>
         <reference value="Patient/1"/>
       </reference>
       <name value="Patient 1 - Example"/>
       <description value="An example showing a Patient"/>
       <exampleBoolean value="true"/>
    </resource>
+   <resource>
+      <reference>
+        <reference value="Practitioner/1"/>
+      </reference>
+      <name value="Practitioner Example"/>
+      <description value="An example showing a Practitioner"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Organization/example-pha-org"/>
+      </reference>
+      <name value="Public Health Organization Example"/>
+      <description value="An example showing a Public Health Organization"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Organization/example-healthcare-org"/>
+      </reference>
+      <name value="Healthcare Organization Example"/>
+      <description value="An example showing a HealthCare Organization"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Endpoint/example-ph-endpoint"/>
+      </reference>
+      <name value="Public Health Organization Endpoint example"/>
+      <description value="An example showing a Public Health Organization Endpoint"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Endpoint/example-healthcare-endpoint"/>
+      </reference>
+      <name value="Healthcare Organization Endpoint example"/>
+      <description value="An example showing a Healthcare Organization Endpoint"/>
+      <exampleBoolean value="true"/>
+    </resource>
+   
+    <resource>
+      <reference>
+        <reference value="MessageHeader/messageheader-example-reportheader"/>
+      </reference>
+      <name value="MessageHeader example used in the Cancer Reporting Bundle sent from Healthcare org to PHA"/>
+      <description value="MessageHeader example used in the Cancer Reporting Bundle sent from Healthcare org to PHA"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Group/group-example-survey"/>
+      </reference>
+      <name value="Group example showing Providers participating in healthcare surveys"/>
+      <description value="Group example showing Providers participating in healthcare surveys"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    
+    <resource>
+      <reference>
+        <reference value="Bundle/content-bundle-example"/>
+      </reference>
+      <name value="Example of a Content Bundle containing Patient Data"/>
+      <description value="Example of a Content Bundle containing Patient Data"/>
+      <exampleBoolean value="true"/>
+    </resource>
   
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->

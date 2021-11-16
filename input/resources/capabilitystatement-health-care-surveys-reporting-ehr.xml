@@ -56,11 +56,12 @@
               <th>Create</th>
               <th>Update</th>
               <th>Delete</th>
+              <th>Operations</th>
             </tr>
           </thead>
           <tbody>
            <tr>
-              <th><a href="{{site.data.fhir.ver.subscriptionsig}}/StructureDefinition-backport-subscription.html">BackportedSubscription</a></th>
+              <th><a href="{{site.data.fhir.ver.subscriptionsig}}/StructureDefinition-backport-subscription.html">Backported Subscription</a></th>
               <td>
               </td>
               <td>
@@ -81,6 +82,79 @@
 			  <td>
                 <a title="Allows deletion of a specific Subscription Resource instance" href="#Subscription-delete">SHALL</a>
               </td>
+              <td>
+                <a href="{{site.data.fhir.ver.subscriptionsig}}/OperationDefinition-backport-subscriptiontopic-list.html">$topic-list</a>
+                <a href="{{site.data.fhir.ver.subscriptionsig}}/OperationDefinition-backport-subscription-status.html">$status</a>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="{{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html">Encounter Close Subscription Topic</a></th>
+              <td>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific Encounter Close Subscription instance." href="#Subscription-read">SHALL</a>
+              </td>
+              <td>
+              </td>
+              <td>               
+              </td>
+              <td>
+              </td>
+              <td>
+                <a title="Allows creation of a specific Subscription Resource instance for Encounter close event" href="#Subscription-create">SHALL</a>
+              </td>
+              <td>
+                <a title="Allows update of a specific Subscription Resource instance for Encounter close event" href="#Subscription-update">SHALL</a>
+              </td>
+              <td>
+                <a title="Allows deletion of a specific Subscription Resource instance for Encounter close event" href="#Subscription-delete">SHALL</a>
+              </td>
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="{{site.data.fhir.ver.medmorphIg}}/StructureDefinition-backport-subscription-notification.html">Backport Subscription Notification Bundle</a></th>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>               
+              </td>
+              <td>
+              </td>
+              <td>
+                <a title="Allows creation of a Subscription Notification Bundle for Encounter close event" href="#Notification-Bundle-create">SHALL</a>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="{{site.data.fhir.ver.medmorphIg}}/StructureDefinition-backport-subscriptionstatus.html">Backport Subscription Status</a></th>
+              <td>
+              </td>
+              <td>
+                <a title="Allows retrieval of a Subscription Status for a specific Subscription" href="#Subscription-Status-read">SHALL</a>
+              </td>
+              <td>
+              </td>
+              <td>               
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
             </tr>
             <tr>
               <th>US Core APIs</th>
@@ -100,7 +174,9 @@
               </td>
               <td>
               </td>
-			  <td>
+			        <td>
+              </td>
+              <td>
               </td>
             </tr>
           </tbody>
