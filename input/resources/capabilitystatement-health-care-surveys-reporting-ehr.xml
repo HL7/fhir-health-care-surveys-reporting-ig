@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <id value="health-care-surveys-reporting-ehr"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>EHR</h2>
+      <p>(Requirements Definition Capability Statement)</p>
+      <p>Canonical URL: http://hl7.org/fhir/us/health-care-surveys-reporting/CapabilityStatement/health-care-surveys-reporting-ehr</p>
+      <p>Published by: <b>HL7 International - Public Health Work Group</b>
+      </p>
+      <p>This profile defines the expected capabilities of the <i>EHR </i> actor to support the healthcare surveys reporting use cases.  
+      This actor is responsible for publishing Subscription Topics based on Named Events, generate notifications base on subscriptions and support US Core FHIR APIs.</p>
+      <h2>General</h2>
+      <div class="table-wrapper">
+        <table>
+          <tbody>
+            <tr>
+              <th>FHIR Version:</th>
+              <td>4.0.1</td>
+            </tr>
+            <tr>
+              <th>Supported formats:</th>
+              <td>json</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>REST  behavior</h2>
+      <p>The primary focus of the EHR is to allow the creation, modification and deletion of Subscriptions, notify subscribers based on subscriptions and support US Core APIs.</p>
+      <p>
+        <b>Security:</b>
+      </p>
+      <p>Implementations must meet the general security requirements documented in FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
+      <p>In addition the EHR needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization-requirements">Formal Specification - Security Section.</a></p>
+
+      <h3>US Core Support</h3>
+
+      <p>
+      The EHR <b>SHALL</b> implement the 
+      <a href="{{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html">US Core Server capability statement</a> as foundational FHIR APIs needed by the healthcare surveys IG.
+      </p>
+      <br/>
+
+      <h3>Resource summary</h3>
+      <div class="table-wrapper">
+        <table class="grid">
+          <thead>
+            <tr>
+              <th>Resource</th>
+              <th>Search</th>
+              <th>Read</th>
+              <th>Read Version</th>
+              <th>Instance History</th>
+              <th>Resource History</th>
+              <th>Create</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+           <tr>
+              <th><a href="{{site.data.fhir.ver.subscriptionsig}}/StructureDefinition-backport-subscription.html">BackportedSubscription</a></th>
+              <td>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific Subscription Resource instances." href="#Subscription-read">SHALL</a>
+              </td>
+              <td>
+              </td>
+              <td>               
+              </td>
+              <td>
+              </td>
+              <td>
+                <a title="Allows creation of a specific Subscription Resource instance" href="#Subscription-create">SHALL</a>
+              </td>
+              <td>
+                <a title="Allows update of a specific Subscription Resource instance" href="#Subscription-update">SHALL</a>
+              </td>
+			  <td>
+                <a title="Allows deletion of a specific Subscription Resource instance" href="#Subscription-delete">SHALL</a>
+              </td>
+            </tr>
+            <tr>
+              <th>US Core APIs</th>
+              <td>
+                <a title="Allows search of a specific US Core Resource instances." href="#USCore-search-type">SHALL</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific US Core Resource instances." href="#USCore-read">SHALL</a>
+              </td>
+              <td>
+              </td>
+              <td>               
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+			  <td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     
+        <h3>FHIR Operations summary</h3>
+        <p>The following FHIR operations SHALL be supported by the EHR.</p>
+      
+      <ul>
+        <li>
+          <a>None</a>
+        </li>
+      </ul>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}subscription.html">Subscription</a>
+      </h3>
+      <p>Profile: None
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Subscription-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific Subscription instance.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Subscription-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of Subscription instances</p>
+              </td>
+            </tr> 
+            <tr>
+              <th>
+                <a name="Subscription-update"> </a>
+                <span>update</span>
+              </th>
+              <td>
+                <p>Allows Update of Subscription instances</p>
+              </td>
+            </tr> 
+            <tr>
+              <th>
+                <a name="Subscription-delete"> </a>
+                <span>update</span>
+              </th>
+              <td>
+                <p>Allows deletion of Subscription instances</p>
+              </td>
+            </tr>    
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/> 
+      <h3>
+        <a href="http://hl7.org/fhir/us/core">US Core APIs</a>
+      </h3>
+      <p>Profile: None
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="USCore-search-type"> </a>
+                <span>search</span>
+              </th>
+              <td>
+                <p>Allows searching of specific US Core resource profile instances.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="USCore-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of specific US Core resource profile instances</p>
+              </td>
+            </tr> 
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>     
+    </div>
+  </text>
+  
+  <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/CapabilityStatement/health-care-surveys-reporting-ehr"/>
+  <name value="HealthcareSurveysReportingEHRCapabilityStatement"/>
+  <title value="Healthcare Surveys Reporting EHR Capability Statement"/>
+  <status value="draft"/>
+  <date value="2020-12-06"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="https://www.cdc.gov/csels/phio/making-ehr-data-more-available.html"/>
+    </telecom>
+  </contact>
+  <description value="This profile defines the expected capabilities of the ''EHR'' actor when conforming to the MedMorph Architecture Implementation Guide.  
+  This role is responsible for allowing creation, modification and deletion of Subscriptions and allows searching and retrieval of resources using US Core APIs."/>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="The focus of the EHR is to allow creation, modification and deletion of Subscriptions and allows searching and retrieval of resources using US Core APIs. "/>
+    <security>
+      <description value="Implementations must meet the general security requirements documented in the security section of the implementation guide."/>
+    </security>
+    <resource>
+      <type value="Subscription"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific Subscription instance."/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Allows creation of a Subscription resource instance."/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows update of a Subscription resource instance."/>
+      </interaction> 
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="delete"/>
+        <documentation value="Allows deletion of a Subscription resource instance."/>
+      </interaction>  
+    </resource>
+  </rest>
+</CapabilityStatement>

@@ -47,17 +47,20 @@ Where US Core profiles do not yet exist (e.g., for PlanDefinition, Bundle), US P
 
 This section outlines how the SMART on FHIR Backend Services Authorization will be used by the MedMorph Healthcare Surveys Reporting Content implementation guide. 
 
-* The following actors comprise the System Actors: EHRs, Backend Service App and the NCHS data stores. 
+* The following actors comprise the System Actors: EHRs, Backend Service App and the NCHS data stores. The authorization requirements outlined below are applicable for the following interactions 
 
-* System Actors (EHRs, Backend Service App, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkig }}/authorization/index.html) specification.
+    ** Backend Service App accessing data from the EHR
+    ** Backend Service App posting data to the NCHS data store.
 
-* System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}) specification.
+* System Actors (EHRs, NCHS data stores) SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkig }}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
 
-* When System Actors act as clients, they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG Export Section]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
+* System Actors SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkig }}/authorization/index.html) specification.
 
-* Client System Actors SHALL obtain the access token as defined in the [Bulk Data Access IG]({{ site.data.fhir.ver.bulkig }}/export/index.html) specification.
+* When System Actors act as clients (Backend Service App), they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkig }}/authorization/index.html#registering-a-smart-backend-service-communicating-public-keys) specification.
 
-* For the healthcare survey use cases, EHRs SHALL support the system/*.read scopes. The Healthcare organization processes along with the EHRs authorization server SHALL verify consent and other policy requirements before allowing the Backend Service App to access the data to be included in the healthcare survey report. 
+* System Actors acting as clients SHALL obtain the access token as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkig }}/authorization/index.html#obtaining-an-access-token) specification.
+
+* For the healthcare survey use cases, EHRs and the NCHS data stores SHALL support the system/*.read scopes. The healthcare organization processes along with the EHRs authorization server SHALL verify consent and other policy requirements before allowing the Backend Service App to access the data to be included in the healthcare survey report. 
  
 
 ### Knowledge Artifact Requirements 
@@ -79,4 +82,8 @@ This section describes the requirements of the healthcare survey reporting Knowl
 
 
 [MedMorph IG]({{site.data.fhir.ver.medmorphig}}/StructureDefinition-us-ph-reporting-bundle.html)
+
+[Subscriptions IG]({{site.data.fhir.ver.subscriptionsig}}/StructureDefinition-backport-subscription.html)
+
+[ABCD]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html)
 
