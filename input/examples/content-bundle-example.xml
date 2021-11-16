@@ -5,7 +5,7 @@
   <meta>
         <versionId value="1"/>
         <lastUpdated value="2020-11-29T02:03:28.045+00:00"/>
-        <profile value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-content-bundle"/>
+        <profile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle"/>
   </meta>
   <type value="collection"/> 
   <timestamp value="2020-11-20T11:15:33-10:00"/> 
@@ -13,7 +13,12 @@
    <fullUrl value="Patient/1"/>
     <resource> 
       <Patient> 
-        <id value="1"/> 
+        <id value="1"/>
+        <meta>
+          <versionId value="1"/>
+          <lastUpdated value="2020-11-29T02:03:28.045+00:00"/>
+          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+        </meta>
         <text> 
           <status value="generated"/> 
           <div xmlns="http://www.w3.org/1999/xhtml">
@@ -44,5 +49,45 @@
         </managingOrganization>
       </Patient> 
     </resource> 
-  </entry> 
+  </entry>
+  <entry>
+    <fullUrl value="Encounter/example-1"/>
+    <resource>     
+      <Encounter xmlns="http://hl7.org/fhir">
+        <id value="example-1"/>
+        <meta>
+          <extension url="http://hl7.org/fhir/StructureDefinition/instance-name">
+            <valueString value="Encounter 1 Example"/>
+          </extension>
+          <lastUpdated value="2017-05-26T11:56:57.250-04:00"/>
+          <profile
+                   value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>status</b>: finished</p><p><b>class</b>: <span title="{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}">ambulatory</span></p><p><b>type</b>: <span title="Codes: {http://snomed.info/sct 308335008}">Office Visit</span></p><p><b>subject</b>: Generated Summary: Medical Record Number: 654321 (USUAL); active; Ledner Dominique; </p><p><b>period</b>: Nov 1, 2015 10:00:14 PM --&gt; Nov 1, 2015 11:00:14 PM</p></div>
+        </text>
+        <status value="finished"/>
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+          <code value="AMB"/>
+          <display value="ambulatory"/>
+        </class>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="308335008"/>
+          </coding>
+          <text value="Office Visit"/>
+        </type>
+        <subject>
+          <reference value="Patient/1"/>
+        </subject>
+        <period>
+          <start value="2015-11-01T17:00:14-05:00"/>
+          <end value="2015-11-01T18:00:14-05:00"/>
+        </period>
+      </Encounter>
+    </resource>
+  </entry>
 </Bundle>

@@ -113,7 +113,7 @@
               </td>
             </tr>
             <tr>
-              <th><a href="{{site.data.fhir.ver.medmorphIg}}/StructureDefinition-backport-subscription-notification.html">Backport Subscription Notification Bundle</a></th>
+              <th><a href="{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription-notification.html">Backport Subscription Notification Bundle</a></th>
               <td>
               </td>
               <td>
@@ -135,7 +135,7 @@
               </td>
             </tr>
             <tr>
-              <th><a href="{{site.data.fhir.ver.medmorphIg}}/StructureDefinition-backport-subscriptionstatus.html">Backport Subscription Status</a></th>
+              <th><a href="{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscriptionstatus.html">Backport Subscription Status</a></th>
               <td>
               </td>
               <td>
@@ -179,24 +179,39 @@
               <td>
               </td>
             </tr>
+            <tr>
+              <th><a href="{{site.data.fhir.path}}medicationadministration.html">MedicationAdministration</a></th>
+              <td>
+                <a title="Allows search of a specific US Core Resource instances." href="#MedAdm-search">SHALL</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific US Core Resource instances." href="#MedAdm-read">SHALL</a>
+              </td>
+              <td>
+              </td>
+              <td>               
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
      
-        <h3>FHIR Operations summary</h3>
-        <p>The following FHIR operations SHALL be supported by the EHR.</p>
-      
-      <ul>
-        <li>
-          <a>None</a>
-        </li>
-      </ul>
       <br/>
       <br/>
       <h3>
-        <a href="{{site.data.fhir.path}}subscription.html">Subscription</a>
+        <a href="{{site.data.fhir.path}}subscription.html">Subscription (Includes Subscriptions for encounter-close Subscription Topic)</a>
       </h3>
-      <p>Profile: None
+      <p>Profile: {{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription.html
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -250,6 +265,64 @@
       <br/>
       <br/> 
       <h3>
+        <a href="{{site.data.fhir.path}}bundle.html">Bundle (Notifcation Bundle for Subscriptions)</a>
+      </h3>
+      <p>Profile: ({{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription-notification.html)
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Notification-Bundle-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of Notifcation Bundles for Subscriptions </p>
+              </td>
+            </tr>   
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}parameters.html">Parameters (Parameters Profile to retrieve Subscription Status)</a>
+      </h3>
+      <p>Profile: ("{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscriptionstatus.html")
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Subscription-Status-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows clients to request Subscription Status for Subscriptions </p>
+              </td>
+            </tr>   
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
         <a href="http://hl7.org/fhir/us/core">US Core APIs</a>
       </h3>
       <p>Profile: None
@@ -286,7 +359,45 @@
         </table>
       </div>
       <br/>
-      <br/>     
+      <br/> 
+      <h3>
+        <a href="http://hl7.org/fhir/medicationadministration.html">MedicationAdministation</a>
+      </h3>
+      <p>Profile: ("hcs-medicationadministration.html")
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="MedAdm-search"> </a>
+                <span>search</span>
+              </th>
+              <td>
+                <p>Allows searching of specific MedicationAdministration resource profile instances.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="MedAdm-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of specific MedicationAdministration resource profile instances</p>
+              </td>
+            </tr> 
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>    
     </div>
   </text>
   

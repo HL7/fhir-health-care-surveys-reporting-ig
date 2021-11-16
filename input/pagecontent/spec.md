@@ -67,8 +67,14 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 This section describes the requirements of the healthcare survey reporting Knowledge Artifact to implement the outlined use cases.
 
+Trigger Event 
 
- 
+Actions
+	- Check Participants
+	- Create Report
+	- Validate Report
+	- Submit Report 
+
 
 ### EHR Requirements
 
@@ -96,11 +102,20 @@ Data APIs
 
 Report profile
 
+Group
 
-
+FHIR Path Expressions 
 
 
 ### NCHS Data Store Requirements 
+
+Process Message
+
+Validate 
+
+Persist
+
+
 
 
 [MedMorph IG]({{site.data.fhir.ver.medmorphIg}}/contentig.html)
