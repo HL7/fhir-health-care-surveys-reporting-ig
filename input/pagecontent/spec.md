@@ -24,10 +24,10 @@ Actors and Systems asserting conformance to this implementation guide have to im
 
 ##### MUST SUPPORT Definition
 
-* Systems SHALL be capable of populating data elements as specified by the profiles and data elements are returned using the specified APIs in the capability statement.
-* Systems SHALL be capable of processing resource instances containing the MUST SUPPORT data elements without generating an error or causing the application to fail. In other words, Systems SHOULD be capable of displaying the data elements for human use or storing it for other purposes.
-* In situations where information on a particular data element is not present and the reason for absence is unknown, Systems SHALL NOT include the data elements in the resource instance returned from executing the API requests.
-* When accessing MedMorph Research Content IG data, Systems SHALL interpret missing data elements within resource instances returned from API requests as data not present.
+* Systems **SHALL** be capable of populating data elements as specified by the profiles and data elements are returned using the specified APIs in the capability statement.
+* Systems **SHALL** be capable of processing resource instances containing the MUST SUPPORT data elements without generating an error or causing the application to fail. In other words, Systems **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes.
+* In situations where information on a particular data element is not present and the reason for absence is unknown, Systems **SHALL NOT** include the data elements in the resource instance returned from executing the API requests.
+* When accessing MedMorph Healthcare Surveys Reporting IG data, Systems **SHALL** interpret missing data elements within resource instances returned from API requests as data not present.
 
 
 #### Profiles
@@ -40,90 +40,138 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 This IG leverages the [US Core]({{ site.data.fhir.ver.uscoreR4 }}) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
 
-Where US Core profiles do not yet exist (e.g., for PlanDefinition, Bundle), US Public Health profiles and MedMorph Reference Architecture IG profiles will be used. 
+Where US Core profiles do not yet exist (e.g., for PlanDefinition, Bundle, MedicationAdministration), US Public Health profiles and MedMorph Reference Architecture IG profiles will be used when available.
 
 
 #### SMART on FHIR Backend Services Authorization Requirements
 
 This section outlines how the SMART on FHIR Backend Services Authorization will be used by the MedMorph Healthcare Surveys Reporting Content implementation guide. 
 
-* The following actors comprise the System Actors: EHRs, Backend Service App and the NCHS data stores. The authorization requirements outlined below are applicable for the following interactions 
+* The system actors namely EHRs, Backend Service App and the NCHS data stores are required to use the SMART on FHIR Backend Services Authorization mechanisms as outlined below for the following interactions 
 
-    ** Backend Service App accessing data from the EHR
-    ** Backend Service App posting data to the NCHS data store.
 
-* System Actors (EHRs, NCHS data stores) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
+    ** Backend Service App accessing data from the EHR ** 
+    ** Backend Service App posting data to the NCHS data store. **
+    
 
-* System Actors **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html) specification.
+* System actors acting as servers (EHRs and NCHS data stores) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
 
-* When System Actors act as clients (Backend Service App), they SHALL share their JSON Web Key Set (JWKS) with the server System Actors using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#registering-a-smart-backend-service-communicating-public-keys) specification.
+* System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html) specification.
 
-* System Actors acting as clients SHALL obtain the access token as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#obtaining-an-access-token) specification.
+* When System actors act as clients (Backend Service App), they **SHALL** share their JSON Web Key Set (JWKS) with the server System actors (EHRs and NCHS data stores) using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#registering-a-smart-backend-service-communicating-public-keys) specification.
 
-* For the healthcare survey use cases, EHRs and the NCHS data stores SHALL support the system/*.read scopes. The healthcare organization processes along with the EHRs authorization server SHALL verify consent and other policy requirements before allowing the Backend Service App to access the data to be included in the healthcare survey report. 
+* System actors acting as clients **SHALL** obtain the access token as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#obtaining-an-access-token) specification.
+
+* For the healthcare survey use cases, EHRs **SHALL** support the system/*.read scopes. 
+
+* The NCHS data stores **SHALL** support the system/*.read and system/*.write scopes. 
+
+* The healthcare organization's existing processes along with the EHRs authorization server **SHALL** verify consent and other policy requirements before allowing the Backend Service App to access the data to be included in the healthcare survey report. 
  
 
-### Knowledge Artifact Requirements 
+### Knowledge Artifact and Knowledge Artifact Repository Requirements 
 
-This section describes the requirements of the healthcare survey reporting Knowledge Artifact to implement the outlined use cases.
+* NCHS **SHALL** create a Knowledge Artifact following the constraints identified by the [MedMorph Provisioning requirements]({{site.data.fhir.ver.medmorphIg}}/provisioning.html#creating-knowledge-artifacts)
 
-Trigger Event 
+* NCHS **SHALL** publish the Group Resource containing the list of all the Practitioners participating in the healthcare survey. This can be published in the NCHS Data Store FHIR Server or a separate Knowledge Artifact Repository.
 
-Actions
-	- Check Participants
-	- Create Report
-	- Validate Report
-	- Submit Report 
+* NCHS **SHALL** republish the Group Resource when the list of all the Practitioners participating in the Healthcare survey changes. 
+
+* NCHS **SHALL** create the Knowledge Artifact following the constraints identified in [HCS-PlanDefinition](StructureDefinition-hcs-plandefinition.html).
 
 
 ### EHR Requirements
 
-The EHR **SHALL**
+* The EHR **SHALL** support the requirements as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
 
-Subscriptions 
-	
-	REST HOOK	
-	With Changed Resource included 
+#### Authorization requirements 
 
-Data APIs 
+* EHRs **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a Server. 
  
 
+#### Subscription requirements
+
+* EHRs **SHALL** support the creation of Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html)
+
+* EHRs **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to notify the Backend Service App.
+
+* EHRs **SHALL** support Notification Bundles with [``full resource payload``]({{site.data.fhir.ver.subscriptionsIg}}/payloads.html#full-resource) as outlined in the Backport Subscriptions IG. 
+
+* For the healthcare surveys reporting Ig, EHRs **SHALL** include the Encounter resource which was closed as part of the Notification Bundle.
+
+* EHRs **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
+
+
+#### Data API requirements
+
+* EHRs **SHALL** support the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) for the Backend Service App to access patient data.
+
+ 
 ### BSA Requirements 
 
-Authorization
 
-Subscription 
+#### Authorization requirements
 
-Notification API
+* BSA **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a client. 
 
-Data APIs
 
-	CLINET 
+#### Subscription requirements
 
-Report profile
+* BSA **SHALL** create Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html).
 
-Group
+* BSA **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the EHR.
 
-FHIR Path Expressions 
+
+##### Subscription Notification API 
+
+* BSA **SHALL** support a POST API <BSA Base URL>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the EHR. 
+
+
+#### Knowledge Artifact processing requirements 
+
+* The BSA **SHALL** allow the healthcare organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the healthcare organization.
+
+* BSA **SHALL** process the MedMorph Healthcare Surveys Reporting Knowledge Artifact and create Subscription resources in the EHR for each trigger event.
+
+* For the healthcare surveys reporting Ig, the BSA **SHALL** create the Subscription for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html) trigger event. 
+
+* Upon deactivation of a Knowledge Artifact, The BSA **SHALL** delete the Subscriptions previously created by the BSA for the Knowledge Artifact. (for e.g delete the Subscription created for encounter-close trigger event) 
+
+* The BSA **SHALL** implement FhirPath expression processing to process the MedMoprh Healthcare Surveys Reporting Knowledge Artifact actions.
+
+* The BSA **SHALL** use the default queries outlined by the MedMoprh Healthcare Surveys Reporting Knowledge Artifact unless overridden by the healthcare organization.
+
+* The BSA **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a healthcare organization.
+
+
+#### Data API requirements 
+
+* The BSA acting as a client **SHALL** use the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) to access patient data from the EHR
+
+
+#### Report generation requirements 
+
+* The BSA **SHALL** create a healthcare survey report following the constraints identified in [Healthcare Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).
+
+* The BSA **SHALL** package the healthcare survey report following the constraints identified in [Healthcare Survey Reporting Bundle](StructureDefinition-hcs-reporting-bundle.html).
+
+* The BSA **SHALL** submit the message containing the healthcare survey report to the endpoint identified in the MedMorph Healthcare Surveys Reporting Knowledge Artifact unless overridden by the healthcare organization.
+
+
+##### Use of Non-FHIR based approaches to submit the Healthcare Surveys Report
+
+* The BSA **MAY** use other transport methods such as Direct Transport to submit the Healthcare Survey Report created when appropriate.
 
 
 ### NCHS Data Store Requirements 
 
-Process Message
 
-Validate 
+#### Message Receiving and Processing requirements
 
-Persist
+* The NCHS Data Store **SHALL** implement the $process-message operation on the ROOT URL of the FHIR Server to receive reports from the Backend Service App using the POST operation.
 
+* Upon receipt of the message, the NCHS Data Store **SHALL** validate the message before accepting the message.
 
+* When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.
 
-
-[MedMorph IG]({{site.data.fhir.ver.medmorphIg}}/contentig.html)
-
-
-[MedMorph IG]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-us-ph-reporting-bundle.html)
-
-[Subscriptions IG]({{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription.html)
-
-[ABCD]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html)
 

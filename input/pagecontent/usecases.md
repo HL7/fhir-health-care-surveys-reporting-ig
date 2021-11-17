@@ -74,5 +74,4 @@ The following actors and definitions from the MedMorph RA IG are used by the Hea
 * EHR 
 * Backend Service App
 * National Center for Health Statistics (NCHS) Data Store as (PHA)
-* KAR ? 
-* TTP ? 
+* Knowledge Artifact Repository

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="hcs-plandefinition"/>
+    <meta>
+        <versionId value="35"/>
+        <lastUpdated value="2021-11-17T04:21:04.742+00:00"/>
+        <source value="#QldGNssihwOAV7Nt"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-plandefinition"/>
+    <version value="1.0.0"/>
+    <name value="HCSPlanDefinition"/>
+    <title value="Healthcare Surveys Reporting PlanDefinition"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="workflow"/>
+        <uri value="http://hl7.org/fhir/workflow"/>
+        <name value="Workflow Pattern"/>
+    </mapping>
+    <mapping>
+        <identity value="w5"/>
+        <uri value="http://hl7.org/fhir/fivews"/>
+        <name value="FiveWs Pattern Mapping"/>
+    </mapping>
+    <mapping>
+        <identity value="objimpl"/>
+        <uri value="http://hl7.org/fhir/object-implementation"/>
+        <name value="Object Implementation Information"/>
+    </mapping>
+    <mapping>
+        <identity value="rim"/>
+        <uri value="http://hl7.org/v3"/>
+        <name value="RIM Mapping"/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="PlanDefinition"/>
+    <baseDefinition value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-plandefinition"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="PlanDefinition">
+            <path value="PlanDefinition"/>
+            <short value="Healthcare Surveys Reporting Knowledge Artifact"/>
+            <definition value="This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action">
+            <path value="PlanDefinition.action"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="id"/>
+                </discriminator>
+                <ordered value="true"/>
+                <rules value="open"/>
+            </slicing>
+            <min value="3"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.code">
+            <path value="PlanDefinition.action.code"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="The set of actions that can be used to create plan definition"/>
+                <valueSet value="http://hl7.org/fhir/us/medmorph/ValueSet/us-ph-plandefinition-action"/>
+            </binding>
+        </element>
+        <element id="PlanDefinition.action.input">
+            <path value="PlanDefinition.action.input"/>
+        </element>
+        <element id="PlanDefinition.action.input.extension">
+            <path value="PlanDefinition.action.input.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <definition value="Defines extensions for the action."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.input.extension:fhirquerypattern">
+            <path value="PlanDefinition.action.input.extension"/>
+            <sliceName value="us-ph-fhirquerypattern-extension"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.input.extension:fhirquerypattern.url">
+            <path value="PlanDefinition.action.input.extension.url"/>
+            <min value="1"/>
+            <max value="1"/>
+            <fixedUri value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose">
+            <path value="PlanDefinition.action"/>
+            <sliceName value="encounterClose"/>
+            <short value="Encounter Close Action"/>
+            <definition value="Defines the &quot;startr&quot; action"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.id">
+            <path value="PlanDefinition.action.id"/>
+            <min value="1"/>
+            <fixedString value="start-workflow"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.description">
+            <path value="PlanDefinition.action.description"/>
+            <short value="Starts the workflow"/>
+            <definition value="Description of the start workflow action."/>
+            <min value="1"/>
+            <fixedString value="This action represents the start of the reporting workflow in response to the encounter-close event"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.textEquivalent">
+            <path value="PlanDefinition.action.textEquivalent"/>
+            <short value="Text equivalent of the start workflow action."/>
+            <definition value="Text equivalent of the start workflow action."/>
+            <min value="1"/>
+            <fixedString value="Start the reporting workflow in response to an encounter-close event"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.code">
+            <path value="PlanDefinition.action.code"/>
+            <short value="Code for the &quot;start&quot; action."/>
+            <definition value="The US-PH-PlanDefinition-Action code for the &quot;start&quot; action."/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="initiate-reporting-workflow"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.trigger">
+            <path value="PlanDefinition.action.trigger"/>
+            <short value="When the &quot;start&quot; action should be triggered."/>
+            <definition value="When the &quot;start&quot; action should be triggered."/>
+            <min value="1"/>
+            <constraint>
+                <key value="epd-1"/>
+                <severity value="error"/>
+                <human value="The code value of the namedEventType SHALL be the same as the name element"/>
+                <expression value="extension('http://hl7.org/fhir/us/medmorph/StructureDefinition/ext-us-ph-namedEventType').value.coding.code.supersetOf(name)"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.trigger.extension">
+            <path value="PlanDefinition.action.trigger.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.trigger.extension:namedEventType">
+            <path value="PlanDefinition.action.trigger.extension"/>
+            <sliceName value="namedEventType"/>
+            <short value="Indicates the types of named events to subscribe to from the HER."/>
+            <definition value="Indicates the types of named events to subscribe to from the HER."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/medmorph/StructureDefinition/ext-us-ph-namedEventType"/>
+            </type>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.trigger.type">
+            <path value="PlanDefinition.action.trigger.type"/>
+            <fixedCode value="named-event"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.trigger.name">
+            <path value="PlanDefinition.action.trigger.name"/>
+            <definition value="The name of the event, encounter-close in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`"/>
+            <fixedString value="encounter-close"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.relatedAction">
+            <path value="PlanDefinition.action.relatedAction"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.relatedAction.actionId">
+            <path value="PlanDefinition.action.relatedAction.actionId"/>
+            <fixedId value="check-survey-participation"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.relatedAction.relationship">
+            <path value="PlanDefinition.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+        <element id="PlanDefinition.action:encounterClose.relatedAction.offsetDuration">
+            <path value="PlanDefinition.action.relatedAction.offsetDuration"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Duration"/>
+            </type>
+            <example>
+                <label value="Wait 72 hour before next action."/>
+                <valueDuration>
+                    <value value="72"/>
+                    <unit value="h"/>
+                </valueDuration>
+            </example>
+        </element>
+        <element id="PlanDefinition.action:checkParticipants">
+            <path value="PlanDefinition.action"/>
+            <sliceName value="checkParticipants"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="PlanDefinition.action:checkParticipants.id">
+            <path value="PlanDefinition.action.id"/>
+            <min value="1"/>
+            <fixedString value="check-survey-participants"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkParticipants.description">
+            <path value="PlanDefinition.action.description"/>
+            <short value="Check if a Practitioner is registered for a survey."/>
+            <definition value="Check if a Practitioner is registered for a survey."/>
+            <fixedString value="This action represents the check if Practitioner is registered to report on healthcare surveys."/>
+        </element>
+        <element id="PlanDefinition.action:checkParticipants.code">
+            <path value="PlanDefinition.action.code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="check-participant-registration"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:checkParticipants.relatedAction">
+            <path value="PlanDefinition.action.relatedAction"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkParticipants.relatedAction.actionId">
+            <path value="PlanDefinition.action.relatedAction.actionId"/>
+            <fixedId value="reportToNchs"/>
+        </element>
+        <element id="PlanDefinition.action:checkParticipants.relatedAction.relationship">
+            <path value="PlanDefinition.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs">
+            <path value="PlanDefinition.action"/>
+            <sliceName value="reportToNchs"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.id">
+            <path value="PlanDefinition.action.id"/>
+            <min value="1"/>
+            <fixedString value="report-to-nchs"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.description">
+            <path value="PlanDefinition.action.description"/>
+            <fixedString value="This action represents the creation, validation and submission of the healthcare survey report."/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.code">
+            <path value="PlanDefinition.action.code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="execute-reporting-workflow"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action">
+            <path value="PlanDefinition.action.action"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="id"/>
+                </discriminator>
+                <ordered value="true"/>
+                <rules value="open"/>
+            </slicing>
+            <min value="3"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:createReport">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="createReport"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:createReport.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="create-hcs-report"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:createReport.description">
+            <path value="PlanDefinition.action.action.description"/>
+            <fixedString value="This action represents the creation of the HCS Report."/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:createReport.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="create-report"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:validateReport">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="validateReport"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:validateReport.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="validate-hcs-report"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:validateReport.description">
+            <path value="PlanDefinition.action.action.description"/>
+            <fixedString value="This action represents the validation of the HCS Report"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:validateReport.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="validate-report"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="routeAndSendHcsReport"/>
+            <short value="Route and send HCS Report"/>
+            <definition value="Defines the routing and sending of the HCS Report"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="route-and-send-hcs-report"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.description">
+            <path value="PlanDefinition.action.action.description"/>
+            <short value="Description of the route and send action."/>
+            <definition value="Description of the route and send action."/>
+            <min value="1"/>
+            <fixedString value="This action represents the routing and sending of the HCS Report"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.textEquivalent">
+            <path value="PlanDefinition.action.action.textEquivalent"/>
+            <min value="1"/>
+            <fixedString value="Route and send HCS Report"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="submit-report"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+    </differential>
+</StructureDefinition>
