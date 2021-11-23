@@ -65,7 +65,22 @@
       <description value="An example showing a Reporting Bundle for HCS"/>
       <exampleBoolean value="true"/>
    </resource>
-   
+   <resource>
+      <reference>
+        <reference value="PlanDefinition/plandefinition-example"/>
+      </reference>
+      <name value="HCS PlanDefinition Example"/>
+      <description value="An example showing a PlanDefinition for HCS"/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="MedicationAdministration/medicationadministration-example"/>
+      </reference>
+      <name value="HCS Medication Administration Example"/>
+      <description value="An example showing a Medication Administration resource"/>
+      <exampleBoolean value="true"/>
+   </resource>
    <resource>
       <reference>
         <reference value="Patient/1"/>
@@ -139,6 +154,14 @@
       </reference>
       <name value="Example of a Content Bundle containing Patient Data"/>
       <description value="Example of a Content Bundle containing Patient Data"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/healthcare-survey-specification-bundle-example"/>
+      </reference>
+      <name value="Example of a Specification Bundle containing PlanDefinition"/>
+      <description value="Example of a Specification Bundle containing PlanDefinition"/>
       <exampleBoolean value="true"/>
     </resource>
   

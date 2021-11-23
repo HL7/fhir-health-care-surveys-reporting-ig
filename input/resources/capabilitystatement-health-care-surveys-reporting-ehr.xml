@@ -38,7 +38,7 @@
 
       <p>
       The EHR <b>SHALL</b> implement the 
-      <a href="{{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html">US Core Server capability statement</a> as foundational FHIR APIs needed by the healthcare surveys IG.
+      <a href="http://hl7.org/fhir/us/core/STU3.1.1/CapabilityStatement-us-core-server.html">US Core Server capability statement</a> as foundational FHIR APIs needed by the healthcare surveys IG.
       </p>
       <br/>
 
@@ -61,7 +61,7 @@
           </thead>
           <tbody>
            <tr>
-              <th><a href="{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription.html">Backported Subscription</a></th>
+              <th><a href="http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/StructureDefinition-backport-subscription.html">Backported Subscription</a></th>
               <td>
               </td>
               <td>
@@ -83,12 +83,12 @@
                 <a title="Allows deletion of a specific Subscription Resource instance" href="#Subscription-delete">SHALL</a>
               </td>
               <td>
-                <a href="{{site.data.fhir.ver.subscriptionsIg}}/OperationDefinition-backport-subscriptiontopic-list.html">$topic-list</a>
-                <a href="{{site.data.fhir.ver.subscriptionsIg}}/OperationDefinition-backport-subscription-status.html">$status</a>
+                <a href="http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/OperationDefinition-backport-subscriptiontopic-list.html">$topic-list</a>
+                <a href="http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/OperationDefinition-backport-subscription-status.html">$status</a>
               </td>
             </tr>
             <tr>
-              <th><a href="{{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html">Encounter Close Subscription Topic</a></th>
+              <th><a href="http://build.fhir.org/ig/HL7/fhir-medmorph/StructureDefinition-encounter-close.html">Encounter Close Subscription Topic</a></th>
               <td>
               </td>
               <td>
@@ -113,7 +113,7 @@
               </td>
             </tr>
             <tr>
-              <th><a href="{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription-notification.html">Backport Subscription Notification Bundle</a></th>
+              <th><a href="http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/StructureDefinition-backport-subscription-notification.html">Backport Subscription Notification Bundle</a></th>
               <td>
               </td>
               <td>
@@ -135,7 +135,7 @@
               </td>
             </tr>
             <tr>
-              <th><a href="{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscriptionstatus.html">Backport Subscription Status</a></th>
+              <th><a href="http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/StructureDefinition-backport-subscriptionstatus.html">Backport Subscription Status</a></th>
               <td>
               </td>
               <td>
@@ -211,7 +211,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}subscription.html">Subscription (Includes Subscriptions for encounter-close Subscription Topic)</a>
       </h3>
-      <p>Profile: {{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription.html
+      <p>Profile: http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/StructureDefinition-backport-subscription.html
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -267,7 +267,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}bundle.html">Bundle (Notifcation Bundle for Subscriptions)</a>
       </h3>
-      <p>Profile: ({{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscription-notification.html)
+      <p>Profile: http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/StructureDefinition-backport-subscription-notification.html)
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -296,7 +296,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}parameters.html">Parameters (Parameters Profile to retrieve Subscription Status)</a>
       </h3>
-      <p>Profile: ("{{site.data.fhir.ver.subscriptionsIg}}/StructureDefinition-backport-subscriptionstatus.html")
+      <p>Profile: ("http://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/StructureDefinition-backport-subscriptionstatus.html")
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">

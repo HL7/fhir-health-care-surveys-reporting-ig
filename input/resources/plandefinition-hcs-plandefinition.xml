@@ -66,7 +66,7 @@
                 <ordered value="true"/>
                 <rules value="open"/>
             </slicing>
-            <min value="3"/>
+            <min value="2"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.code">
@@ -224,7 +224,7 @@
             <path value="PlanDefinition.action.trigger.extension"/>
             <sliceName value="namedEventType"/>
             <short value="Indicates the types of named events to subscribe to from the HER."/>
-            <definition value="Indicates the types of named events to subscribe to from the HER."/>
+            <definition value="Indicates the types of named events to subscribe to from the EHR."/>
             <min value="0"/>
             <max value="1"/>
             <base>
@@ -273,7 +273,7 @@
         </element>
         <element id="PlanDefinition.action:encounterClose.relatedAction.actionId">
             <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="check-survey-participation"/>
+            <fixedId value="check-survey-participants"/>
         </element>
         <element id="PlanDefinition.action:encounterClose.relatedAction.relationship">
             <path value="PlanDefinition.action.relatedAction.relationship"/>
@@ -330,7 +330,7 @@
         </element>
         <element id="PlanDefinition.action:checkParticipants.relatedAction.actionId">
             <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="reportToNchs"/>
+            <fixedId value="report-to-nchs"/>
         </element>
         <element id="PlanDefinition.action:checkParticipants.relatedAction.relationship">
             <path value="PlanDefinition.action.relatedAction.relationship"/>

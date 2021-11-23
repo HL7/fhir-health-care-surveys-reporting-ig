@@ -30,28 +30,39 @@ Actors and Systems asserting conformance to this implementation guide have to im
 * When accessing MedMorph Healthcare Surveys Reporting IG data, Systems **SHALL** interpret missing data elements within resource instances returned from API requests as data not present.
 
 
-#### Profiles
+#### Profiles and Other IGs used by the specification
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions, and terminology artifacts to describe the content to be shared as part of MedMorph Healthcare Surveys Reporting Content IG workflows. The implementation guide is based on [FHIR R4]({{site.data.fhir.path}}) and profiles are listed for each interaction.
 
 The full set of profiles defined in this implementation guide can be found by following the links on the MedMorph [FHIR Artifacts](artifacts.html) page.
 
+##### MedMorph Reference Architecture (RA) IG Usage
 
-#### US Core Usage
+This IG leverages the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}}/index.html) defined by HL7 Infrastructure Public Health WG as the reference architecture for automation and implementing the health care surveys use case.
+
+
+##### US Core Usage
 
 This IG leverages the [US Core]({{ site.data.fhir.ver.uscoreR4 }}) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
 
-Where US Core profiles do not yet exist (e.g., for PlanDefinition, Bundle, MedicationAdministration), US Public Health profiles and MedMorph Reference Architecture IG profiles will be used when available.
+##### Subscriptions Backport IG Usage
 
+This IG leverages the [Subscriptions Backport IG]({{site.data.fhir.ver.subscriptionsIg}}/index.html) defined by HL7 Infrastructure WG for automating reporting workflows using subscriptions.
 
-#### SMART on FHIR Backend Services Authorization Requirements
+##### Bulk Data Access IG Usage
+
+This IG leverages the [BulkData Access IG]({{site.data.fhir.ver.buldataIg}}/index.html) defined by HL7 Infrastructure WG for enabling authentication and authorization between various actors involved in the workflows.
+
+#### Implementation Requirements
+
+##### SMART on FHIR Backend Services Authorization Requirements
 
 This section outlines how the SMART on FHIR Backend Services Authorization will be used by the MedMorph Healthcare Surveys Reporting Content implementation guide. 
 
 * The system actors namely EHRs, Backend Service App and the NCHS data stores are required to use the SMART on FHIR Backend Services Authorization mechanisms as outlined below for the following interactions 
 
 
-    ** Backend Service App accessing data from the EHR ** 
-    ** Backend Service App posting data to the NCHS data store. **
+    * Backend Service App accessing data from the EHR
+    * Backend Service App posting data to the NCHS data store.
     
 
 * System actors acting as servers (EHRs and NCHS data stores) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
@@ -69,7 +80,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * The healthcare organization's existing processes along with the EHRs authorization server **SHALL** verify consent and other policy requirements before allowing the Backend Service App to access the data to be included in the healthcare survey report. 
  
 
-### Knowledge Artifact and Knowledge Artifact Repository Requirements 
+##### Knowledge Artifact and Knowledge Artifact Repository Requirements 
 
 * NCHS **SHALL** create a Knowledge Artifact following the constraints identified by the [MedMorph Provisioning requirements]({{site.data.fhir.ver.medmorphIg}}/provisioning.html#creating-knowledge-artifacts)
 
@@ -79,17 +90,19 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * NCHS **SHALL** create the Knowledge Artifact following the constraints identified in [HCS-PlanDefinition](StructureDefinition-hcs-plandefinition.html).
 
+* The NCHS **SHALL** implement the Knowledge Artifact Repository requirements as outlined in the [MedMorph RA Knowledge Artifact Repository Requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-knowledge-artifact-repository.html).
 
-### EHR Requirements
+
+##### EHR Requirements
 
 * The EHR **SHALL** support the requirements as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
 
-#### Authorization requirements 
+###### Authorization requirements 
 
 * EHRs **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a Server. 
  
 
-#### Subscription requirements
+###### Subscription requirements
 
 * EHRs **SHALL** support the creation of Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html)
 
@@ -102,32 +115,32 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * EHRs **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
 
 
-#### Data API requirements
+###### Data API requirements
 
 * EHRs **SHALL** support the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) for the Backend Service App to access patient data.
 
  
-### BSA Requirements 
+##### BSA Requirements 
 
 
-#### Authorization requirements
+###### Authorization requirements
 
 * BSA **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a client. 
 
 
-#### Subscription requirements
+###### Subscription requirements
 
 * BSA **SHALL** create Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html).
 
 * BSA **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the EHR.
 
 
-##### Subscription Notification API 
+###### Subscription Notification API 
 
 * BSA **SHALL** support a POST API <BSA Base URL>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the EHR. 
 
 
-#### Knowledge Artifact processing requirements 
+###### Knowledge Artifact processing requirements 
 
 * The BSA **SHALL** allow the healthcare organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the healthcare organization.
 
@@ -144,12 +157,12 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * The BSA **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a healthcare organization.
 
 
-#### Data API requirements 
+###### Data API requirements 
 
 * The BSA acting as a client **SHALL** use the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) to access patient data from the EHR
 
 
-#### Report generation requirements 
+###### Report generation requirements 
 
 * The BSA **SHALL** create a healthcare survey report following the constraints identified in [Healthcare Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).
 
@@ -157,21 +170,27 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The BSA **SHALL** submit the message containing the healthcare survey report to the endpoint identified in the MedMorph Healthcare Surveys Reporting Knowledge Artifact unless overridden by the healthcare organization.
 
-
-##### Use of Non-FHIR based approaches to submit the Healthcare Surveys Report
+###### Use of Non-FHIR based approaches to submit the Healthcare Surveys Report
 
 * The BSA **MAY** use other transport methods such as Direct Transport to submit the Healthcare Survey Report created when appropriate.
 
+###### MedMorph RA Requirements 
 
-### NCHS Data Store Requirements 
+* The BSA **SHALL** implement the MedMorph BSA requirements as outlined in the [MedMorph RA BSA requirements]({{site.data.fhir.ver.medmorphIg}}//CapabilityStatement-medmorph-backend-service-app.html).
 
 
-#### Message Receiving and Processing requirements
+##### NCHS Data Store Requirements 
+
+
+###### Message Receiving and Processing requirements
 
 * The NCHS Data Store **SHALL** implement the $process-message operation on the ROOT URL of the FHIR Server to receive reports from the Backend Service App using the POST operation.
 
 * Upon receipt of the message, the NCHS Data Store **SHALL** validate the message before accepting the message.
 
 * When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.
+
+* The NCSH Data Store **SHALL** implement the PHA requirements as outlined in the [MedMorph PHA requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-public-health-authority.html).
+
 
 
