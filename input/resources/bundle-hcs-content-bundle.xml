@@ -10,7 +10,7 @@
     <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle"/>
     <version value="0.1.0"/>
     <name value="HealthcareSurveysContentBundle"/>
-    <title value="Healthcare Surveys Content Bundle"/>
+    <title value="Health Care Surveys Content Bundle"/>
     <status value="draft"/>
     <experimental value="false"/>
     <date value="2019-09-01"/>

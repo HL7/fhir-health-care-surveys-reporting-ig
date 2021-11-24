@@ -2,7 +2,7 @@
  "package-id" : "hl7.fhir.us.health-care-surveys-reporting",
  "title" : "Making EHR Data MOre available for Research and Public Health (MedMorph) Healthcare Surveys Reporting Content IG", 
  "canonical" : "http://hl7.org/fhir/us/health-care-surveys-reporting", 
- "introduction" : "The MedMorph Healthcare Surveys Reporting Content IG provides healthcare organizations the necessary data exchange mechanisms to report healthcare survey data to public health agencies.",
+ "introduction" : "The MedMorph Health Care Surveys Reporting Content IG provides healthcare organizations the necessary data exchange mechanisms to report health care survey data to public health agencies.",
  "category" : "Public Health and Research",
  "list" : [
  {

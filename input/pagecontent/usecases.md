@@ -1,5 +1,5 @@
 ### Business Need and User Stories
-The section identifies the business needs and specific user stories outlining the healthcare surveys reporting data exchange needs.
+The section identifies the business needs and specific user stories outlining the health care surveys reporting data exchange needs.
 
 #### Business Need
 The purpose of the Health Care Survey Submission Content IG is to identify the hospital (emergency department and inpatient care) and ambulatory care data that will be extracted from EHRs and/or clinical data repositories via FHIR APIs and sent to a system hosted at the federal level. This use case will help define how EHR data can be used in automated data collection, thereby reducing burden for the healthcare provider and EHR with the goal of increasing the submission of timely, quality health care data to the National Center for Health Statistics (NCHS).
@@ -54,22 +54,22 @@ The goals of the Health Care Survey submission use case include:
 
  
 
-#### Healthcare Surveys Reporting Workflow 
+#### Health Care Surveys Reporting Workflow 
 
-The following is a diagram of the workflow based on the above user story used for Healthcare Surveys Reporting
+The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting
 
 
-{% include img.html img="healthcare-surveys-reporting-workflow.png" caption="Figure 2.1 - Healthcare Surveys Reporting Workflow" %}
-
-<br/>
-
+{% include img.html img="healthcare-surveys-reporting-workflow.png" caption="Figure 2.1 - Health Care Surveys Reporting Workflow" %}
 
 <br/>
 
 
-#### MedMorph Healthcare Surveys Reporting Actors and Definitions
+<br/>
 
-The following actors and definitions from the MedMorph RA IG are used by the Healthcare Surveys Reporting use cases. 
+
+#### MedMorph Health Care Surveys Reporting Actors and Definitions
+
+The following actors and definitions from the MedMorph RA IG are used by the Health Care Surveys Reporting use cases. 
 
 * EHR 
 * Backend Service App

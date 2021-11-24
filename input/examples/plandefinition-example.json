@@ -56,14 +56,14 @@
         "experimental": true,
         "date": "2020-11-04T12:32:29.858-05:00",
         "publisher": "HL7 Public Health Work Group",
-        "description": "This is the Healthcare Survey Reporting Knowledge Artifact",
+        "description": "This is the Health Care Survey Reporting Knowledge Artifact",
         "effectivePeriod": {
           "start": "2021-11-01"
         },
         "relatedArtifact": [
           {
             "type": "depends-on",
-            "label": "Healthcare Survey Registered Participants",
+            "label": "Health Care Survey Registered Participants",
             "resource": "http://nchs/fhir/r4/Group/healthcare-survey-participants"
           }
         ],
@@ -117,7 +117,7 @@
           },
           {
             "id": "check-survey-participants",
-            "description": "This action represents the check if Practitioner is registered to report on healthcare surveys.",
+            "description": "This action represents the check if Practitioner is registered to report on health care surveys.",
             "textEquivalent": "Check Participant Registration",
                 "code": [
                   {
@@ -167,7 +167,7 @@
           },
           {
             "id" : "report-to-nchs",
-            "description" : "This action represents the creation, validation and submission of the healthcare survey report.",
+            "description" : "This action represents the creation, validation and submission of the health care survey report.",
             "textEquivalent" : "Create Report and send to NCHS.",
             "code" : [
               {
@@ -183,7 +183,7 @@
                 {
                   "id": "create-hcs-report",
                   "description": "This action represents the creation of the HCS Report.",
-                  "textEquivalent": "Healthcare Survey Report",
+                  "textEquivalent": "Health Care Survey Report",
                   "code": [
                     {
                       "coding": [

@@ -5,8 +5,8 @@
   <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/ImplementationGuide/health-care-surveys-reporting"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.1.0"/>
-  <name value="MedMorphHealthcareSurveysReporting"/>
-  <title value="MedMorph Healthcare Surveys Reporting Content IG"/>
+  <name value="HealthcareSurveysReporting"/>
+  <title value="Health Care Surveys Reporting Content IG"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - Public Health Work Group"/>
@@ -17,7 +17,7 @@
       <value value="http://hl7.org/Special/committees/pher"/>
     </telecom>
   </contact>
-  <description value="The MedMorph Healthcare Surveys Reporting Content IG provides healthcare organizations the necessary data exchange mechanisms to report healthcare survey data to public health agencies."/>
+  <description value="The Health Care Surveys Reporting Content IG provides healthcare organizations the necessary data exchange mechanisms to report health care survey data to public health agencies."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -134,8 +134,8 @@
       <reference>
         <reference value="MessageHeader/messageheader-example-reportheader"/>
       </reference>
-      <name value="MessageHeader example used in the Cancer Reporting Bundle sent from Healthcare org to PHA"/>
-      <description value="MessageHeader example used in the Cancer Reporting Bundle sent from Healthcare org to PHA"/>
+      <name value="MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"/>
+      <description value="MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"/>
       <exampleBoolean value="true"/>
     </resource>
     
@@ -143,8 +143,8 @@
       <reference>
         <reference value="Group/group-example-survey"/>
       </reference>
-      <name value="Group example showing Providers participating in healthcare surveys"/>
-      <description value="Group example showing Providers participating in healthcare surveys"/>
+      <name value="Group example showing Providers participating in health care surveys"/>
+      <description value="Group example showing Providers participating in health care surveys"/>
       <exampleBoolean value="true"/>
     </resource>
     
@@ -172,7 +172,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="MedMorph Healthcare Surveys Reporting Content IG Home"/>
+        <title value="Health Care Surveys Reporting Content IG Home"/>
         <generation value="html"/>
       </page>
       <page>
