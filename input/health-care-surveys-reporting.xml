@@ -6,7 +6,7 @@
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.1.0"/>
   <name value="HealthcareSurveysReporting"/>
-  <title value="Health Care Surveys Reporting Content IG"/>
+  <title value="Health Care Surveys Content Implementation Guide"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - Public Health Work Group"/>
@@ -17,7 +17,7 @@
       <value value="http://hl7.org/Special/committees/pher"/>
     </telecom>
   </contact>
-  <description value="The Health Care Surveys Reporting Content IG provides healthcare organizations the necessary data exchange mechanisms to report health care survey data to public health agencies."/>
+  <description value="The Health Care Surveys Content IG provides healthcare organizations the necessary data exchange mechanisms to report health care survey data to public health agencies."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -172,7 +172,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="Health Care Surveys Reporting Content IG Home"/>
+        <title value="Health Care Surveys Content IG Home"/>
         <generation value="html"/>
       </page>
       <page>
