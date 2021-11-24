@@ -22,7 +22,7 @@ The goals of the Health Care Survey submission use case include:
 
 **In-Scope**
 
-* Collect standardized data based on eligibility criteria from NAMCS[1] and NHCS[2] in the hospital and ambulatory care settings
+* Collect standardized data based on eligibility criteria from NAMCS and NHCS in the hospital and ambulatory care settings
 * Define under what circumstances an EHR system must create and transmit a report to the NCHS data store
 * Identify the data elements to be retrieved from the EHR to produce the report
 * Collect partial provider-level and all available patient-level data for NAMCS
@@ -54,7 +54,7 @@ The goals of the Health Care Survey submission use case include:
 
  
 
-#### Health Care Surveys Reporting Workflow 
+#### Health Care Surveys Workflow 
 
 The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting
 
@@ -67,9 +67,9 @@ The following is a diagram of the workflow based on the above user story used fo
 <br/>
 
 
-#### MedMorph Health Care Surveys Reporting Actors and Definitions
+#### Health Care Surveys Actors and Definitions
 
-The following actors and definitions from the MedMorph RA IG are used by the Health Care Surveys Reporting use cases. 
+The following actors and definitions from the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}})/usecases.html#medmorph-actors-and-definitions) are used by the Health Care Surveys Reporting use cases. 
 
 * EHR 
 * Backend Service App

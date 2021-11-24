@@ -1143,7 +1143,7 @@
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s92"><Data ss:Type="String">HCS Medication Administration</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s95"><Data ss:Type="String">Sets expectations for supported capabilities for MedicationAdmininstration resource in MedMorph Health Care Surveys Reporting IG.</Data><NamedCell
+    <Cell ss:StyleID="s95"><Data ss:Type="String">Sets expectations for supported capabilities for MedicationAdmininstration resource in MedMorph Health Care Surveys IG.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>

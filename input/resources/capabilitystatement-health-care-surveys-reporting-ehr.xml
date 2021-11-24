@@ -9,7 +9,7 @@
       <p>Canonical URL: http://hl7.org/fhir/us/health-care-surveys-reporting/CapabilityStatement/health-care-surveys-reporting-ehr</p>
       <p>Published by: <b>HL7 International - Public Health Work Group</b>
       </p>
-      <p>This profile defines the expected capabilities of the <i>EHR </i> actor to support the health care surveys reporting use cases.  
+      <p>This profile defines the expected capabilities of the <i>EHR </i> actor to support the health care surveys use cases.  
       This actor is responsible for publishing Subscription Topics based on Named Events, generate notifications base on subscriptions and support US Core FHIR APIs.</p>
       <h2>General</h2>
       <div class="table-wrapper">
@@ -403,7 +403,7 @@
   
   <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/CapabilityStatement/health-care-surveys-reporting-ehr"/>
   <name value="HealthcareSurveysReportingEHRCapabilityStatement"/>
-  <title value="Health Care Surveys Reporting EHR Capability Statement"/>
+  <title value="Health Care Surveys EHR Capability Statement"/>
   <status value="draft"/>
   <date value="2020-12-06"/>
   <publisher value="HL7 International - Public Health Work Group"/>
@@ -413,7 +413,7 @@
       <value value="https://www.cdc.gov/csels/phio/making-ehr-data-more-available.html"/>
     </telecom>
   </contact>
-  <description value="This profile defines the expected capabilities of the ''EHR'' actor when conforming to the Health Care Surveys Reporting Content Implementation Guide.  
+  <description value="This profile defines the expected capabilities of the ''EHR'' actor when conforming to the Health Care Surveys Content Implementation Guide.  
   This role is responsible for allowing creation, modification and deletion of Subscriptions and allows searching and retrieval of resources using US Core APIs."/>
   <kind value="requirements"/>
   <fhirVersion value="4.0.1"/>

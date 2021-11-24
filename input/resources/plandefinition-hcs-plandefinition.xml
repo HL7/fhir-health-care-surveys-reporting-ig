@@ -10,7 +10,7 @@
     <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-plandefinition"/>
     <version value="1.0.0"/>
     <name value="HCSPlanDefinition"/>
-    <title value="Health Care Surveys Reporting PlanDefinition"/>
+    <title value="Health Care Surveys PlanDefinition"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
@@ -52,7 +52,7 @@
     <differential>
         <element id="PlanDefinition">
             <path value="PlanDefinition"/>
-            <short value="Health Care Surveys Reporting Knowledge Artifact"/>
+            <short value="Health Care Surveys Knowledge Artifact"/>
             <definition value="This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."/>
             <mustSupport value="true"/>
         </element>
