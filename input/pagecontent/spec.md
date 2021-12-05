@@ -15,7 +15,7 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance.
 
-* **MAY** describes optional behaviors that are free to consider but where the is no recommendation for or against adoption.
+* **MAY** describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.
 
 
 #### Claiming Conformance 
