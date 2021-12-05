@@ -21,7 +21,7 @@
   </extension>
   <eventCoding> 
     <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-messageheader-message-types"/> 
-    <code value="cancer-report-message"/> 
+    <code value="healthcare-survey-report-message"/> 
   </eventCoding> 
   <destination> 
     <name value="PHA endpoint"/> 

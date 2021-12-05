@@ -1,4 +1,4 @@
-This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content IG.  The specification focuses on using the Backend Service App to report the healthcare survey data to NCHS data stores.
+This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content IG.  The specification focuses on using the Backend Service App to report the health care survey data to NCHS data stores.
 
 ### Context
 
@@ -25,7 +25,8 @@ Actors and Systems asserting conformance to this implementation guide have to im
 ##### MUST SUPPORT Definition
 
 * Systems **SHALL** be capable of populating data elements as specified by the profiles and data elements are returned using the specified APIs in the capability statement.
-* Systems **SHALL** be capable of processing resource instances containing the MUST SUPPORT data elements without generating an error or causing the application to fail. In other words, Systems **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes.
+* Systems **SHALL** be capable of processing resource instances containing the MUST SUPPORT data elements without generating an error or causing the application to fail. 
+* Systems **SHOULD** be capable of displaying the MUST Support data elements for human use or storing it for other purposes.
 * In situations where information on a particular data element is not present and the reason for absence is unknown, Systems **SHALL NOT** include the data elements in the resource instance returned from executing the API requests.
 * When accessing Health Care Surveys Content IG data, Systems **SHALL** interpret missing data elements within resource instances returned from API requests as data not present.
 
@@ -62,7 +63,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 
     * Backend Service App accessing data from the EHR
-    * Backend Service App posting data to the NCHS data store.
+    * Backend Service App posting data to the NCHS data store acting as a PHA with FHIR capabilities per the MedMorph RA IG
     
 
 * System actors acting as servers (EHRs and NCHS data stores) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
@@ -73,20 +74,20 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * System actors acting as clients **SHALL** obtain the access token as defined in the [Bulk Data Access IG Authorization Section]({{ site.data.fhir.ver.bulkIg }}/authorization/index.html#obtaining-an-access-token) specification.
 
-* For the healthcare survey use cases, EHRs **SHALL** support the system/*.read scopes. 
+* For the health care survey use cases, EHRs **SHALL** support the system/*.read scopes. 
 
 * The NCHS data stores **SHALL** support the system/*.read and system/*.write scopes. 
 
-* The healthcare organization's existing processes along with the EHRs authorization server **SHALL** verify consent and other policy requirements before allowing the Backend Service App to access the data to be included in the healthcare survey report. 
+* The health care organization's existing processes along with the EHRs authorization server **SHALL** verify any organizational policy requirements (for example, registration of Backend Service App, authorizing requested scopes, testing and verification of BSA implementation in sandbox environment prior to production) before allowing the Backend Service App to access the data to be included in the health care survey report. 
  
 
 ##### Knowledge Artifact and Knowledge Artifact Repository Requirements 
 
 * NCHS **SHALL** create a Knowledge Artifact following the constraints identified by the [MedMorph Provisioning requirements]({{site.data.fhir.ver.medmorphIg}}/provisioning.html#creating-knowledge-artifacts)
 
-* NCHS **SHALL** publish the Group Resource containing the list of all the Practitioners participating in the healthcare survey. This can be published in the NCHS Data Store FHIR Server or a separate Knowledge Artifact Repository.
+* NCHS **SHALL** publish the Group Resource containing the list of all the Practitioners participating in the health care survey. This can be published in the NCHS Data Store FHIR Server or a separate Knowledge Artifact Repository.
 
-* NCHS **SHALL** republish the Group Resource when the list of all the Practitioners participating in the Healthcare survey changes. 
+* NCHS **SHALL** republish the Group Resource when the list of all the Practitioners participating in the health care survey changes. 
 
 * NCHS **SHALL** create the Knowledge Artifact following the constraints identified in [HCS-PlanDefinition](StructureDefinition-hcs-plandefinition.html).
 
@@ -142,7 +143,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Knowledge Artifact processing requirements 
 
-* The BSA **SHALL** allow the healthcare organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the healthcare organization.
+* The BSA **SHALL** allow the health care organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the health care organization.
 
 * BSA **SHALL** process the Health Care Surveys Knowledge Artifact and create Subscription resources in the EHR for each trigger event.
 
@@ -152,9 +153,9 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The BSA **SHALL** implement FhirPath expression processing to process the Health Care Surveys Knowledge Artifact actions.
 
-* The BSA **SHALL** use the default queries outlined by the Health Care Surveys Knowledge Artifact unless overridden by the healthcare organization.
+* The BSA **SHALL** use the default queries outlined by the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
 
-* The BSA **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a healthcare organization.
+* The BSA **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a health care organization.
 
 
 ###### Data API requirements 
@@ -164,22 +165,22 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Report generation requirements 
 
-* The BSA **SHALL** create a healthcare survey report following the constraints identified in [Healthcare Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).
+* The BSA **SHALL** create a health care survey report following the constraints identified in [Health Care Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).
 
-* The BSA **SHALL** package the healthcare survey report following the constraints identified in [Healthcare Survey Reporting Bundle](StructureDefinition-hcs-reporting-bundle.html).
+* The BSA **SHALL** package the health care survey report following the constraints identified in [Health Care Survey Reporting Bundle](StructureDefinition-hcs-reporting-bundle.html).
 
-* The BSA **SHALL** submit the message containing the healthcare survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the healthcare organization.
+* The BSA **SHALL** submit the message containing the health care survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
 
 ###### Use of Non-FHIR based approaches to submit the Health Care Surveys Report
 
-* The BSA **MAY** use other transport methods such as Direct Transport to submit the Healthcare Survey Report created when appropriate.
+* The BSA **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.
 
 ###### MedMorph RA Requirements 
 
 * The BSA **SHALL** implement the MedMorph BSA requirements as outlined in the [MedMorph RA BSA requirements]({{site.data.fhir.ver.medmorphIg}}//CapabilityStatement-medmorph-backend-service-app.html).
 
 
-##### NCHS Data Store Requirements 
+##### NCHS Data Store Requirements acting as a MedMorph PHA actor
 
 
 ###### Message Receiving and Processing requirements
