@@ -3,7 +3,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
   <id value="health-care-surveys-reporting"/>
   <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/ImplementationGuide/health-care-surveys-reporting"/>
-  <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
+  <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden  -->
   <version value="0.1.0"/>
   <name value="HealthcareSurveysReporting"/>
   <title value="Health Care Surveys Content Implementation Guide"/>
