@@ -177,7 +177,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### MedMorph RA Requirements 
 
-* The BSA **SHALL** implement the MedMorph BSA requirements as outlined in the [MedMorph RA BSA requirements]({{site.data.fhir.ver.medmorphIg}}//CapabilityStatement-medmorph-backend-service-app.html).
+* The BSA **SHALL** implement the MedMorph BSA requirements as outlined in the [MedMorph RA BSA requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-backend-service-app.html).
 
 
 ##### NCHS Data Store Requirements acting as a MedMorph PHA actor
