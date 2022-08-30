@@ -2,20 +2,20 @@
 The section identifies the business needs and specific user stories outlining the health care surveys reporting data exchange needs.
 
 #### Business Need
-The purpose of the Health Care Survey Submission Content IG is to identify the hospital (ED and inpatient care) and ambulatory care data that will be extracted from Electronic Health Records and/or clinical data repositories via Fast Healthcare Interoperability Resources Application Programming Interfaces and sent to a system hosted at the federal level. This use case will help define how Electronic Health Record (EHR) data can be used in automated data collection, reducing burden for the healthcare provider and Electronic Health Record with the goal of increasing the submission of timely quality health care data to the National Center for Health Statistics (NCHS).
-The current ambulatory (manual medical record abstraction) and hospital (claims) data collection method is burdensome for providers, lacks clinical richness, and is inefficient for NCHS.
+The purpose of the Health Care Survey Submission Content IG is to identify the hospital (emergency department (ED) and inpatient care) and ambulatory care data that will be extracted from Data Sources (e.g., Electronic Health Records (EHR), clinical data repository) via Fast Healthcare Interoperability Resources (FHIR) Application Programming Interfaces (APIs) and sent to a system hosted at the federal level. This use case will help define how electronic data can be used in automated data collection, reducing burden for the healthcare provider and Data Source with the goal of increasing the submission of timely quality health care data to the National Center for Health Statistics (NCHS).
+The current predominate ambulatory (manual medical record abstraction) and hospital (claims) data collection methods are burdensome for providers, lack clinical richness, and are inefficient for NCHS. The HL7 CDA® R2 Implementation Guide: National Health Care Surveys Release 1, DSTU Release 1.2 - US Realm, 2016, is available-as a standards-based as well as a Promoting Interoperability measure-data submission option for providers. This CDA IG has improved NCHS EHR data submissions, but some providers have found it burdensome and NCHS has identified some data quality issues in submissions by this method.
 
-Electronic reporting will increase the response rate of sampled hospitals and ambulatory health care providers to the National Hospital Care Survey (NHCS) and the National Ambulatory Medical Care Survey (NAMCS). This will also increase the volume, quality, completeness, and timeliness of the data submitted to the NHCS and NAMCS. Electronic reporting via automated means (without provider involvement) will reduce the burden associated with survey participation and reduce costs associated with recruiting hospital and ambulatory health care providers.
+It is expected that use of this IG, which is tightly aligned with newly available standards such as FHIR R4 APIs and USCDI/US Core Profiles, for electronic reporting will increase the response rate of sampled hospitals and ambulatory health care providers to the National Hospital Care Survey (NHCS) and the National Ambulatory Medical Care Survey (NAMCS) over other data collection approaches. This will also increase the volume, quality, completeness, and timeliness of the data submitted to the NHCS and NAMCS. This reporting approach via automated means (without provider involvement) will reduce the burden associated with survey participation and reduce costs associated with recruiting hospital and ambulatory health care providers.
 
 
 #### Goals of the Use Case
 
 The goals of the Health Care Survey submission use case include:
-* Increase the response rate of sampled hospitals and ambulatory health care providers to the National Hospital Care Survey (NHCS) and the National Ambulatory Medical Care Survey (NAMCS).
+* Increase the response rate of sampled hospitals and ambulatory health care providers to the NHCS and the NAMCS.
 * Increase the volume, quality, completeness, and timeliness of data submitted to the NHCS and NAMCS.
-* Reduce the burden, including cost, associated with survey participation for hospitals, ambulatory health care providers, and EHR vendors.
+* Reduce the burden, including cost, associated with survey participation for hospitals, ambulatory health care providers, and data source vendors.
 * Reduce NCHS’s costs associated with recruiting hospital and ambulatory health care providers, and the processing of NHCS and NAMCS data.
-* Develop a complete use case that can be supported by the MedMorph Reference Architecture for the reporting of health care survey data from health care providers and systems to NCHS.
+* Develop a complete use case that can be supported by the MedMorph Reference Architecture (RA) for the reporting of health care survey data from health care providers and systems to NCHS.
 
 
 ##### Scope of the Use Case
@@ -23,19 +23,20 @@ The goals of the Health Care Survey submission use case include:
 **In-Scope**
 
 * Collect standardized data based on eligibility criteria from NAMCS and NHCS in the hospital and ambulatory care settings.
-* Define under what circumstances an EHR system must create and transmit a report to the NCHS data store.
-* Identify the data elements to be retrieved from the EHR to produce the report.
+* Define under what circumstances a Data Source system must create and transmit a report to the NCHS data store.
+* Identify the data elements to be retrieved from the Data Source to produce the report.
 * Collect partial provider-level and all available patient-level data for NAMCS.
 * Collect partial hospital/facility-level and all available patient-level data for NHCS.
 
 
 **Out-of-Scope**
 
-* Validation of the EHR data.
-* Data captured outside the EHR and communicated directly to registries.
+* Assessment of the data quality of the content extracted from the Data Source.
+* Data captured outside the Data Source and communicated directly to registries.
 * Changes to existing provider workflow or existing data entry.
-* Policies of the clinical care setting to collect consent for data sharing.
+* Policies of the clinical care setting to collect consent for data sharing. (Provider participation in the National Health Care Surveys is by invitation by NCHS based on being selected as part of the nationally representative samples of providers. Consent for participation in each National Health Care Survey is obtained during the manual recruitment process.)
 * Adult day services centers, residential care communities, nursing homes, home health agencies, and hospice.
+* The National Hospital Ambulatory Medical Care Survey (NHAMCS) is designed to collect data on the utilization and provision of ambulatory care services in hospital emergency and outpatient departments and ambulatory surgery locations. While this IG could be used for NHAMCS data collection, at the present time NCHS is not intending to do so.
 
 
  
@@ -43,23 +44,29 @@ The goals of the Health Care Survey submission use case include:
 
 **Background:** The National Ambulatory Medical Care Survey (NAMCS) is based on a sample of patient visits to non-federally employed office-based physicians (primary care or specialist) who are primarily engaged in direct patient care and, starting in 2006, a separate sample of visits to community health centers. NAMCS collects an encounter-based set of demographic and clinical data generally available in a medical record for any type of visit.
 
-**Workflow:** Upon completion of an encounter, the physician or licensed clinician, using the EHR, completes and closes the clinical encounter (“sign off”). This “sign off” triggers the backend services app to evaluate the completed encounter. The completed encounter evaluation includes validating that the provider associated with the encounter is a “sampled” NAMCS provider and the encounter occurred within a specified timeframe.  If the encounter meets the criteria, and after a lag period to allow for lab results to post when applicable, the backend services app requests a set of FHIR resources representing patient-level and select provider-level data of the encounter from the EHR. Once obtained and validated, these resources are transmitted to NCHS where they are received, acknowledged, validated, and loaded into the NCHS Data Store.
+**Workflow:** Upon completion of an encounter, the physician or licensed clinician, using the EHR, completes and closes the clinical encounter (“sign off”). This “sign off” triggers the Health Data Exchange App (HDEA), MedMorph's backend services app, to evaluate the completed encounter. The completed encounter evaluation by the HDEA includes validating that the provider associated with the encounter is a “sampled” NAMCS provider and the encounter occurred within a specified timeframe.  If the encounter meets the criteria, and after a lag period to allow for lab results to post when applicable, the HDEA requests a set of FHIR resources representing patient-level and select provider-level data of the encounter from the Data Source. The obtained resources are validated (e.g., conformant to the appropriate FHIR profiles) and transmitted to NCHS where they are received, acknowledged, and loaded into the NCHS Data Store.
+
+The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting in the Ambulatory Setting:
 
 
-#### **User Story #2 – Inpatient Setting**
+{% include img.html img="healthcare-surveys-reporting-workflow.png" caption="Figure 2.1 - Ambulatory Setting Health Care Survey Reporting Workflow" %}
 
-**Background:** The National Hospital Care Survey (NHCS) is an electronic data collection, gathering Uniform Bill (UB) 04 administrative claims data or electronic health record data from sampled hospitals. NHCS is designed to provide reliable and timely nationally representative healthcare utilization data for hospital-based settings. NHCS collects all inpatient discharges, and ED encounters from sampled hospitals for a survey period of one year. NHCS’ sample is drawn from all non-federal US hospitals with a bed size > 6.
-
-**Workflow:** Upon completion of an inpatient or ED encounter, the physician or licensed clinician completes and closes the clinical encounter (“sign off”). This “sign off” triggers the backend services app to evaluate the completed encounter against the NHCS criteria.  If the encounter meets the survey criteria, and after a lag period to allow for lab results to post when applicable, the backend services app requests a set of FHIR resources representing patient-level and select provider-level data of the encounter from the EHR.  Once obtained and validated, these resources are transmitted to NCHS where they are received, acknowledged, validated, and loaded into the NCHS Data Store.
-
- 
-
-#### Health Care Surveys Workflow 
-
-The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting
+<br/>
 
 
-{% include img.html img="healthcare-surveys-reporting-workflow.png" caption="Figure 2.1 - Health Care Surveys Reporting Workflow" %}
+<br/>
+
+
+#### **User Story #2 – Hospital Setting**
+
+**Background:** The National Hospital Care Survey (NHCS) is an electronic data collection, gathering Uniform Bill (UB) 04 administrative claims data or electronic data from sampled hospitals. NHCS is designed to provide reliable and timely nationally representative healthcare utilization data for hospital-based settings. NHCS collects all inpatient discharges, and ED encounters from sampled hospitals for a survey period of one year. NHCS’ sample is drawn from all non-federal US hospitals with a bed size > 6.
+
+**Workflow:** Upon completion of an inpatient or ED encounter, the physician or licensed clinician completes and closes the clinical encounter (“sign off”). This “sign off” triggers the HDEA to evaluate the completed encounter against the NHCS criteria.  If the encounter meets the survey criteria, and after a lag period to allow for lab results to post when applicable, the HDEA requests a set of FHIR resources representing patient-level and select provider-level data of the encounter from the Data Source.  Once obtained and validated, these resources are transmitted to NCHS where they are received, acknowledged, validated, and loaded into the NCHS Data Store.
+
+The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting for the Hospital Setting:
+
+
+{% include img.html img="healthcare-surveys-reporting-workflow.png" caption="Figure 2.2 - Hospital Setting Health Care Survey Reporting Workflow" %}
 
 <br/>
 
@@ -69,9 +76,9 @@ The following is a diagram of the workflow based on the above user story used fo
 
 #### Health Care Surveys Actors and Definitions
 
-The following actors and definitions from the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}})/usecases.html#medmorph-actors-and-definitions) are used by the Health Care Surveys Reporting use cases. 
+The following actors and definitions from the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}}/usecases.html#medmorph-actors-and-definitions) are used by the Health Care Surveys Reporting use cases. 
 
-* EHR
-* Backend Service App
-* National Center for Health Statistics (NCHS) Data Store acting as (PHA) with FHIR capabilities per the MedMorph RA IG
+* Data Source (e.g., EHR, clinical data repository)
+* HDEA
+* NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
 * Knowledge Artifact Repository
