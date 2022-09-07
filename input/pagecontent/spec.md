@@ -1,13 +1,13 @@
-This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content Implementation Guide (IG).  The specification focuses on using the Health Data Exchange App (HDEA), MedMorph's backend services app, to report the health care survey data to NCHS data stores.
+This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content Implementation Guide (IG).  The specification focuses on using the Health Data Exchange App (HDEA), Making Electronic Data More available for Research and Public Health's (MedMorph) backend services app, to report the health care survey data to National Center for Health Statistics (NCHS) data stores.
 
 ### Context
 
 #### Pre-reading
-Before reading this formal specification, implementers should first be familiar with the the [Use Cases](usecases.html) page which provides the business context and general process flow.
+Before reading this formal specification, implementers should first be familiar with the [Use Cases](usecases.html) page which provides the business context and general process flow.
 
 
 #### Conventions
-This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
+This IG uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
 * **SHALL** indicates requirements that must be met to be conformant with the specification.
 
@@ -18,7 +18,7 @@ This implementation guide uses specific terminology to flag statements that have
 
 #### Claiming Conformance 
 
-Actors and Systems asserting conformance to this implementation guide have to implement the requirements outlined in the corresponding capability statements. The following definition of MUST SUPPORT is to be used in the implementation of the requirements.
+Actors and Systems asserting conformance to this IG must implement the requirements outlined in the corresponding capability statements. The following definition of Must Support is to be used in the implementation of the requirements.
 
 ##### Must Support Definition
 
@@ -30,19 +30,19 @@ Actors and Systems asserting conformance to this implementation guide have to im
 * When data is not available for any of the mandatory elements specified in the IG, a data absent reason extension should be added to satisfy the requirement along with an appropriate value from the [data-absent-reason value set](http://hl7.org/fhir/ValueSet/data-absent-reason).
 
 
-#### Profiles and Other IGs used by the specification
-This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions, and terminology artifacts to describe the content to be shared as part of Health Care Surveys Content IG workflows. The implementation guide is based on [FHIR R4]({{site.data.fhir.path}}) and profiles are listed for each interaction.
+#### Profiles and Other IGs Used by the Specification
+This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions, and terminology artifacts to describe the content to be shared as part of Health Care Surveys Content IG workflows. The IG is based on [FHIR R4]({{site.data.fhir.path}}) and profiles are listed for each interaction.
 
-The full set of profiles defined in this implementation guide can be found by following the links on the [FHIR Artifacts](artifacts.html) page.
+The full set of profiles defined in this IG can be found by following the links on the [FHIR Artifacts](artifacts.html) page.
 
 ##### MedMorph Reference Architecture (RA) IG Usage
 
-This IG leverages the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}}/index.html) defined by HL7 Public Health WG as the reference architecture for automation and implementing the health care surveys use case.
+This IG leverages the [MedMorph Reference Architecture (RA) IG]({{site.data.fhir.ver.medmorphIg}}/index.html) defined by HL7 Public Health Workgroup (WG) as the reference architecture for automation and implementing the Health Care Surveys use case.
 
 
 ##### US Core Usage
 
-This IG leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
+This IG leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}) set of profiles defined by HL7 for sharing non-veterinary electronic medical record (EMR) individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
 
 ##### Subscriptions Backport IG Usage
 
@@ -50,7 +50,7 @@ This IG leverages the [Subscriptions Backport IG]({{site.data.fhir.ver.subscript
 
 ##### Bulk Data Access IG Usage
 
-This IG leverages the [BulkData Access IG]({{site.data.fhir.ver.buldataIg}}/index.html) defined by HL7 Infrastructure WG for enabling authentication and authorization between various actors involved in the workflows. The Bulk Data IG is being referenced to use the SMART on FHIR Backend Services Authorization requirements only. The Bulk Data operations related to exporting data for a cohort (Group) or a patient or system level export is not used for this IG.
+This IG leverages the [BulkData Access IG]({{site.data.fhir.ver.buldataIg}}/index.html) defined by HL7 Infrastructure WG for enabling authentication and authorization between various actors involved in the workflows. The Bulk Data IG is being referenced to use the Substitutable Medical Applications, Reusable Technologies (SMART) on FHIR Backend Services Authorization requirements only. The Bulk Data operations related to exporting data for a cohort (Group) or a patient or system level export is not used for this IG.
 
 #### Implementation Requirements
 
@@ -65,7 +65,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
     * HDEA posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
     
 
-* System actors acting as servers (e.g., EHR and NCHS Data Store) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
+* System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
 
 * System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html) specification.
 
@@ -73,7 +73,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 
 * System actors acting as clients **SHALL** obtain the access token as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html#obtaining-an-access-token) specification.
 
-* For the Health Care Survey use cases, Data Sourcess **SHALL** support the system/*.read scopes. 
+* For the Health Care Survey use cases, Data Sources **SHALL** support the system/*.read scopes. 
 
 * The NCHS Data Store **SHALL** support the system/*.read and system/*.write scopes. 
 
@@ -82,7 +82,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 
 ##### Knowledge Artifact and Knowledge Artifact Repository Requirements 
 
-* The NCHS Data Store **SHALL** create a Knowledge Artifact following the constraints identified by the [MedMorph Provisioning requirements]({{site.data.fhir.ver.medmorphIg}}/provisioning.html#creating-knowledge-artifacts)
+* The NCHS Data Store **SHALL** create a Knowledge Artifact following the constraints identified by the [MedMorph Provisioning requirements]({{site.data.fhir.ver.medmorphIg}}/provisioning.html#creating-knowledge-artifacts).
 
 * The NCHS Data Store **SHALL** publish the Group Resource containing the list of all the Practitioners participating in the health care survey. This can be published in the NCHS Data Store FHIR Server or a separate Knowledge Artifact Repository.
 
@@ -97,12 +97,12 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 
 * The Data Source (e.g., EHR, clinical data repository) **SHALL** support the requirements as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
 
-###### Authorization requirements 
+###### Authorization Requirements 
 
 * The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a Server. 
  
 
-###### Subscription requirements
+###### Subscription Requirements
 
 * The Data Source **SHALL** support the creation of Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html)
 
@@ -115,7 +115,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 * The Data Source **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
 
 
-###### Data API requirements
+###### Data API Requirements
 
 * The Data Source **SHALL** support the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) for the HDEA to access patient data.
 
@@ -123,12 +123,12 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 ##### HDEA Requirements 
 
 
-###### Authorization requirements
+###### Authorization Requirements
 
 * The HDEA **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a client. 
 
 
-###### Subscription requirements
+###### Subscription Requirements
 
 * The HDEA **SHALL** create Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html).
 
@@ -140,7 +140,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 * The HDEA **SHALL** support a POST API <BSA Base URL>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source. 
 
 
-###### Knowledge Artifact processing requirements 
+###### Knowledge Artifact Processing Requirements 
 
 * The HDEA **SHALL** allow the health care organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the health care organization.
 
@@ -148,7 +148,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 
 * For the health care surveys, the HDEA **SHALL** create the Subscription for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html) trigger event. 
 
-* Upon deactivation of a Knowledge Artifact, The HDEA **SHALL** delete the Subscriptions previously created by the HDEA for the Knowledge Artifact. (for e.g delete the Subscription created for encounter-close trigger event) 
+* Upon deactivation of a Knowledge Artifact, The HDEA **SHALL** delete the Subscriptions previously created by the HDEA for the Knowledge Artifact (e.g., delete the Subscription created for encounter-close trigger event). 
 
 * The HDEA **SHALL** implement FhirPath expression processing to process the Health Care Surveys Knowledge Artifact actions.
 
@@ -157,7 +157,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 * The HDEA **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a health care organization.
 
 
-###### Data API requirements 
+###### Data API Requirements 
 
 * The HDEA acting as a client **SHALL** use the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) to access patient data from the Data Source.
 
@@ -170,7 +170,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 
 * The HDEA **SHALL** submit the message containing the health care survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
 
-###### Use of Non-FHIR based approaches to submit the Health Care Surveys Report
+###### Use of Non-FHIR Based Approaches to Submit the Health Care Surveys Report
 
 * The HDEA **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.
 
@@ -179,10 +179,10 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
 * The HDEA **SHALL** implement the MedMorph HDEA requirements as outlined in the [MedMorph RA HDEA requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-backend-service-app.html).
 
 
-##### NCHS Data Store Requirements acting as a MedMorph Data Receiver actor
+##### NCHS Data Store Requirements Acting as a MedMorph Data Receiver Actor
 
 
-###### Message Receiving and Processing requirements
+###### Message Receiving and Processing Requirements
 
 * The NCHS Data Store **SHALL** implement the $process-message operation on the ROOT URL of the FHIR Server to receive reports from the Backend Service App using the POST operation.
 
