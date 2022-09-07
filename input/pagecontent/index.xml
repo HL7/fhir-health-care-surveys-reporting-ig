@@ -4,7 +4,7 @@
   <h3>Introduction</h3>
 	<p>
     The Making Electronic Data More Available for Research and Public Health (MedMorph) project seeks to advance public health and patient-centered outcomes
-    by using emerging health data and exchange standards, such as Health Level 7 (HL7) Fast Healthcare Interoperability Resources (FHIR) and Clinical Quality 
+		by using emerging health data and exchange standards, such as Health Level 7 (HL7<sup>®</sup>) Fast Healthcare Interoperability Resources (FHIR<sup>®</sup>) and Clinical Quality 
     Language (CQL), to develop and implement an interoperable solution that will enable access to clinical data. The MedMorph project fits within the 
     Centers for Disease Control and Prevention (CDC) strategic imperative of transforming how data are collected, used, and shared through modern 
     Information Technology (IT) capabilities to save lives and improve health. The MedMorph project is funded by the Health and Human Services (HHS) 
@@ -12,18 +12,18 @@
     Surveillance, Epidemiology, and Laboratory Services (CSELS) Public Health Informatics Office (PHIO) to advance research and public health goals.
        </p>
     	<p>   
-    The project aims to leverage the maturation of standards and requirements for certification of health information technology by the Office of the 
+    The MedMorph project aims to leverage the maturation of standards and requirements for certification of health IT by the Office of the 
     National Coordinator for Health IT (ONC) that underpin many electronic health records (EHRs). Standards and regulations such as FHIR, the 
     ONC 2015 Edition Common Clinical Data Set (CCDS), 2015 Edition Cures Update - United States Core Data for Interoperability (USCDI) Version 1, 
     February 2020 and standardized application programming interfaces (API) for patient services have created a health IT environment that is ripe 
     for developing standards-based scalable and extensible solutions to overcome interoperability challenges.
     </p>
     <p>
-    The National Health Care Surveys with its NHCS Clinical Document Architecture (CDA) Release 3 more closely aligned its data requirements with USCDI V1. 
+    The National Health Care Surveys, with its NHCS Clinical Document Architecture (CDA) Release 3, more closely aligned its data requirements with USCDI V1. 
     The alignment with USCDI is increased in this FHIR IG. The Health Care Survey Content Bundle is limited to data elements included in USCDI V1 as 
-    operationalized by 17 US Core Resource Profiles v3.1.1. As medications administered during encounters has been collected in the National Health Care 
-    Surveys for decades, it was felt this data was needed so as to not have gaps in collection years. Thus the only exception to the US Core Profiles only 
-    heuristic is the HCS MedicationAdministration Profile, which is also included in the Health Care Survey Content Bundle. NCHS plans to align the 
+    operationalized by 17 US Core Resource Profiles v3.1.1. As medications administered during encounters have been collected in the National Health Care 
+    Surveys for decades, it was felt this data was needed so as to not have gaps in collection years. Thus, the only exception to the US Core Profiles only 
+    heuristic is the HCS MedicationAdministration Profile, which is also included in the Health Care Survey Content Bundle. The National Center for Health Statistics (NCHS) plans to align the 
     data elements in future releases of this IG with those that achieve recognition for voluntary implementation in the 
     Standards Version Advancement Process (SVAP) or are required by regulation as part of USCDI.
 	</p>
@@ -38,8 +38,8 @@
   </p>
   <ul>
     <li>
-      <a href="usecases.html">Use Cases</a> - The use cases provide business context for the IG and information that implementers should be
-      familiar with before reading the remainder of the IG.  
+      <a href="usecases.html">Use Cases</a> - The use cases provide business context for the IG and information that implementers should familiarize themselves
+	    with prior to reading the remainder of the IG.  
     </li>
     <li>
       <a href="spec.html">Detailed Specification</a> - The formal specification identifying the requirements for the implementers.
