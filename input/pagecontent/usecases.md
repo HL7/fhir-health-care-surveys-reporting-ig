@@ -49,7 +49,7 @@ The goals of the Health Care Survey submission use case include:
 The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting in the Ambulatory Setting:
 
 
-{% include img.html img="healthcare-surveys-reporting-workflow.png" caption="Figure 2.1 - Ambulatory Setting Health Care Survey Reporting Workflow" %}
+{% include img.html img="healthcare-surveys-reporting-workflow-userstory1.png" caption="Figure 2.1 - Ambulatory Setting Health Care Survey Reporting Workflow" %}
 
 <br/>
 
@@ -66,7 +66,7 @@ The following is a diagram of the workflow based on the above user story used fo
 The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting for the Hospital Setting:
 
 
-{% include img.html img="healthcare-surveys-reporting-workflow.png" caption="Figure 2.2 - Hospital Setting Health Care Survey Reporting Workflow" %}
+{% include img.html img="healthcare-surveys-reporting-workflow-userstory2.png" caption="Figure 2.2 - Hospital Setting Health Care Survey Reporting Workflow" %}
 
 <br/>
 
@@ -76,9 +76,33 @@ The following is a diagram of the workflow based on the above user story used fo
 
 #### Health Care Surveys Actors and Definitions
 
-The following actors and definitions from the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}}/usecases.html#medmorph-actors-and-definitions) are used by the Health Care Surveys Reporting use cases. 
+The following actors from the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}}/usecases.html#medmorph-actors-and-definitions) are used by the Health Care Surveys Reporting use cases. 
 
 * Data Source (e.g., EHR, clinical data repository)
 * HDEA
 * NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
 * Knowledge Artifact Repository
+* Trust Service Provider
+
+###### Interactions between MedMorph RA Actors and Systems for Health Care Surveys
+This section outlines the high-level interactions between the various MedMorph Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
+
+{% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - Healthcare Surveys Actors and Systems" %}
+
+The descriptions for each step in the above diagram include:
+* Step 1: The National Center for Health Statistics (NCHS) Data Store (e.g., Data Receiver) creates a Knowledge Artifact and makes it available via the Knowledge Artifact Repository.
+     * Step 1a: Knowledge Artifact Repositories which implement notifications, can optionally notify the subscribers (Data Source, HDEA, Administrators) of changes in the Knowledge Artifacts.
+* Step 2: The Health Data Exchange App (HDEA) queries the Knowledge Artifact Repository to retrieve a Knowledge Artifact. 
+     * Step 2a: HDEA receives the Knowledge Artifact as a response to the query in Step 2.
+* Step 3: The HDEA processes the Knowledge Artifact and creates subscriptions in the Data Source’s (e.g., EHR) FHIR Server so that it can be notified when specific events occur in clinical workflows.
+* Step 4: Providers as part of their clinical workflows update the data in the Data Source’s patient chart.
+* Step 5: The Data Source notifies the HDEA based on subscriptions that have been created in Step 3.
+* Step 6: The HDEA queries the Data Source for patient’s data.
+     * Step 6a: HDEA receives the response from the Data Source with the patient’s data.
+* Step 7: After the creation of the report with identifiable data that needs to be submitted, the HDEA invokes the Trust Service Provider to de-identify, anonymize, pseudonymize the report as needed.
+     * Step 7a: The HDEA receives the de-identified, anonymized or pseudonymized report.
+* Step 8: The HDEA submits the created report to the NCHS Data Store.
+* Step 9: The NCHS Data Store submits a response back to the HDEA based on the submitted report. The Response transaction can be synchronous or asynchronous (after a period of time).
+* Step 10: The HDEA writes back the response from the NCHS Data Store to the Data Source as appropriate. Note: The Response may have to be re-identified in some scenarios using Trust Services before it is written back to the EHR.
+
+
