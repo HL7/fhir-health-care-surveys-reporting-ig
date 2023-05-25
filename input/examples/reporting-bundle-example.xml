@@ -77,7 +77,7 @@
     <resource>
       
             <Bundle xmlns="http://hl7.org/fhir">
-        <id value="content-bundle-example"/> 
+        <id value="content-bundle-example1"/> 
         <meta>
               <versionId value="1"/>
               <lastUpdated value="2020-11-29T02:03:28.045+00:00"/>
