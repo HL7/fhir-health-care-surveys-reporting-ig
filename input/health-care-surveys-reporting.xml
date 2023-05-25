@@ -208,14 +208,14 @@
       <exampleBoolean value="true"/>
     </resource>
     
-    <resource>
+  <!--  <resource>
       <reference>
         <reference value="Bundle/content-bundle-example"/>
       </reference>
       <name value="Example of a Content Bundle containing Patient Data"/>
       <description value="Example of a Content Bundle containing Patient Data"/>
       <exampleBoolean value="true"/>
-    </resource>
+    </resource> -->
     <resource>
       <reference>
         <reference value="Bundle/healthcare-survey-specification-bundle-example"/>
