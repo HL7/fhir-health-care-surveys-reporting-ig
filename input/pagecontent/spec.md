@@ -48,15 +48,15 @@ This IG leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}) set of profiles
 
 This IG leverages the [Subscriptions Backport IG]({{site.data.fhir.ver.subscriptionsIg}}/index.html) defined by HL7 Infrastructure WG for automating reporting workflows using subscriptions.
 
-##### Bulk Data Access IG Usage
+##### SMART App Launch IG Usage
 
-This IG leverages the [BulkData Access IG]({{site.data.fhir.ver.buldataIg}}/index.html) defined by HL7 Infrastructure WG for enabling authentication and authorization between various actors involved in the workflows. The Bulk Data IG is being referenced to use the Substitutable Medical Applications, Reusable Technologies (SMART) on FHIR Backend Services Authorization requirements only. The Bulk Data operations related to exporting data for a cohort (Group) or a patient or system level export is not used for this IG.
+This IG leverages the [SMART App Launch IG]({{site.data.fhir.ver.smartapplaunch}}/index.html) defined by HL7 Infrastructure WG for enabling authentication and authorization between various actors involved in the workflows. This IG leverages Substitutable Medical Applications, Reusable Technologies (SMART) on FHIR Backend Services Authorization requirements.
 
 #### Implementation Requirements
 
-##### SMART on FHIR Backend Services Authorization Requirements from the Bulk Data Access IG
+##### SMART on FHIR Backend Services Authorization Requirements from the SMART App Launch IG
 
-This section outlines how the SMART on FHIR Backend Services Authorization (from the Bulk Data Access IG) will be used by the Health Care Surveys Content IG. 
+This section outlines how the SMART on FHIR Backend Services Authorization will be used by the Health Care Surveys Content IG. 
 
 * The system actors namely Data Source, HDEA and the NCHS Data Store are required to use the SMART on FHIR Backend Services Authorization mechanisms as outlined below for the following interactions:
 
@@ -65,13 +65,13 @@ This section outlines how the SMART on FHIR Backend Services Authorization (from
     * HDEA posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
     
 
-* System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html#advertising-server-conformance-with-smart-backend-services) specification.
+* System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
-* System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html) specification.
+* System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
-* When System actors act as clients (e.g., HDEA), they **SHALL** share their JSON Web Key Set (JWKS) with the server System actors (e.g., EHR and NCHS Data Store) using Uniform Resource Locators (URLs) as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html#registering-a-smart-backend-service-communicating-public-keys) specification.
+* When System actors act as clients (e.g., HDEA), they **SHALL** share their JSON Web Key Set (JWKS) with the server System actors (e.g., EHR and NCHS Data Store) using Uniform Resource Locators (URLs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
-* System actors acting as clients **SHALL** obtain the access token as defined in the [Bulk Data Access IG Authorization Section]({{site.data.fhir.ver.bulkIg}}/authorization/index.html#obtaining-an-access-token) specification.
+* System actors acting as clients **SHALL** obtain the access token as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
 * For the Health Care Survey use cases, Data Sources **SHALL** support the system/*.read scopes. 
 
