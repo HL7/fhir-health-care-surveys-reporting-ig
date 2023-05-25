@@ -8,7 +8,7 @@
         <source value="#op9qv8RqccCL7zOB"/>
     </meta>
     <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle"/>
-    <version value="0.1.0"/>
+    <version value="1.0.0"/>
     <name value="HealthcareSurveysReportingBundle"/>
     <title value="Health Care Surveys Reporting Bundle"/>
     <status value="draft"/>
@@ -21,7 +21,7 @@
             <value value="http://hl7.org/Special/committees/pher"/>
         </telecom>
     </contact>
-    <description value="Bundle Resource profile for exchanging one of public health messages, knowledge artifacts or content."/>
+    <description value="Bundle Resource profile for exchanging health care surveys report. This bundle contains the MessageHeader resource used for routing and the Health Care Surveys Content Bundle specifying the content."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -71,7 +71,7 @@
             <path value="Bundle.entry.resource"/>
             <type>
                 <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-content-bundle"/>
+                <profile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle"/>
             </type>
         </element>
     </differential>

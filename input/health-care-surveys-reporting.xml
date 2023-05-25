@@ -4,7 +4,7 @@
   <id value="health-care-surveys-reporting"/>
   <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/ImplementationGuide/health-care-surveys-reporting"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden  -->
-  <version value="0.1.0"/>
+  <version value="1.0.0"/>
   <name value="HealthcareSurveysReporting"/>
   <title value="Health Care Surveys Content Implementation Guide"/>
   <status value="draft"/>
@@ -37,24 +37,36 @@
     <version value="3.1.1"/>
   </dependsOn>
   
-   <dependsOn id="bulkIg">
-    <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
-    <packageId value="hl7.fhir.uv.bulkdata"/>
-    <version value="1.0.1"/>
-  </dependsOn>
-  
   <dependsOn id="medmorphIg">
     <uri value="http://hl7.org/fhir/us/medmorph/ImplementationGuide/hl7.fhir.us.medmorph"/>
     <packageId value="hl7.fhir.us.medmorph"/>
-    <version value="0.2.0"/>
+    <version value="current"/>
+  </dependsOn>
+  
+  <dependsOn id="smartapplaunch">
+    <uri value="http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch"/>
+    <packageId value="hl7.fhir.uv.smart-app-launch"/>
+    <version value="2.0.0"/>
   </dependsOn>
   
   <dependsOn id="subscriptionsIg">
     <uri value="http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"/>
-    <packageId value="hl7.fhir.uv.subscriptions-backport"/>
-    <version value="0.1.0"/>
+    <packageId value="hl7.fhir.uv.subscriptions-backport.r4"/>
+    <version value="1.1.0"/>
   </dependsOn>
- 
+  
+  <dependsOn id="uscdcphinvads">
+        <uri value="http://fhir.org/packages/us.cdc.phinvads/ImplementationGuide/us.cdc.phinvads"/>
+        <packageId value="us.cdc.phinvads"/>
+        <version value="0.12.0"/>
+  </dependsOn>
+    
+  <dependsOn id="usnlmvsac">
+        <uri value="http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac"/>
+        <packageId value="us.nlm.vsac"/>
+        <version value="0.9.0"/>
+  </dependsOn>
+  
   <definition>
   
   <resource>
