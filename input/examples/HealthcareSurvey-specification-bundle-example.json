@@ -27,14 +27,6 @@
           "status": "extensions",
           "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Receiver Endpoint Address</b>: <a>Generated Summary: id: example-nchs-endpoint; status: active; <span title=\"{http://terminology.hl7.org/CodeSystem/endpoint-connection-type hl7-fhir-rest}\">HL7 FHIR</span>; name: PHAReceiver; endpointmanager@example.pha.org; period: 2020-11-20 --&gt; (ongoing); <span title=\"Codes: {http://hl7.org/fhir/resource-types Bundle}\">Bundle</span>; payloadMimeType: application/fhir+xml, payloadMimeType: application/fhir+json; address: http://example.pha.org/fhir</a></p><p><b>Author </b></p></div>"
         },
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/ext-receiverAddress",
-            "valueReference": {
-              "reference": "Endpoint/example-ph-endpoint"
-            }
-          }
-        ],
         "url": "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/plandefinition-healthcare-survey-example",
         "version": "1.0",
         "name": "PlanDefinitionHealthcareSurveyExample",
@@ -67,7 +59,7 @@
           {
             "id": "start-workflow",
             "description": "This action represents the start of the reporting workflow in response to the encounter-end event",
-            "textEquivalent": "Start the reporting workflow in response to an encounter-close event",
+            "textEquivalent": "Start the reporting workflow in response to an encounter-end event",
             "code": [
               {
                 "coding": [
@@ -89,7 +81,7 @@
                         {
                           "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-triggerdefinition-namedevents",
                           "code": "encounter-end",
-                          "display": "Indicates the close of an encounter"
+                          "display": "Indicates the end of an encounter"
                         }
                       ]
                     }
