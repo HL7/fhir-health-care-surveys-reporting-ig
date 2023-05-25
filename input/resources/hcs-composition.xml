@@ -553,6 +553,12 @@
       <short value="Clinical Notes Section code" />
       <definition value="Clinical Notes Section code" />
       <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="28650-0" />
+        </coding>
+      </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>

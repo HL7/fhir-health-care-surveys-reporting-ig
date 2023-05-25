@@ -6,7 +6,7 @@
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden  -->
   <version value="1.0.0"/>
   <name value="HealthcareSurveysReporting"/>
-  <title value="Health Care Surveys Content Implementation Guide"/>
+  <title value="Health Care Surveys Content Implementation Guide (IG)"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - Public Health Work Group"/>
@@ -83,6 +83,54 @@
       </reference>
       <name value="HCS PlanDefinition Example"/>
       <description value="An example showing a PlanDefinition for HCS"/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="AllergyIntolerance/example"/>
+      </reference>
+      <name value="AllergyIntolerance Example"/>
+      <description value="An example showing an AllergyIntolerance for HCS reporting."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Condition/example"/>
+      </reference>
+      <name value="Condition Example"/>
+      <description value="An example showing a Condition for HCS reporting."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Encounter/example-1"/>
+      </reference>
+      <name value="Encounter Example"/>
+      <description value="An Encounter example for HCS reporting."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Patient/example"/>
+      </reference>
+      <name value="Patient Example"/>
+      <description value="An example showing a Patient for HCS reporting."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="MedicationRequest/self-tylenol"/>
+      </reference>
+      <name value="MedicationRequest Example"/>
+      <description value="An example showing a MedciationRequest for HCS reporting."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Composition/hcs-composition-example"/>
+      </reference>
+      <name value="Composition Example"/>
+      <description value="An example showing a Composition for HCS"/>
       <exampleBoolean value="true"/>
    </resource>
    <resource>

@@ -1,0 +1,88 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "content-bundle-example",
+  "meta" : {
+    "versionId" : "1",
+    "lastUpdated" : "2020-11-29T02:03:28.045+00:00",
+    "profile" : ["http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle"]
+  },
+  "type" : "collection",
+  "timestamp" : "2020-11-20T11:15:33-10:00",
+  "entry" : [{
+    "fullUrl" : "Patient/1",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "1",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2020-11-29T02:03:28.045+00:00",
+        "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <p> Patient Dominique Ledner</p>           \n          </div>"
+      },
+      "identifier" : [{
+        "use" : "usual",
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MR"
+          }]
+        },
+        "system" : "urn:oid:0.1.2.3.4.5.6.7",
+        "value" : "654321"
+      }],
+      "active" : true,
+      "name" : [{
+        "use" : "official",
+        "family" : "Ledner",
+        "given" : ["Dominique"]
+      }],
+      "gender" : "male",
+      "managingOrganization" : {
+        "reference" : "Organization/example-healthcare-org",
+        "display" : "Example Healthcare org"
+      }
+    }
+  },
+  {
+    "fullUrl" : "Encounter/example-1",
+    "resource" : {
+      "resourceType" : "Encounter",
+      "id" : "example-1",
+      "meta" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/instance-name",
+          "valueString" : "Encounter 1 Example"
+        }],
+        "lastUpdated" : "2017-05-26T11:56:57.250-04:00",
+        "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>status</b>: finished</p><p><b>class</b>: <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">ambulatory</span></p><p><b>type</b>: <span title=\"Codes: {http://snomed.info/sct 308335008}\">Office Visit</span></p><p><b>subject</b>: Generated Summary: Medical Record Number: 654321 (USUAL); active; Ledner Dominique; </p><p><b>period</b>: Nov 1, 2015 10:00:14 PM --&gt; Nov 1, 2015 11:00:14 PM</p></div>"
+      },
+      "status" : "finished",
+      "class" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "AMB",
+        "display" : "ambulatory"
+      },
+      "type" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "308335008"
+        }],
+        "text" : "Office Visit"
+      }],
+      "subject" : {
+        "reference" : "Patient/1"
+      },
+      "period" : {
+        "start" : "2015-11-01T17:00:14-05:00",
+        "end" : "2015-11-01T18:00:14-05:00"
+      }
+    }
+  }]
+}
