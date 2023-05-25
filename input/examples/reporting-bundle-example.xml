@@ -67,13 +67,13 @@
           </coding> 
         </reason> 
         <focus>
-          <reference value="Bundle/content-bundle-example"/>
+          <reference value="Bundle/content-bundle-example1"/>
         </focus>
       </MessageHeader>
     </resource>
   </entry>
   <entry>
-    <fullUrl value="Bundle/content-bundle-example"/>
+    <fullUrl value="Bundle/content-bundle-example1"/>
     <resource>
       
             <Bundle xmlns="http://hl7.org/fhir">
