@@ -1,6 +1,6 @@
 {
         "resourceType": "PlanDefinition",
-        "id": "plandefinition-example",
+        "id": "plandefinition-healthcare-survey-example",
         "meta": {
           "versionId": "1",
           "lastUpdated": "2020-11-29T02:03:28.045+00:00",
@@ -10,7 +10,7 @@
         },
         "text": {
           "status": "extensions",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition Narrative</b></p><p><b>Receiver Endpoint Address</b>: <a>Generated Summary: id: example-nchs-endpoint; status: active; <span title=\"{http://terminology.hl7.org/CodeSystem/endpoint-connection-type hl7-fhir-rest}\">HL7 FHIR</span>; name: PHAReceiver; endpointmanager@example.pha.org; period: 2020-11-20 --&gt; (ongoing); <span title=\"Codes: {http://hl7.org/fhir/resource-types Bundle}\">Bundle</span>; payloadMimeType: application/fhir+xml, payloadMimeType: application/fhir+json; address: http://example.pha.org/fhir</a></p><p><b>Author Signature</b>: </p><p><b style=\"color: maroon\">Exception generating Narrative: type org.hl7.fhir.r5.model.Signature not handled - should not be here</b></p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Receiver Endpoint Address</b>: <a>Generated Summary: id: example-nchs-endpoint; status: active; <span title=\"{http://terminology.hl7.org/CodeSystem/endpoint-connection-type hl7-fhir-rest}\">HL7 FHIR</span>; name: PHAReceiver; endpointmanager@example.pha.org; period: 2020-11-20 --&gt; (ongoing); <span title=\"Codes: {http://hl7.org/fhir/resource-types Bundle}\">Bundle</span>; payloadMimeType: application/fhir+xml, payloadMimeType: application/fhir+json; address: http://example.pha.org/fhir</a></p><p><b>Author Signature</b>: </p><p><b style=\"color: maroon\">Exception generating Narrative: type org.hl7.fhir.r5.model.Signature not handled - should not be here</b></p></div>"
         },
         "extension": [
           {
@@ -18,31 +18,12 @@
             "valueReference": {
               "reference": "Endpoint/example-ph-endpoint"
             }
-          },
-          {
-            "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/ext-authorSignature",
-            "valueSignature": {
-              "type": [
-                {
-                  "system": "urn:iso-astm:E1762-95:2013",
-                  "code": "1.2.840.10065.1.12.1.5",
-                  "display": "Verification Signature"
-                }
-              ],
-              "when": "2020-11-04T08:39:24+10:00",
-              "who": {
-                "reference": "Organization/example-pha-org"
-              },
-              "targetFormat": "application/fhir+xml",
-              "sigFormat": "application/signature+xml",
-              "data": "L44u"
-            }
           }
         ],
-        "url": "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/plandefinition-example",
+        "url": "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/plandefinition-healthcare-survey-example",
         "version": "1.0",
-        "name": "PlanDefinitionExample",
-        "title": "PlanDefinition Example",
+        "name": "PlanDefinitionHealthcareSurveyExample",
+        "title": "PlanDefinition Health Care Survey Reporting Example",
         "type": {
           "coding": [
             {
@@ -52,9 +33,9 @@
             }
           ]
         },
-        "status": "draft",
+        "status": "active",
         "experimental": true,
-        "date": "2020-11-04T12:32:29.858-05:00",
+        "date": "2023-06-01T12:32:29.858-05:00",
         "publisher": "HL7 Public Health Work Group",
         "description": "This is the Health Care Survey Reporting Knowledge Artifact",
         "effectivePeriod": {
@@ -70,7 +51,7 @@
         "action": [
           {
             "id": "start-workflow",
-            "description": "This action represents the start of the reporting workflow in response to the encounter-close event",
+            "description": "This action represents the start of the reporting workflow in response to the encounter-end event",
             "textEquivalent": "Start the reporting workflow in response to an encounter-close event",
             "code": [
               {
@@ -84,15 +65,15 @@
             ],
             "trigger": [
               {
-                "id": "encounter-close",
+                "id": "encounter-end",
                 "extension": [
                   {
-                    "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/ext-us-ph-namedEventType",
+                    "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-named-eventtype",
                     "valueCodeableConcept": {
                       "coding": [
                         {
                           "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-triggerdefinition-namedevents",
-                          "code": "encounter-close",
+                          "code": "encounter-end",
                           "display": "Indicates the close of an encounter"
                         }
                       ]
@@ -100,245 +81,411 @@
                   }
                 ],
                 "type": "named-event",
-                "name": "encounter-close"
+                "name": "encounter-end"
               }
             ],
             "relatedAction": [
               {
-                "actionId": "check-survey-participants",
+                "actionId": "check-reportability",
                 "relationship": "before-start",
                 "offsetDuration": {
-                  "value": 5,
+                  "value": 72,
                   "system": "http://unitsofmeasure.org",
-                  "code": "min"
+                  "code": "h"
                 }
               }
             ]
           },
           {
-            "id": "check-survey-participants",
-            "description": "This action represents the check if Practitioner is registered to report on health care surveys.",
-            "textEquivalent": "Check Participant Registration",
+            "id": "check-reportability",
+            "description": "This action represents the start of the check for reportable conditions in response to the encounter-end event. This is an example of executing a reporting workflow with other actions.",
+            "textEquivalent": "Check Reportability",
+            "code": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                    "code": "execute-reporting-workflow"
+                  }
+                ]
+              }
+            ],
+            "action": [
+                            {
+                                "code": [
+                                    {
+                                        "coding": [
+                                            {
+                                                "code": "evaluate-condition",
+                                                "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "condition": [
+                                    {
+                                        "expression": {
+                                            "expression": "%closedEncounter.participant.individual.identifier.where(system = 'http://hl7.org/fhir/sid/us-npi).value.subsetOf(participantGroup.member.entity.identifier.where(system = 'http://hl7.org/fhir/sid/us-npi).value)'",
+                                            "language": "text/fhirpath"
+                                        },
+                                        "kind": "applicability"
+                                    }
+                                ],
+                                "description": "This action represents the check for reportability of ambulatory encounters based on survey participation.",
+                                "id": "is-ambulatory-encounter-reportable",
+                                "input": [
+                                    {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                                                "valueString": "Encounter/{{context.patientId}}"
+                                            }
+                                        ],
+                                        "id": "closedEncounter",
+                                        "type": "Encounter"
+                                    },
+                                    {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                                                "valueString": "Group/{{context.nchsGroupId}}"
+                                            }
+                                        ],
+                                        "id": "participantGroup",
+                                        "type": "Group"
+                                    }
+                                ],
+                                "relatedAction": [
+                                    {
+                                        "actionId": "create-hcs-report",
+                                        "relationship": "before-start"
+                                    }
+                                ],
+                                "textEquivalent": "Check Participation of Provider to report on the encounter"
+                            },
+                            {
+                                "code": [
+                                    {
+                                        "coding": [
+                                            {
+                                                "code": "evaluate-condition",
+                                                "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "condition": [
+                                    {
+                                        "expression": {
+                                            "expression": "%closedEncounter.exists()",
+                                            "language": "text/fhirpath"
+                                        },
+                                        "kind": "applicability"
+                                    }
+                                ],
+                                "description": "This action represents the check for reportability of inpatient encounters based on survey requirements.",
+                                "id": "is-inpatient-encounter-reportable",
+                                "input": [
+                                    {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                                                "valueString": "Encounter/{{context.patientId}}"
+                                            }
+                                        ],
+                                        "id": "inpatientEncounter",
+                                        "type": "Encounter"
+                                    }
+                                ],
+                                "relatedAction": [
+                                    {
+                                        "actionId": "create-hcs-report",
+                                        "relationship": "before-start"
+                                    }
+                                ],
+                                "textEquivalent": "Check criteria to report on the encounter"
+                            }
+                      ]
+            
+          },
+          {
+            "id": "create-hcs-report",
+            "description": "This action represents the creation, validation and submission of the health care survey report.",
+            "textEquivalent": "Create Report and send to NCHS.",
+            "code": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                    "code": "create-report"
+                  }
+                ]
+              }
+            ],
+            "input": [
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "Patient/{{context.patientId}}"
+                      }
+                    ],
+                    "id": "patient",
+                    "type": "Patient"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "Condition?patient=Patient/{{context.patientId}}&clinical-status=http://terminology.hl7.org/CodeSystem/condition-clinical|active"
+                      }
+                    ],
+                    "id": "conditions",
+                    "type": "Condition"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "AllergyIntolerance?patient=Patient/{{context.patientId}}"
+                      }
+                    ],
+                    "id": "allergies",
+                    "type": "AllergyIntolerance"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "CareTeam?patient=Patient/{{context.patientId}}"
+                      }
+                    ],
+                    "id": "careteam",
+                    "type": "CareTeam"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "CarePlan?patient=Patient/{{context.patientId}}"
+                      }
+                    ],
+                    "id": "careplan",
+                    "type": "CarePlan"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "Goal?patient=Patient/{{context.patientId}}"
+                      }
+                    ],
+                    "id": "goals",
+                    "type": "Goal"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "Encounter/{{context.encounterId}}"
+                      }
+                    ],
+                    "id": "encounter",
+                    "type": "Encounter"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "MedicationRequest?patient=Patient/{{context.patientId}}&intent=order"
+                      }
+                    ],
+                    "id": "medRequests",
+                    "type": "MedicationRequest"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "MedicationStatement?patient=Patient/{{context.patientId}}"
+                      }
+                    ],
+                    "id": "medStatements",
+                    "type": "MedicationStatement"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "MedicationAdministration?patient=Patient/{{context.patientId}}"
+                      }
+                    ],
+                    "id": "medAdms",
+                    "type": "MedicationAdministration"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "Observation?patient=Patient/{{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs"
+                      }
+                    ],
+                    "id": "vitals",
+                    "type": "Observation"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "Observation?patient=Patient/{{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|social-history"
+                      }
+                    ],
+                    "id": "socialHistory",
+                    "type": "Observation"
+                  },
+                  {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                                                "valueString": "DiagnosticReport?patient=Patient/{{context.patientId}}"
+                                            }
+                                        ],
+                                        "id": "diagnosticOrders",
+                                        "type": "DiagnosticReport"
+                  },
+                  {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                                                "valueString": "ServiceRequest?patient=Patient/{{context.patientId}}"
+                                            }
+                                        ],
+                                        "id": "serviceRequests",
+                                        "type": "ServiceRequest"
+                  },
+                  {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                                                "valueString": "Procedure?patient=Patient/{{context.patientId}}"
+                                            }
+                                        ],
+                                        "id": "procedures",
+                                        "type": "Procedure"
+                  },
+                  {
+
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                                                "valueString": "Device?patient=Patient/{{context.patientId}}"
+                                            }
+                                        ],
+                                        "id": "implantableDevices",
+                                        "type": "Device"
+                  },
+                  {
+                    "extension": [
+                      {
+                          "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                          "valueString": "Observation?patient=Patient/{{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory"
+                      }
+                    ],
+                    "id": "labs",
+                    "type": "Observation"
+                  }
+                ],
+            "output": [
+                  {
+                    "id": "hcs-report",
+                    "type": "Bundle",
+                    "profile": [
+                      "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle"
+                    ]
+                  }
+            ],
+            "relatedAction": [
+                  {
+                    "actionId": "validate-hcs-report",
+                    "relationship": "before-start"
+                  }
+            ]
+          },
+              {
+                "id": "validate-hcs-report",
+                "description": "This action represents the validation of the HCS Report",
+                "textEquivalent": "Validate Report",
                 "code": [
                   {
                     "coding": [
                       {
                         "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                        "code": "check-participant-registration"
+                        "code": "validate-report"
                       }
                     ]
                   }
                 ],
-                "condition": [
-                  {
-                    "kind": "applicability",
-                    "expression": {
-                      "language": "text/fhirpath",
-                      "expression": "closedEncounter.participant.individual.identifier.where(system = 'http://hl7.org/fhir/sid/us-npi).value.subsetOf(participantGroup.member.entity.identifier.where(system = 'http://hl7.org/fhir/sid/us-npi).value)'"
-                    }
-                  }
-                ],
                 "input": [
                   {
-                    "id": "closedEncounter",
-                    "type": "Encounter",
+                  "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-relateddata-extension",
+                                        "valueString": "hcs-report"
+                                    }
+                                ],
+                    "id": "created-hcs-report",
+                    "type": "Bundle",
                     "profile": [
-                      
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
-                      
+                      "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle"
                     ]
-                  },
+                  }
+                ],
+                "output": [
                   {
-                    "id": "participantGroup",
-                    "type": "Group",
+                    "id": "validated-hcs-report",
+                    "type": "Bundle",
                     "profile": [
-                      
-                        "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-survey-practitioner-group"
-                      
+                      "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle"
                     ]
                   }
                 ],
                 "relatedAction": [
                   {
-                    "actionId": "report-to-nchs",
+                    "actionId": "submit-hcs-report",
                     "relationship": "before-start"
                   }
                 ]
-          },
-          {
-            "id" : "report-to-nchs",
-            "description" : "This action represents the creation, validation and submission of the health care survey report.",
-            "textEquivalent" : "Create Report and send to NCHS.",
-            "code" : [
+              },
               {
-                "coding" : [
+                "id": "submit-hcs-report",
+                "description": "This action represents the routing and sending of the HCS Report",
+                "textEquivalent": "Route and send HCS Report",
+                "code": [
                   {
-                    "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                    "code" : "execute-reporting-workflow"
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                        "code": "submit-report"
+                      }
+                    ]
                   }
-                ]
-              }
-            ],
-            "action" : [        
-                {
-                  "id": "create-hcs-report",
-                  "description": "This action represents the creation of the HCS Report.",
-                  "textEquivalent": "Health Care Survey Report",
-                  "code": [
-                    {
-                      "coding": [
-                        {
-                          "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                          "code": "create-report"
-                        }
-                      ]
-                    }
-                  ],
-                  "input": [
-                    {
-                          "id": "patient",
-                          "type": "Patient",
-                          "profile": [
-                            
-                              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
-                            
-                          ]
-                    },
-                    {
-                      "id": "condition",
-                          "type": "Condition",
-                          "profile": [
-                            
-                              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
-                            
-                          ]
-                    },
-                    {
-                      "id": "encounter",
-                          "type": "Encounter",
-                          "profile": [
-                            
-                              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
-                            
-                          ]
-                    },
-                    {
-                      "id": "mr",
-                          "type": "MedicationRequest",
-                          "profile": [
-                            
-                              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
-                            
-                          ]
-                    },
-                    {
-                      "id": "vitals",
-                          "type": "Observation",
-                          "profile": [
-                            
-                              "http://hl7.org/fhir/StructureDefinition/vitalsigns"
-                            
-                          ]
-                    },
-                    {
-                      "id": "labs",
-                          "type": "Observation",
-                          "profile": [
-                            
-                              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
-                            
-                          ]
-                    }
-                  ],
-                  "output": [
-                    {
-                          "id":"hcs-report",
-                          "type": "Bundle",
-                          "profile": [
-                            
-                              "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-reporting-bundle"
-                            
-                          ]
-                    }
-                  ],
-                  "relatedAction": [
-                        {
-                          "actionId": "validate-report",
-                          "relationship": "before-start"
-                        }
-                      ]
-                },
-          {
-            "id": "validate-hcs-report",
-            "description": "This action represents the validation of the HCS Report",
-            "textEquivalent": "Validate Report",
-            "code": [
-              {
-                "coding": [
+                ],
+                "input": [
                   {
-                    "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                    "code": "validate-report"
-                  }
-                ]
-              }
-            ],
-            "input": [
-              {
-                "id": "created-hcs-report",
+                  "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-relateddata-extension",
+                                        "valueString": "validated-hcs-report"
+                                    }
+                                ],
+                    "id": "valid-hcs-report",
                     "type": "Bundle",
                     "profile": [
-                      
-                        "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-reporting-bundle"
-                      
+                      "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle"
                     ]
-              }
-            ],
-            "output": [
-              {
-                "id": "validated-hcs-report",
-                    "type": "Bundle",
-                    "profile": [
-                      
-                        "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-reporting-bundle"
-                      
-                    ]
-              }
-            ],
-            "relatedAction": [
-                  {
-                    "actionId": "submit-report",
-                    "relationship": "before-start"
-                  }
-                ]
-          },
-          {
-            "id": "route-and-send-hcs-report",
-            "description": "This action represents the routing and sending of the HCS Report",
-            "textEquivalent": "Route and send HCS Report",
-            "code": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                    "code": "submit-report"
                   }
                 ]
               }
-            ],
-            "input": [
-              {
-                "id": "valid-hcs-report",
-                    "type": "Bundle",
-                    "profile": [
-                      
-                        "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-reporting-bundle"
-                      
-                    ]
-              }
-            ]
-          }
-        ]
+          ]
+        }
       }
-   ]
-}
-

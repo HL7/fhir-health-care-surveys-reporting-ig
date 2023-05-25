@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="hcs-composition" />
+  <meta>
+    <versionId value="77" />
+    <lastUpdated value="2021-08-21T02:37:44.721+00:00" />
+    <source value="#W9i7pBeg7jai2jZL" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-composition" />
+  <version value="1.0.0" />
+  <name value="HcsComposition" />
+  <title value="Health Care Survey Report Composition" />
+  <status value="active" />
+  <experimental value="false" />
+  <publisher value="HL7 Public Health Work Group" />
+  <description value="This Composition profile is used to organize the healthcare survey report content." />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
+    </coding>
+    <text value="United States of America" />
+  </jurisdiction>
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Composition">
+      <path value="Composition" />
+      <short value="Hcs Composition Profile" />
+      <definition
+        value="The Health Care Survey Report Composition profile establishes the core elements, extensions, vocabularies and value sets for representing heath care survey report. " />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.identifier">
+            <path value="Composition.identifier"/>
+            <short value="Health Care Survey Report Composition identifier"/>
+            <definition value="Health Care Survey Report Composition identifier. This is equivalent to ClinicalDocument.setId in CDA. The identifier of the containing Bundle is equivalent to ClinicalDocument.id in CDA. "/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+     </element>
+     <element id="Composition.status">
+            <path value="Composition.status"/>
+            <fixedCode value="final" />
+            <mustSupport value="true"/>
+     </element>
+    <element id="Composition.type">
+      <path value="Composition.type" />
+      <short value="Health Care Survey Report" />
+      <definition value="The type of this Composition is a Health Care Survey Report" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="75619-7" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <short value="Patient who is the subject of the report." />
+      <definition value="This Patient profile represents the subject of the healthcare survey report." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.encounter">
+      <path value="Composition.encounter" />
+      <short value="Encounter related to the public health event" />
+      <definition value="This Encounter profile represents the encounter related to the healthcare survey report." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.date">
+            <path value="Composition.date"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+    </element>
+    <element id="Composition.author">
+            <path value="Composition.author"/>
+            <short value="The author(s) of the document"/>
+            <definition value="It is possible to have multiple authors - especially in the case where the default author is the organization. Author information can contain the HDEA/BSA as a Device Author. "/>
+            <max value="*"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+    </element>
+    <element id="Composition.title">
+            <path value="Composition.title"/>
+            <fixdString value="Health Care Survey Report" />
+            <mustSupport value="true"/>
+    </element>  
+	<element id="Composition.section">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceReasonForVisitSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceReasonForVisitSection" />
+      <short value="Reason for Visit Section" />
+      <definition value="This section records the reason for the patient's visit (the provider’s description of the reason for visit)." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceReasonForVisitSection.code">
+      <path value="Composition.section.code" />
+      <short value="Reason for Visit code" />
+      <definition value="Reason for Visit code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="29299-5" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceReasonForVisitSection.text">
+      <path value="Composition.section.text" />
+      <short value="Reason for Visit narrative" />
+      <definition value="Reason for Visit narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+ 	<element id="Composition.section:sliceProblemSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceProblemSection" />
+      <short value="Problem Section" />
+      <definition value="This section lists and describes all the patient's current problems on the maintained problem list." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceProblemSection.code">
+      <path value="Composition.section.code" />
+      <short value="Problem Section code" />
+      <definition value="Problem Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="11450-4" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceProblemSection.text">
+      <path value="Composition.section.text" />
+      <short value="Problem Section narrative" />
+      <definition value="Problem Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceProblemSection.entry">
+      <path value="Composition.section.entry" />
+      <mustSupport value="true" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" />
+      </type>
+    </element>  
+    <element id="Composition.section:sliceAllergiesSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceAllergiesSection" />
+      <short value="Allergies Section" />
+      <definition value="This section lists and describes all the patient's current allergies on the maintained allergy list." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceAllergiesSection.code">
+      <path value="Composition.section.code" />
+      <short value="Allergies Section code" />
+      <definition value="Allergies Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="48765-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceAllergiesSection.text">
+      <path value="Composition.section.text" />
+      <short value="Allergies Section narrative" />
+      <definition value="Allergies Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceAllergiesSection.entry">
+      <path value="Composition.section.entry" />
+      <mustSupport value="true" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance" />
+      </type>
+    </element> 
+    <element id="Composition.section:sliceMedicationsAdministeredSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceMedicationsAdministeredSection" />
+      <short value="Medications Administered Section" />
+      <definition value="The Medications Administered Section defines medications administered during the encounter." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.code">
+      <path value="Composition.section.code" />
+      <short value="Medications Administered Section code" />
+      <definition value="Medications Administered Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="29549-3" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.text">
+      <path value="Composition.section.text" />
+      <short value="Medications Administered Section narrative" />
+      <definition value="Medications Administered Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.sliceMedicationAdministrationEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationAdministration"/>
+      <short value="Medication Administration Entry"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-medicationadministration" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+   <element id="Composition.section:sliceMedicationsAdministeredSection.sliceMedicationReferences">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationReferences"/>
+      <short value="Medication Reference Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+   <element id="Composition.section:sliceAdmissionMedicationsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceAdmissionMedicationsSection" />
+      <short value="Admission Medications Section" />
+      <definition value="The Admissions Medications Section contains the medications taken by the patient prior to and at the time of admission to the facility." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceAdmissionMedicationsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Admission Medications Section code" />
+      <definition value="Admission Medications Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="42346-7" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceAdmissionMedicationsSection.text">
+      <path value="Composition.section.text" />
+      <short value="Admission Medications Section narrative" />
+      <definition value="Admission Medications Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceAdmissionMedicationsSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceAdmissionMedicationsSection.sliceMedicationAdministrationEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationAdministration"/>
+      <short value="Medication Administration Entry"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-medicationadministration" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+   <element id="Composition.section:sliceAdmissionMedicationsSection.sliceMedicationStatmentEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationStatement"/>
+      <short value="Medication Statement Entry"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-medicationstatement" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+   <element id="Composition.section:sliceAdmissionMedicationsSection.sliceMedicationReferences">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationReferences"/>
+      <short value="Medication Reference Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+    <element id="Composition.section:sliceMedicationsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceMedicationsSection" />
+      <short value="Medications Section" />
+      <definition value="The Medications Section contains a patient's current medications and pertinent medication history. At a minimum, the currently active medications are listed." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceMedicationsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Medications Section code" />
+      <definition value="Medications Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="10160-0" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceMedicationsSection.text">
+      <path value="Composition.section.text" />
+      <short value="Medications Section narrative" />
+      <definition value="Medications Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceMedicationsSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceMedicationsSection.sliceMedicationAdministrationEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationAdministration"/>
+      <short value="Medication Administration Entry"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-medicationadministration" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+   <element id="Composition.section:sliceMedicationsSection.sliceMedicationStatmentEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationStatement"/>
+      <short value="Medication Statement Entry"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-medicationstatement" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+   <element id="Composition.section:sliceMedicationsSection.sliceMedicationReferences">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationReferences"/>
+      <short value="Medication Reference Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+   <element id="Composition.section:sliceResultsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceResultsSection" />
+      <short value="Results Section" />
+      <definition
+        value="The Results Section contains observations of results generated by laboratories, imaging procedures, and other procedures. The scope includes observations such as hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray, ultrasound, CT, MRI, angiography, echocardiography, nuclear medicine, pathology, and procedure observations. The section often includes notable results such as abnormal values or relevant trends, and could contain all results for the period of time being documented.&#xA;&#xA;Laboratory results are typically generated by laboratories providing analytic services in areas such as chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These observations are based on analysis of specimens obtained from the patient and submitted to the laboratory. Imaging results are typically generated by a clinician reviewing the output of an imaging procedure, such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac echocardiogram.&#xA;&#xA;Procedure results are typically generated by a clinician to provide more granular information about component observations made during a procedure, such as where a gastroenterologist reports the size of a polyp observed during a colonoscopy.&#xA;" />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceResultsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Results Section code" />
+      <definition value="Results Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="30954-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceResultsSection.text">
+      <path value="Composition.section.text" />
+      <short value="Results Section narrative" />
+      <definition value="Results Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceResultsSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceResultsSection.labResultEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceLabResultEntry"/>
+      <short value="Lab Result Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceResultsSection.diagnosticResultEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceDiagnosticResultEntry"/>
+      <short value="Diagnostic Result Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+	<element id="Composition.section:sliceNotesSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceNotesSection" />
+      <short value="Clinical and Diagnostic Reports Section" />
+      <definition
+        value="The Notes Section contains clinical notes and diagnostic reports." />
+      <min value="0" />
+      <max value="*" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceNotesSection.code">
+      <path value="Composition.section.code" />
+      <short value="Clinical Notes Section code" />
+      <definition value="Clinical Notes Section code" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceNotesSection.text">
+      <path value="Composition.section.text" />
+      <short value="Notes Section narrative" />
+      <definition value="Notes Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceNotesSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceNotesSection.documentReferenceEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceDocumentReferenceEntry"/>
+      <short value="Document Reference Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceNotesSection.diagnosticReportEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceDiagnosticReportEntry"/>
+      <short value="Diagnostic Report Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="slicePlanOfTreatmentSection" />
+      <short value="Plan of Treatment Section" />
+      <definition
+        value="This section, contains data that define pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed. " />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.code">
+      <path value="Composition.section.code" />
+      <short value="Plan of Treatment code" />
+      <definition value="Plan of Treatment code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="18776-5" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.text">
+      <path value="Composition.section.text" />
+      <short value="Plan of Treatment narrative" />
+      <definition value="Plan of Treatment narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.medicationRequestEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationRequest"/>
+      <short value="Medication Request Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.sliceMedicationReferences">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationReferences"/>
+      <short value="Medication Reference Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+   </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.procedureOrderEntry">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceProcedureOrders"/>
+      <short value="Procedure Order Entries"/>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-servicerequest" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceImmunizationsSection" />
+      <short value="Immunizations Section" />
+      <definition
+        value="The Immunizations Section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization Section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Immunizations code" />
+      <definition value="Immunizations code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="11369-6" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.text">
+      <path value="Composition.section.text" />
+      <short value="Immunizations narrative" />
+      <definition value="Immunizations narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.entry">
+      <path value="Composition.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceProceduresSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceProceduresSection" />
+      <short value="This section describes all interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated." />
+      <definition
+        value="This section describes all interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. The section should include notable procedures, but can contain all procedures for the period of time being summarized." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceProceduresSection.code">
+      <path value="Composition.section.code" />
+      <short value="Procedures Section code" />
+      <definition value="Procedures Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="47519-4" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceProceduresSection.text">
+      <path value="Composition.section.text" />
+      <short value="Procedures Section narrative" />
+      <definition value="Procedures Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceProceduresSection.entry">
+      <path value="Composition.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceVitalSignsSection" />
+      <short value="Vital Signs Section" />
+      <definition
+        value="The Vital Signs Section contains relevant vital signs for the eICR. The section should include notable vital signs such as the most recent, maximum and/or minimum, baseline, or relevant trends. Vital signs are represented in the same way as other results, but are aggregated into their own section to follow clinical conventions." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Vital Signs code" />
+      <definition value="Vital Signs code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="8716-3" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.text">
+      <path value="Composition.section.text" />
+      <short value="Vital Signs narrative" />
+      <definition value="Vital Signs narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.entry">
+      <path value="Composition.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceSocialHistorySection" />
+      <short value="Social History Section" />
+      <definition value="This section contains social history data that influence a patient’s physical, psychological or emotional health such as occupation, home environment, travel history, and disability status." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.code">
+      <path value="Composition.section.code" />
+      <short value="Social History Section code" />
+      <definition value="Social History Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="29762-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.text">
+      <path value="Composition.section.text" />
+      <short value="Social History Section narrative" />
+      <definition value="Social History Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.entry">
+      <path value="Composition.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus" />
+      </type>
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element> 
+    <element id="Composition.section:sliceMedicalEquipmentSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceMedicalEquipmentSection" />
+      <short value="Medical Equipment Section" />
+      <definition value="This section lists and describes all the patient's current implanted devices." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceMedicalEquipmentSection.code">
+      <path value="Composition.section.code" />
+      <short value="Medical Equipment Section code" />
+      <definition value="Medical Equipment Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="46264-8" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceMedicalEquipmentSection.text">
+      <path value="Composition.section.text" />
+      <short value="Medical Equipment Section narrative" />
+      <definition value="Medical Equipment Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceMedicalEquipmentSection.entry">
+      <path value="Composition.section.entry" />
+      <mustSupport value="true" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device" />
+      </type>
+    </element> 
+    <element id="Composition.section:sliceCareTeamSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceCareTeamSection" />
+      <short value="Care Team Section" />
+      <definition value="This section lists and describes all the patient's current care team members." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceCareTeamSection.code">
+      <path value="Composition.section.code" />
+      <short value="Care Team Section code" />
+      <definition value="Care Team Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="85847-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceCareTeamSection.text">
+      <path value="Composition.section.text" />
+      <short value="Care Team Section narrative" />
+      <definition value="Care Team Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceCareTeamSection.entry">
+      <path value="Composition.section.entry" />
+      <mustSupport value="true" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam" />
+      </type>
+    </element>
+    <element id="Composition.section:sliceCarePlanSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceCarePlanSection" />
+      <short value="Care Plan Section" />
+      <definition value="This section lists and describes the patient's care plan." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceCarePlanSection.code">
+      <path value="Composition.section.code" />
+      <short value="Care Plan Section code" />
+      <definition value="Care Plan Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="18776-5" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceCarePlanSection.text">
+      <path value="Composition.section.text" />
+      <short value="Care Plan Section narrative" />
+      <definition value="Care Plan Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceCarePlanSection.entry">
+      <path value="Composition.section.entry" />
+      <mustSupport value="true" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan" />
+      </type>
+    </element>
+     <element id="Composition.section:sliceGoalsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceGoalsSection" />
+      <short value="Goals Section" />
+      <definition value="This section lists and describes the patient's goals." />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceGoalsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Goals Section code" />
+      <definition value="Goals Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="61146-7" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceGoalsSection.text">
+      <path value="Composition.section.text" />
+      <short value="Goals Section narrative" />
+      <definition value="Goals Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceGoalsSection.entry">
+      <path value="Composition.section.entry" />
+      <mustSupport value="true" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
