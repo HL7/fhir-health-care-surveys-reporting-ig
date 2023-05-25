@@ -83,35 +83,6 @@
         <element id="PlanDefinition.action.input">
             <path value="PlanDefinition.action.input"/>
         </element>
-        <element id="PlanDefinition.action.input.extension">
-            <path value="PlanDefinition.action.input.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <definition value="Defines extensions for the action."/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.input.extension:fhirquerypattern">
-            <path value="PlanDefinition.action.input.extension"/>
-            <sliceName value="us-ph-fhirquerypattern-extension"/>
-            <min value="0"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.input.extension:fhirquerypattern.url">
-            <path value="PlanDefinition.action.input.extension.url"/>
-            <min value="1"/>
-            <max value="1"/>
-            <fixedUri value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension"/>
-            <mustSupport value="true"/>
-        </element>
         <element id="PlanDefinition.action:startWorkflow">
             <path value="PlanDefinition.action"/>
             <sliceName value="startWorkflow"/>

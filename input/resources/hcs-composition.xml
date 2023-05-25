@@ -108,7 +108,7 @@
     </element>
     <element id="Composition.title">
             <path value="Composition.title"/>
-            <fixdString value="Health Care Survey Report" />
+            <fixedString value="Health Care Survey Report" />
             <mustSupport value="true"/>
     </element>  
 	<element id="Composition.section">
@@ -802,7 +802,7 @@
       <path value="Composition.section.entry" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
