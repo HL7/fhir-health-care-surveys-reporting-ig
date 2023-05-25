@@ -66,7 +66,7 @@
                 <ordered value="true"/>
                 <rules value="open"/>
             </slicing>
-            <min value="2"/>
+            <min value="5"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.code">
@@ -112,38 +112,38 @@
             <fixedUri value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose">
+        <element id="PlanDefinition.action:startWorkflow">
             <path value="PlanDefinition.action"/>
-            <sliceName value="encounterClose"/>
-            <short value="Encounter Close Action"/>
+            <sliceName value="startWorkflow"/>
+            <short value="Start Workflow Action"/>
             <definition value="Defines the &quot;startr&quot; action"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.id">
+        <element id="PlanDefinition.action:startWorkflow.id">
             <path value="PlanDefinition.action.id"/>
             <min value="1"/>
             <fixedString value="start-workflow"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.description">
+        <element id="PlanDefinition.action:startWorkflow.description">
             <path value="PlanDefinition.action.description"/>
             <short value="Starts the workflow"/>
             <definition value="Description of the start workflow action."/>
             <min value="1"/>
-            <fixedString value="This action represents the start of the reporting workflow in response to the encounter-close event"/>
+            <fixedString value="This action represents the start of the reporting workflow in response to the encounter-end event"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.textEquivalent">
+        <element id="PlanDefinition.action:startWorkflow.textEquivalent">
             <path value="PlanDefinition.action.textEquivalent"/>
             <short value="Text equivalent of the start workflow action."/>
             <definition value="Text equivalent of the start workflow action."/>
             <min value="1"/>
-            <fixedString value="Start the reporting workflow in response to an encounter-close event"/>
+            <fixedString value="Start the reporting workflow in response to an encounter-end event"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.code">
+        <element id="PlanDefinition.action:startWorkflow.code">
             <path value="PlanDefinition.action.code"/>
             <short value="Code for the &quot;start&quot; action."/>
             <definition value="The US-PH-PlanDefinition-Action code for the &quot;start&quot; action."/>
@@ -157,22 +157,14 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.trigger">
+        <element id="PlanDefinition.action:startWorkflow.trigger">
             <path value="PlanDefinition.action.trigger"/>
             <short value="When the &quot;start&quot; action should be triggered."/>
             <definition value="When the &quot;start&quot; action should be triggered."/>
             <min value="1"/>
-            <constraint>
-                <key value="epd-1"/>
-                <severity value="error"/>
-                <human value="The code value of the namedEventType SHALL be the same as the name element"/>
-                <expression value="extension('http://hl7.org/fhir/us/medmorph/StructureDefinition/ext-us-ph-namedEventType').value.coding.code.supersetOf(name)"/>
-                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])"/>
-                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-            </constraint>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.trigger.extension">
+        <element id="PlanDefinition.action:startWorkflow.trigger.extension">
             <path value="PlanDefinition.action.trigger.extension"/>
             <slicing>
                 <discriminator>
@@ -220,7 +212,7 @@
                 <map value="n/a"/>
             </mapping>
         </element>
-        <element id="PlanDefinition.action:encounterClose.trigger.extension:namedEventType">
+        <element id="PlanDefinition.action:startWorkflow.trigger.extension:namedEventType">
             <path value="PlanDefinition.action.trigger.extension"/>
             <sliceName value="namedEventType"/>
             <short value="Indicates the types of named events to subscribe to from the HER."/>
@@ -234,7 +226,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/medmorph/StructureDefinition/ext-us-ph-namedEventType"/>
+                <profile value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-named-eventtype"/>
             </type>
             <constraint>
                 <key value="ele-1"/>
@@ -256,30 +248,30 @@
             <isModifier value="false"/>
             <isSummary value="false"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.trigger.type">
+        <element id="PlanDefinition.action:startWorkflow.trigger.type">
             <path value="PlanDefinition.action.trigger.type"/>
             <fixedCode value="named-event"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.trigger.name">
+        <element id="PlanDefinition.action:startWorkflow.trigger.name">
             <path value="PlanDefinition.action.trigger.name"/>
-            <definition value="The name of the event, encounter-close in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`"/>
-            <fixedString value="encounter-close"/>
+            <definition value="The name of the event, encounter-end in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`"/>
+            <fixedString value="encounter-end"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.relatedAction">
+        <element id="PlanDefinition.action:startWorkflow.relatedAction">
             <path value="PlanDefinition.action.relatedAction"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.relatedAction.actionId">
+        <element id="PlanDefinition.action:startWorkflow.relatedAction.actionId">
             <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="check-survey-participants"/>
+            <fixedId value="check-reportability"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.relatedAction.relationship">
+        <element id="PlanDefinition.action:startWorkflow.relatedAction.relationship">
             <path value="PlanDefinition.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
-        <element id="PlanDefinition.action:encounterClose.relatedAction.offsetDuration">
+        <element id="PlanDefinition.action:startWorkflow.relatedAction.offsetDuration">
             <path value="PlanDefinition.action.relatedAction.offsetDuration"/>
             <min value="0"/>
             <max value="1"/>
@@ -294,105 +286,211 @@
                 </valueDuration>
             </example>
         </element>
-        <element id="PlanDefinition.action:checkParticipants">
+
+
+    <element id="PlanDefinition.action:executeReportingWorkflow">
+      <path value="PlanDefinition.action" />
+      <sliceName value="executeReportingWorkflow" />
+      <short value="Execute Reporting Workflow" />
+      <definition value="Defines the &quot;Execute Reporting Workflow&quot; action" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <fixedString value="check-reportability" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.description">
+      <path value="PlanDefinition.action.description" />
+      <short value="Check for reportability conditions" />
+      <definition value="Check for Reportable Conditions." />
+      <min value="1" />
+      <fixedString value="This action represents the start of the check for reportable conditions in response to the encounter-end event. This is an example of executing a reporting workflow with other actions." />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.code">
+      <path value="PlanDefinition.action.code" />
+      <short value="Code for the &quot;execute-reporting-workflow&quot; action." />
+      <definition value="The US-PH-PlanDefinition-Action code for the &quot;execute-reporting-workflow&quot; action." />
+      <min value="1" />
+      <max value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions" />
+          <code value="execute-reporting-workflow" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action">
+      <path value="PlanDefinition.action.action" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="id" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="2" />
+    </element>
+
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable">
+      <path value="PlanDefinition.action.action" />
+      <sliceName value="isAmbulatoryEncounterReportable" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.id">
+      <path value="PlanDefinition.action.action.id" />
+      <min value="1" />
+      <fixedString value="is-ambulatory-encounter-reportable" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.code">
+      <path value="PlanDefinition.action.action.code" />
+      <min value="1"/>
+      <max value="1"/>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions" />
+          <code value="evaluate-condition" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.condition">
+      <path value="PlanDefinition.action.action.condition" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.condition.kind">
+      <path value="PlanDefinition.action.action.condition.kind" />
+      <fixedCode value="applicability" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.condition.expression">
+      <path value="PlanDefinition.action.action.condition.expression" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.condition.expression.language">
+      <path value="PlanDefinition.action.action.condition.expression.language" />
+      <fixedCode value="text/fhirpath" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.input">
+      <path value="PlanDefinition.action.action.input" />
+      <definition value="Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.input.id">
+      <path value="PlanDefinition.action.action.input.id" />
+      <definition value="The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.relatedAction">
+      <path value="PlanDefinition.action.action.relatedAction" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.relatedAction.actionId">
+      <path value="PlanDefinition.action.action.relatedAction.actionId" />
+      <fixedId value="create-hcs-report" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isAmbulatoryEncounterReportable.relatedAction.relationship">
+      <path value="PlanDefinition.action.action.relatedAction.relationship" />
+      <fixedCode value="before-start" />
+    </element>
+
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable">
+      <path value="PlanDefinition.action.action" />
+      <sliceName value="isInpatientEncounterReportable" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.id">
+      <path value="PlanDefinition.action.action.id" />
+      <min value="1" />
+      <fixedString value="is-inpatient-encounter-reportable" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.code">
+      <path value="PlanDefinition.action.action.code" />
+      <min value="1"/>
+      <max value="1"/>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions" />
+          <code value="evaluate-condition" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.condition">
+      <path value="PlanDefinition.action.action.condition" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.condition.kind">
+      <path value="PlanDefinition.action.action.condition.kind" />
+      <fixedCode value="applicability" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.condition.expression">
+      <path value="PlanDefinition.action.action.condition.expression" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.condition.expression.language">
+      <path value="PlanDefinition.action.action.condition.expression.language" />
+      <fixedCode value="text/fhirpath" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.input">
+      <path value="PlanDefinition.action.action.input" />
+      <definition value="Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.input.id">
+      <path value="PlanDefinition.action.action.input.id" />
+      <definition value="The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.relatedAction">
+      <path value="PlanDefinition.action.action.relatedAction" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.relatedAction.actionId">
+      <path value="PlanDefinition.action.action.relatedAction.actionId" />
+      <fixedId value="create-hcs-report" />
+    </element>
+    <element id="PlanDefinition.action:executeReportingWorkflow.action:isInpatientEncounterReportable.relatedAction.relationship">
+      <path value="PlanDefinition.action.action.relatedAction.relationship" />
+      <fixedCode value="before-start" />
+    </element>
+
+        
+        <element id="PlanDefinition.action:createReport">
             <path value="PlanDefinition.action"/>
-            <sliceName value="checkParticipants"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action:checkParticipants.id">
-            <path value="PlanDefinition.action.id"/>
-            <min value="1"/>
-            <fixedString value="check-survey-participants"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:checkParticipants.description">
-            <path value="PlanDefinition.action.description"/>
-            <short value="Check if a Practitioner is registered for a survey."/>
-            <definition value="Check if a Practitioner is registered for a survey."/>
-            <fixedString value="This action represents the check if Practitioner is registered to report on health care surveys."/>
-        </element>
-        <element id="PlanDefinition.action:checkParticipants.code">
-            <path value="PlanDefinition.action.code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="check-participant-registration"/>
-                </coding>
-            </patternCodeableConcept>
-        </element>
-        <element id="PlanDefinition.action:checkParticipants.relatedAction">
-            <path value="PlanDefinition.action.relatedAction"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:checkParticipants.relatedAction.actionId">
-            <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="report-to-nchs"/>
-        </element>
-        <element id="PlanDefinition.action:checkParticipants.relatedAction.relationship">
-            <path value="PlanDefinition.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
-        </element>
-        <element id="PlanDefinition.action:reportToNchs">
-            <path value="PlanDefinition.action"/>
-            <sliceName value="reportToNchs"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action:reportToNchs.id">
-            <path value="PlanDefinition.action.id"/>
-            <min value="1"/>
-            <fixedString value="report-to-nchs"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:reportToNchs.description">
-            <path value="PlanDefinition.action.description"/>
-            <fixedString value="This action represents the creation, validation and submission of the health care survey report."/>
-        </element>
-        <element id="PlanDefinition.action:reportToNchs.code">
-            <path value="PlanDefinition.action.code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="execute-reporting-workflow"/>
-                </coding>
-            </patternCodeableConcept>
-        </element>
-        <element id="PlanDefinition.action:reportToNchs.action">
-            <path value="PlanDefinition.action.action"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="id"/>
-                </discriminator>
-                <ordered value="true"/>
-                <rules value="open"/>
-            </slicing>
-            <min value="3"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:reportToNchs.action:createReport">
-            <path value="PlanDefinition.action.action"/>
             <sliceName value="createReport"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:createReport.id">
-            <path value="PlanDefinition.action.action.id"/>
+        <element id="PlanDefinition.action:createReport.id">
+            <path value="PlanDefinition.action.id"/>
             <min value="1"/>
             <fixedString value="create-hcs-report"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:createReport.description">
-            <path value="PlanDefinition.action.action.description"/>
-            <fixedString value="This action represents the creation of the HCS Report."/>
+        <element id="PlanDefinition.action:createReport.description">
+            <path value="PlanDefinition.action.description"/>
+            <fixedString value="This action represents the creation, validation and submission of the health care survey report."/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:createReport.code">
-            <path value="PlanDefinition.action.action.code"/>
+        <element id="PlanDefinition.action:createReport.code">
+            <path value="PlanDefinition.action.code"/>
+            <min value="1"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
@@ -400,24 +498,60 @@
                 </coding>
             </patternCodeableConcept>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:validateReport">
-            <path value="PlanDefinition.action.action"/>
+        <element id="PlanDefinition.action:createReport.input">
+          <path value="PlanDefinition.action.input" />
+          <definition value="Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:createReport.input.id">
+          <path value="PlanDefinition.action.input.id" />
+          <definition value="The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`" />
+          <min value="1" />
+          <max value="1" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:createReport.output">
+          <path value="PlanDefinition.action.output" />
+          <definition value="Defines output produced by the action. Required data is accessible via a context variable named `%[id]` using the `id` of the output data requirement" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:createReport.output.id">
+          <path value="PlanDefinition.action.output.id" />
+          <definition value="The id of the output produced, allowing the data to be referenced via a context variable named `%[id]`" />
+          <min value="1" />
+          <max value="1" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:createReport.relatedAction">
+          <path value="PlanDefinition.action.relatedAction" />
+        </element>
+        <element id="PlanDefinition.action:createReport.relatedAction.actionId">
+          <path value="PlanDefinition.action.relatedAction.actionId" />
+          <fixedId value="validate-hcs-report" />
+        </element>
+        <element id="PlanDefinition.action:createReport.relatedAction.relationship">
+          <path value="PlanDefinition.action.relatedAction.relationship" />
+          <fixedCode value="before-start" />
+        </element>
+
+        <element id="PlanDefinition.action:validateReport">
+            <path value="PlanDefinition.action"/>
             <sliceName value="validateReport"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:validateReport.id">
-            <path value="PlanDefinition.action.action.id"/>
+        <element id="PlanDefinition.action:validateReport.id">
+            <path value="PlanDefinition.action.id"/>
             <min value="1"/>
             <fixedString value="validate-hcs-report"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:validateReport.description">
-            <path value="PlanDefinition.action.action.description"/>
+        <element id="PlanDefinition.action:validateReport.description">
+            <path value="PlanDefinition.action.description"/>
             <fixedString value="This action represents the validation of the HCS Report"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:validateReport.code">
-            <path value="PlanDefinition.action.action.code"/>
+        <element id="PlanDefinition.action:validateReport.code">
+            <path value="PlanDefinition.action.code"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
@@ -425,42 +559,90 @@
                 </coding>
             </patternCodeableConcept>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport">
-            <path value="PlanDefinition.action.action"/>
-            <sliceName value="routeAndSendHcsReport"/>
+        <element id="PlanDefinition.action:validateReport.input">
+          <path value="PlanDefinition.action.input" />
+          <definition value="Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:validateReport.input.id">
+          <path value="PlanDefinition.action.input.id" />
+          <definition value="The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`" />
+          <min value="1" />
+          <max value="1" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:validateReport.output">
+          <path value="PlanDefinition.action.output" />
+          <definition value="Defines output produced by the action. Required data is accessible via a context variable named `%[id]` using the `id` of the output data requirement" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:validateReport.output.id">
+          <path value="PlanDefinition.action.output.id" />
+          <definition value="The id of the output produced, allowing the data to be referenced via a context variable named `%[id]`" />
+          <min value="1" />
+          <max value="1" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:validateReport.relatedAction">
+          <path value="PlanDefinition.action.relatedAction" />
+        </element>
+        <element id="PlanDefinition.action:validateReport.relatedAction.actionId">
+          <path value="PlanDefinition.action.relatedAction.actionId" />
+          <fixedId value="submit-hcs-report" />
+        </element>
+        <element id="PlanDefinition.action:validateReport.relatedAction.relationship">
+          <path value="PlanDefinition.action.relatedAction.relationship" />
+          <fixedCode value="before-start" />
+        </element>
+
+        <element id="PlanDefinition.action:submitReport">
+            <path value="PlanDefinition.action"/>
+            <sliceName value="submitHcsReport"/>
             <short value="Route and send HCS Report"/>
             <definition value="Defines the routing and sending of the HCS Report"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.id">
-            <path value="PlanDefinition.action.action.id"/>
+        <element id="PlanDefinition.action:submitReport.id">
+            <path value="PlanDefinition.action.id"/>
             <min value="1"/>
-            <fixedString value="route-and-send-hcs-report"/>
+            <fixedString value="submit-hcs-report"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.description">
-            <path value="PlanDefinition.action.action.description"/>
+        <element id="PlanDefinition.action:submitReport.description">
+            <path value="PlanDefinition.action.description"/>
             <short value="Description of the route and send action."/>
             <definition value="Description of the route and send action."/>
             <min value="1"/>
             <fixedString value="This action represents the routing and sending of the HCS Report"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.textEquivalent">
-            <path value="PlanDefinition.action.action.textEquivalent"/>
+        <element id="PlanDefinition.action:submitReport.textEquivalent">
+            <path value="PlanDefinition.action.textEquivalent"/>
             <min value="1"/>
             <fixedString value="Route and send HCS Report"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportToNchs.action:routeAndSendHcsReport.code">
-            <path value="PlanDefinition.action.action.code"/>
+        <element id="PlanDefinition.action:submitReport.code">
+            <path value="PlanDefinition.action.code"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions"/>
                     <code value="submit-report"/>
                 </coding>
             </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:submitReport.input">
+          <path value="PlanDefinition.action.input" />
+          <definition value="Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement" />
+          <mustSupport value="true" />
+        </element>
+        <element id="PlanDefinition.action:submitReport.input.id">
+          <path value="PlanDefinition.action.input.id" />
+          <definition value="The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`" />
+          <min value="1" />
+          <max value="1" />
+          <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>
