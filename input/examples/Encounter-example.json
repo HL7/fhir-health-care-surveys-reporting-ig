@@ -21,8 +21,9 @@
     {
       "coding": [
         {
-          "system": "http://www.ama-assn.org/go/cpt",
-          "code": "99201"
+          "system": "http://snomed.info/sct",
+          "code": "177184002",
+          "display" : "Normal delivery procedure (procedure)"
         }
       ],
       "text": "Office Visit"

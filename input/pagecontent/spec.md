@@ -54,7 +54,7 @@ This IG leverages the [SMART App Launch IG]({{site.data.fhir.ver.smartapplaunch}
 
 #### Implementation Requirements
 
-##### SMART on FHIR Backend Services Authorization Requirements from the SMART App Launch IG
+##### SMART on FHIR Backend Services Requirements
 
 This section outlines how the SMART on FHIR Backend Services Authorization will be used by the Health Care Surveys Content IG. 
 
@@ -65,7 +65,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
     * HDEA posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
     
 
-* System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
+* System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART on FHIR Backend Services by hosting Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
 * System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
@@ -99,7 +99,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Authorization Requirements 
 
-* The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a Server. 
+* The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-requirements) outlined above as a Server. 
  
 
 ###### Subscription Requirements
@@ -125,7 +125,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Authorization Requirements
 
-* The HDEA **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-authorization-requirements) outlined above as a client. 
+* The HDEA **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-requirements) outlined above as a client. 
 
 
 ###### Subscription Requirements

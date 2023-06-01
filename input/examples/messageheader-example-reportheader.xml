@@ -49,8 +49,8 @@
   </source> 
   <reason> 
     <coding> 
-      <system value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-named-eventtype"/> 
-      <code value="encounter-close"/> 
+      <system value="http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-triggerdefinition-namedevents"/> 
+      <code value="encounter-end"/> 
     </coding> 
   </reason> 
 </MessageHeader>

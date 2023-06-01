@@ -32,7 +32,7 @@
         <b>Security:</b>
       </p>
       <p>Implementations must meet the general security requirements documented in FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
-      <p>In addition the EHR needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization-requirements-from-the-bulk-data-access-ig">Formal Specification - Security Section.</a></p>
+      <p>In addition the EHR needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-requirements">Formal Specification - SMART on FHIR Backend Services Requirements.</a></p>
 
       <h3>US Core Support</h3>
 

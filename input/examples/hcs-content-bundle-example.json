@@ -1,6 +1,21 @@
 {
-  "resourceType": "Composition",
-  "id": "hcs-composition-example",
+  "resourceType" : "Bundle",
+  "id" : "hcs-content-bundle-example",
+  "meta" : {
+    "versionId" : "1",
+    "lastUpdated" : "2020-11-29T02:03:28.045+00:00",
+    "profile" : [
+      "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle"
+    ]
+  },
+  "type" : "collection",
+  "timestamp" : "2020-11-20T11:15:33-10:00",
+  "entry" : [
+    {
+      "fullUrl" : "Composition/hcs-composition-content-example",
+      "resource" : {
+      "resourceType": "Composition",
+  "id": "hcs-composition-content-example",
   "meta": {
     "versionId": "23",
     "lastUpdated": "2021-08-19T22:06:32.441+00:00",
@@ -120,6 +135,9 @@
           "reference": "MedicationAdministration/medicationadministration-example"
         }
       ]
+    }
+  ]
+      }
     }
   ]
 }
