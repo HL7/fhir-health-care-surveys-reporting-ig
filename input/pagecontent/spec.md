@@ -56,7 +56,7 @@ This IG leverages the [SMART App Launch IG]({{site.data.fhir.ver.smartapplaunch}
 
 ##### SMART on FHIR Backend Services Requirements
 
-This section outlines how the SMART on FHIR Backend Services Authorization will be used by the Health Care Surveys Content IG. 
+This section outlines how the SMART on FHIR Backend Services Authorization will be used by the Health Care Surveys Content IG along with [FHIR security Guidance.]({{site.data.fhir.path}}/security.html)
 
 * The system actors namely Data Source, HDEA and the NCHS Data Store are required to use the SMART on FHIR Backend Services Authorization mechanisms as outlined below for the following interactions:
 
