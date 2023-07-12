@@ -104,7 +104,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Subscription Requirements
 
-* The Data Source **SHALL** support the creation of Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html)
+* The Data Source **SHALL** support the creation of Subscriptions for the [encounter-end Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-medmorph-encounter-end-subscription.html)
 
 * The Data Source **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to notify the HDEA.
 
@@ -130,7 +130,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Subscription Requirements
 
-* The HDEA **SHALL** create Subscriptions for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html).
+* The HDEA **SHALL** create Subscriptions for the [encounter-end Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-medmorph-encounter-end-subscription.html).
 
 * The HDEA **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the Data Source.
 
@@ -146,9 +146,9 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The HDEA **SHALL** process the Health Care Surveys Knowledge Artifact and create Subscription resources in the Data Source for each trigger event.
 
-* For the health care surveys, the HDEA **SHALL** create the Subscription for the [encounter-close Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-encounter-close.html) trigger event. 
+* For the health care surveys, the HDEA **SHALL** create the Subscription for the [encounter-end Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-medmorph-encounter-end-subscription.html) trigger event. 
 
-* Upon deactivation of a Knowledge Artifact, The HDEA **SHALL** delete the Subscriptions previously created by the HDEA for the Knowledge Artifact (e.g., delete the Subscription created for encounter-close trigger event). 
+* Upon deactivation of a Knowledge Artifact, The HDEA **SHALL** delete the Subscriptions previously created by the HDEA for the Knowledge Artifact (e.g., delete the Subscription created for encounter-end trigger event). 
 
 * The HDEA **SHALL** implement FhirPath expression processing to process the Health Care Surveys Knowledge Artifact actions.
 
@@ -176,7 +176,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### MedMorph RA Requirements 
 
-* The HDEA **SHALL** implement the MedMorph HDEA requirements as outlined in the [MedMorph RA HDEA requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-backend-service-app.html).
+* The HDEA **SHALL** implement the MedMorph HDEA requirements as outlined in the [MedMorph RA HDEA requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-healthdata-exchange-app-client.html).
 
 
 ##### NCHS Data Store Requirements Acting as a MedMorph Data Receiver Actor
@@ -190,7 +190,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.
 
-* The NCSH Data Store **SHALL** implement the PHA requirements as outlined in the [MedMorph Data Receiver requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-public-health-authority.html).
+* The NCSH Data Store **SHALL** implement the PHA requirements as outlined in the [MedMorph Data Receiver requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-data-receiver.html).
 
 
 

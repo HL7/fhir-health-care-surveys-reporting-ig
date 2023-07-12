@@ -15,7 +15,7 @@
       "coding" : [{
         "system" : "http://snomed.info/sct",
         "code" : "27658006",
-        "display" : "Amoxicillin (product)"
+        "display" : "Amoxicillin-containing product"
       }]
   },
   "subject" : {
