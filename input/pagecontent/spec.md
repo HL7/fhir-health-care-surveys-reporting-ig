@@ -95,7 +95,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ##### Data Source Requirements
 
-* The Data Source (e.g., EHR, clinical data repository) **SHALL** support the requirements as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
+* The Data Source (e.g., EHR, clinical data repository) **SHALL** support the requirements as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).
 
 ###### Authorization Requirements 
 
@@ -112,12 +112,12 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * For the Health Care Surveys Content IG, the Data Source **SHALL** include the Encounter resource which was closed as part of the Notification Bundle.
 
-* The Data Source **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html).
+* The Data Source **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).
 
 
 ###### Data API Requirements
 
-* The Data Source **SHALL** support the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) for the HDEA to access patient data.
+* The Data Source **SHALL** support the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) for the HDEA to access patient data.
 
  
 ##### HDEA Requirements 
@@ -159,7 +159,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Data API Requirements 
 
-* The HDEA acting as a client **SHALL** use the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-ehr.html) to access patient data from the Data Source.
+* The HDEA acting as a client **SHALL** use the [US Core Server APIs]({{site.data.fhir.ver.uscoreR4}}/CapabilityStatement-us-core-server.html) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) to access patient data from the Data Source.
 
 
 ###### Report Generation Requirements 
