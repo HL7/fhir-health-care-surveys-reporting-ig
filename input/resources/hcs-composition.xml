@@ -221,8 +221,8 @@
       <min value="1" />
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org" />
-          <code value="48765-2" />
+          <system value="http://loinc.org"/>
+          <code value="48765-2"/>
         </coding>
       </patternCodeableConcept>
       <mustSupport value="true" />

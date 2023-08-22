@@ -2,3 +2,6 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
+
+# This has been approved by the CPG on 7/13/2023 per the ticket : https://jira.hl7.org/browse/FHIR-41578. Motion Brett Marquard/Eric Haas: 13-0-0 
+US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
