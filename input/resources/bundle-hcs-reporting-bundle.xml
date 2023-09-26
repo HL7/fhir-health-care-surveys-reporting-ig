@@ -32,15 +32,15 @@
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
-    <baseDefinition value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-reporting-bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Bundle.entry">
             <path value="Bundle.entry"/>
             <slicing>
                 <discriminator>
-                    <type value="profile"/>
-                    <path value="$this.resource"/>
+                    <type value="type"/>
+                    <path value="resource"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
@@ -56,7 +56,7 @@
         <element id="Bundle.entry:sliceMessageHeader.resource">
             <path value="Bundle.entry.resource"/>
             <type>
-                <code value="Resource"/>
+               <code value="MessageHeader"/>   
                 <profile value="http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-messageheader"/>
             </type>
         </element>
@@ -70,7 +70,7 @@
         <element id="Bundle.entry:contentBundle.resource">
             <path value="Bundle.entry.resource"/>
             <type>
-                <code value="Resource"/>
+               <code value="Bundle"/>
                 <profile value="http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle"/>
             </type>
         </element>

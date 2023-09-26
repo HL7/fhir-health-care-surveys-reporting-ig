@@ -4,7 +4,7 @@
   <id value="health-care-surveys-reporting"/>
   <url value="http://hl7.org/fhir/us/health-care-surveys-reporting/ImplementationGuide/health-care-surveys-reporting"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden  -->
-  <version value="1.0.0"/>
+  <version value="1.0.1"/>
   <name value="HealthcareSurveysReporting"/>
   <title value="Health Care Surveys Content Implementation Guide (IG)"/>
   <status value="draft"/>
@@ -264,7 +264,7 @@
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
       <code value="releaselabel"/>
-      <value value="STU1 Release 1"/>
+      <value value="CI Build"/>
     </parameter>
     <parameter>
       <code value="find-other-resources"/>
