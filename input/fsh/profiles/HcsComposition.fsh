@@ -163,14 +163,14 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceAdmissionMedicationsSection].entry ^slicing.rules = #open
 * section[sliceAdmissionMedicationsSection].entry contains
     sliceMedicationAdministration 0..* MS and
-    sliceMedicationStatement 0..* MS and
+    sliceMedicationRequest 0..* MS and
     sliceMedicationReferences 0..* MS
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration or MedicationAdministration)
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] only Reference(HcsMedicationStatement or MedicationStatement)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] ^short = "Medication Statement Entry"
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] ^isModifier = false
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest or MedicationRequest)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Statement Entry"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication or Medication)
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
@@ -193,15 +193,15 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceMedicationsSection].entry ^slicing.rules = #open
 * section[sliceMedicationsSection].entry contains
     sliceMedicationAdministration 0..* MS and
-    sliceMedicationStatement 0..* MS and
+    sliceMedicationRequest 0..* MS and
     sliceMedicationDispense 0..* MS and
     sliceMedicationReferences 0..* MS
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration or MedicationAdministration)
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationStatement] only Reference(HcsMedicationStatement or MedicationStatement)
-* section[sliceMedicationsSection].entry[sliceMedicationStatement] ^short = "Medication Statement Entry"
-* section[sliceMedicationsSection].entry[sliceMedicationStatement] ^isModifier = false
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest or MedicationRequest)
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Statement Entry"
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] only Reference($us-core-medicationdispense or MedicationDispense)
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] ^short = "Medication Dispense Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] ^isModifier = false
