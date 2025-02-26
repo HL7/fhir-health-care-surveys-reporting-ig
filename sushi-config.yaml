@@ -1,0 +1,47 @@
+packageId: hl7.fhir.us.health-care-surveys-reporting
+canonical: http://hl7.org/fhir/us/health-care-surveys-reporting
+fhirVersion: 4.0.1
+applyExtensionMetadataToRoot: false
+id: hl7.fhir.us.health-care-surveys-reporting
+name: HealthcareSurveysReporting
+title: Health Care Surveys Reporting
+copyrightYear: 2020+
+releaseLabel: STU 1.0.1
+description: >
+  This implementation guide (IG) provides Health Level Seven (HL7 FHIR) resources to define standards. 
+  This guide contains a library of FHIR profiles and is compliant with FHIR Release 4.
+publisher:
+  name: HL7 International / Public Health
+  url: http://www.hl7.org/Special/committees/pher
+  email: ord@lists.HL7.org
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: pher
+jurisdiction: urn:iso:std:iso:3166#US
+status: draft
+version: 1.0.1
+dependencies:
+  hl7.terminology.r4:
+    version: 6.1.0
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+    id: hl7tx
+  hl7.fhir.uv.extensions.r4:
+    version: 5.1.0
+    uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
+    id: hl7ext
+  hl7.fhir.us.core:
+    version: 6.1.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core#6.1.0
+    id: hl7fhiruscore
+  hl7.fhir.us.medmorph:
+    version: 1.0.0
+    uri: http://hl7.org/fhir/us/medmorph/ImplementationGuide/hl7.fhir.us.medmorph
+    id: medmorphIg
+  hl7.fhir.uv.smart-app-launch:
+    version: 2.0.0
+    uri: http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch
+    id: smartapplaunch
+  hl7.fhir.uv.subscriptions-backport.r4:
+    version: 1.1.0
+    uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
+    id: subscriptionsIg

@@ -21,7 +21,7 @@
     <p>
     The National Health Care Surveys, with its NHCS Clinical Document Architecture (CDA) Release 3, more closely aligned its data requirements with USCDI V1. 
     The alignment with USCDI is increased in this FHIR IG. The Health Care Survey Content Bundle is limited to data elements included in USCDI V1 as 
-    operationalized by 17 US Core Resource Profiles v3.1.1. As medications administered during encounters have been collected in the National Health Care 
+    operationalized by 17 US Core Resource Profiles v6.1. As medications administered during encounters have been collected in the National Health Care 
     Surveys for decades, it was felt this data was needed so as to not have gaps in collection years. Thus, the only exception to the US Core Profiles only 
     heuristic is the HCS MedicationAdministration Profile, which is also included in the Health Care Survey Content Bundle. The National Center for Health Statistics (NCHS) plans to align the 
     data elements in future releases of this IG with those that achieve recognition for voluntary implementation in the 
