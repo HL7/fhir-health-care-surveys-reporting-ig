@@ -1,7 +1,7 @@
 Instance: self-tylenol
-InstanceOf: MedicationRequest
+InstanceOf: HcsMedicationRequest
 Title: "MedicationRequest Example"
-Description: "An example showing a MedciationRequest for HCS reporting."
+Description: "An example showing a MedicationRequest for HCS reporting."
 Usage: #example
 * identifier.use = #official
 * identifier.system = "http://acme.org/prescriptions"
