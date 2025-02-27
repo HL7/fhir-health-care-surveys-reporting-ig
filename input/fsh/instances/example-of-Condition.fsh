@@ -1,5 +1,5 @@
 Instance: example-of-Condition
-InstanceOf: Condition
+InstanceOf: USCoreConditionProblemsHealthConcernsProfile
 Title: "Condition Example"
 Description: "An example showing a Condition for HCS reporting."
 Usage: #example
