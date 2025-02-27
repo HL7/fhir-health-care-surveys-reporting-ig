@@ -35,18 +35,9 @@ This specification makes significant use of [FHIR profiles]({{site.data.fhir.pat
 
 The full set of profiles defined in this IG can be found by following the links on the [FHIR Artifacts](artifacts.html) page.
 
-##### MedMorph Reference Architecture (RA) IG Usage
-
-This IG leverages the [MedMorph Reference Architecture (RA) IG]({{site.data.fhir.ver.medmorphIg}}/index.html) defined by HL7 Public Health Workgroup (WG) as the reference architecture for automation and implementing the Health Care Surveys use case.
-
-
 ##### US Core Usage
 
 This IG leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}) set of profiles defined by HL7 for sharing non-veterinary electronic medical record (EMR) individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
-
-##### Subscriptions Backport IG Usage
-
-This IG leverages the [Subscriptions Backport IG]({{site.data.fhir.ver.subscriptionsIg}}/index.html) defined by HL7 Infrastructure WG for automating reporting workflows using subscriptions.
 
 ##### SMART App Launch IG Usage
 
