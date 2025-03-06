@@ -99,10 +99,19 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceProblemSection].entry ^slicing.discriminator.type = #profile
 * section[sliceProblemSection].entry ^slicing.discriminator.path = "resolve()"
 * section[sliceProblemSection].entry ^slicing.rules = #open
-* section[sliceProblemSection].entry contains sliceProblemsHealthConcerns 0..* MS
+
+* section[sliceProblemSection].entry contains 
+    sliceProblemsHealthConcerns 0..* MS and
+    sliceEncounterDiagnosis 0..* MS
+
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] only Reference($us-core-condition-problems-health-concerns or Condition)
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^short = "Problems Health Concerns Entry"
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^isModifier = false
+
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis or Condition)
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^short = "Encounter Diagnosis Entry"
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^definition = "References to Conditions that represent encounter diagnoses"
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^isModifier = false
 * section[sliceAllergiesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceAllergiesSection] ^extension.valueString = "Section"
 * section[sliceAllergiesSection] ^short = "Allergies Section"
