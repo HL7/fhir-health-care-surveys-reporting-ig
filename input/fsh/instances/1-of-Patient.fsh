@@ -3,23 +3,31 @@ InstanceOf: Patient
 Title: "Patient 1 - Example"
 Description: "An example showing a Patient"
 Usage: #example
-* id = "1"
-* meta.versionId = "3"
-* meta.lastUpdated = "2019-04-23T10:30:54.819-04:00"
-* identifier.use = #official
-* identifier.type = $v2-0203#MR "Medical Record Number"
-* identifier.type.text = "Medical Record Number"
-* identifier.system = "http://example.healthcare.org"
-* identifier.value = "1213208"
-* active = true
-* name.use = #official
+* identifier.system = "urn:system"
+* identifier.value = "1-of-Patient"
 * name.family = "Ledner144"
 * name.given = "Dominique369"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* id = "1"
+* identifier[0].system = "urn:oid:2.16.840.1.113883.4.3.6"
+* identifier[=].value = "patient-OakleyAnnie"
+* identifier[+].use = #usual
+* identifier[=].type.text = "SHID"
+* identifier[=].system = "http://hospital.smarthealthit.org"
+* identifier[=].value = "12446"
+* identifier[+].use = #usual
+* identifier[=].type.text = "FHIR"
+* identifier[=].system = "http://example.com/FHIR/StructureDefinition/patient-fhir-id"
+* identifier[=].value = "66574567"
+* identifier[+].use = #usual
+* identifier[=].type.text = "MRN"
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.3.2"
+* identifier[=].value = "abc123"
 * telecom[0].system = #phone
-* telecom[=].value = "800-504-7344"
+* telecom[=].value = "1-(303)555-1212"
 * telecom[=].use = #home
 * telecom[+].system = #email
-* telecom[=].value = "brian.gracia@example.healthcare.com"
+* telecom[=].value = "annie.oakley@example.com"
 * gender = #female
 * birthDate = "1965-06-22"
 * deceasedBoolean = false

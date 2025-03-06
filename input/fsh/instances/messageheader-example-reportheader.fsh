@@ -5,10 +5,12 @@ Description: "MessageHeader example used in the HCS Bundle sent from Healthcare 
 Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2020-11-29T02:03:28.045+00:00"
-* extension[0].url = "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-data-encrypted-extension"
+* extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encrypted-extension"
 * extension[=].valueBoolean = false
-* extension[+].url = "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-report-initiation-type"
+* extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-report-initiation-type-extension"
 * extension[=].valueCodeableConcept = $us-ph-report-initiation-types#subscription-notification
+* extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-message-processing-category-extension"
+* extension[=].valueCode = http://hl7.org/fhir/message-significance-category#notification
 * eventCoding = $us-ph-messageheader-message-types#healthcare-survey-report-message
 * destination.name = "PHA endpoint"
 * destination.endpoint = "http://example.pha.org/fhir"
@@ -19,4 +21,4 @@ Usage: #example
 * source.contact.system = #phone
 * source.contact.value = "+1 (917) 123 4567"
 * source.endpoint = "http://example.healthcare.org/fhir"
-* reason = $us-ph-triggerdefinition-namedevents#encounter-end
+* reason = $us-ph-triggerdefinition-namedevents#encounter-close

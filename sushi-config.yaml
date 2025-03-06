@@ -17,6 +17,8 @@ publisher:
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: pher
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
 jurisdiction: urn:iso:std:iso:3166#US
 status: draft
 version: 1.0.1
@@ -33,10 +35,10 @@ dependencies:
     version: 6.1.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core#6.1.0
     id: hl7fhiruscore
-  hl7.fhir.us.medmorph:
+  hl7.fhir.us.ph-library:
     version: 1.0.0
-    uri: http://hl7.org/fhir/us/medmorph/ImplementationGuide/hl7.fhir.us.medmorph
-    id: medmorphIg
+    uri: http://hl7.org/fhir/us/ph-library/ImplementationGuide/hl7.fhir.us.ph-library#1.0.0
+    id: hl7fhirusphlibrarys
   hl7.fhir.uv.smart-app-launch:
     version: 2.0.0
     uri: http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch
