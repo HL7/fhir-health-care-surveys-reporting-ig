@@ -1,5 +1,5 @@
 Profile: HcsMedicationRequest
-Parent: USCoreMedicationRequestProfile
+Parent: USCoreMedicationRequestProfile|6.1.0
 Id: hcs-medicationrequest
 Title: "HCS Medication Request"
 Description: "This is the MedicationStatement Resource profile for the IG."

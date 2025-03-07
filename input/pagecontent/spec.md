@@ -79,7 +79,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The NCHS Data Store **SHALL** republish the Group Resource when the list of all the Practitioners participating in the health care survey changes. 
 
-* The NCHS Data Store **SHALL** create the Knowledge Artifact following the constraints identified in [HCS-PlanDefinition](StructureDefinition-hcs-plandefinition.html).
+* The NCHS Data Store **SHALL** create the Knowledge Artifact following the constraints.
 
 * The NCHS Data Store **SHALL** implement the Knowledge Artifact Repository requirements
 

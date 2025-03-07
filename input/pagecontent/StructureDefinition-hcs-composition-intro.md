@@ -14,7 +14,7 @@ The following sections and population criteria should be used to create the comp
 * Medications: Medications referenced by MedicationRequests and MedicationAdministration.
 * Vital Signs: Vital signs for the encounter with status = final or amended.
 * Allergies: Allergies associated with the patient with status = active; verification status= confirmed.
-* Procedures: Procedures performed during the encounter limited to status = completed or in-progress. 
+* Procedures: All interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. 
 * ServiceRequest: Procedures ordered during the encounter.
 * Immunizations: Immunizations associated with the patient.
 * LabResults: Results linked to the encounter or ordered during the encounter or results received during the encounter plus thresholds. (72 hours after the encounter close) and status = final and preliminary.

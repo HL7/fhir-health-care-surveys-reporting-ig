@@ -68,7 +68,8 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceMedicalEquipmentSection 0..1 MS and
     sliceCareTeamSection 0..1 MS and
     sliceGoalsSection 0..1 MS and
-    slicePregnancySection 0..1 MS
+    slicePregnancySection 0..1 MS and 
+    sliceCoverageSection 0..1 MS 
 * section[sliceReasonForVisitSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceReasonForVisitSection] ^extension.valueString = "Section"
 * section[sliceReasonForVisitSection] ^short = "Reason for Visit Section"
@@ -507,3 +508,18 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[slicePregnancySection].entry[slicePregnancyIntent] only Reference($us-core-observation-pregnancyintent or Observation)
 * section[slicePregnancySection].entry[slicePregnancyIntent] ^short = "Pregnancy Intent"
 * section[slicePregnancySection].entry[slicePregnancyIntent] ^definition = "Pregnancy Intent entry"
+* section[sliceCoverageSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[sliceCoverageSection] ^extension.valueString = "Section"
+* section[sliceCoverageSection] ^short = "Coverage Section"
+* section[sliceCoverageSection] ^definition = "This section lists the patient's coverage."
+* section[sliceCoverageSection] ^isModifier = false
+* section[sliceCoverageSection].code 1.. MS
+* section[sliceCoverageSection].code = $loinc#48768-6
+* section[sliceCoverageSection].code ^short = "Coverage Section code"
+* section[sliceCoverageSection].code ^definition = "Coverage Section code"
+* section[sliceCoverageSection].code ^isModifier = false
+* section[sliceCoverageSection].text 1.. MS
+* section[sliceCoverageSection].text ^short = "Coverage Section narrative"
+* section[sliceCoverageSection].text ^definition = "Coverage Section narrative"
+* section[sliceCoverageSection].entry only Reference(USCoreCoverageProfile or Coverage)
+* section[sliceCoverageSection].entry MS

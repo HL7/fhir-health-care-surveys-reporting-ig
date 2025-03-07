@@ -61,3 +61,5 @@ Alias: $us-core-goal = http://hl7.org/fhir/us/core/StructureDefinition/us-core-g
 Alias: $us-core-observation-pregnancystatus = http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus
 Alias: $us-core-observation-pregnancyintent = http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent
 Alias: $us-core-procedure-code = http://hl7.org/fhir/us/core/ValueSet/us-core-procedure-code
+Alias: $subscriber-relationship = http://terminology.hl7.org/CodeSystem/subscriber-relationship
+Alias: $coverage-class = http://terminology.hl7.org/CodeSystem/coverage-class
