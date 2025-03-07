@@ -44,6 +44,8 @@ Description: "This Diagnostic Report profile is for healthcare survey report con
 
 * effective[x] 0..1 MS
 * effective[x] ^constraint[1].key = "C"
+* effective[x] ^constraint[1].severity = #error
+* effective[x] ^constraint[1].human = "Either effectiveDateTime or effectivePeriod must be present"
 * effective[x] ^comment = "(USCDI) Diagnostically relevant time (typically the time of the procedure)"
 * effectiveDateTime MS
 * effectivePeriod MS

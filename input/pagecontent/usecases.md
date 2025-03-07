@@ -74,9 +74,7 @@ The following is a diagram of the workflow based on the above user story used fo
 <br/>
 
 
-#### Health Care Surveys Actors and Definitions
-
-The following actors from the [MedMorph RA IG]({{site.data.fhir.ver.medmorphIg}}/usecases.html#medmorph-actors-and-definitions) are used by the Health Care Surveys Reporting use cases. 
+#### Health Care Surveys Actors and Definitions 
 
 * Data Source (e.g., EHR, clinical data repository)
 * HDEA

@@ -73,7 +73,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ##### Knowledge Artifact and Knowledge Artifact Repository Requirements 
 
-* The NCHS Data Store **SHALL** create a Knowledge Artifact following the constraints identified by the [MedMorph Provisioning requirements]({{site.data.fhir.ver.medmorphIg}}/provisioning.html#creating-knowledge-artifacts).
+* The NCHS Data Store **SHALL** create a Knowledge Artifact 
 
 * The NCHS Data Store **SHALL** publish the Group Resource containing the list of all the Practitioners participating in the health care survey. This can be published in the NCHS Data Store FHIR Server or a separate Knowledge Artifact Repository.
 
@@ -81,7 +81,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The NCHS Data Store **SHALL** create the Knowledge Artifact following the constraints identified in [HCS-PlanDefinition](StructureDefinition-hcs-plandefinition.html).
 
-* The NCHS Data Store **SHALL** implement the Knowledge Artifact Repository requirements as outlined in the [MedMorph RA Knowledge Artifact Repository Requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-knowledge-artifact-repository.html).
+* The NCHS Data Store **SHALL** implement the Knowledge Artifact Repository requirements
 
 
 ##### Data Source Requirements
@@ -95,7 +95,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Subscription Requirements
 
-* The Data Source **SHALL** support the creation of Subscriptions for the [encounter-end Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-medmorph-encounter-end-subscription.html)
+* The Data Source **SHALL** support the creation of Subscriptions 
 
 * The Data Source **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to notify the HDEA.
 
@@ -121,7 +121,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Subscription Requirements
 
-* The HDEA **SHALL** create Subscriptions for the [encounter-end Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-medmorph-encounter-end-subscription.html).
+* The HDEA **SHALL** create Subscriptions 
 
 * The HDEA **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the Data Source.
 
@@ -137,7 +137,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The HDEA **SHALL** process the Health Care Surveys Knowledge Artifact and create Subscription resources in the Data Source for each trigger event.
 
-* For the health care surveys, the HDEA **SHALL** create the Subscription for the [encounter-end Subscription Topic]({{site.data.fhir.ver.medmorphIg}}/StructureDefinition-medmorph-encounter-end-subscription.html) trigger event. 
+* For the health care surveys, the HDEA **SHALL** create the Subscription  
 
 * Upon deactivation of a Knowledge Artifact, The HDEA **SHALL** delete the Subscriptions previously created by the HDEA for the Knowledge Artifact (e.g., delete the Subscription created for encounter-end trigger event). 
 
@@ -165,13 +165,6 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The HDEA **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.
 
-###### MedMorph RA Requirements 
-
-* The HDEA **SHALL** implement the MedMorph HDEA requirements as outlined in the [MedMorph RA HDEA requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-healthdata-exchange-app-client.html).
-
-
-##### NCHS Data Store Requirements Acting as a MedMorph Data Receiver Actor
-
 
 ###### Message Receiving and Processing Requirements
 
@@ -181,7 +174,6 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.
 
-* The NCSH Data Store **SHALL** implement the PHA requirements as outlined in the [MedMorph Data Receiver requirements]({{site.data.fhir.ver.medmorphIg}}/CapabilityStatement-medmorph-data-receiver.html).
-
+* The NCSH Data Store **SHALL** implement the PHA requirements 
 
 

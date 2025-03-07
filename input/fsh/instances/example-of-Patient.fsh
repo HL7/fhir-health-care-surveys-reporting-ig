@@ -11,7 +11,7 @@ Usage: #example
 * extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#1002-5 "American Indian or Alaska Native"
 * extension[=].extension[+].url = "ombCategory"
 * extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2028-9 "Asian"
-* extension[=].extension[+].url = "detailed"
+* extension[=].extension[+].url = "text"
 * extension[=].extension[=].valueString = "Mixed"
 * extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
 * extension[+].extension[0].url = "ombCategory"

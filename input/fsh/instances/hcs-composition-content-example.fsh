@@ -33,7 +33,7 @@ Usage: #inline
   <p>Single liveborn, born in hospital</p>
 </div>
 """
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/example)
+* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/example-of-Condition)
 
 /* Allergies Section (sliceAllergiesSection) */
 * section[sliceAllergiesSection].title = "Allergies Section"

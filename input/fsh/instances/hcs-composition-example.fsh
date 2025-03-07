@@ -33,9 +33,12 @@ Usage: #example
 * section[sliceProblemSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
   <p>Single liveborn, born in hospital</p>
+  <p>Acute bronchitis</p>
 </div>
 """
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/example)
+* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/example-of-Condition)
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] = Reference(Condition/encounter-of-encounter-diagnosis)
+
 
 /* Allergies Section (sliceAllergiesSection) */
 * section[sliceAllergiesSection].title = "Allergies Section"

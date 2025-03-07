@@ -104,11 +104,11 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceProblemsHealthConcerns 0..* MS and
     sliceEncounterDiagnosis 0..* MS
 
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] only Reference($us-core-condition-problems-health-concerns or Condition)
+* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] only Reference(USCoreConditionProblemsHealthConcernsProfile)
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^short = "Problems Health Concerns Entry"
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^isModifier = false
 
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis or Condition)
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] only Reference(USCoreConditionEncounterDiagnosisProfile)
 * section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^short = "Encounter Diagnosis Entry"
 * section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^definition = "References to Conditions that represent encounter diagnoses"
 * section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^isModifier = false
