@@ -9,7 +9,9 @@
 <artifact id="AllergyIntolerance/example" key="AllergyIntolerance-example" name="AllergyIntolerance Example"/>
 <artifact id="ValueSet/2.16.840.1.113762.1.4.1099.27" key="ValueSet-2.16.840.1.113762.1.4.1099.27" name="Care Team Member Function (SNOMEDCT)"/>
 <artifact id="Composition/hcs-composition-example" key="Composition-hcs-composition-example" name="Composition Example"/>
-<artifact id="Condition/example" key="Condition-example" name="Condition Example"/>
+<artifact id="Condition/example-of-Condition" key="Condition-example" name="Condition Example"/>
+<artifact id="Coverage/example-of-coverage" key="Coverage-example-of-coverage" name="Coverage Example 1"/>
+<artifact id="Condition/encounter-of-encounter-diagnosis" key="Condition-encounter-of-encounter-diagnosis" name="Encounter Diagnosis Example"/>
 <artifact id="Encounter/example-1" key="Encounter-example-1" name="Encounter Example"/>
 <artifact id="Bundle/hcs-content-bundle-example" key="Bundle-hcs-content-bundle-example" name="Example of a Content Bundle containing Composition resource"/>
 <artifact deprecated="true" id="Bundle/content-bundle-example" key="Bundle-content-bundle-example" name="Example of a Content Bundle containing Patient Data"/>
@@ -17,27 +19,33 @@
 <artifact deprecated="true" id="Group/group-example-survey" key="Group-group-example-survey" name="Group example showing Providers participating in health care surveys"/>
 <artifact id="StructureDefinition/hcs-medicationadministration" key="StructureDefinition-hcs-medicationadministration" name="HCS Medication Administration"/>
 <artifact id="MedicationAdministration/medicationadministration-example" key="MedicationAdministration-medicationadministration-example" name="HCS Medication Administration Example"/>
-<artifact id="StructureDefinition/hcs-medicationstatement" key="StructureDefinition-hcs-medicationstatement" name="HCS Medication Statement"/>
+<artifact id="StructureDefinition/hcs-medicationrequest" key="StructureDefinition-hcs-medicationrequest" name="HCS Medication Request"/>
 <artifact deprecated="true" id="PlanDefinition/plandefinition-example" key="PlanDefinition-plandefinition-example" name="HCS PlanDefinition Example"/>
 <artifact id="Bundle/reporting-bundle-example" key="Bundle-reporting-bundle-example" name="HCS Reporting Bundle Example"/>
-<artifact id="StructureDefinition/hcs-servicerequest" key="StructureDefinition-hcs-servicerequest" name="HCS Service Request"/>
+<artifact deprecated="true" id="StructureDefinition/hcs-medicationstatement" key="StructureDefinition-hcs-medicationstatement" name="HcsMedicationStatement"/>
+<artifact deprecated="true" id="StructureDefinition/hcs-servicerequest" key="StructureDefinition-hcs-servicerequest" name="HcsServiceRequest"/>
 <artifact id="StructureDefinition/hcs-composition" key="StructureDefinition-hcs-composition" name="Health Care Survey Report Composition"/>
+<artifact id="StructureDefinition/hcs-diagnosticreport" key="StructureDefinition-hcs-diagnosticreport" name="Health Care Survey Report Diagnostic Report"/>
 <artifact id="StructureDefinition/hcs-content-bundle" key="StructureDefinition-hcs-content-bundle" name="Health Care Surveys Content Bundle"/>
 <artifact id="CapabilityStatement/health-care-surveys-reporting-data-source" key="CapabilityStatement-health-care-surveys-reporting-ehr" name="Health Care Surveys EHR Capability Statement"/>
 <artifact id="StructureDefinition/hcs-plandefinition" key="StructureDefinition-hcs-plandefinition" name="Health Care Surveys PlanDefinition"/>
 <artifact id="StructureDefinition/hcs-reporting-bundle" key="StructureDefinition-hcs-reporting-bundle" name="Health Care Surveys Reporting Bundle"/>
 <artifact id="Endpoint/example-healthcare-endpoint" key="Endpoint-example-healthcare-endpoint" name="Healthcare Organization Endpoint example"/>
 <artifact id="Organization/example-healthcare-org" key="Organization-example-healthcare-org" name="Healthcare Organization Example"/>
+<artifact id="MedicationRequest/example" key="MedicationRequest-self-tylenol" name="MedicationRequest Example"/>
 <artifact id="MedicationRequest/self-tylenol" key="MedicationRequest-self-tylenol" name="MedicationRequest Example"/>
-<artifact id="MedicationStatement/example" key="MedicationStatement-example" name="MedicationStatement Example"/>
+<artifact deprecated="true" id="MedicationStatement/example" key="MedicationStatement-example" name="MedicationStatement Example"/>
 <artifact id="MessageHeader/messageheader-example-reportheader" key="MessageHeader-messageheader-example-reportheader" name="MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"/>
 <artifact id="ValueSet/2.16.840.1.113883.1.11.10267" key="ValueSet-2.16.840.1.113883.1.11.10267" name="ParticipationFunction"/>
 <artifact id="Patient/1" key="Patient-1" name="Patient 1 - Example"/>
 <artifact id="Patient/example" key="Patient-example" name="Patient Example"/>
+<artifact id="Organization/Payer2" key="Organization-Payer2" name="Payer 2"/>
 <artifact id="Practitioner/1" key="Practitioner-1" name="Practitioner Example"/>
 <artifact id="Endpoint/example-ph-endpoint" key="Endpoint-example-ph-endpoint" name="Public Health Organization Endpoint example"/>
 <artifact id="Organization/example-pha-org" key="Organization-example-pha-org" name="Public Health Organization Example"/>
 <artifact id="ServiceRequest/example" key="ServiceRequest-example" name="ServiceRequest Example"/>
+<artifact id="CodeSystem/us-ph-codesystem-plandefinition-actions" key="CodeSystem-us-ph-codesystem-plandefinition-actions" name="US Public Health CodeSystem - PlanDefinition Actions"/>
+<artifact id="ValueSet/us-ph-valueset-plandefinition-action" key="ValueSet-us-ph-valueset-plandefinition-action" name="US Public Health VaueSet - PlanDefinition Action"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
