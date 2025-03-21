@@ -24,7 +24,7 @@ Usage: #inline
 * entry.resource.date = "2023-01-02T22:13:23Z"
 * entry.resource.author.reference = "Practitioner/1"
 * entry.resource.author.display = "Nicholas Joseph"
-* entry.resource.title = "Health Care Survey Report"
+* entry.resource.title = "National Health Care Surveys report"
 * entry.resource.section[0].title = "Reason for Visit Section"
 * entry.resource.section[=].code = $loinc#29299-5 "Reason for visit Narrative"
 * entry.resource.section[=].text.status = #generated

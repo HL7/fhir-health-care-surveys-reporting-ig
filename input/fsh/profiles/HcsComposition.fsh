@@ -43,7 +43,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * author ^short = "The author(s) of the document"
 * author ^definition = "It is possible to have multiple authors - especially in the case where the default author is the organization. Author information can contain the HDEA/BSA as a Device Author. "
 * author ^isModifier = false
-* title = "Health Care Survey Report" (exactly)
+* title = "National Health Care Surveys report" (exactly)
 * title MS
 * section MS
 * section ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"

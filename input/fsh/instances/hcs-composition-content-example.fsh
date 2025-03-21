@@ -12,7 +12,7 @@ Usage: #inline
 * encounter = Reference(example-1) "Ambulatory Office Visit"
 * date = "2023-01-02T22:13:23Z"
 * author = Reference(Practitioner/1) "Nicholas Joseph"
-* title = "Health Care Survey Report"
+* title = "National Health Care Surveys report"
 
 /* Reason for Visit Section (sliceReasonForVisitSection) */
 * section[sliceReasonForVisitSection].title = "Reason for Visit Section"
