@@ -2,7 +2,7 @@
 The section identifies the business needs including specific user stories outlining the health care surveys reporting data exchange needs.
 
 #### Business Need
-The purpose of the Health Care Surveys Content Implementation Guide (IG) is to identify the hospital (e.g., emergency department (ED), inpatient care) and ambulatory care data that will be extracted from Data Sources (e.g., Electronic Health Records (EHR), clinical data repository) via Fast Healthcare Interoperability Resources (FHIR®) Application Programming Interfaces (APIs) and sent to a system hosted at the federal level. This use case will help define how electronic data can be used in automated data collection, reducing burden for the healthcare provider and data dource with the goal of increasing the submission of timely quality health care data to the National Center for Health Statistics (NCHS).
+The purpose of the Health Care Surveys Content Implementation Guide (IG) is to identify the hospital (e.g., emergency department (ED), inpatient care) and ambulatory care data that will be extracted from Data Sources (e.g., Electronic Health Records (EHR), clinical data repository) via Fast Healthcare Interoperability Resources (FHIR®) Application Programming Interfaces (APIs) and sent to a system hosted at the federal level. This use case will help define how electronic data can be used in automated data collection, reducing burden for the healthcare provider and data source with the goal of increasing the submission of timely quality health care data to the National Center for Health Statistics (NCHS).
 In the past predominate ambulatory (manual medical record abstraction) and hospital (claims) data collection methods are burdensome for providers, lack clinical richness, and are inefficient for NCHS. The HL7 Clinical Document Architecture (CDA®) R2 Implementation Guide: National Health Care Surveys Release 1, Draft Standard for Trial Use (DSTU) Release 1.2 - US Realm, 2016, is available-as a standards-based as well as a Promoting Interoperability measure-data submission option for providers. This CDA IG has improved NCHS EHR data submissions, but some providers have found it burdensome and NCHS has identified some data quality issues in submissions by this method.
 
 Utilizing this IG, which is tightly aligned with newly available standards such as FHIR R4 APIs and the United States Core Date for Interoperability (USCDI)/US Core Profiles, for electronic reporting will increase the response rate of sampled hospitals and ambulatory health care providers to the National Hospital Care Survey (NHCS) and the National Ambulatory Medical Care Survey (NAMCS) over other data collection approaches. This will also increase the volume, quality, completeness, and timeliness of the data submitted to the NHCS and NAMCS. This reporting approach via automated means (without provider involvement) will reduce the burden associated with survey participation and reduce costs associated with recruiting hospital and ambulatory health care providers.
@@ -15,7 +15,7 @@ The goals of the Health Care Survey submission use case include:
 * Increase the volume, quality, completeness, and timeliness of data submitted to the NHCS and NAMCS.
 * Reduce the burden, including cost, associated with survey participation for hospitals, ambulatory health care providers, and data source vendors.
 * Reduce NCHS’s costs associated with recruiting hospital and ambulatory health care providers, and the processing of NHCS and NAMCS data.
-* Develop a complete use case that can be supported by the Making Electronic Data More available for Research and Publich Health (MedMorph) Reference Architecture (RA) for the reporting of health care survey data from health care providers and systems to NCHS.
+* Develop a complete use case that can support the reporting of health care survey data from health care providers and systems to NCHS.
 
 
 ##### Scope of the Use Case
@@ -44,7 +44,7 @@ The goals of the Health Care Survey submission use case include:
 
 **Background:** The National Ambulatory Medical Care Survey (NAMCS) is based on a sample of patient visits to non-federally employed office-based physicians (primary care or specialist) who are primarily engaged in direct patient care. Starting in 2006, a separate sample of visits to community health centers (CHC) was added; in 2021, the former CHC sample of NAMCS was redesigned and launched as the health center (HC) component. NAMCS collects an encounter-based set of demographic and clinical data generally available in a medical record for any type of visit.
 
-**Workflow:** Upon completion of an encounter, the physician or licensed clinician, using the EHR, completes and closes the clinical encounter (“sign off”). This “sign off” triggers the Health Data Exchange App (HDEA), MedMorph's backend services app, to evaluate the completed encounter. The completed encounter evaluation by the HDEA includes validating that the provider associated with the encounter is a “sampled” NAMCS provider and the encounter occurred within a specified timeframe.  If the encounter meets the criteria, and after a lag period to allow for lab results to post when applicable, the HDEA requests a set of FHIR resources representing patient-level and select provider-level data of the encounter from the Data Source. The obtained resources are validated (e.g., conformant to the appropriate FHIR profiles) and transmitted to NCHS where they are received, acknowledged, and loaded into the NCHS Data Store.
+**Workflow:** Upon completion of an encounter, the physician or licensed clinician, using the EHR, completes and closes the clinical encounter ("sign off"). This "sign off" triggers the eCR Now FHIR App or vendor developed solution to evaluate the completed encounter. The completed encounter evaluation includes validating that the provider associated with the encounter is a "sampled" NAMCS provider and the encounter occurred within a specified timeframe. If the encounter meets the criteria, and after a lag period to allow for lab results to post when applicable, the application or vendor developed solution queries the Data Source for a set of FHIR resources representing patient-level and select provider-level data of the encounter. The obtained resources are validated (e.g., conformant to the appropriate FHIR profiles) and transmitted to NCHS where they are received, acknowledged, and loaded into the NCHS Data Store.
 
 The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting in the Ambulatory Setting:
 
@@ -61,7 +61,7 @@ The following is a diagram of the workflow based on the above user story used fo
 
 **Background:** The National Hospital Care Survey (NHCS) is an electronic data collection, gathering Uniform Bill (UB) 04 administrative claims data or electronic data from sampled hospitals. NHCS is designed to provide reliable and timely nationally representative healthcare utilization data for hospital-based settings. NHCS collects all inpatient discharges, and ED encounters from sampled hospitals for a survey period of one year. NHCS’ sample is drawn from all non-federal US hospitals with a bed size > 6.
 
-**Workflow:** Upon completion of an inpatient or ED encounter, the physician or licensed clinician completes and closes the clinical encounter (“sign off”). This “sign off” triggers the HDEA to evaluate the completed encounter against the NHCS criteria.  If the encounter meets the survey criteria, and after a lag period to allow for lab results to post when applicable, the HDEA requests a set of FHIR resources representing patient-level and select provider-level data of the encounter from the Data Source.  Once obtained and validated, these resources are transmitted to NCHS where they are received, acknowledged, validated, and loaded into the NCHS Data Store.
+**Workflow:** Upon completion of an inpatient or ED encounter, the physician or licensed clinician completes and closes the clinical encounter ("sign off"). This "sign off" triggers the eCR Now FHIR App or vendor developed solution to evaluate the completed encounter against the NHCS criteria. If the encounter meets the survey criteria, and after a lag period to allow for lab results to post when applicable, the application or vendor developed solution queries the Data Source for a set of FHIR resources representing patient-level and select provider-level data of the encounter. Once obtained and validated, these resources are transmitted to NCHS where they are received, acknowledged, validated, and loaded into the NCHS Data Store.
 
 The following is a diagram of the workflow based on the above user story used for Health Care Surveys Reporting for the Hospital Setting:
 
@@ -77,30 +77,30 @@ The following is a diagram of the workflow based on the above user story used fo
 #### Health Care Surveys Actors and Definitions 
 
 * Data Source (e.g., EHR, clinical data repository)
-* HDEA
+* eCR Now FHIR App or vendor developed solution
 * NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
 * Knowledge Artifact Repository
 * Trust Service Provider
 
-###### Interactions between MedMorph RA Actors and Systems for Health Care Surveys
+###### Interactions between Actors and Systems for Health Care Surveys
 This section outlines the high-level interactions between the various MedMorph Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
 
 {% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - Healthcare Surveys Actors and Systems" %}
 
 The descriptions for each step in the above diagram include:
 * Step 1: The National Center for Health Statistics (NCHS) Data Store (e.g., Data Receiver) creates a Knowledge Artifact and makes it available via the Knowledge Artifact Repository.
-     * Step 1a: Knowledge Artifact Repositories which implement notifications, can optionally notify the subscribers (Data Source, HDEA, Administrators) of changes in the Knowledge Artifacts.
-* Step 2: The Health Data Exchange App (HDEA) queries the Knowledge Artifact Repository to retrieve a Knowledge Artifact. 
-     * Step 2a: HDEA receives the Knowledge Artifact as a response to the query in Step 2.
-* Step 3: The HDEA processes the Knowledge Artifact and creates subscriptions in the Data Source’s (e.g., EHR) FHIR Server so that it can be notified when specific events occur in clinical workflows.
+     * Step 1a: Knowledge Artifact Repositories which implement notifications, can optionally notify the subscribers (Data Source, eCR Now FHIR App*, Administrators) of changes in the Knowledge Artifacts.
+* Step 2: The eCR Now FHIR App* queries the Knowledge Artifact Repository to retrieve a Knowledge Artifact. 
+     * Step 2a: eCR Now FHIR App* receives the Knowledge Artifact as a response to the query in Step 2.
+* Step 3: The eCR Now FHIR App* processes the Knowledge Artifact and creates subscriptions in the Data Source’s (e.g., EHR) FHIR Server so that it can be notified when specific events occur in clinical workflows.
 * Step 4: Providers as part of their clinical workflows update the data in the Data Source’s patient chart.
-* Step 5: The Data Source notifies the HDEA based on subscriptions that have been created in Step 3.
-* Step 6: The HDEA queries the Data Source for patient’s data.
-     * Step 6a: HDEA receives the response from the Data Source with the patient’s data.
-* Step 7: After the creation of the report with identifiable data that needs to be submitted, the HDEA invokes the Trust Service Provider to de-identify, anonymize, pseudonymize the report as needed.
-     * Step 7a: The HDEA receives the de-identified, anonymized or pseudonymized report.
-* Step 8: The HDEA submits the created report to the NCHS Data Store.
-* Step 9: The NCHS Data Store submits a response back to the HDEA based on the submitted report. The Response transaction can be synchronous or asynchronous (after a period of time).
-* Step 10: The HDEA writes back the response from the NCHS Data Store to the Data Source as appropriate. Note: The Response may have to be re-identified in some scenarios using Trust Services before it is written back to the EHR.
+* Step 5: The Data Source notifies the eCR Now FHIR App* based on subscriptions that have been created in Step 3.
+* Step 6: The eCR Now FHIR App* queries the Data Source for patient’s data.
+     * Step 6a: eCR Now FHIR App* receives the response from the Data Source with the patient’s data.
+* Step 7: After the creation of the report with identifiable data that needs to be submitted, the eCR Now FHIR App* invokes the Trust Service Provider to de-identify, anonymize, pseudonymize the report as needed.
+     * Step 7a: The eCR Now FHIR App* receives the de-identified, anonymized or pseudonymized report.
+* Step 8: The eCR Now FHIR App* submits the created report to the NCHS Data Store.
+* Step 9: The NCHS Data Store submits a response back to the eCR Now FHIR App* based on the submitted report. The Response transaction can be synchronous or asynchronous (after a period of time).
+* Step 10: The eCR Now FHIR App* writes back the response from the NCHS Data Store to the Data Source as appropriate. Note: The Response may have to be re-identified in some scenarios using Trust Services before it is written back to the EHR.
 
-
+* *or vendor developed solution
