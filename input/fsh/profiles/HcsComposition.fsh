@@ -27,19 +27,19 @@ Description: "This Composition profile is used to organize the healthcare survey
 * type ^short = "Health Care Survey Report"
 * type ^definition = "The type of this Composition is a Health Care Survey Report"
 * subject 1.. MS
-* subject only Reference($us-core-patient or Patient)
+* subject only Reference($us-core-patient)
 * subject ^short = "Patient who is the subject of the report."
 * subject ^definition = "This Patient profile represents the subject of the healthcare survey report."
 * subject ^isModifier = false
 * encounter 1.. MS
-* encounter only Reference($us-core-encounter or Encounter)
+* encounter only Reference($us-core-encounter)
 * encounter ^short = "Encounter related to the public health event"
 * encounter ^definition = "This Encounter profile represents the encounter related to the healthcare survey report."
 * encounter ^isModifier = false
 * date MS
 * date ^isModifier = false
 * author ..* MS
-* author only Reference($us-core-practitionerrole or $us-core-practitioner or $us-core-organization or Device or Organization or Practitioner or PractitionerRole)
+* author only Reference($us-core-practitionerrole or $us-core-practitioner or $us-core-organization or Device)
 * author ^short = "The author(s) of the document"
 * author ^definition = "It is possible to have multiple authors - especially in the case where the default author is the organization. Author information can contain the HDEA/BSA as a Device Author. "
 * author ^isModifier = false
@@ -126,7 +126,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceAllergiesSection].text 1.. MS
 * section[sliceAllergiesSection].text ^short = "Allergies Section narrative"
 * section[sliceAllergiesSection].text ^definition = "Allergies Section narrative"
-* section[sliceAllergiesSection].entry only Reference($us-core-allergyintolerance or AllergyIntolerance)
+* section[sliceAllergiesSection].entry only Reference($us-core-allergyintolerance)
 * section[sliceAllergiesSection].entry MS
 * section[sliceMedicationsAdministeredSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceMedicationsAdministeredSection] ^extension.valueString = "Section"
@@ -148,10 +148,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceMedicationsAdministeredSection].entry contains
     sliceMedicationAdministration 0..* MS and
     sliceMedicationReferences 0..* MS
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration or MedicationAdministration)
+* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration)
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] only Reference($us-core-medication or Medication)
+* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] ^isModifier = false
 * section[sliceAdmissionMedicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -175,13 +175,13 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceMedicationAdministration 0..* MS and
     sliceMedicationRequest 0..* MS and
     sliceMedicationReferences 0..* MS
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration or MedicationAdministration)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration)
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest or MedicationRequest)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest)
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Statement Entry"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication or Medication)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
 * section[sliceMedicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -206,16 +206,16 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceMedicationRequest 0..* MS and
     sliceMedicationDispense 0..* MS and
     sliceMedicationReferences 0..* MS
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration or MedicationAdministration)
+* section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration)
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest or MedicationRequest)
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest)
 * section[sliceMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Statement Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationDispense] only Reference($us-core-medicationdispense or MedicationDispense)
+* section[sliceMedicationsSection].entry[sliceMedicationDispense] only Reference($us-core-medicationdispense)
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] ^short = "Medication Dispense Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication or Medication)
+* section[sliceMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
 * section[sliceMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[sliceMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
 * section[sliceResultsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -242,19 +242,19 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceSimpleObservationEntry 0..* MS and
     sliceScreeningAssessmentEntry 0..* MS and
     sliceQuestionnaireResponseEntry 0..* MS
-* section[sliceResultsSection].entry[sliceLabResultEntry] only Reference($us-core-observation-lab or Observation)
+* section[sliceResultsSection].entry[sliceLabResultEntry] only Reference($us-core-observation-lab)
 * section[sliceResultsSection].entry[sliceLabResultEntry] ^short = "Lab Result Entries"
 * section[sliceResultsSection].entry[sliceLabResultEntry] ^isModifier = false
-* section[sliceResultsSection].entry[sliceDiagnosticResultEntry] only Reference($us-core-diagnosticreport-lab or DiagnosticReport)
+* section[sliceResultsSection].entry[sliceDiagnosticResultEntry] only Reference($us-core-diagnosticreport-lab)
 * section[sliceResultsSection].entry[sliceDiagnosticResultEntry] ^short = "Diagnostic Result Entries"
 * section[sliceResultsSection].entry[sliceDiagnosticResultEntry] ^isModifier = false
-* section[sliceResultsSection].entry[sliceClinicalResultEntry] only Reference($us-core-observation-clinical-result or Observation)
+* section[sliceResultsSection].entry[sliceClinicalResultEntry] only Reference($us-core-observation-clinical-result)
 * section[sliceResultsSection].entry[sliceClinicalResultEntry] ^short = "Clinical Result Entries"
 * section[sliceResultsSection].entry[sliceClinicalResultEntry] ^isModifier = false
-* section[sliceResultsSection].entry[sliceSimpleObservationEntry] only Reference($us-core-simple-observation or Observation)
+* section[sliceResultsSection].entry[sliceSimpleObservationEntry] only Reference($us-core-simple-observation)
 * section[sliceResultsSection].entry[sliceSimpleObservationEntry] ^short = "Simple Observation Entries"
 * section[sliceResultsSection].entry[sliceSimpleObservationEntry] ^isModifier = false
-* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] only Reference($us-core-observation-screening-assessment or Observation)
+* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] only Reference($us-core-observation-screening-assessment)
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^short = "Screening Assessment Entries"
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^isModifier = false
 //removed us-core-questionnaireresponse
@@ -281,10 +281,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceNotesSection].entry contains
     sliceDocumentReferenceEntry 0..* MS and
     sliceDiagnosticReportEntry 0..* MS
-* section[sliceNotesSection].entry[sliceDocumentReferenceEntry] only Reference($us-core-documentreference or DocumentReference)
+* section[sliceNotesSection].entry[sliceDocumentReferenceEntry] only Reference($us-core-documentreference)
 * section[sliceNotesSection].entry[sliceDocumentReferenceEntry] ^short = "Document Reference Entries"
 * section[sliceNotesSection].entry[sliceDocumentReferenceEntry] ^isModifier = false
-* section[sliceNotesSection].entry[sliceDiagnosticReportEntry] only Reference($us-core-diagnosticreport-note or DiagnosticReport)
+* section[sliceNotesSection].entry[sliceDiagnosticReportEntry] only Reference($us-core-diagnosticreport-note)
 * section[sliceNotesSection].entry[sliceDiagnosticReportEntry] ^short = "Diagnostic Report Entries"
 * section[sliceNotesSection].entry[sliceDiagnosticReportEntry] ^isModifier = false
 * section[slicePlanOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -309,16 +309,16 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceMedicationReferences 0..* MS and
     sliceProcedureOrders 0..* MS and
     sliceCarePlanEntries 0..* MS
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] only Reference($us-core-medicationrequest or MedicationRequest)
+* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] only Reference($us-core-medicationrequest)
 * section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] ^short = "Medication Request Entries"
 * section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] ^isModifier = false
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] only Reference($us-core-medication or Medication)
+* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
 * section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] ^isModifier = false
-* section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] only Reference($us-core-servicerequest or ServiceRequest)
+* section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] only Reference($us-core-servicerequest)
 * section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] ^short = "Procedure Order Entries"
 * section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] ^isModifier = false
-* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] only Reference($us-core-careplan or CarePlan)
+* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] only Reference($us-core-careplan)
 * section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] ^short = "CarePlan Entries"
 * section[sliceImmunizationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceImmunizationsSection] ^extension.valueString = "Section"
@@ -333,7 +333,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceImmunizationsSection].text 1.. MS
 * section[sliceImmunizationsSection].text ^short = "Immunizations narrative"
 * section[sliceImmunizationsSection].text ^definition = "Immunizations narrative"
-* section[sliceImmunizationsSection].entry only Reference($us-core-immunization or Immunization)
+* section[sliceImmunizationsSection].entry only Reference($us-core-immunization)
 * section[sliceImmunizationsSection].entry MS
 * section[sliceImmunizationsSection].entry ^isModifier = false
 * section[sliceProceduresSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -349,7 +349,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceProceduresSection].text 1.. MS
 * section[sliceProceduresSection].text ^short = "Procedures Section narrative"
 * section[sliceProceduresSection].text ^definition = "Procedures Section narrative"
-* section[sliceProceduresSection].entry only Reference($us-core-procedure or Procedure)
+* section[sliceProceduresSection].entry only Reference($us-core-procedure)
 * section[sliceProceduresSection].entry MS
 * section[sliceProceduresSection].entry ^isModifier = false
 * section[sliceVitalSignsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -365,12 +365,12 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceVitalSignsSection].text 1.. MS
 * section[sliceVitalSignsSection].text ^short = "Vital Signs narrative"
 * section[sliceVitalSignsSection].text ^definition = "Vital Signs narrative"
+* section[sliceVitalSignsSection].entry only Reference($us-core-vital-signs)
 * section[sliceVitalSignsSection].entry MS
 * section[sliceVitalSignsSection].entry ^slicing.discriminator.type = #profile
 * section[sliceVitalSignsSection].entry ^slicing.discriminator.path = "resolve()"
 * section[sliceVitalSignsSection].entry ^slicing.rules = #open
 * section[sliceVitalSignsSection].entry contains
-    sliceVitalSignsEntry 0..* MS and
     sliceBloodPressureEntry 0..* MS and
     sliceBodyWeightEntry 0..* MS and
     sliceBodyHeightEntry 0..* MS and
@@ -383,43 +383,40 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceBodyTemperatureEntry 0..* MS and
     sliceHeadCircumferenceEntry 0..* MS and
     sliceRespiratoryRateEntry 0..* MS
-* section[sliceVitalSignsSection].entry[sliceVitalSignsEntry] only Reference($us-core-vital-signs or $vitalsigns)
-* section[sliceVitalSignsSection].entry[sliceVitalSignsEntry] ^short = "Vital Signs Entries"
-* section[sliceVitalSignsSection].entry[sliceVitalSignsEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] only Reference($us-core-blood-pressure or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] only Reference($us-core-blood-pressure)
 * section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] ^short = "Blood Pressure Entries"
 * section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] only Reference($us-core-body-weight or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] only Reference($us-core-body-weight)
 * section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] ^short = "Body Weight Entries"
 * section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] only Reference($us-core-body-height or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] only Reference($us-core-body-height)
 * section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] ^short = "Body Height Entries"
 * section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceHeartRateEntry] only Reference($us-core-heart-rate or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceHeartRateEntry] only Reference($us-core-heart-rate)
 * section[sliceVitalSignsSection].entry[sliceHeartRateEntry] ^short = "Heart Rate Entries"
 * section[sliceVitalSignsSection].entry[sliceHeartRateEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] only Reference($us-core-pulse-oximetry or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] only Reference($us-core-pulse-oximetry)
 * section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] ^short = "Pulse Oximetry Entries"
 * section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBMIEntry] only Reference($us-core-bmi or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceBMIEntry] only Reference($us-core-bmi)
 * section[sliceVitalSignsSection].entry[sliceBMIEntry] ^short = "BMI Entries"
 * section[sliceVitalSignsSection].entry[sliceBMIEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePediatricWeightForHeightEntry] only Reference($pediatric-weight-for-height or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[slicePediatricWeightForHeightEntry] only Reference($pediatric-weight-for-height)
 * section[sliceVitalSignsSection].entry[slicePediatricWeightForHeightEntry] ^short = "Pediatric Weight For Height Entries"
 * section[sliceVitalSignsSection].entry[slicePediatricWeightForHeightEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePediatricHeadOccipitalFrontalCircumferenceEntry] only Reference($head-occipital-frontal-circumference-percentile or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[slicePediatricHeadOccipitalFrontalCircumferenceEntry] only Reference($head-occipital-frontal-circumference-percentile)
 * section[sliceVitalSignsSection].entry[slicePediatricHeadOccipitalFrontalCircumferenceEntry] ^short = "Pediatric Head Occipital Frontal Circumference Percentile Entries"
 * section[sliceVitalSignsSection].entry[slicePediatricHeadOccipitalFrontalCircumferenceEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePediatricBMIForAgeEntry] only Reference($pediatric-bmi-for-age or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[slicePediatricBMIForAgeEntry] only Reference($pediatric-bmi-for-age)
 * section[sliceVitalSignsSection].entry[slicePediatricBMIForAgeEntry] ^short = "Pediatric BMI For Age Entries"
 * section[sliceVitalSignsSection].entry[slicePediatricBMIForAgeEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] only Reference($us-core-body-temperature or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] only Reference($us-core-body-temperature)
 * section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] ^short = "Body Temperature Entries"
 * section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceHeadCircumferenceEntry] only Reference($us-core-head-circumference or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceHeadCircumferenceEntry] only Reference($us-core-head-circumference)
 * section[sliceVitalSignsSection].entry[sliceHeadCircumferenceEntry] ^short = "Head Circumference Entries"
 * section[sliceVitalSignsSection].entry[sliceHeadCircumferenceEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] only Reference($us-core-respiratory-rate or $us-core-vital-signs or $vitalsigns)
+* section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] only Reference($us-core-respiratory-rate)
 * section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] ^short = "Respiratory Rate Entries"
 * section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] ^isModifier = false
 * section[sliceSocialHistorySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -436,7 +433,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceSocialHistorySection].text ^short = "Social History Section narrative"
 * section[sliceSocialHistorySection].text ^definition = "Social History Section narrative"
 * section[sliceSocialHistorySection].entry 0..1 MS
-* section[sliceSocialHistorySection].entry only Reference($us-core-smokingstatus or Observation)
+* section[sliceSocialHistorySection].entry only Reference($us-core-smokingstatus)
 * section[sliceMedicalEquipmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceMedicalEquipmentSection] ^extension.valueString = "Section"
 * section[sliceMedicalEquipmentSection] ^short = "Medical Equipment Section"
@@ -450,7 +447,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceMedicalEquipmentSection].text 1.. MS
 * section[sliceMedicalEquipmentSection].text ^short = "Medical Equipment Section narrative"
 * section[sliceMedicalEquipmentSection].text ^definition = "Medical Equipment Section narrative"
-* section[sliceMedicalEquipmentSection].entry only Reference($us-core-implantable-device or Device)
+* section[sliceMedicalEquipmentSection].entry only Reference($us-core-implantable-device)
 * section[sliceMedicalEquipmentSection].entry MS
 * section[sliceCareTeamSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceCareTeamSection] ^extension.valueString = "Section"
@@ -465,7 +462,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceCareTeamSection].text 1.. MS
 * section[sliceCareTeamSection].text ^short = "Care Team Section narrative"
 * section[sliceCareTeamSection].text ^definition = "Care Team Section narrative"
-* section[sliceCareTeamSection].entry only Reference($us-core-careteam or CareTeam)
+* section[sliceCareTeamSection].entry only Reference($us-core-careteam)
 * section[sliceCareTeamSection].entry MS
 * section[sliceGoalsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceGoalsSection] ^extension.valueString = "Section"
@@ -480,7 +477,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceGoalsSection].text 1.. MS
 * section[sliceGoalsSection].text ^short = "Goals Section narrative"
 * section[sliceGoalsSection].text ^definition = "Goals Section narrative"
-* section[sliceGoalsSection].entry only Reference($us-core-goal or Goal)
+* section[sliceGoalsSection].entry only Reference($us-core-goal)
 * section[sliceGoalsSection].entry MS
 * section[slicePregnancySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[slicePregnancySection] ^extension.valueString = "Section"
@@ -502,10 +499,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[slicePregnancySection].entry contains
     slicePregnancyStatusObservation 0..* MS and
     slicePregnancyIntent 0..* MS
-* section[slicePregnancySection].entry[slicePregnancyStatusObservation] only Reference($us-core-observation-pregnancystatus or Observation)
+* section[slicePregnancySection].entry[slicePregnancyStatusObservation] only Reference($us-core-observation-pregnancystatus)
 * section[slicePregnancySection].entry[slicePregnancyStatusObservation] ^short = "Pregnancy Status Observation"
 * section[slicePregnancySection].entry[slicePregnancyStatusObservation] ^definition = "Pregnancy Status Observation entry"
-* section[slicePregnancySection].entry[slicePregnancyIntent] only Reference($us-core-observation-pregnancyintent or Observation)
+* section[slicePregnancySection].entry[slicePregnancyIntent] only Reference($us-core-observation-pregnancyintent)
 * section[slicePregnancySection].entry[slicePregnancyIntent] ^short = "Pregnancy Intent"
 * section[slicePregnancySection].entry[slicePregnancyIntent] ^definition = "Pregnancy Intent entry"
 * section[sliceCoverageSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -521,5 +518,5 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceCoverageSection].text 1.. MS
 * section[sliceCoverageSection].text ^short = "Coverage Section narrative"
 * section[sliceCoverageSection].text ^definition = "Coverage Section narrative"
-* section[sliceCoverageSection].entry only Reference(USCoreCoverageProfile or Coverage)
+* section[sliceCoverageSection].entry only Reference(USCoreCoverageProfile)
 * section[sliceCoverageSection].entry MS
