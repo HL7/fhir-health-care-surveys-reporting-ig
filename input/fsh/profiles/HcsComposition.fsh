@@ -365,7 +365,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceVitalSignsSection].text 1.. MS
 * section[sliceVitalSignsSection].text ^short = "Vital Signs narrative"
 * section[sliceVitalSignsSection].text ^definition = "Vital Signs narrative"
-* section[sliceVitalSignsSection].entry only Reference($us-core-vital-signs)
+//* section[sliceVitalSignsSection].entry only Reference($us-core-vital-signs)
 * section[sliceVitalSignsSection].entry MS
 * section[sliceVitalSignsSection].entry ^slicing.discriminator.type = #profile
 * section[sliceVitalSignsSection].entry ^slicing.discriminator.path = "resolve()"
