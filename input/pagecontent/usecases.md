@@ -104,3 +104,5 @@ The descriptions for each step in the above diagram include:
 * Step 10: The eCR Now FHIR App* writes back the response from the NCHS Data Store to the Data Source as appropriate. Note: The Response may have to be re-identified in some scenarios using Trust Services before it is written back to the EHR.
 
 * *or vendor developed solution
+
+{% include img.html img="alternative.png" caption="Figure 2.4 - Subscription & Subscription Alternative Models" %}
