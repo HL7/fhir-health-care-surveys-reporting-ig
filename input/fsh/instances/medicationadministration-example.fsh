@@ -3,8 +3,6 @@ InstanceOf: HcsMedicationAdministration
 Title: "HCS Medication Administration Example"
 Description: "An example showing a Medication Administration resource"
 Usage: #example
-* meta.versionId = "1"
-* meta.lastUpdated = "2020-11-29T02:03:28.045+00:00"
 * status = #completed
 * medicationCodeableConcept = $rxnorm#285018 "Lantus 100 UNT/ML Injectable Solution"
 * subject = Reference(Patient/1) "Donald Duck"

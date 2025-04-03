@@ -1,8 +1,6 @@
 Instance: rep-content-bundle-example
 InstanceOf: HealthcareSurveysContentBundle
 Usage: #inline
-* meta.versionId = "1"
-* meta.lastUpdated = "2020-11-29T02:03:28.045+00:00"
 * type = #collection
 * timestamp = "2020-11-20T11:15:33-10:00"
 * entry.fullUrl = "http://example.org/fhir/Composition/rep-composition-content-example"

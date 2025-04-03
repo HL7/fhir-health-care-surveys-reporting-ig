@@ -2,9 +2,6 @@ Instance: hcs-composition-content-example
 InstanceOf: HcsComposition
 Usage: #inline
 
-* meta.versionId = "23"
-* meta.lastUpdated = "2021-08-19T22:06:32.441+00:00"
-* meta.source = "#6i8cijintDjJ8In2"
 * identifier.value = "c03eab8c-11e8-4d0c-ad2a-b385395e27db"
 * status = #final
 * type = $loinc#75619-7

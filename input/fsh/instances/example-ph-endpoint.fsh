@@ -3,8 +3,6 @@ InstanceOf: USPublicHealthEndpoint
 Title: "Public Health Organization Endpoint example"
 Description: "An example showing a Public Health Organization Endpoint"
 Usage: #example
-* meta.versionId = "1"
-* meta.lastUpdated = "2020-11-29T02:03:28.045+00:00"
 * identifier.system = "http://example.pha.org/enpoint-identifier"
 * identifier.value = "pha-endpoint-id"
 * status = #active

@@ -239,7 +239,6 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceLabResultEntry 0..* MS and
     sliceDiagnosticResultEntry 0..* MS and
     sliceClinicalResultEntry 0..* MS and
-    sliceSimpleObservationEntry 0..* MS and
     sliceScreeningAssessmentEntry 0..* MS and
     sliceQuestionnaireResponseEntry 0..* MS
 * section[sliceResultsSection].entry[sliceLabResultEntry] only Reference($us-core-observation-lab)
@@ -251,9 +250,6 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceResultsSection].entry[sliceClinicalResultEntry] only Reference($us-core-observation-clinical-result)
 * section[sliceResultsSection].entry[sliceClinicalResultEntry] ^short = "Clinical Result Entries"
 * section[sliceResultsSection].entry[sliceClinicalResultEntry] ^isModifier = false
-* section[sliceResultsSection].entry[sliceSimpleObservationEntry] only Reference($us-core-simple-observation)
-* section[sliceResultsSection].entry[sliceSimpleObservationEntry] ^short = "Simple Observation Entries"
-* section[sliceResultsSection].entry[sliceSimpleObservationEntry] ^isModifier = false
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] only Reference($us-core-observation-screening-assessment)
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^short = "Screening Assessment Entries"
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^isModifier = false

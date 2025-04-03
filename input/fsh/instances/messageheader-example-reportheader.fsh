@@ -3,8 +3,6 @@ InstanceOf: USPublicHealthMessageHeader
 Title: "MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"
 Description: "MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"
 Usage: #example
-* meta.versionId = "1"
-* meta.lastUpdated = "2020-11-29T02:03:28.045+00:00"
 * extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encrypted-extension"
 * extension[=].valueBoolean = false
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-report-initiation-type-extension"
