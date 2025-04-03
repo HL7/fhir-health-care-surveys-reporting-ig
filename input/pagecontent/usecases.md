@@ -105,5 +105,5 @@ The descriptions for each step in the above diagram include:
 
 * *or vendor developed solution
 
-{% include img.html img="alternative.png" caption="Figure 2.4 - Subscription & Scheduled Task Notification Models" %}
+{% include img.html img="alternatives.png" caption="Figure 2.4 - Subscription & Scheduled Task Notification Models" %}
 
