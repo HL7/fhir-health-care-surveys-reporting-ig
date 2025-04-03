@@ -78,12 +78,12 @@ The following is a diagram of the workflow based on the above user story used fo
 
 * Data Source (e.g., EHR, clinical data repository)
 * eCR Now FHIR App or vendor developed solution
-* NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
+* NCHS Data Store acting as a Data Receiver with FHIR capabilities
 * Knowledge Artifact Repository
 * Trust Service Provider
 
 ###### Interactions between Actors and Systems for Health Care Surveys
-This section outlines the high-level interactions between the various MedMorph Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
+This section outlines the high-level interactions between the various Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
 
 {% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - Healthcare Surveys Actors and Systems" %}
 
@@ -105,4 +105,5 @@ The descriptions for each step in the above diagram include:
 
 * *or vendor developed solution
 
-{% include img.html img="alternative.png" caption="Figure 2.4 - Subscription & Subscription Alternative Models" %}
+{% include img.html img="alternative.png" caption="Figure 2.4 - Subscription & Scheduled Task Notification Models" %}
+
