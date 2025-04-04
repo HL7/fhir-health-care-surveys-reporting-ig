@@ -34,7 +34,7 @@ Usage: #example
 </div>
 """
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/example-of-Condition)
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] = Reference(Condition/example-of-encounter-diagnosis)
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] = Reference(Condition/encounter-of-encounter-diagnosis)
 
 
 /* Allergies Section (sliceAllergiesSection) */
@@ -60,7 +60,7 @@ Usage: #example
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(medicationadministrationone-example)
 
 /* Medications Administered Section (sliceMedicationsAdministeredSection) - Optional */
-* section[sliceMedicationsAdministeredSection].code = $loinc#29549-3 "Medications Administered"
+* section[sliceMedicationsAdministeredSection].code = $loinc#29549-3 "Medication administered"
 * section[sliceMedicationsAdministeredSection].text.status = #generated
 * section[sliceMedicationsAdministeredSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -543,7 +543,7 @@ Usage: #example
 * goal = Reference(goal-example)
 * activity.detail.status = #in-progress
 * activity.detail.description = "Rest and increase fluid intake"
-* activity.detail.code = http://snomed.info/sct#304510005 "Self-care education"
+* activity.detail.code = http://snomed.info/sct#304510005 "Advice to avoid exercise"
 
 // Immunization
 Instance: immunization-example
@@ -763,11 +763,11 @@ Usage: #example
 * subject = Reference(Patient/1)
 * encounter = Reference(Encounter/example-1)
 * period.start = "2025-01-02"
-* participant[0].role = http://snomed.info/sct#446050000 "Primary care provider"
+* participant[0].role = http://snomed.info/sct#446050000 "Primary care physician (occupation)"
 * participant[0].member = Reference(Practitioner/1)
 * participant[0].period.start = "2025-01-02"
 * participant[0].onBehalfOf = Reference(organization-example)
-* participant[1].role = http://snomed.info/sct#309343006 "Pulmonologist"
+* participant[1].role = http://snomed.info/sct#309343006 "Physician"
 * participant[1].member = Reference(practitioner-pulmonologist-example)
 * participant[1].period.start = "2025-01-02"
 * participant[1].onBehalfOf = Reference(organization-example)
