@@ -71,7 +71,7 @@ Usage: #example
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] = Reference(medication-ibuprofen-example)
 
 /* Admission Medications Section (sliceAdmissionMedicationsSection) - Optional */
-* section[sliceAdmissionMedicationsSection].code = $loinc#42346-7 "Medications on Admission"
+* section[sliceAdmissionMedicationsSection].code = $loinc#42346-7 "Medications on admission (narrative)"
 * section[sliceAdmissionMedicationsSection].text.status = #generated
 * section[sliceAdmissionMedicationsSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -109,7 +109,7 @@ Usage: #example
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(observation-screening-example)
 
 /* Notes Section (sliceNotesSection) - Optional */
-* section[sliceNotesSection].code = $loinc#28650-0 "Provider Notes"
+* section[sliceNotesSection].code = $loinc#28650-0 "Clinical notes and chart sections Set"
 * section[sliceNotesSection].text.status = #generated
 * section[sliceNotesSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -120,7 +120,7 @@ Usage: #example
 * section[sliceNotesSection].entry[sliceDiagnosticReportEntry] = Reference(diagnosticreport-note-example)
 
 /* Plan of Treatment Section (slicePlanOfTreatmentSection) - Optional */
-* section[slicePlanOfTreatmentSection].code = $loinc#18776-5 "Plan of Treatment"
+* section[slicePlanOfTreatmentSection].code = $loinc#18776-5 "Plan of care note"
 * section[slicePlanOfTreatmentSection].text.status = #generated
 * section[slicePlanOfTreatmentSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -191,7 +191,7 @@ Usage: #example
 * section[sliceSocialHistorySection].entry = Reference(observation-smoking-example)
 
 /* Medical Equipment Section (sliceMedicalEquipmentSection) - Optional */
-* section[sliceMedicalEquipmentSection].code = $loinc#46264-8 "Medical Equipment"
+* section[sliceMedicalEquipmentSection].code = $loinc#46264-8 "History of medical device use"
 * section[sliceMedicalEquipmentSection].text.status = #generated
 * section[sliceMedicalEquipmentSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -201,7 +201,7 @@ Usage: #example
 * section[sliceMedicalEquipmentSection].entry = Reference(device-example)
 
 /* Care Team Section (sliceCareTeamSection) - Optional */
-* section[sliceCareTeamSection].code = $loinc#85847-2 "Care team Information"
+* section[sliceCareTeamSection].code = $loinc#85847-2 "Patient Care team information"
 * section[sliceCareTeamSection].text.status = #generated
 * section[sliceCareTeamSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -223,7 +223,7 @@ Usage: #example
 * section[sliceGoalsSection].entry = Reference(goal-example)
 
 /* Pregnancy Section (slicePregnancySection) - Optional */
-* section[slicePregnancySection].code = $loinc#90767-5 "Pregnancy Status"
+* section[slicePregnancySection].code = $loinc#90767-5 "Pregnancy summary Document"
 * section[slicePregnancySection].text.status = #generated
 * section[slicePregnancySection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -254,7 +254,7 @@ Usage: #example
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* code = http://snomed.info/sct#195662009 "Acute bronchitis"
+* code = http://snomed.info/sct#195662009 "Acute viral pharyngitis"
 * subject = Reference(Patient/1)
 * onsetDateTime = "2025-01-01"
 * recordedDate = "2025-01-02"
@@ -270,7 +270,7 @@ Usage: #example
 * subject = Reference(Patient/1)
 * effectiveDateTime = "2025-01-02T09:00:00Z"
 * performer.actor = Reference(1-of-Practitioner)
-* reasonCode = http://snomed.info/sct#43724002 "Cough"
+* reasonCode = http://snomed.info/sct#43724002 "Shivering"
 * dosage.text = "400 mg orally"
 * dosage.route = http://snomed.info/sct#26643006 "Oral route"
 * dosage.dose.value = 400
@@ -281,7 +281,7 @@ Instance: medication-ibuprofen-example
 InstanceOf: $us-core-medication
 Title: "Medication - Ibuprofen Example"
 Usage: #example
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#1049589 "Ibuprofen 200 MG Oral Tablet"
+* code = http://www.nlm.nih.gov/research/umls/rxnorm#1049589 "ibuprofen 400 MG / oxycodone hydrochloride 5 MG Oral Tablet"
 * status = #active
 * form = http://snomed.info/sct#385055001 "Tablet"
 
@@ -370,7 +370,7 @@ Title: "Medication - Lantus Example"
 Usage: #example
 * code = http://www.nlm.nih.gov/research/umls/rxnorm#847232 "3 ML insulin glargine 100 UNT/ML Pen Injector [Lantus]"
 * status = #active
-* form = http://snomed.info/sct#385219001 "Injection solution"
+* form = http://snomed.info/sct#385219001 "Solution for injection"
 
 
 // Lab Observation
@@ -380,7 +380,7 @@ Title: "Laboratory Observation Example"
 Usage: #example
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
-* code = http://loinc.org#26464-8 "White blood cells [#/volume] in Blood"
+* code = http://loinc.org#26464-8 "Leukocytes [#/volume] in Blood"
 * subject = Reference(Patient/1)
 * effectiveDateTime = "2025-01-02"
 * issued = "2025-01-02T10:30:00Z"
@@ -398,7 +398,7 @@ Title: "Diagnostic Report Laboratory Example"
 Usage: #example
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
-* code = http://loinc.org#58410-2 "Complete blood count panel - Blood"
+* code = http://loinc.org#58410-2 "CBC panel - Blood by Automated count"
 * subject = Reference(Patient/1)
 * encounter = Reference(Encounter/example-1)
 * effectiveDateTime = "2025-01-02"
@@ -469,7 +469,7 @@ Title: "Diagnostic Report Note Example"
 Usage: #example
 * status = #final
 * category[us-core] = http://loinc.org#LP29684-5 "Radiology"
-* code = http://loinc.org#42272-5 "Chest X-ray 2 Views"
+* code = http://loinc.org#42272-5 "XR Chest PA and Lateral"
 * subject = Reference(Patient/1)
 * encounter = Reference(Encounter/example-1)
 * effectiveDateTime = "2025-01-02T10:00:00Z"
@@ -502,9 +502,9 @@ Instance: medication-plan-example
 InstanceOf:  $us-core-medication
 Title: "Medication Plan Example"
 Usage: #example
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#1870196 "Benzonatate 200 MG Oral Capsule"
+* code = http://www.nlm.nih.gov/research/umls/rxnorm#1870196 "betamethasone / gentamicin Topical Spray"
 * status = #active
-* form = http://snomed.info/sct#385059009 "Capsule"
+* form = http://snomed.info/sct#421637006 "Lyophilized powder for conventional release solution for injection (dose form)"
 
 // Service Request
 Instance: servicerequest-example
@@ -515,13 +515,13 @@ Usage: #example
 * intent = #order
 * category[us-core] = http://terminology.hl7.org/CodeSystem/service-category#diagnostics
 * priority = #routine
-* code = http://loinc.org#24627-2 "Chest X-ray PA and Lateral"
+* code = http://loinc.org#24627-2 "CT Chest"
 * subject = Reference(Patient/1)
 * encounter = Reference(Encounter/example-1)
 * occurrenceDateTime = "2025-01-03T10:00:00Z"
 * authoredOn = "2025-01-02"
 * requester = Reference(Practitioner/1)
-* reasonCode = http://snomed.info/sct#195662009 "Acute bronchitis"
+* reasonCode = http://snomed.info/sct#195662009 "Acute viral pharyngitis"
 
 // Care Plan
 Instance: careplan-example
@@ -559,7 +559,7 @@ Usage: #example
 * manufacturer = Reference(organization-example)
 * lotNumber = "123456A"
 * expirationDate = "2025-06-30"
-* site = http://snomed.info/sct#368208006 "Left deltoid"
+* site = http://snomed.info/sct#368208006 "Left upper arm structure"
 * route = http://snomed.info/sct#78421000 "Intramuscular route"
 * doseQuantity.value = 0.5
 * doseQuantity.unit = "mL"
@@ -750,7 +750,7 @@ Usage: #example
 * serialNumber = "SER987654"
 * deviceName.name = "No implantable devices"
 * deviceName.type = #user-friendly-name
-* type = http://snomed.info/sct#56961003 "Cardiac pacemaker, device (physical object)"
+* type = http://snomed.info/sct#56961003 "Cardiac transvenous pacemaker"
 * patient = Reference(Patient/1)
 
 // Care Team
@@ -785,6 +785,7 @@ Usage: #example
 * startDate = "2025-01-02"
 * target.dueDate = "2025-01-16"
 * target.detailString = "Resolution of cough and other symptoms"
+* target.measure = http://snomed.info/sct#431855005 "Chronic kidney disease stage 1 (disorder)"
 * statusDate = "2025-01-02"
 * statusReason = "Treatment initiated"
 * expressedBy = Reference(Patient/1)
@@ -812,11 +813,11 @@ Title: "Pregnancy Intent Example"
 Usage: #example
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = http://loinc.org#86645-9 "Pregnancy intention"
+* code = http://loinc.org#86645-9 "Pregnancy intention in the next year - Reported"
 * subject = Reference(Patient/1)
 * effectiveDateTime = "2025-01-02"
 * performer = Reference(Practitioner/1)
-* valueCodeableConcept = http://loinc.org#LA26683-5 "Not intending to become pregnant in the next year"
+* valueCodeableConcept = http://loinc.org#LA26683-5 "Not pregnant"
 
 // Coverage
 Instance: coverage-example
@@ -824,7 +825,7 @@ InstanceOf: USCoreCoverageProfile
 Title: "Coverage Example"
 Usage: #example
 * status = #active
-* type = http://terminology.hl7.org/CodeSystem/v3-ActCode#EHCPOL "extended health care policy"
+* type = http://terminology.hl7.org/CodeSystem/v3-ActCode#EHCPOL "extended healthcare"
 * policyHolder = Reference(Patient/1)
 * subscriber = Reference(Patient/1)
 * subscriberId = "XYZ123456789"
@@ -849,7 +850,7 @@ InstanceOf:  $us-core-organization
 Title: "Organization Example"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "9876543210"
+* identifier.value = "1234567893"
 * active = true
 * type = http://terminology.hl7.org/CodeSystem/organization-type#prov "Healthcare Provider"
 * name = "General Hospital"
@@ -871,7 +872,7 @@ InstanceOf: Organization
 Title: "Payer Organization Example"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "6543210987"
+* identifier.value = "1234567892"
 * active = true
 * type = http://terminology.hl7.org/CodeSystem/organization-type#pay "Payer"
 * name = "Blue Cross Blue Shield"
@@ -916,7 +917,7 @@ InstanceOf: USCorePractitionerProfile
 Title: "Pulmonologist Practitioner Example"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1234567890"
+* identifier.value = "1234567891"
 * name.family = "Chen"
 * name.given = "Sarah"
 * name.prefix = "Dr."
@@ -939,7 +940,7 @@ Title: "Diagnostic Report Laboratory Example"
 Usage: #example
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
-* code = http://loinc.org#58410-2 "Complete blood count panel - Blood"
+* code = http://loinc.org#58410-2 "CBC panel - Blood by Automated count"
 * subject = Reference(Patient/1)
 * encounter = Reference(Encounter/example-1)
 * effectiveDateTime = "2025-01-02"

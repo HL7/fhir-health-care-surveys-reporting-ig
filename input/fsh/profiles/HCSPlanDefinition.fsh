@@ -28,7 +28,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 
 * action.code MS
 * action.code 0..1
-* action.code from USPublicHealthValueSetPlanDefinitionAction (extensible)
+* action.code from $USPHPlanDefAction (extensible)
 
 // 2) Define slices for your five actions
 * action contains

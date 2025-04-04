@@ -4,7 +4,7 @@ Title: "Healthcare Organization Example"
 Description: "An example showing a HealthCare Organization"
 Usage: #example
 * identifier.system = "http://example.healthcare.org/fhir"
-* identifier.value = "1063494177"
+* identifier.value = "1234567898"
 * active = true
 * name = "Example Healthcare Organization"
 * telecom.system = #phone

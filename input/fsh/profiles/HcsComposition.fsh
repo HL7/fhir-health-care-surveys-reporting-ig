@@ -179,7 +179,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Statement Entry"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Request Entry"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
@@ -210,7 +210,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
 * section[sliceMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest)
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Statement Entry"
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Result Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] only Reference($us-core-medicationdispense)
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] ^short = "Medication Dispense Entry"
@@ -218,6 +218,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
 * section[sliceMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[sliceMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
+
 * section[sliceResultsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceResultsSection] ^extension.valueString = "Section"
 * section[sliceResultsSection] ^short = "Results Section"
@@ -253,10 +254,11 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] only Reference($us-core-observation-screening-assessment)
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^short = "Screening Assessment Entries"
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^isModifier = false
-//removed us-core-questionnaireresponse
-//* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] only Reference($sdc-questionnaireresponse)
-//* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^short = "Questionnaire Response Entries"
-//* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^isModifier = false
+//* removed us-core-questionnaireresponse
+* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] only Reference($us-core-questionnaireresponse )
+* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^short = "Questionnaire Response Entries"
+* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^isModifier = false
+
 * section[sliceNotesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceNotesSection] ^extension.valueString = "Section"
 * section[sliceNotesSection] ^short = "Clinical and Diagnostic Reports Section"
@@ -290,7 +292,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[slicePlanOfTreatmentSection] ^isModifier = false
 * section[slicePlanOfTreatmentSection].code 1.. MS
 * section[slicePlanOfTreatmentSection].code = $loinc#18776-5
-* section[slicePlanOfTreatmentSection].code ^short = "Plan of Treatment code"
+* section[slicePlanOfTreatmentSection].code ^short = "Plan of care note"
 * section[slicePlanOfTreatmentSection].code ^definition = "Plan of Treatment code"
 * section[slicePlanOfTreatmentSection].code ^isModifier = false
 * section[slicePlanOfTreatmentSection].text 1.. MS

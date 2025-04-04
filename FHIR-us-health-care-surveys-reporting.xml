@@ -87,8 +87,6 @@
 <artifact id="ServiceRequest/servicerequest-example" key="ServiceRequest-servicerequest-example" name="Service Request Example"/>
 <artifact id="ServiceRequest/example" key="ServiceRequest-example" name="ServiceRequest Example"/>
 <artifact id="Observation/observation-smoking-example" key="Observation-observation-smoking-example" name="Smoking Status Example"/>
-<artifact id="CodeSystem/us-ph-codesystem-plandefinition-actions" key="CodeSystem-us-ph-codesystem-plandefinition-actions" name="US Public Health CodeSystem - PlanDefinition Actions"/>
-<artifact id="ValueSet/us-ph-valueset-plandefinition-action" key="ValueSet-us-ph-valueset-plandefinition-action" name="US Public Health VaueSet - PlanDefinition Action"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
