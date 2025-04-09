@@ -14,27 +14,27 @@ Usage: #example
 * title = "National Health Care Surveys report"
 
 /* Reason for Visit Section (sliceReasonForVisitSection) */
-* section[sliceReasonForVisitSection].title = "Reason for Visit Section"
-* section[sliceReasonForVisitSection].code = $loinc#29299-5 "Reason for visit Narrative"
-* section[sliceReasonForVisitSection].text.status = #generated
-* section[sliceReasonForVisitSection].text.div = """
+* section[sliceReasonForVisitSection][+].title = "Reason for Visit Section"
+* section[sliceReasonForVisitSection][=].code = $loinc#29299-5 "Reason for visit Narrative"
+* section[sliceReasonForVisitSection][=].text.status = #generated
+* section[sliceReasonForVisitSection][=].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
   <p>Reason for Visit: Bad cough</p>
 </div>
 """
 
 /* Problems Section (sliceProblemSection) */
-* section[sliceProblemSection].title = "Problems Section"
-* section[sliceProblemSection].code = $loinc#11450-4 "Problem list - Reported"
-* section[sliceProblemSection].text.status = #generated
-* section[sliceProblemSection].text.div = """
+* section[sliceProblemSection][+].title = "Problems Section"
+* section[sliceProblemSection][=].code = $loinc#11450-4 "Problem list - Reported"
+* section[sliceProblemSection][=].text.status = #generated
+* section[sliceProblemSection][=].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
   <p>Single liveborn, born in hospital</p>
   <p>Acute bronchitis</p>
 </div>
 """
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/example-of-Condition)
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] = Reference(Condition/encounter-of-encounter-diagnosis)
+* section[sliceProblemSection][=].entry[sliceProblemsHealthConcerns] = Reference(Condition/example-of-Condition)
+* section[sliceProblemSection][=].entry[sliceEncounterDiagnosis] = Reference(Condition/encounter-of-encounter-diagnosis)
 
 
 /* Allergies Section (sliceAllergiesSection) */
@@ -57,7 +57,7 @@ Usage: #example
   Taking Lantus
 </div>
 """
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(medicationadministrationone-example)
+* section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
 
 /* Medications Administered Section (sliceMedicationsAdministeredSection) - Optional */
 * section[sliceMedicationsAdministeredSection].code = $loinc#29549-3 "Medication administered"
@@ -67,8 +67,8 @@ Usage: #example
   <p>Ibuprofen 400mg administered orally at 9:00AM</p>
 </div>
 """
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] = Reference(medicationadministrationone-example)
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] = Reference(medication-ibuprofen-example)
+* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
+* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] = Reference(Medication/medication-ibuprofen-example)
 
 /* Admission Medications Section (sliceAdmissionMedicationsSection) - Optional */
 * section[sliceAdmissionMedicationsSection].code = $loinc#42346-7 "Medications on admission (narrative)"
@@ -78,8 +78,8 @@ Usage: #example
   <p>Patient reported taking Lisinopril 10mg daily prior to admission</p>
 </div>
 """
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] = Reference(medicationrequest-admission-example)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] = Reference(medication-lisinopril-example)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/medicationrequest-admission-example)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] = Reference(Medication/medication-lisinopril-example)
 
 /* Medications Section (sliceMedicationsSection) - Optional */
 * section[sliceMedicationsSection].code = $loinc#10160-0 "History of Medication use Narrative"
@@ -89,10 +89,10 @@ Usage: #example
   Taking Lantus
 </div>
 """
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(medicationadministration-lantus-example)
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] = Reference(medicationrequest-lantus-example)
-* section[sliceMedicationsSection].entry[sliceMedicationDispense] = Reference(medicationdispense-example)
-* section[sliceMedicationsSection].entry[sliceMedicationReferences] = Reference(medication-lantus-example)
+* section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministration-lantus-example)
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/medicationrequest-lantus-example)
+* section[sliceMedicationsSection].entry[sliceMedicationDispense] = Reference(MedicationDispense/medicationdispense-example)
+* section[sliceMedicationsSection].entry[sliceMedicationReferences] = Reference(Medication/medication-lantus-example)
 
 /* Results Section (sliceResultsSection) - Optional */
 * section[sliceResultsSection].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
@@ -103,10 +103,10 @@ Usage: #example
   <p>CMP Results: Glucose 98, BUN 14, Cr 0.8, Na 140, K 3.8, Cl 102</p>
 </div>
 """
-* section[sliceResultsSection].entry[sliceLabResultEntry] = Reference(observation-lab-example)
-* section[sliceResultsSection].entry[sliceDiagnosticResultEntry] = Reference(diagnosticreport-lab-example)
-* section[sliceResultsSection].entry[sliceClinicalResultEntry] = Reference(observation-clinical-example)
-* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(observation-screening-example)
+* section[sliceResultsSection].entry[sliceLabResultEntry] = Reference(Observation/observation-lab-example)
+* section[sliceResultsSection].entry[sliceDiagnosticResultEntry] = Reference(DiagnosticReport/diagnosticreport-lab-example)
+//* section[sliceResultsSection].entry[sliceClinicalResultEntry] = Reference(Observation/observation-clinical-example)
+* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(Observation/observation-screening-example)
 
 /* Notes Section (sliceNotesSection) - Optional */
 * section[sliceNotesSection].code = $loinc#28650-0 "Clinical notes and chart sections Set"
@@ -116,8 +116,8 @@ Usage: #example
   <p>Patient presented with one week history of cough and low-grade fever. Lungs clear on examination. No lymphadenopathy.</p>
 </div>
 """
-* section[sliceNotesSection].entry[sliceDocumentReferenceEntry] = Reference(documentreference-example)
-* section[sliceNotesSection].entry[sliceDiagnosticReportEntry] = Reference(diagnosticreport-note-example)
+* section[sliceNotesSection].entry[sliceDocumentReferenceEntry] = Reference(DocumentReference/documentreference-example)
+* section[sliceNotesSection].entry[sliceDiagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-note-example)
 
 /* Plan of Treatment Section (slicePlanOfTreatmentSection) - Optional */
 * section[slicePlanOfTreatmentSection].code = $loinc#18776-5 "Plan of care note"
@@ -127,10 +127,10 @@ Usage: #example
   <p>Continue symptomatic treatment. Return if symptoms worsen or fail to improve within 5 days.</p>
 </div>
 """
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] = Reference(medicationrequest-plan-example)
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] = Reference(medication-plan-example)
-* section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] = Reference(servicerequest-example)
-* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] = Reference(careplan-example)
+* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/medicationrequest-plan-example)
+* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] = Reference(Medication/medication-plan-example)
+* section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] = Reference(ServiceRequest/servicerequest-example)
+* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] = Reference(CarePlan/careplan-example)
 
 /* Immunizations Section (sliceImmunizationsSection) - Optional */
 * section[sliceImmunizationsSection].code = $loinc#11369-6 "History of Immunization Narrative"
@@ -141,7 +141,7 @@ Usage: #example
   <p>COVID-19 vaccine: Last dose received 06/20/2024</p>
 </div>
 """
-* section[sliceImmunizationsSection].entry = Reference(immunization-example)
+* section[sliceImmunizationsSection].entry = Reference(Immunization/immunization-example)
 
 /* Procedures Section (sliceProceduresSection) - Optional */
 * section[sliceProceduresSection].code = $loinc#47519-4 "History of Procedures Document"
@@ -152,7 +152,7 @@ Usage: #example
   <p>Colonoscopy (2020)</p>
 </div>
 """
-* section[sliceProceduresSection].entry = Reference(procedure-example)
+* section[sliceProceduresSection].entry = Reference(Procedure/procedure-example)
 
 /* Vital Signs Section (sliceVitalSignsSection) - Optional */
 * section[sliceVitalSignsSection].code = $loinc#8716-3 "Vital signs"
@@ -169,14 +169,14 @@ Usage: #example
   <p>BMI: 23.5 kg/m²</p>
 </div>
 """
-* section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] = Reference(observation-bp-example)
-* section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] = Reference(observation-weight-example)
-* section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] = Reference(observation-height-example)
-* section[sliceVitalSignsSection].entry[sliceHeartRateEntry] = Reference(observation-heartrate-example)
-* section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] = Reference(observation-oximetry-example)
-* section[sliceVitalSignsSection].entry[sliceBMIEntry] = Reference(observation-bmi-example)
-* section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] = Reference(observation-temperature-example)
-* section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] = Reference(observation-resprate-example)
+* section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] = Reference(Observation/observation-bp-example)
+* section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] = Reference(Observation/observation-weight-example)
+* section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] = Reference(Observation/observation-height-example)
+* section[sliceVitalSignsSection].entry[sliceHeartRateEntry] = Reference(Observation/observation-heartrate-example)
+* section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] = Reference(Observation/observation-oximetry-example)
+* section[sliceVitalSignsSection].entry[sliceBMIEntry] = Reference(Observation/observation-bmi-example)
+* section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] = Reference(Observation/observation-temperature-example)
+* section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] = Reference(Observation/observation-resprate-example)
 
 /* Social History Section (sliceSocialHistorySection) - Optional */
 * section[sliceSocialHistorySection].code = $loinc#29762-2 "Social History Narrative"
@@ -188,7 +188,7 @@ Usage: #example
   <p>Lives with spouse and two children</p>
 </div>
 """
-* section[sliceSocialHistorySection].entry = Reference(observation-smoking-example)
+* section[sliceSocialHistorySection].entry = Reference(Observation/observation-smoking-example)
 
 /* Medical Equipment Section (sliceMedicalEquipmentSection) - Optional */
 * section[sliceMedicalEquipmentSection].code = $loinc#46264-8 "History of medical device use"
@@ -198,7 +198,7 @@ Usage: #example
   <p>No implantable devices</p>
 </div>
 """
-* section[sliceMedicalEquipmentSection].entry = Reference(device-example)
+* section[sliceMedicalEquipmentSection].entry = Reference(Device/device-example)
 
 /* Care Team Section (sliceCareTeamSection) - Optional */
 * section[sliceCareTeamSection].code = $loinc#85847-2 "Patient Care team information"
@@ -209,7 +209,7 @@ Usage: #example
   <p>Pulmonologist: Dr. Sarah Chen</p>
 </div>
 """
-* section[sliceCareTeamSection].entry = Reference(careteam-example)
+* section[sliceCareTeamSection].entry = Reference(CareTeam/careteam-example)
 
 /* Goals Section (sliceGoalsSection) - Optional */
 * section[sliceGoalsSection].code = $loinc#61146-7 "Goals"
@@ -220,7 +220,7 @@ Usage: #example
   <p>Improve sleep quality</p>
 </div>
 """
-* section[sliceGoalsSection].entry = Reference(goal-example)
+* section[sliceGoalsSection].entry = Reference(Goal/goal-example)
 
 /* Pregnancy Section (slicePregnancySection) - Optional */
 * section[slicePregnancySection].code = $loinc#90767-5 "Pregnancy summary Document"
@@ -230,8 +230,8 @@ Usage: #example
   <p>Patient is not currently pregnant</p>
 </div>
 """
-* section[slicePregnancySection].entry[slicePregnancyStatusObservation] = Reference(observation-pregnancy-status-example)
-* section[slicePregnancySection].entry[slicePregnancyIntent] = Reference(observation-pregnancy-intent-example)
+* section[slicePregnancySection].entry[slicePregnancyStatusObservation] = Reference(Observation/observation-pregnancy-status-example)
+* section[slicePregnancySection].entry[slicePregnancyIntent] = Reference(Observation/observation-pregnancy-intent-example)
 
 /* Coverage Section (sliceCoverageSection) - Optional */
 * section[sliceCoverageSection].code = $loinc#48768-6 "Payment sources Document"
@@ -243,7 +243,7 @@ Usage: #example
   <p>Group: ABC987</p>
 </div>
 """
-* section[sliceCoverageSection].entry = Reference(coverage-example)
+* section[sliceCoverageSection].entry = Reference(Coverage/coverage-example)
 
 
 // Problem - Health Concern
@@ -278,7 +278,7 @@ Usage: #example
 
 // Medication - Ibuprofen
 Instance: medication-ibuprofen-example
-InstanceOf: $us-core-medication
+InstanceOf: USCoreMedicationProfile
 Title: "Medication - Ibuprofen Example"
 Usage: #example
 * code = http://www.nlm.nih.gov/research/umls/rxnorm#1049589 "ibuprofen 400 MG / oxycodone hydrochloride 5 MG Oral Tablet"
@@ -306,7 +306,7 @@ Usage: #example
 
 // Medication - Lisinopril
 Instance: medication-lisinopril-example
-InstanceOf: $us-core-medication
+InstanceOf: USCoreMedicationProfile
 Title: "Medication - Lisinopril Example"
 Usage: #example
 * code = http://www.nlm.nih.gov/research/umls/rxnorm#314076 "Lisinopril 10 MG Oral Tablet"
@@ -513,7 +513,7 @@ Title: "Service Request Example"
 Usage: #example
 * status = #active
 * intent = #order
-* category[us-core] = http://terminology.hl7.org/CodeSystem/service-category#diagnostics
+* category[us-core] =  http://snomed.info/sct#386053000 "Evaluation procedure (procedure)"
 * priority = #routine
 * code = http://loinc.org#24627-2 "CT Chest"
 * subject = Reference(Patient/1)
@@ -917,7 +917,7 @@ InstanceOf: USCorePractitionerProfile
 Title: "Pulmonologist Practitioner Example"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1234567891"
+* identifier.value = "1417947457"
 * name.family = "Chen"
 * name.given = "Sarah"
 * name.prefix = "Dr."

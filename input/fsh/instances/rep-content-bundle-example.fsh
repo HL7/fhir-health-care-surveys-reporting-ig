@@ -6,9 +6,6 @@ Usage: #inline
 * entry.fullUrl = "http://example.org/fhir/Composition/rep-composition-content-example"
 * entry.resource.resourceType = "Composition"
 * entry.resource.id = "rep-composition-content-example"
-* entry.resource.meta.versionId = "23"
-* entry.resource.meta.lastUpdated = "2021-08-19T22:06:32.441+00:00"
-* entry.resource.meta.source = "#6i8cijintDjJ8In2"
 * entry.resource.meta.profile = "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-composition"
 * entry.resource.text.status = #extensions
 * entry.resource.text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b> Amy Shaw data for HCS </b></p></div>"
