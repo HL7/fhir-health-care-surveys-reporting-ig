@@ -8,7 +8,7 @@ Usage: #inline
 * extension[=].valueCodeableConcept = $us-ph-report-initiation-types#subscription-notification
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-message-processing-category-extension"
 * extension[=].valueCode = http://hl7.org/fhir/message-significance-category#notification
-* eventCoding = $us-ph-messageheader-message-types#cancer-report-message
+* eventCoding = $us-ph-messageheader-message-types#healthcare-survey-report-message
 * destination.name = "PHA endpoint"
 * destination.endpoint = "http://example.pha.org/fhir"
 * sender = Reference(example-healthcare-org)
