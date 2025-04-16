@@ -1,14 +1,13 @@
-Instance: example-of-HcsMedicationRequest
+Instance: hcs-MedicationRequest
 InstanceOf: HcsMedicationRequest
 Title: "MedicationRequest Example"
 Description: "An example showing a MedicationRequest for HCS reporting."
 Usage: #example
-* id = "example"
 * status = #entered-in-error
 * intent = #order
 * medicationCodeableConcept = $sct#27658006 "Amoxicillin-containing product"
-* subject = Reference(1-of-Patient) "Dominique"
+* subject = Reference(patient-ledner) "Dominique"
 * authoredOn = "2015-11-01"
-* requester = Reference(1-of-Practitioner) "Dr. Smith"
-* encounter = Reference(example-1)
+* requester = Reference(practitioner-1) "Dr. Smith"
+* encounter = Reference(encounter-ambulatory)
 * note.text = "Patient indicated that they thought it was Amoxicillin they were taking but it was really Erythromycin"

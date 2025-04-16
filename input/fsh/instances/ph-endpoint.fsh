@@ -1,4 +1,4 @@
-Instance: example-ph-endpoint
+Instance: ph-endpoint
 InstanceOf: USPublicHealthEndpoint
 Title: "Public Health Organization Endpoint example"
 Description: "An example showing a Public Health Organization Endpoint"
@@ -8,7 +8,7 @@ Usage: #example
 * status = #active
 * connectionType = $endpoint-connection-type#hl7-fhir-rest
 * name = "PHAReceiver"
-* managingOrganization = Reference(example-pha-org)
+* managingOrganization = Reference(Organization/organization-pha)
 * contact.system = #email
 * contact.value = "endpointmanager@example.pha.org"
 * contact.use = #work

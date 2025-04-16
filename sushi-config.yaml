@@ -5,8 +5,8 @@ applyExtensionMetadataToRoot: false
 id: hl7.fhir.us.health-care-surveys-reporting
 name: HealthcareSurveysReporting
 title: Health Care Surveys Reporting
-copyrightYear: 2020+
-releaseLabel: STU 1.0.1
+copyrightYear: 2025+
+releaseLabel: STU 2.0.0
 description: >
   This implementation guide (IG) provides Health Level Seven (HL7 FHIR) resources to define standards. 
   This guide contains a library of FHIR profiles and is compliant with FHIR Release 4.
@@ -18,10 +18,10 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: pher
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    valueCode: trial-use
+    valueCode: draft
 jurisdiction: urn:iso:std:iso:3166#US
 status: draft
-version: 1.0.1
+version: 2.0.0
 dependencies:
   hl7.terminology.r4:
     version: 6.1.0

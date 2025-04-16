@@ -1,5 +1,5 @@
-Instance: example-pha-org
-InstanceOf: Organization
+Instance: organization-pha
+InstanceOf: USCoreOrganizationProfile
 Title: "Public Health Organization Example"
 Description: "An example showing a Public Health Organization"
 Usage: #example
@@ -15,4 +15,4 @@ Usage: #example
 * address.city = "Atlanta"
 * address.state = "GA"
 * address.postalCode = "81452"
-* endpoint = Reference(example-ph-endpoint)
+* endpoint = Reference(ph-endpoint)

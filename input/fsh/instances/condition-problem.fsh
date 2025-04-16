@@ -1,4 +1,4 @@
-Instance: example-of-Condition
+Instance: condition-problem
 InstanceOf: USCoreConditionProblemsHealthConcernsProfile
 Title: "Condition Example"
 Description: "An example showing a Condition for HCS reporting."
@@ -12,5 +12,5 @@ Usage: #example
 * category.text = "Problem"
 * code = $sct#442311008 "Liveborn born in hospital"
 * code.text = "Single liveborn, born in hospital"
-* subject = Reference(Patient/example) "Amy V. Shaw"
+* subject = Reference(Patient/patient-ledner) "Amy V. Shaw"
 * onsetDateTime = "2016-08-10"

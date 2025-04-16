@@ -1,11 +1,8 @@
-Instance: 1-of-Practitioner
-InstanceOf: Practitioner
+Instance: practitioner-1
+InstanceOf: USCorePractitionerProfile
 Title: "Practitioner Example"
 Description: "An example showing a Practitioner"
 Usage: #example
-* id = "1"
-* meta.versionId = "3"
-* meta.lastUpdated = "2019-03-06T03:07:57.933-05:00"
 * identifier.use = #official
 * identifier.type = $v2-0203#SB "Social Beneficiary Identifier"
 * identifier.type.text = "US Social Security Number"

@@ -11,7 +11,7 @@ Usage: #inline
 * eventCoding = $us-ph-messageheader-message-types#healthcare-survey-report-message
 * destination.name = "PHA endpoint"
 * destination.endpoint = "http://example.pha.org/fhir"
-* sender = Reference(example-healthcare-org)
+* sender = Reference(organization-healthcare)
 * source.name = "Healthcare Organization"
 * source.software = "Backend Service App"
 * source.version = "3.1.45.AABB"
@@ -19,4 +19,4 @@ Usage: #inline
 * source.contact.value = "+1 (917) 123 4567"
 * source.endpoint = "http://example.healthcare.org/fhir"
 * reason = $us-ph-triggerdefinition-namedevents#encounter-close
-* focus = Reference(rep-content-bundle-example)
+* focus = Reference(healthcare-surveys-reporting-bundle)

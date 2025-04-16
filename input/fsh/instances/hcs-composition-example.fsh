@@ -7,10 +7,10 @@ Usage: #example
 * identifier.value = "c03eab8c-11e8-4d0c-ad2a-b385395e27db"
 * status = #final
 * type = $loinc#75619-7
-* subject = Reference(Patient/example) "Amy Shaw"
-* encounter = Reference(example-1) "Ambulatory Office Visit"
+* subject = Reference(Patient/patient-ledner) "Amy Shaw"
+* encounter = Reference(encounter-ambulatory) "Ambulatory Office Visit"
 * date = "2023-01-02T22:13:23Z"
-* author = Reference(Practitioner/1) "Nicholas Joseph"
+* author = Reference(Practitioner/practitioner-1) "Nicholas Joseph"
 * title = "National Health Care Surveys report"
 
 /* Reason for Visit Section (sliceReasonForVisitSection) */
@@ -33,8 +33,8 @@ Usage: #example
   <p>Acute bronchitis</p>
 </div>
 """
-* section[sliceProblemSection][=].entry[sliceProblemsHealthConcerns] = Reference(Condition/example-of-Condition)
-* section[sliceProblemSection][=].entry[sliceEncounterDiagnosis] = Reference(Condition/encounter-of-encounter-diagnosis)
+* section[sliceProblemSection][=].entry[sliceProblemsHealthConcerns] = Reference(Condition/condition-problem)
+* section[sliceProblemSection][=].entry[sliceEncounterDiagnosis] = Reference(Condition/condition-encounter-diagnosis)
 
 
 /* Allergies Section (sliceAllergiesSection) */
@@ -46,7 +46,7 @@ Usage: #example
   <p>Allergy to Sulfonide</p>
 </div>
 """
-* section[sliceAllergiesSection].entry = Reference(AllergyIntolerance/example)
+* section[sliceAllergiesSection].entry = Reference(AllergyIntolerance/allergyintolerance-sulfonamide)
 
 /* Medications Section (sliceMedicationsSection) */
 * section[sliceMedicationsSection].title = "Medications Section"
@@ -68,7 +68,6 @@ Usage: #example
 </div>
 """
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] = Reference(Medication/medication-ibuprofen-example)
 
 /* Admission Medications Section (sliceAdmissionMedicationsSection) - Optional */
 * section[sliceAdmissionMedicationsSection].code = $loinc#42346-7 "Medications on admission (narrative)"
@@ -78,8 +77,7 @@ Usage: #example
   <p>Patient reported taking Lisinopril 10mg daily prior to admission</p>
 </div>
 """
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/medicationrequest-admission-example)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] = Reference(Medication/medication-lisinopril-example)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/hcs-medicationrequest)
 
 /* Medications Section (sliceMedicationsSection) - Optional */
 * section[sliceMedicationsSection].code = $loinc#10160-0 "History of Medication use Narrative"
@@ -89,10 +87,6 @@ Usage: #example
   Taking Lantus
 </div>
 """
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministration-lantus-example)
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/medicationrequest-lantus-example)
-* section[sliceMedicationsSection].entry[sliceMedicationDispense] = Reference(MedicationDispense/medicationdispense-example)
-* section[sliceMedicationsSection].entry[sliceMedicationReferences] = Reference(Medication/medication-lantus-example)
 
 /* Results Section (sliceResultsSection) - Optional */
 * section[sliceResultsSection].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
@@ -127,8 +121,6 @@ Usage: #example
   <p>Continue symptomatic treatment. Return if symptoms worsen or fail to improve within 5 days.</p>
 </div>
 """
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/medicationrequest-plan-example)
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] = Reference(Medication/medication-plan-example)
 * section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] = Reference(ServiceRequest/servicerequest-example)
 * section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] = Reference(CarePlan/careplan-example)
 
@@ -249,142 +241,48 @@ Usage: #example
 // Problem - Health Concern
 Instance: problem-healthconcern-example
 InstanceOf: $us-core-condition-problems-health-concerns
+Description: "An example of a Condition (Health Concern)"
 Title: "Health Concern Example"
 Usage: #example
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * code = http://snomed.info/sct#195662009 "Acute viral pharyngitis"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * onsetDateTime = "2025-01-01"
 * recordedDate = "2025-01-02"
-* recorder = Reference(Practitioner/1)
+* recorder = Reference(Practitioner/practitioner-1)
 
 // Medication Administration - Ibuprofen
 Instance: medicationadministrationone-example
 InstanceOf: HcsMedicationAdministration
 Title: "Medication Administration Example"
+Description: "An example of a MedicationAdministration"
 Usage: #example
 * status = #completed
-* medicationReference = Reference(medication-ibuprofen-example)
-* subject = Reference(Patient/1)
+* medicationCodeableConcept = $rxnorm#285018 "Lantus 100 UNT/ML Injectable Solution"
+* subject = Reference(Patient/patient-ledner)
 * effectiveDateTime = "2025-01-02T09:00:00Z"
-* performer.actor = Reference(1-of-Practitioner)
+* performer.actor = Reference(Practitioner/practitioner-1)
 * reasonCode = http://snomed.info/sct#43724002 "Shivering"
 * dosage.text = "400 mg orally"
 * dosage.route = http://snomed.info/sct#26643006 "Oral route"
 * dosage.dose.value = 400
 * dosage.dose.unit = "mg"
 
-// Medication - Ibuprofen
-Instance: medication-ibuprofen-example
-InstanceOf: USCoreMedicationProfile
-Title: "Medication - Ibuprofen Example"
-Usage: #example
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#1049589 "ibuprofen 400 MG / oxycodone hydrochloride 5 MG Oral Tablet"
-* status = #active
-* form = http://snomed.info/sct#385055001 "Tablet"
-
-// Medication Request - Admission (Lisinopril)
-Instance: medicationrequest-admission-example
-InstanceOf: HcsMedicationRequest
-Title: "Admission Medication Request Example"
-Usage: #example
-* status = #active
-* intent = #order
-* medicationReference = Reference(medication-lisinopril-example)
-* subject = Reference(Patient/1)
-* authoredOn = "2025-01-02"
-* requester = Reference(Practitioner/1)
-* dosageInstruction.text = "10 mg once daily"
-* dosageInstruction.timing.repeat.frequency = 1
-* dosageInstruction.timing.repeat.period = 1
-* dosageInstruction.timing.repeat.periodUnit = #d
-* dosageInstruction.route = http://snomed.info/sct#26643006 "Oral route"
-* dosageInstruction.doseAndRate.doseQuantity.value = 10
-* dosageInstruction.doseAndRate.doseQuantity.unit = "mg"
-
-// Medication - Lisinopril
-Instance: medication-lisinopril-example
-InstanceOf: USCoreMedicationProfile
-Title: "Medication - Lisinopril Example"
-Usage: #example
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#314076 "Lisinopril 10 MG Oral Tablet"
-* status = #active
-* form = http://snomed.info/sct#385055001 "Tablet"
-
-// Medication Administration - Lantus
-Instance: medicationadministration-lantus-example
-InstanceOf: HcsMedicationAdministration
-Title: "Medication Administration - Lantus Example"
-Usage: #example
-* status = #completed
-* medicationReference = Reference(medication-lantus-example)
-* subject = Reference(Patient/1)
-* effectiveDateTime = "2025-01-02T08:00:00Z"
-* performer.actor = Reference(Patient/1)
-* dosage.text = "10 units subcutaneously"
-* dosage.route = http://snomed.info/sct#34206005 "Subcutaneous route"
-* dosage.dose.value = 10
-* dosage.dose.unit = "units"
-
-// Medication Request - Lantus
-Instance: medicationrequest-lantus-example
-InstanceOf: USCoreMedicationRequestProfile
-Title: "Medication Request - Lantus Example"
-Usage: #example
-* status = #active
-* intent = #order
-* medicationReference = Reference(medication-lantus-example)
-* subject = Reference(Patient/1)
-* authoredOn = "2024-12-15"
-* requester = Reference(Practitioner/1)
-* dosageInstruction.text = "10 units subcutaneously once daily at bedtime"
-* dosageInstruction.timing.repeat.frequency = 1
-* dosageInstruction.timing.repeat.period = 1
-* dosageInstruction.timing.repeat.periodUnit = #d
-* dosageInstruction.route = http://snomed.info/sct#34206005 "Subcutaneous route"
-* dosageInstruction.doseAndRate.doseQuantity.value = 10
-* dosageInstruction.doseAndRate.doseQuantity.unit = "units"
-
-// Medication Dispense
-Instance: medicationdispense-example
-InstanceOf: USCoreMedicationDispenseProfile
-Title: "Medication Dispense Example"
-Usage: #example
-* status = #completed
-* medicationReference = Reference(medication-lantus-example)
-* subject = Reference(Patient/1)
-* performer.actor = Reference(Practitioner/1)
-* authorizingPrescription = Reference(medicationrequest-lantus-example)
-* quantity.value = 1
-* quantity.unit = "vial"
-* daysSupply.value = 30
-* daysSupply.unit = "days"
-* whenHandedOver = "2024-12-15"
-
-// Medication - Lantus
-Instance: medication-lantus-example
-InstanceOf: USCoreMedicationProfile
-Title: "Medication - Lantus Example"
-Usage: #example
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#847232 "3 ML insulin glargine 100 UNT/ML Pen Injector [Lantus]"
-* status = #active
-* form = http://snomed.info/sct#385219001 "Solution for injection"
-
-
 // Lab Observation
 Instance: observation-lab-example
 InstanceOf: USCoreLaboratoryResultObservationProfile
 Title: "Laboratory Observation Example"
+Description: "An example of an Observation (Laboratory Result)"
 Usage: #example
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code = http://loinc.org#26464-8 "Leukocytes [#/volume] in Blood"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * effectiveDateTime = "2025-01-02"
 * issued = "2025-01-02T10:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 6.8
 * valueQuantity.unit = "10^3/uL"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -395,15 +293,16 @@ Usage: #example
 Instance: diagnosticreport-lab-example
 InstanceOf: $us-core-diagnosticreport-lab
 Title: "Diagnostic Report Laboratory Example"
+Description: "An example of a DiagnosticReport (Laboratory)"
 Usage: #example
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code = http://loinc.org#58410-2 "CBC panel - Blood by Automated count"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02"
 * issued = "2025-01-02T11:00:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * result = Reference(observation-lab-example)
 * conclusion = "CBC within normal limits"
 
@@ -411,15 +310,16 @@ Usage: #example
 Instance: observation-clinical-example
 InstanceOf: $us-core-observation-clinical-result
 Title: "Clinical Observation Example"
+Description: "An example of an Observation (Clinical Result)"
 Usage: #example
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
 * issued = "2025-01-02T09:35:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 37.8
 * valueQuantity.unit = "C"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -430,15 +330,16 @@ Usage: #example
 Instance: observation-screening-example
 InstanceOf: $us-core-observation-screening-assessment
 Title: "Screening Assessment Example"
+Description: "An example of an Observation (Screening Assessment)"
 Usage: #example
 * status = #final
 * category[survey] = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = http://loinc.org#44249-1 "PHQ-9 quick depression assessment panel [Reported.PHQ]"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:15:00Z"
 * issued = "2025-01-02T09:20:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueInteger = 3
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
@@ -446,19 +347,20 @@ Usage: #example
 Instance: documentreference-example
 InstanceOf: $us-core-documentreference
 Title: "Document Reference Example"
+Description: "An example of a DocumentReference"
 Usage: #example
 * status = #current
 * type = http://loinc.org#11488-4 "Consult note"
 * category[uscore] = http://loinc.org#11488-4 "Consult note"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * date = "2025-01-02T10:30:00Z"
-* author = Reference(Practitioner/1)
+* author = Reference(Practitioner/practitioner-1)
 * custodian = Reference(organization-example)
 * content.attachment.contentType = #text/plain
 * content.attachment.language = #en-US
 * content.attachment.data = "UGF0aWVudCBwcmVzZW50ZWQgd2l0aCBvbmUgd2VlayBoaXN0b3J5IG9mIGNvdWdoIGFuZCBsb3ctZ3JhZGUgZmV2ZXIuIEx1bmdzIGNsZWFyIG9uIGV4YW1pbmF0aW9uLiBObyBseW1waGFkZW5vcGF0aHkuIERpYWdub3NpczogeEFjdXRlIGJyb25jaGl0aXMuIA=="
 * content.attachment.title = "Consultation Note"
-* context.encounter = Reference(Encounter/example-1)
+* context.encounter = Reference(Encounter/encounter-ambulatory)
 * context.period.start = "2025-01-02T09:00:00Z"
 * context.period.end = "2025-01-02T10:00:00Z"
 
@@ -466,78 +368,52 @@ Usage: #example
 Instance: diagnosticreport-note-example
 InstanceOf:  $us-core-diagnosticreport-note
 Title: "Diagnostic Report Note Example"
+Description: "An example of a DiagnosticReport (Note/Radiology)"
 Usage: #example
 * status = #final
 * category[us-core] = http://loinc.org#LP29684-5 "Radiology"
 * code = http://loinc.org#42272-5 "XR Chest PA and Lateral"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T10:00:00Z"
 * issued = "2025-01-02T11:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * conclusion = "No acute radiographic abnormality"
-
-// Medication Request - Plan
-Instance: medicationrequest-plan-example
-InstanceOf: $us-core-medicationrequest
-Title: "Medication Request Plan Example"
-Usage: #example
-* status = #active
-* intent = #plan
-* medicationReference = Reference(medication-plan-example)
-* subject = Reference(Patient/1)
-* authoredOn = "2025-01-02"
-* requester = Reference(Practitioner/1)
-* dosageInstruction.text = "Benzonatate 200mg three times daily as needed for cough"
-* dosageInstruction.timing.repeat.frequency = 3
-* dosageInstruction.timing.repeat.period = 1
-* dosageInstruction.timing.repeat.periodUnit = #d
-* dosageInstruction.asNeededBoolean = true
-* dosageInstruction.route = http://snomed.info/sct#26643006 "Oral route"
-* dosageInstruction.doseAndRate.doseQuantity.value = 200
-* dosageInstruction.doseAndRate.doseQuantity.unit = "mg"
-
-// Medication - Plan Example
-Instance: medication-plan-example
-InstanceOf:  $us-core-medication
-Title: "Medication Plan Example"
-Usage: #example
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#1870196 "betamethasone / gentamicin Topical Spray"
-* status = #active
-* form = http://snomed.info/sct#421637006 "Lyophilized powder for conventional release solution for injection (dose form)"
 
 // Service Request
 Instance: servicerequest-example
 InstanceOf: $us-core-servicerequest
 Title: "Service Request Example"
+Description: "An example of a ServiceRequest"
 Usage: #example
 * status = #active
 * intent = #order
 * category[us-core] =  http://snomed.info/sct#386053000 "Evaluation procedure (procedure)"
 * priority = #routine
 * code = http://loinc.org#24627-2 "CT Chest"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * occurrenceDateTime = "2025-01-03T10:00:00Z"
 * authoredOn = "2025-01-02"
-* requester = Reference(Practitioner/1)
+* requester = Reference(Practitioner/practitioner-1)
 * reasonCode = http://snomed.info/sct#195662009 "Acute viral pharyngitis"
 
 // Care Plan
 Instance: careplan-example
 InstanceOf:  $us-core-careplan
 Title: "Care Plan Example"
+Description: "An example of a CarePlan"
 Usage: #example
 * status = #active
 * intent = #plan
 * title = "Respiratory Care Plan"
 * description = "Care plan for management of acute bronchitis"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * period.start = "2025-01-02"
 * period.end = "2025-01-16"
 * created = "2025-01-02"
-* author = Reference(Practitioner/1)
+* author = Reference(Practitioner/practitioner-1)
 * careTeam = Reference(careteam-example)
 * addresses = Reference(problem-healthconcern-example)
 * goal = Reference(goal-example)
@@ -549,10 +425,11 @@ Usage: #example
 Instance: immunization-example
 InstanceOf: $us-core-immunization
 Title: "Immunization Example"
+Description: "An example of an Immunization"
 Usage: #example
 * status = #completed
 * vaccineCode = http://hl7.org/fhir/sid/cvx#158 "Influenza, injectable, quadrivalent"
-* patient = Reference(Patient/1)
+* patient = Reference(Patient/patient-ledner)
 * occurrenceDateTime = "2024-10-15"
 * primarySource = true
 * location = Reference(location-example)
@@ -563,7 +440,7 @@ Usage: #example
 * route = http://snomed.info/sct#78421000 "Intramuscular route"
 * doseQuantity.value = 0.5
 * doseQuantity.unit = "mL"
-* performer.actor = Reference(Practitioner/1)
+* performer.actor = Reference(Practitioner/practitioner-1)
 * isSubpotent = false
 * education.documentType = "VIS"
 * education.presentationDate = "2024-10-15"
@@ -573,27 +450,29 @@ Usage: #example
 Instance: procedure-example
 InstanceOf: $us-core-procedure
 Title: "Procedure Example"
+Description: "An example of a Procedure"
 Usage: #example
 * status = #completed
 * code = http://snomed.info/sct#80146002 "Appendectomy"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * performedDateTime = "1995-06-12"
-* recorder = Reference(Practitioner/1)
-* asserter = Reference(Patient/1)
+* recorder = Reference(Practitioner/practitioner-1)
+* asserter = Reference(Patient/patient-ledner)
 * location = Reference(location-example)
 
 // Blood Pressure Observation
 Instance: observation-bp-example
 InstanceOf:  $us-core-blood-pressure
 Title: "Blood Pressure Example"
+Description: "An example of an Observation (Blood Pressure)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#85354-9 "Blood pressure panel with all children optional"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * component[systolic].code = http://loinc.org#8480-6 "Systolic blood pressure"
 * component[systolic].valueQuantity.value = 120
 * component[systolic].valueQuantity.unit = "mmHg"
@@ -609,14 +488,15 @@ Usage: #example
 Instance: observation-weight-example
 InstanceOf:  $us-core-body-weight
 Title: "Body Weight Example"
+Description: "An example of an Observation (Body Weight)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#29463-7 "Body weight"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 68
 * valueQuantity.unit = "kg"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -626,14 +506,15 @@ Usage: #example
 Instance: observation-height-example
 InstanceOf: $us-core-body-height
 Title: "Body Height Example"
+Description: "An example of an Observation (Body Height)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8302-2 "Body height"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 170
 * valueQuantity.unit = "cm"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -643,14 +524,15 @@ Usage: #example
 Instance: observation-heartrate-example
 InstanceOf:  $us-core-heart-rate
 Title: "Heart Rate Example"
+Description: "An example of an Observation (Heart Rate)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8867-4 "Heart rate"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 70
 * valueQuantity.unit = "beats/minute"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -660,14 +542,15 @@ Usage: #example
 Instance: observation-oximetry-example
 InstanceOf: $us-core-pulse-oximetry
 Title: "Pulse Oximetry Example"
+Description: "An example of an Observation (Pulse Oximetry)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 98
 * valueQuantity.unit = "%"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -677,14 +560,15 @@ Usage: #example
 Instance: observation-bmi-example
 InstanceOf: $us-core-bmi
 Title: "BMI Example"
+Description: "An example of an Observation (BMI)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#39156-5 "Body mass index (BMI) [Ratio]"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 23.5
 * valueQuantity.unit = "kg/m2"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -694,14 +578,15 @@ Usage: #example
 Instance: observation-temperature-example
 InstanceOf: $us-core-body-temperature
 Title: "Body Temperature Example"
+Description: "An example of an Observation (Body Temperature)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 37.0
 * valueQuantity.unit = "C"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -711,14 +596,15 @@ Usage: #example
 Instance: observation-resprate-example
 InstanceOf:  $us-core-respiratory-rate
 Title: "Respiratory Rate Example"
+Description: "An example of an Observation (Respiratory Rate)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#9279-1 "Respiratory rate"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 16
 * valueQuantity.unit = "breaths/minute"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -728,19 +614,21 @@ Usage: #example
 Instance: observation-smoking-example
 InstanceOf: $us-core-smokingstatus
 Title: "Smoking Status Example"
+Description: "An example of an Observation (Smoking Status)"
 Usage: #example
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#72166-2 "Tobacco smoking status"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * effectiveDateTime = "2025-01-02"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueCodeableConcept = http://snomed.info/sct#266919005 "Never smoked tobacco"
 
 // Device Example
 Instance: device-example
 InstanceOf:  $us-core-implantable-device
 Title: "Implantable Device Example"
+Description: "An example of a Device (Implantable)"
 Usage: #example
 * status = #active
 * manufacturer = "Device Manufacturer Inc."
@@ -751,24 +639,25 @@ Usage: #example
 * deviceName.name = "No implantable devices"
 * deviceName.type = #user-friendly-name
 * type = http://snomed.info/sct#56961003 "Cardiac transvenous pacemaker"
-* patient = Reference(Patient/1)
+* patient = Reference(Patient/patient-ledner)
 
 // Care Team
 Instance: careteam-example
 InstanceOf: $us-core-careteam
 Title: "Care Team Example"
+Description: "An example of a CareTeam"
 Usage: #example
 * status = #active
 * name = "Respiratory Care Team"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * period.start = "2025-01-02"
 * participant[0].role = http://snomed.info/sct#446050000 "Primary care physician (occupation)"
-* participant[0].member = Reference(Practitioner/1)
+* participant[0].member = Reference(Practitioner/practitioner-1)
 * participant[0].period.start = "2025-01-02"
 * participant[0].onBehalfOf = Reference(organization-example)
 * participant[1].role = http://snomed.info/sct#309343006 "Physician"
-* participant[1].member = Reference(practitioner-pulmonologist-example)
+* participant[1].member = Reference(Practitioner/practitioner-1)
 * participant[1].period.start = "2025-01-02"
 * participant[1].onBehalfOf = Reference(organization-example)
 // Remove the problematic note.author line
@@ -777,18 +666,19 @@ Usage: #example
 Instance: goal-example
 InstanceOf: $us-core-goal
 Title: "Goal Example"
+Description: "An example of a Goal"
 Usage: #example
 * lifecycleStatus = #active
 * achievementStatus = http://terminology.hl7.org/CodeSystem/goal-achievement#in-progress
 * description.text = "Resolve acute bronchitis within 2 weeks"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * startDate = "2025-01-02"
 * target.dueDate = "2025-01-16"
 * target.detailString = "Resolution of cough and other symptoms"
 * target.measure = http://snomed.info/sct#431855005 "Chronic kidney disease stage 1 (disorder)"
 * statusDate = "2025-01-02"
 * statusReason = "Treatment initiated"
-* expressedBy = Reference(Patient/1)
+* expressedBy = Reference(Patient/patient-ledner)
 * addresses = Reference(problem-healthconcern-example)
 * note.text = "Patient understands the plan and is committed to improved rest and hydration"
 * note.time = "2025-01-02T10:30:00Z"
@@ -797,39 +687,42 @@ Usage: #example
 Instance: observation-pregnancy-status-example
 InstanceOf: $us-core-observation-pregnancystatus
 Title: "Pregnancy Status Example"
+Description: "An example of an Observation (Pregnancy Status)"
 Usage: #example
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#82810-3 "Pregnancy status"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * effectiveDateTime = "2025-01-02"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueCodeableConcept = http://snomed.info/sct#60001007 "Not pregnant"
 
 // Pregnancy Intent Observation
 Instance: observation-pregnancy-intent-example
 InstanceOf: $us-core-observation-pregnancyintent
 Title: "Pregnancy Intent Example"
+Description: "An example of an Observation (Pregnancy Intent)"
 Usage: #example
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#86645-9 "Pregnancy intention in the next year - Reported"
-* subject = Reference(Patient/1)
+* subject = Reference(Patient/patient-ledner)
 * effectiveDateTime = "2025-01-02"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueCodeableConcept = http://loinc.org#LA26683-5 "Not pregnant"
 
 // Coverage
 Instance: coverage-example
 InstanceOf: USCoreCoverageProfile
 Title: "Coverage Example"
+Description: "An example of a Coverage"
 Usage: #example
 * status = #active
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#EHCPOL "extended healthcare"
-* policyHolder = Reference(Patient/1)
-* subscriber = Reference(Patient/1)
+* policyHolder = Reference(Patient/patient-ledner)
+* subscriber = Reference(Patient/patient-ledner)
 * subscriberId = "XYZ123456789"
-* beneficiary = Reference(Patient/1)
+* beneficiary = Reference(Patient/patient-ledner)
 * dependent = "0"
 * relationship = http://terminology.hl7.org/CodeSystem/subscriber-relationship#self "Self"
 * period.start = "2025-01-01"
@@ -842,15 +735,16 @@ Usage: #example
 * class[1].value = "HMO"
 * class[1].name = "Health Maintenance Organization"
 
-// Additional resources needed for references
+
 
 // Organization - Provider
 Instance: organization-example
 InstanceOf:  $us-core-organization
 Title: "Organization Example"
+Description: "An example of an Organization (Provider)"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1234567893"
+* identifier.value = "1234567899"
 * active = true
 * type = http://terminology.hl7.org/CodeSystem/organization-type#prov "Healthcare Provider"
 * name = "General Hospital"
@@ -868,8 +762,9 @@ Usage: #example
 
 // Organization - Payer
 Instance: organization-payer-example
-InstanceOf: Organization
+InstanceOf: $us-core-organization
 Title: "Payer Organization Example"
+Description: "An example of an Organization (Payer)"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1234567892"
@@ -892,6 +787,7 @@ Usage: #example
 Instance: location-example
 InstanceOf: USCoreLocation
 Title: "Location Example"
+Description: "An example of a Location"
 Usage: #example
 * identifier.system = "http://www.acme.org/location"
 * identifier.value = "29"
@@ -910,57 +806,36 @@ Usage: #example
 * address.country = "US"
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
 * managingOrganization = Reference(organization-example)
-
-// Pulmonologist Practitioner
-Instance: practitioner-pulmonologist-example
-InstanceOf: USCorePractitionerProfile
-Title: "Pulmonologist Practitioner Example"
-Usage: #example
-* identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1417947457"
-* name.family = "Chen"
-* name.given = "Sarah"
-* name.prefix = "Dr."
-* telecom.system = #phone
-* telecom.value = "555-987-6543"
-* telecom.use = #work
-* address.line = "123 Health Avenue"
-* address.city = "Anytown"
-* address.state = "CA"
-* address.postalCode = "12345"
-* gender = #female
-* qualification.code = http://terminology.hl7.org/CodeSystem/v2-0360|2.7#MD "Doctor of Medicine"
-* qualification.period.start = "2010-01-01"
-* qualification.issuer = Reference(organization-example)
-
 // Diagnostic Report - Lab
 Instance: diagnosticreport-example
 InstanceOf: USCoreDiagnosticReportProfileLaboratoryReporting
 Title: "Diagnostic Report Laboratory Example"
+Description: "An example of a DiagnosticReport (Laboratory – Profile Alternate)"
 Usage: #example
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code = http://loinc.org#58410-2 "CBC panel - Blood by Automated count"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02"
 * issued = "2025-01-02T11:00:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * result = Reference(observation-lab-example)
 * conclusion = "CBC within normal limits"
 
 Instance: observation-clinical-result-example
 InstanceOf: USCoreBodyTemperatureProfile
 Title: "Clinical Observation Example"
+Description: "An example of an Observation (Body Temperature – Alternate Profile)"
 Usage: #example
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:30:00Z"
 * issued = "2025-01-02T09:35:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueQuantity.value = 37.8
 * valueQuantity.unit = "C"
 * valueQuantity.system = "http://unitsofmeasure.org"
@@ -971,14 +846,15 @@ Usage: #example
 Instance: observation-screening-assessment-example
 InstanceOf: USCoreObservationScreeningAssessmentProfile
 Title: "Screening Assessment Example"
+Description: "An example of an Observation (Screening Assessment – Alternate Profile)"
 Usage: #example
 * status = #final
 * category[survey] = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = http://loinc.org#44249-1 "PHQ-9 quick depression assessment panel [Reported.PHQ]"
-* subject = Reference(Patient/1)
-* encounter = Reference(Encounter/example-1)
+* subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory)
 * effectiveDateTime = "2025-01-02T09:15:00Z"
 * issued = "2025-01-02T09:20:00Z"
-* performer = Reference(Practitioner/1)
+* performer = Reference(Practitioner/practitioner-1)
 * valueInteger = 3
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"

@@ -1,4 +1,4 @@
-Instance: Payer2
+Instance: organization-payer-2
 InstanceOf: USCoreOrganizationProfile|6.1.0
 Title: "Payer 2"
 Description: "Payer 2"

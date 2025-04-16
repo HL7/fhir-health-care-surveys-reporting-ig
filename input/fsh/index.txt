@@ -1,6 +1,6 @@
 Name                                                        Type      File
 1-of-Patient                                                Instance  instances\1-of-Patient.fsh
-1-of-Practitioner                                           Instance  instances\1-of-Practitioner.fsh
+Practitioner                                           Instance  instances\Practitioner.fsh
 Binary-CDSHookServices                                      Instance  instances\Binary-CDSHookServices.fsh
 CareTeamMemberFunctionSNOMEDCT                              ValueSet  valuesets\CareTeamMemberFunctionSNOMEDCT.fsh
 CodeSystem-CDSActionType                                    Instance  instances\CodeSystem-CDSActionType.fsh

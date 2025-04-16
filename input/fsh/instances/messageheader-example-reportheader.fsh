@@ -12,7 +12,7 @@ Usage: #example
 * eventCoding = $us-ph-messageheader-message-types#healthcare-survey-report-message
 * destination.name = "PHA endpoint"
 * destination.endpoint = "http://example.pha.org/fhir"
-* sender = Reference(example-healthcare-org)
+* sender = Reference(organization-healthcare)
 * source.name = "Healthcare Organization"
 * source.software = "Backend Service App"
 * source.version = "3.1.45.AABB"

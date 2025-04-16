@@ -1,5 +1,5 @@
-Instance: example-healthcare-org
-InstanceOf: Organization
+Instance: organization-healthcare
+InstanceOf: USCoreOrganizationProfile
 Title: "Healthcare Organization Example"
 Description: "An example showing a HealthCare Organization"
 Usage: #example
@@ -15,4 +15,4 @@ Usage: #example
 * address.city = "Atlanta"
 * address.state = "GA"
 * address.postalCode = "81452"
-* endpoint = Reference(example-healthcare-endpoint)
+* endpoint = Reference(healthcare-endpoint)

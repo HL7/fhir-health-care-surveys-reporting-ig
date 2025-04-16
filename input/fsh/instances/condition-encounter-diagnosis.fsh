@@ -1,9 +1,9 @@
-Instance: encounter-of-encounter-diagnosis
+Instance: condition-encounter-diagnosis
 InstanceOf: USCoreConditionEncounterDiagnosisProfile
 Title: "Encounter Diagnosis Example"
 Description: "An example of an encounter diagnosis condition for HCS"
 Usage: #example
-
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
 * verificationStatus.coding.version = "4.0.0"
 * verificationStatus.coding = $condition-ver-status#confirmed "Confirmed"
 * verificationStatus.text = "Confirmed"
@@ -12,9 +12,9 @@ Usage: #example
 * category[us-core].text = "Encounter Diagnosis"
 * code.coding[0] = http://snomed.info/sct#10509002 "Acute bronchitis (disorder)"
 * code.text = "Acute bronchitis"
-* subject = Reference(1-of-Patient) "Amy Shaw"
-* encounter = Reference(example-1) "Ambulatory Office Visit"
+* subject = Reference(patient-ledner) "Amy Shaw"
+* encounter = Reference(encounter-ambulatory) "Ambulatory Office Visit"
 * onsetDateTime = "2023-01-02"
 * recordedDate = "2023-01-02"
-* recorder = Reference(1-of-Practitioner) "Nicholas Joseph"
-* asserter = Reference(1-of-Practitioner) "Nicholas Joseph"
+* recorder = Reference(practitioner-1) "Nicholas Joseph"
+* asserter = Reference(practitioner-1) "Nicholas Joseph"

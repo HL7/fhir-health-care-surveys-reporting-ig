@@ -1,14 +1,13 @@
-Instance: 1-of-Patient
+Instance: patient-ledner
 InstanceOf: USCorePatientProfile
 Title: "Patient 1 - Example"
 Description: "An example showing a Patient"
 Usage: #example
 * identifier.system = "urn:system"
-* identifier.value = "1-of-Patient"
+* identifier.value = "patient-ledner"
 * name.family = "Ledner144"
 * name.given = "Dominique369"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
-* id = "1"
 * identifier[0].system = "urn:oid:2.16.840.1.113883.4.3.6"
 * identifier[=].value = "patient-OakleyAnnie"
 * identifier[+].use = #usual
@@ -41,5 +40,5 @@ Usage: #example
 * maritalStatus.coding[+] = $v3-MaritalStatus#M
 * communication.language = urn:ietf:bcp:47#en "English"
 * communication.preferred = true
-* generalPractitioner = Reference(Practitioner/1)
-* managingOrganization = Reference(example-healthcare-org) "Healthcare Example"
+* generalPractitioner = Reference(Practitioner/practitioner-1)
+* managingOrganization = Reference(organization-healthcare) "Healthcare Example"

@@ -5,10 +5,10 @@ Usage: #inline
 * identifier.value = "c03eab8c-11e8-4d0c-ad2a-b385395e27db"
 * status = #final
 * type = $loinc#75619-7
-* subject = Reference(Patient/example) "Amy Shaw"
-* encounter = Reference(example-1) "Ambulatory Office Visit"
+* subject = Reference(Patient/patient-ledner) "Amy Shaw"
+* encounter = Reference(Encounter/encounter-ambulatory) "Ambulatory Office Visit"
 * date = "2023-01-02T22:13:23Z"
-* author = Reference(Practitioner/1) "Nicholas Joseph"
+* author = Reference(Practitioner/practitioner-1) "Nicholas Joseph"
 * title = "National Health Care Surveys report"
 
 /* Reason for Visit Section (sliceReasonForVisitSection) */
@@ -30,7 +30,7 @@ Usage: #inline
   <p>Single liveborn, born in hospital</p>
 </div>
 """
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/example-of-Condition)
+* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] = Reference(Condition/condition-problem)
 
 /* Allergies Section (sliceAllergiesSection) */
 * section[sliceAllergiesSection].title = "Allergies Section"
@@ -41,7 +41,7 @@ Usage: #inline
   <p>Allergy to Sulfonide</p>
 </div>
 """
-* section[sliceAllergiesSection].entry = Reference(AllergyIntolerance/example)
+* section[sliceAllergiesSection].entry = Reference(AllergyIntolerance/allergyintolerance-sulfonamide)
 
 /* Medications Section (sliceMedicationsSection) */
 * section[sliceMedicationsSection].title = "Medications Section"

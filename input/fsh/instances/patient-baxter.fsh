@@ -1,9 +1,8 @@
-Instance: example-of-Patient
-InstanceOf: Patient
+Instance: patient-baxter
+InstanceOf: USCorePatientProfile
 Title: "Patient Example"
 Description: "An example showing a Patient for HCS reporting."
 Usage: #example
-* id = "example"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * extension[0].extension[0].url = "ombCategory"
 * extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2106-3 "White"
