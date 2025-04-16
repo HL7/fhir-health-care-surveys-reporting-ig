@@ -1,5 +1,5 @@
 Instance: 1-of-Patient
-InstanceOf: Patient
+InstanceOf: USCorePatientProfile
 Title: "Patient 1 - Example"
 Description: "An example showing a Patient"
 Usage: #example
