@@ -105,11 +105,11 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceProblemsHealthConcerns 0..* MS and
     sliceEncounterDiagnosis 0..* MS
 
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] only Reference(USCoreConditionProblemsHealthConcernsProfile)
+* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] only Reference($us-core-condition-problems-health-concerns)
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^short = "Problems Health Concerns Entry"
 * section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^isModifier = false
 
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] only Reference(USCoreConditionEncounterDiagnosisProfile)
+* section[sliceProblemSection].entry[sliceEncounterDiagnosis] only Reference($us-core-encounterdiagnosis)
 * section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^short = "Encounter Diagnosis Entry"
 * section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^definition = "References to Conditions that represent encounter diagnoses"
 * section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^isModifier = false
@@ -255,7 +255,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^short = "Screening Assessment Entries"
 * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^isModifier = false
 //* removed us-core-questionnaireresponse
-* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] only Reference($us-core-questionnaireresponse )
+* section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] only Reference($us-core-questionnaireresponse)
 * section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^short = "Questionnaire Response Entries"
 * section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^isModifier = false
 

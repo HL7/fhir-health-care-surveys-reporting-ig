@@ -8,7 +8,7 @@ Usage: #example
 * status = #active
 * connectionType = $endpoint-connection-type#hl7-fhir-rest
 * name = "HealthCareSenderAndReceiver"
-* managingOrganization = Reference(organization-healthcare)
+* managingOrganization = Reference(Organization/organization-healthcare)
 * contact.system = #email
 * contact.value = "endpointmanager@example.healthcare.org"
 * contact.use = #work

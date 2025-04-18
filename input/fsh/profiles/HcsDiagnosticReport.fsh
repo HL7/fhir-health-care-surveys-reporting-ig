@@ -22,24 +22,24 @@ Description: "This Diagnostic Report profile is for healthcare survey report con
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
 * category contains us-core 0..* MS
-* category[us-core] from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-category (required)
+* category[us-core] from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-category|6.1.0 (required)
 
 * category 1..* MS
-* category from http://hl7.org/fhir/ValueSet/diagnostic-service-sections (required)
-* category from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-category (required)
+* category from http://hl7.org/fhir/ValueSet/diagnostic-service-sections|6.1.0 (required)
+* category from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-category|6.1.0 (required)
 
 * code 1..1 MS
 * code only CodeableConcept
-* code from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-report-and-note-codes (extensible)
+* code from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-report-and-note-codes|6.1.0 (extensible)
 * code ^comment = "(USCDI) US Core Report Code"
 
 * subject 1..1 MS
-* subject only Reference(USCorePatientProfile)
+* subject only Reference($us-core-patient)
 * subject ^comment = "(USCDI) The subject of the report - usually, but not always, the patient"
 
 
 * encounter 0..1 MS
-* encounter only Reference(USCoreEncounterProfile)
+* encounter only Reference($us-core-encounter)
 * encounter ^comment = "(USCDI)Health care event when test ordered"
 
 * effective[x] 0..1 MS
@@ -56,10 +56,10 @@ Description: "This Diagnostic Report profile is for healthcare survey report con
 
 * performer 0..* MS
 * performer ^comment = "(USCDI) Responsible Diagnostic Service"
-* performer only Reference(USCorePractitionerProfile or USCorePractitionerRoleProfile or USCoreOrganizationProfile or USCoreCareTeam)
+* performer only Reference($us-core-practitioner or $us-core-practitionerrole or $us-core-organization or $us-core-careteam)
 
 * result 0..* MS
 * result ^comment = "(USCDI) Observations"
-* result only Reference(USCoreLaboratoryResultObservationProfile or USCoreObservationClinicalResultProfile or Observation)
+* result only Reference($us-core-observation-lab or $us-core-observation-clinical-result or Observation)
 
 * presentedForm 0..* MS
