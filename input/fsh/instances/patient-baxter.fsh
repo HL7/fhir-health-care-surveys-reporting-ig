@@ -3,7 +3,7 @@ InstanceOf: USCorePatientProfile
 Title: "Patient Example"
 Description: "An example showing a Patient for HCS reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * extension[0].extension[0].url = "ombCategory"
 * extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2106-3 "White"
 * extension[=].extension[+].url = "ombCategory"

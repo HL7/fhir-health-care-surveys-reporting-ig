@@ -4,7 +4,7 @@ Title: "ServiceRequest Example"
 Description: "An example showing a ServiceRequest for HCS reporting."
 Usage: #example
 * id = "example"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0"
 * status = #active
 * intent = #original-order
 * category = $sct#103693007 "Diagnostic procedure (procedure)"

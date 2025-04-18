@@ -3,7 +3,7 @@ InstanceOf: USCoreConditionEncounterDiagnosisProfile
 Title: "Encounter Diagnosis Example"
 Description: "An example of an encounter diagnosis condition for HCS"
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0"
 * verificationStatus.coding.version = "4.0.0"
 * verificationStatus.coding = $condition-ver-status#confirmed "Confirmed"
 * verificationStatus.text = "Confirmed"

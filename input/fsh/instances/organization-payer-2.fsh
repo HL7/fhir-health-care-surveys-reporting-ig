@@ -6,6 +6,7 @@ Usage: #example
 * meta
   * lastUpdated = "2020-09-08T00:00:00+00:00"
   * source = "Organization/PayerOrganizationExample1"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * identifier
   * system = "urn:oid:2.16.840.1.113883.6.300"
   * value = "95216"

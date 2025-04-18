@@ -3,7 +3,7 @@ InstanceOf: USCoreAllergyIntolerance
 Title: "AllergyIntolerance Example"
 Description: "An example showing an AllergyIntolerance for HCS reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"
 * clinicalStatus = $allergyintolerance-clinical#active
 * verificationStatus = $allergyintolerance-verification#confirmed
 * category = #medication

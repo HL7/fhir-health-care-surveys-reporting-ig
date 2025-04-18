@@ -7,7 +7,7 @@ Usage: #example
 * identifier.value = "patient-ledner"
 * name.family = "Ledner144"
 * name.given = "Dominique369"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * identifier[0].system = "urn:oid:2.16.840.1.113883.4.3.6"
 * identifier[=].value = "patient-OakleyAnnie"
 * identifier[+].use = #usual

@@ -3,6 +3,7 @@ InstanceOf: USCorePractitionerProfile
 Title: "Practitioner Example"
 Description: "An example showing a Practitioner"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * identifier.use = #official
 * identifier.type = $v2-0203#SB "Social Beneficiary Identifier"
 * identifier.type.text = "US Social Security Number"

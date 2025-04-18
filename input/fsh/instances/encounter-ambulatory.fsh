@@ -3,7 +3,7 @@ InstanceOf: USCoreEncounterProfile
 Title: "Encounter Example"
 Description: "An Encounter example for HCS reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
 * status = #finished
 * class = $v3-ActCode#AMB "ambulatory"
 * type = $sct#177184002 "Normal delivery procedure (procedure)"

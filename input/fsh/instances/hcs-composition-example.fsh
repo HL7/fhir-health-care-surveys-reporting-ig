@@ -244,6 +244,8 @@ InstanceOf: $us-core-condition-problems-health-concerns
 Description: "An example of a Condition (Health Concern)"
 Title: "Health Concern Example"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
+* clinicalStatus = $condition-clinical#active "Active"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
@@ -276,6 +278,7 @@ InstanceOf: USCoreLaboratoryResultObservationProfile
 Title: "Laboratory Observation Example"
 Description: "An example of an Observation (Laboratory Result)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code = http://loinc.org#26464-8 "Leukocytes [#/volume] in Blood"
@@ -295,6 +298,8 @@ InstanceOf: $us-core-diagnosticreport-lab
 Title: "Diagnostic Report Laboratory Example"
 Description: "An example of a DiagnosticReport (Laboratory)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"
+
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code = http://loinc.org#58410-2 "CBC panel - Blood by Automated count"
@@ -312,6 +317,7 @@ InstanceOf: $us-core-observation-clinical-result
 Title: "Clinical Observation Example"
 Description: "An example of an Observation (Clinical Result)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-result|6.1.0"
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"
@@ -326,12 +332,13 @@ Usage: #example
 * valueQuantity.code = #Cel
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 
-// Screening Assessment
+// Screening Assessment* clinicalStatus = $condition-clinical#active "Active"
 Instance: observation-screening-example
 InstanceOf: $us-core-observation-screening-assessment
 Title: "Screening Assessment Example"
 Description: "An example of an Observation (Screening Assessment)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment|6.1.0"
 * status = #final
 * category[survey] = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = http://loinc.org#44249-1 "PHQ-9 quick depression assessment panel [Reported.PHQ]"
@@ -349,9 +356,10 @@ InstanceOf: $us-core-documentreference
 Title: "Document Reference Example"
 Description: "An example of a DocumentReference"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
 * status = #current
 * type = http://loinc.org#11488-4 "Consult note"
-* category[uscore] = http://loinc.org#11488-4 "Consult note"
+* category[uscore] = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note "Clinical Note"
 * subject = Reference(Patient/patient-ledner)
 * date = "2025-01-02T10:30:00Z"
 * author = Reference(Practitioner/practitioner-1)
@@ -370,6 +378,7 @@ InstanceOf:  $us-core-diagnosticreport-note
 Title: "Diagnostic Report Note Example"
 Description: "An example of a DiagnosticReport (Note/Radiology)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0"
 * status = #final
 * category[us-core] = http://loinc.org#LP29684-5 "Radiology"
 * code = http://loinc.org#42272-5 "XR Chest PA and Lateral"
@@ -386,6 +395,7 @@ InstanceOf: $us-core-servicerequest
 Title: "Service Request Example"
 Description: "An example of a ServiceRequest"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0"
 * status = #active
 * intent = #order
 * category[us-core] =  http://snomed.info/sct#386053000 "Evaluation procedure (procedure)"
@@ -404,6 +414,7 @@ InstanceOf:  $us-core-careplan
 Title: "Care Plan Example"
 Description: "An example of a CarePlan"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|6.1.0"
 * status = #active
 * intent = #plan
 * title = "Respiratory Care Plan"
@@ -427,6 +438,7 @@ InstanceOf: $us-core-immunization
 Title: "Immunization Example"
 Description: "An example of an Immunization"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0"
 * status = #completed
 * vaccineCode = http://hl7.org/fhir/sid/cvx#158 "Influenza, injectable, quadrivalent"
 * patient = Reference(Patient/patient-ledner)
@@ -452,6 +464,7 @@ InstanceOf: $us-core-procedure
 Title: "Procedure Example"
 Description: "An example of a Procedure"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
 * status = #completed
 * code = http://snomed.info/sct#80146002 "Appendectomy"
 * subject = Reference(Patient/patient-ledner)
@@ -466,6 +479,7 @@ InstanceOf:  $us-core-blood-pressure
 Title: "Blood Pressure Example"
 Description: "An example of an Observation (Blood Pressure)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#85354-9 "Blood pressure panel with all children optional"
@@ -490,6 +504,7 @@ InstanceOf:  $us-core-body-weight
 Title: "Body Weight Example"
 Description: "An example of an Observation (Body Weight)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#29463-7 "Body weight"
@@ -508,6 +523,7 @@ InstanceOf: $us-core-body-height
 Title: "Body Height Example"
 Description: "An example of an Observation (Body Height)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8302-2 "Body height"
@@ -526,6 +542,7 @@ InstanceOf:  $us-core-heart-rate
 Title: "Heart Rate Example"
 Description: "An example of an Observation (Heart Rate)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate|6.1.0" 
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8867-4 "Heart rate"
@@ -544,6 +561,7 @@ InstanceOf: $us-core-pulse-oximetry
 Title: "Pulse Oximetry Example"
 Description: "An example of an Observation (Pulse Oximetry)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
@@ -562,6 +580,7 @@ InstanceOf: $us-core-bmi
 Title: "BMI Example"
 Description: "An example of an Observation (BMI)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#39156-5 "Body mass index (BMI) [Ratio]"
@@ -580,6 +599,7 @@ InstanceOf: $us-core-body-temperature
 Title: "Body Temperature Example"
 Description: "An example of an Observation (Body Temperature)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"
@@ -598,6 +618,7 @@ InstanceOf:  $us-core-respiratory-rate
 Title: "Respiratory Rate Example"
 Description: "An example of an Observation (Respiratory Rate)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#9279-1 "Respiratory rate"
@@ -616,6 +637,7 @@ InstanceOf: $us-core-smokingstatus
 Title: "Smoking Status Example"
 Description: "An example of an Observation (Smoking Status)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0"
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#72166-2 "Tobacco smoking status"
@@ -630,6 +652,7 @@ InstanceOf:  $us-core-implantable-device
 Title: "Implantable Device Example"
 Description: "An example of a Device (Implantable)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
 * status = #active
 * manufacturer = "Device Manufacturer Inc."
 * manufactureDate = "2023-01-15"
@@ -647,6 +670,7 @@ InstanceOf: $us-core-careteam
 Title: "Care Team Example"
 Description: "An example of a CareTeam"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam|6.1.0"
 * status = #active
 * name = "Respiratory Care Team"
 * subject = Reference(Patient/patient-ledner)
@@ -668,6 +692,7 @@ InstanceOf: $us-core-goal
 Title: "Goal Example"
 Description: "An example of a Goal"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal|6.1.0"
 * lifecycleStatus = #active
 * achievementStatus = http://terminology.hl7.org/CodeSystem/goal-achievement#in-progress
 * description.text = "Resolve acute bronchitis within 2 weeks"
@@ -689,6 +714,7 @@ InstanceOf: $us-core-observation-pregnancystatus
 Title: "Pregnancy Status Example"
 Description: "An example of an Observation (Pregnancy Status)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1.0"
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#82810-3 "Pregnancy status"
@@ -703,6 +729,7 @@ InstanceOf: $us-core-observation-pregnancyintent
 Title: "Pregnancy Intent Example"
 Description: "An example of an Observation (Pregnancy Intent)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1.0"    
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#86645-9 "Pregnancy intention in the next year - Reported"
@@ -717,6 +744,7 @@ InstanceOf: USCoreCoverageProfile
 Title: "Coverage Example"
 Description: "An example of a Coverage"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0"
 * status = #active
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#EHCPOL "extended healthcare"
 * policyHolder = Reference(Patient/patient-ledner)
@@ -743,6 +771,7 @@ InstanceOf:  $us-core-organization
 Title: "Organization Example"
 Description: "An example of an Organization (Provider)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1234567899"
 * active = true
@@ -766,6 +795,7 @@ InstanceOf: $us-core-organization
 Title: "Payer Organization Example"
 Description: "An example of an Organization (Payer)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1234567892"
 * active = true
@@ -789,6 +819,7 @@ InstanceOf: USCoreLocation
 Title: "Location Example"
 Description: "An example of a Location"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
 * identifier.system = "http://www.acme.org/location"
 * identifier.value = "29"
 * status = #active
@@ -812,6 +843,7 @@ InstanceOf: USCoreDiagnosticReportProfileLaboratoryReporting
 Title: "Diagnostic Report Laboratory Example"
 Description: "An example of a DiagnosticReport (Laboratory – Profile Alternate)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code = http://loinc.org#58410-2 "CBC panel - Blood by Automated count"
@@ -828,6 +860,7 @@ InstanceOf: USCoreBodyTemperatureProfile
 Title: "Clinical Observation Example"
 Description: "An example of an Observation (Body Temperature – Alternate Profile)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature|6.1.0"
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"
@@ -848,6 +881,7 @@ InstanceOf: USCoreObservationScreeningAssessmentProfile
 Title: "Screening Assessment Example"
 Description: "An example of an Observation (Screening Assessment – Alternate Profile)"
 Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment|6.1.0"
 * status = #final
 * category[survey] = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = http://loinc.org#44249-1 "PHQ-9 quick depression assessment panel [Reported.PHQ]"
