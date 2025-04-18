@@ -97,10 +97,12 @@ Usage: #example
   <p>CMP Results: Glucose 98, BUN 14, Cr 0.8, Na 140, K 3.8, Cl 102</p>
 </div>
 """
-* section[sliceResultsSection].entry[sliceLabResultEntry] = Reference(Observation/observation-lab-example)
-* section[sliceResultsSection].entry[sliceDiagnosticResultEntry] = Reference(DiagnosticReport/diagnosticreport-lab-example)
-//* section[sliceResultsSection].entry[sliceClinicalResultEntry] = Reference(Observation/observation-clinical-example)
-* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(Observation/observation-screening-example)
+//* section[sliceResultsSection].entry[sliceLabResultEntry] = Reference(Observation/observation-lab-example)
+* section[sliceResultsSection].entry[sliceResultEntry] = Reference(Observation/observation-lab-example)
+* section[sliceResultsSection].entry[sliceDiagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-lab-example)
+// * section[sliceResultsSection].entry[sliceClinicalResultEntry] = Reference(Observation/observation-clinical-example)
+* section[sliceResultsSection].entry[sliceResultEntry] = Reference(Observation/observation-clinical-example)
+// * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(Observation/observation-screening-example)
 
 /* Notes Section (sliceNotesSection) - Optional */
 * section[sliceNotesSection].code = $loinc#28650-0 "Clinical notes and chart sections Set"
@@ -122,7 +124,7 @@ Usage: #example
 </div>
 """
 * section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] = Reference(ServiceRequest/servicerequest-example)
-* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] = Reference(CarePlan/careplan-example)
+* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntry] = Reference(CarePlan/careplan-example)
 
 /* Immunizations Section (sliceImmunizationsSection) - Optional */
 * section[sliceImmunizationsSection].code = $loinc#11369-6 "History of Immunization Narrative"
@@ -329,7 +331,7 @@ Usage: #example
 // Screening Assessment
 Instance: observation-screening-example
 InstanceOf: $us-core-observation-screening-assessment
-Title: "Screening Assessment Example"
+Title: "Observation Screening Example"
 Description: "An example of an Observation (Screening Assessment)"
 Usage: #example
 * status = #final
@@ -809,7 +811,7 @@ Usage: #example
 // Diagnostic Report - Lab
 Instance: diagnosticreport-example
 InstanceOf: USCoreDiagnosticReportProfileLaboratoryReporting
-Title: "Diagnostic Report Laboratory Example"
+Title: "Diagnostic Report Example"
 Description: "An example of a DiagnosticReport (Laboratory – Profile Alternate)"
 Usage: #example
 * status = #final
@@ -825,7 +827,7 @@ Usage: #example
 
 Instance: observation-clinical-result-example
 InstanceOf: USCoreBodyTemperatureProfile
-Title: "Clinical Observation Example"
+Title: "Clinical Result Observation Example"
 Description: "An example of an Observation (Body Temperature – Alternate Profile)"
 Usage: #example
 * status = #final
@@ -845,7 +847,7 @@ Usage: #example
 // Screening Assessment
 Instance: observation-screening-assessment-example
 InstanceOf: USCoreObservationScreeningAssessmentProfile
-Title: "Screening Assessment Example"
+Title: "Observation Screening Assessment Example"
 Description: "An example of an Observation (Screening Assessment – Alternate Profile)"
 Usage: #example
 * status = #final

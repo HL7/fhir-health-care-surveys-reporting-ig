@@ -16,6 +16,7 @@ Description: "This is the MedicationStatement Resource profile for the IG."
 * . ^short = "HCS Medication Request"
 * . ^definition = "Sets expectations for supported capabilities for MedicationStatement resource in Health Care Surveys Content IG."
 * . ^mustSupport = false
+// TODO - need to look at these constraints and remove any that are not needed (I think status, medication, subject, enocunter need to be remvoed) - is there a reason dosageInstruction is changed from the us core constraint of 0..* to 0..1?
 * status 1..1 MS
 * medication[x] 1..1 MS
 * subject 1..1 MS
