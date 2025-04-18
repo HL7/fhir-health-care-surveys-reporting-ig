@@ -53,13 +53,8 @@
 <artifact id="Device/device-example" key="Device-device-example" name="Implantable Device Example"/>
 <artifact id="Observation/observation-lab-example" key="Observation-observation-lab-example" name="Laboratory Observation Example"/>
 <artifact id="Location/location-example" key="Location-location-example" name="Location Example"/>
-<artifact id="Medication/medication-lantus-example" key="Medication-medication-lantus-example" name="Medication - Lantus Example"/>
-<artifact id="MedicationAdministration/medicationadministration-lantus-example" key="MedicationAdministration-medicationadministration-lantus-example" name="Medication Administration - Lantus Example"/>
 <artifact id="MedicationAdministration/medicationadministrationone-example" key="MedicationAdministration-medicationadministrationone-example" name="Medication Administration Example"/>
-<artifact id="MedicationDispense/medicationdispense-example" key="MedicationDispense-medicationdispense-example" name="Medication Dispense Example"/>
-<artifact id="MedicationRequest/medicationrequest-lantus-example" key="MedicationRequest-medicationrequest-lantus-example" name="Medication Request - Lantus Example"/>
 <artifact id="MedicationRequest/hcs-MedicationRequest" key="MedicationRequest-self-tylenol" name="MedicationRequest Example"/>
-<artifact id="MedicationRequest/hcsmedicationrequest-self-tylenol" key="MedicationRequest-self-tylenol" name="MedicationRequest Example"/>
 <artifact deprecated="true" id="MedicationStatement/example" key="MedicationStatement-example" name="MedicationStatement Example"/>
 <artifact id="MessageHeader/messageheader-example-reportheader" key="MessageHeader-messageheader-example-reportheader" name="MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"/>
 <artifact id="Organization/organization-example" key="Organization-organization-example" name="Organization Example"/>
