@@ -52,9 +52,11 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section contains
+    sliceReasonForVisitSection 1..1 MS and
+    sliceProblemSection 1..1 MS and
+    sliceAllergiesSection 1..1 MS and
     sliceAssessmentAndPlanOfTreatmentSection 0..1 MS and
     slicePlanOfTreatmentSection 0..1 MS and
-    sliceAllergiesSection 1..1 MS and
     sliceCareTeamSection 0..1 MS and
     sliceCoverageSection 0..1 MS and
     sliceGoalsSection 0..1 MS and
@@ -65,9 +67,7 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceAdmissionMedicationsSection 0..1 MS and
     sliceNotesSection 0..* MS and
     slicePregnancySection 0..1 MS and 
-    sliceProblemSection 1..1 MS and
     sliceProceduresSection 0..1 MS and
-    sliceReasonForVisitSection 1..1 MS and
     sliceResultsSection 0..1 MS and
     sliceSocialHistorySection 0..1 MS and
     sliceVitalSignsSection 0..* MS
