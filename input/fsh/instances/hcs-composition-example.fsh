@@ -97,10 +97,10 @@ Usage: #example
   <p>CMP Results: Glucose 98, BUN 14, Cr 0.8, Na 140, K 3.8, Cl 102</p>
 </div>
 """
-* section[sliceResultsSection].entry[sliceLabResultEntry] = Reference(Observation/observation-lab-example)
-* section[sliceResultsSection].entry[sliceDiagnosticResultEntry] = Reference(DiagnosticReport/diagnosticreport-lab-example)
+* section[sliceResultsSection].entry[sliceResultEntry] = Reference(Observation/observation-lab-example)
+* section[sliceResultsSection].entry[sliceDiagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-lab-example)
 //* section[sliceResultsSection].entry[sliceClinicalResultEntry] = Reference(Observation/observation-clinical-example)
-* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(Observation/observation-screening-example)
+//* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(Observation/observation-screening-example)
 
 /* Notes Section (sliceNotesSection) - Optional */
 * section[sliceNotesSection].code = $loinc#28650-0 "Clinical notes and chart sections Set"
@@ -122,7 +122,7 @@ Usage: #example
 </div>
 """
 * section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] = Reference(ServiceRequest/servicerequest-example)
-* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntries] = Reference(CarePlan/careplan-example)
+* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntry] = Reference(CarePlan/careplan-example)
 
 /* Immunizations Section (sliceImmunizationsSection) - Optional */
 * section[sliceImmunizationsSection].code = $loinc#11369-6 "History of Immunization Narrative"
@@ -773,7 +773,7 @@ Description: "An example of an Organization (Provider)"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1234567899"
+* identifier.value = "1234567893"
 * active = true
 * type = http://terminology.hl7.org/CodeSystem/organization-type#prov "Healthcare Provider"
 * name = "General Hospital"
@@ -797,7 +797,7 @@ Description: "An example of an Organization (Payer)"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1234567892"
+* identifier.value = "1234567893"
 * active = true
 * type = http://terminology.hl7.org/CodeSystem/organization-type#pay "Payer"
 * name = "Blue Cross Blue Shield"

@@ -8,28 +8,41 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="AllergyIntolerance/allergyintolerance-sulfonamide" key="AllergyIntolerance-example" name="AllergyIntolerance Example"/>
 <artifact id="Observation/observation-bmi-example" key="Observation-observation-bmi-example" name="BMI Example"/>
+<artifact id="DiagnosticReport/BasicMetabolicPanelReport" key="DiagnosticReport-BasicMetabolicPanelReport" name="Basic Metabolic Panel DiagnosticReport"/>
 <artifact id="Observation/observation-bp-example" key="Observation-observation-bp-example" name="Blood Pressure Example"/>
+<artifact id="Specimen/BloodSpecimen" key="Specimen-BloodSpecimen" name="Blood Specimen"/>
 <artifact id="Observation/observation-height-example" key="Observation-observation-height-example" name="Body Height Example"/>
 <artifact id="Observation/observation-temperature-example" key="Observation-observation-temperature-example" name="Body Temperature Example"/>
 <artifact id="Observation/observation-weight-example" key="Observation-observation-weight-example" name="Body Weight Example"/>
+<artifact id="DiagnosticReport/CBCPanelReport" key="DiagnosticReport-CBCPanelReport" name="CBC Panel DiagnosticReport"/>
+<artifact id="Observation/CarbonDioxideObservation" key="Observation-CarbonDioxideObservation" name="Carbon Dioxide Observation"/>
 <artifact id="CarePlan/careplan-example" key="CarePlan-careplan-example" name="Care Plan Example"/>
 <artifact id="CareTeam/careteam-example" key="CareTeam-careteam-example" name="Care Team Example"/>
 <artifact id="ValueSet/2.16.840.1.113762.1.4.1099.27" key="ValueSet-2.16.840.1.113762.1.4.1099.27" name="Care Team Member Function (SNOMEDCT)"/>
+<artifact id="Observation/ChlorideObservation" key="Observation-ChlorideObservation" name="Chloride Observation"/>
 <artifact id="Observation/observation-clinical-example" key="Observation-observation-clinical-example" name="Clinical Observation Example"/>
 <artifact id="Observation/observation-clinical-result-example" key="Observation-observation-clinical-result-example" name="Clinical Observation Example"/>
 <artifact id="Composition/hcs-composition-example" key="Composition-hcs-composition-example" name="Composition Example"/>
+<artifact id="Composition/hcs-composition-example-three" key="Composition-hcs-composition-example-three" name="Composition ExampleTwo"/>
 <artifact id="Condition/condition-problem" key="Condition-example" name="Condition Example"/>
 <artifact id="Coverage/coverage-example" key="Coverage-coverage-example" name="Coverage Example"/>
 <artifact id="Coverage/coverage-upmc" key="Coverage-coverage-upmc" name="Coverage Example 1"/>
+<artifact id="Observation/CreatinineObservation" key="Observation-CreatinineObservation" name="Creatinine Observation"/>
 <artifact id="DiagnosticReport/diagnosticreport-example" key="DiagnosticReport-diagnosticreport-example" name="Diagnostic Report Laboratory Example"/>
 <artifact id="DiagnosticReport/diagnosticreport-lab-example" key="DiagnosticReport-diagnosticreport-lab-example" name="Diagnostic Report Laboratory Example"/>
 <artifact id="DiagnosticReport/diagnosticreport-note-example" key="DiagnosticReport-diagnosticreport-note-example" name="Diagnostic Report Note Example"/>
 <artifact id="DocumentReference/documentreference-example" key="DocumentReference-documentreference-example" name="Document Reference Example"/>
+<artifact id="DocumentReference/EchocardiogramNote" key="DocumentReference-EchocardiogramNote" name="Echocardiogram Note"/>
+<artifact id="Observation/EchocardiogramObservation" key="Observation-EchocardiogramObservation" name="Echocardiogram Observation"/>
+<artifact id="Procedure/EchocardiogramProcedure" key="Procedure-EchocardiogramProcedure" name="Echocardiogram Procedure"/>
+<artifact id="DiagnosticReport/EchocardiogramReport" key="DiagnosticReport-EchocardiogramReport" name="Echocardiogram Report"/>
+<artifact id="DiagnosticReport/ElectrolytesPanelReport" key="DiagnosticReport-ElectrolytesPanelReport" name="Electrolytes Panel DiagnosticReport"/>
 <artifact id="Condition/condition-encounter-diagnosis" key="Condition-condition-encounter-diagnosis" name="Encounter Diagnosis Example"/>
 <artifact id="Encounter/encounter-ambulatory" key="Encounter-example-1" name="Encounter Example"/>
 <artifact id="Bundle/hcs-content-bundle-example" key="Bundle-hcs-content-bundle-example" name="Example of a Content Bundle containing Composition resource"/>
 <artifact deprecated="true" id="Bundle/content-bundle-example" key="Bundle-content-bundle-example" name="Example of a Content Bundle containing Patient Data"/>
 <artifact deprecated="true" id="Bundle/healthcare-survey-specification-bundle-example" key="Bundle-healthcare-survey-specification-bundle-example" name="Example of a Specification Bundle containing PlanDefinition"/>
+<artifact id="Observation/GlucoseObservation" key="Observation-GlucoseObservation" name="Glucose Observation"/>
 <artifact id="Goal/goal-example" key="Goal-goal-example" name="Goal Example"/>
 <artifact deprecated="true" id="Group/group-example-survey" key="Group-group-example-survey" name="Group example showing Providers participating in health care surveys"/>
 <artifact id="StructureDefinition/hcs-medicationadministration" key="StructureDefinition-hcs-medicationadministration" name="HCS Medication Administration"/>
@@ -49,20 +62,65 @@
 <artifact id="Endpoint/healthcare-endpoint" key="Endpoint-example-healthcare-endpoint" name="Healthcare Organization Endpoint example"/>
 <artifact id="Organization/organization-healthcare" key="Organization-example-healthcare-org" name="Healthcare Organization Example"/>
 <artifact id="Observation/observation-heartrate-example" key="Observation-observation-heartrate-example" name="Heart Rate Example"/>
+<artifact id="Observation/HematocritObservation" key="Observation-HematocritObservation" name="Hematocrit Observation"/>
+<artifact id="Observation/HemoglobinObservation" key="Observation-HemoglobinObservation" name="Hemoglobin Observation"/>
 <artifact id="Immunization/immunization-example" key="Immunization-immunization-example" name="Immunization Example"/>
 <artifact id="Device/device-example" key="Device-device-example" name="Implantable Device Example"/>
 <artifact id="Observation/observation-lab-example" key="Observation-observation-lab-example" name="Laboratory Observation Example"/>
 <artifact id="Location/location-example" key="Location-location-example" name="Location Example"/>
+<artifact id="Observation/MCHObservation" key="Observation-MCHObservation" name="MCH Observation"/>
+<artifact id="Observation/MCVObservation" key="Observation-MCVObservation" name="MCV Observation"/>
 <artifact id="MedicationAdministration/medicationadministrationone-example" key="MedicationAdministration-medicationadministrationone-example" name="Medication Administration Example"/>
 <artifact id="MedicationRequest/hcs-MedicationRequest" key="MedicationRequest-self-tylenol" name="MedicationRequest Example"/>
 <artifact deprecated="true" id="MedicationStatement/example" key="MedicationStatement-example" name="MedicationStatement Example"/>
 <artifact id="MessageHeader/messageheader-example-reportheader" key="MessageHeader-messageheader-example-reportheader" name="MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"/>
+<artifact id="AllergyIntolerance/NHCSOutpatientAllergyIntolerance" key="AllergyIntolerance-NHCSOutpatientAllergyIntolerance" name="NHCS Outpatient AllergyIntolerance"/>
+<artifact id="Observation/NHCSOutpatientBMI" key="Observation-NHCSOutpatientBMI" name="NHCS Outpatient BMI"/>
+<artifact id="Observation/NHCSOutpatientBloodPressure" key="Observation-NHCSOutpatientBloodPressure" name="NHCS Outpatient Blood Pressure"/>
+<artifact id="Observation/NHCSOutpatientHeight" key="Observation-NHCSOutpatientHeight" name="NHCS Outpatient Body Height"/>
+<artifact id="Observation/NHCSOutpatientTemperature" key="Observation-NHCSOutpatientTemperature" name="NHCS Outpatient Body Temperature"/>
+<artifact id="Observation/NHCSOutpatientWeight" key="Observation-NHCSOutpatientWeight" name="NHCS Outpatient Body Weight"/>
+<artifact id="CarePlan/NHCSOutpatientCarePlan" key="CarePlan-NHCSOutpatientCarePlan" name="NHCS Outpatient CarePlan"/>
+<artifact id="CareTeam/NHCSOutpatientCareTeam" key="CareTeam-NHCSOutpatientCareTeam" name="NHCS Outpatient CareTeam"/>
+<artifact id="Condition/NHCSOutpatientCondition3" key="Condition-NHCSOutpatientCondition3" name="NHCS Outpatient Condition - Hyperlipidemia"/>
+<artifact id="Condition/NHCSOutpatientCondition2" key="Condition-NHCSOutpatientCondition2" name="NHCS Outpatient Condition - Hypertension"/>
+<artifact id="Condition/NHCSOutpatientCondition1" key="Condition-NHCSOutpatientCondition1" name="NHCS Outpatient Condition - Work Worries"/>
+<artifact id="Consent/NHCSOutpatientConsent" key="Consent-NHCSOutpatientConsent" name="NHCS Outpatient Consent"/>
+<artifact id="Coverage/NHCSOutpatientCoverage" key="Coverage-NHCSOutpatientCoverage" name="NHCS Outpatient Coverage"/>
+<artifact id="DiagnosticReport/NHCSOutpatientDiagnosticReport" key="DiagnosticReport-NHCSOutpatientDiagnosticReport" name="NHCS Outpatient DiagnosticReport"/>
+<artifact id="DocumentReference/NHCSOutpatientDocumentReference" key="DocumentReference-NHCSOutpatientDocumentReference" name="NHCS Outpatient DocumentReference"/>
+<artifact id="Encounter/NHCSOutpatientEncounter" key="Encounter-NHCSOutpatientEncounter" name="NHCS Outpatient Encounter"/>
+<artifact id="Goal/NHCSOutpatientGoal1" key="Goal-NHCSOutpatientGoal1" name="NHCS Outpatient Goal - Vaccination Status"/>
+<artifact id="Goal/NHCSOutpatientGoal2" key="Goal-NHCSOutpatientGoal2" name="NHCS Outpatient Goal - Work Life Conditions"/>
+<artifact id="Observation/NHCSOutpatientHDLCholesterol" key="Observation-NHCSOutpatientHDLCholesterol" name="NHCS Outpatient HDL Cholesterol"/>
+<artifact id="Observation/NHCSOutpatientHeartRate" key="Observation-NHCSOutpatientHeartRate" name="NHCS Outpatient Heart Rate"/>
+<artifact id="Immunization/NHCSOutpatientImmunization" key="Immunization-NHCSOutpatientImmunization" name="NHCS Outpatient Immunization"/>
+<artifact id="Organization/NHCSOutpatientInsurer" key="Organization-NHCSOutpatientInsurer" name="NHCS Outpatient Insurer"/>
+<artifact id="Observation/NHCSOutpatientLDLCholesterol" key="Observation-NHCSOutpatientLDLCholesterol" name="NHCS Outpatient LDL Cholesterol"/>
+<artifact id="Location/NHCSOutpatientLocation" key="Location-NHCSOutpatientLocation" name="NHCS Outpatient Location"/>
+<artifact id="Medication/NHCSOutpatientMedication2" key="Medication-NHCSOutpatientMedication2" name="NHCS Outpatient Medication - Atorvastatin"/>
+<artifact id="Medication/NHCSOutpatientMedication1" key="Medication-NHCSOutpatientMedication1" name="NHCS Outpatient Medication - Lisinopril"/>
+<artifact id="MedicationRequest/NHCSOutpatientMedicationRequest1" key="MedicationRequest-NHCSOutpatientMedicationRequest1" name="NHCS Outpatient MedicationRequest - Lisinopril"/>
+<artifact id="MedicationRequest/NHCSOutpatientMedicationRequest2" key="MedicationRequest-NHCSOutpatientMedicationRequest2" name="NHCS Outpatient MedicationRequest - Statin"/>
+<artifact id="Patient/NHCSOutpatientPatient" key="Patient-NHCSOutpatientPatient" name="NHCS Outpatient Patient"/>
+<artifact id="Practitioner/NHCSOutpatientPractitioner" key="Practitioner-NHCSOutpatientPractitioner" name="NHCS Outpatient Practitioner"/>
+<artifact id="PractitionerRole/NHCSOutpatientPractitionerRole" key="PractitionerRole-NHCSOutpatientPractitionerRole" name="NHCS Outpatient PractitionerRole"/>
+<artifact id="Procedure/NHCSOutpatientProcedure" key="Procedure-NHCSOutpatientProcedure" name="NHCS Outpatient Procedure - SDOH Intervention"/>
+<artifact id="QuestionnaireResponse/NHCSOutpatientQuestionnaireResponse" key="QuestionnaireResponse-NHCSOutpatientQuestionnaireResponse" name="NHCS Outpatient QuestionnaireResponse - Health Status Assessment"/>
+<artifact id="Observation/NHCSOutpatientRespRate" key="Observation-NHCSOutpatientRespRate" name="NHCS Outpatient Respiratory Rate"/>
+<artifact id="ServiceRequest/NHCSOutpatientServiceRequest" key="ServiceRequest-NHCSOutpatientServiceRequest" name="NHCS Outpatient ServiceRequest"/>
+<artifact id="Specimen/NHCSOutpatientSpecimen" key="Specimen-NHCSOutpatientSpecimen" name="NHCS Outpatient Specimen"/>
+<artifact id="Observation/NHCSOutpatientTotalCholesterol" key="Observation-NHCSOutpatientTotalCholesterol" name="NHCS Outpatient Total Cholesterol"/>
+<artifact id="Observation/NHCSOutpatientTriglycerides" key="Observation-NHCSOutpatientTriglycerides" name="NHCS Outpatient Triglycerides"/>
+<artifact id="Observation/NHCSOutpatientWeightLengthPercentile" key="Observation-NHCSOutpatientWeightLengthPercentile" name="NHCS Outpatient Weight-for-length Percentile"/>
 <artifact id="Organization/organization-example" key="Organization-organization-example" name="Organization Example"/>
 <artifact id="ValueSet/2.16.840.1.113883.1.11.10267" key="ValueSet-2.16.840.1.113883.1.11.10267" name="ParticipationFunction"/>
 <artifact id="Patient/patient-ledner" key="Patient-1" name="Patient 1 - Example"/>
 <artifact id="Patient/patient-baxter" key="Patient-example" name="Patient Example"/>
 <artifact id="Organization/organization-payer-2" key="Organization-organization-payer-2" name="Payer 2"/>
 <artifact id="Organization/organization-payer-example" key="Organization-organization-payer-example" name="Payer Organization Example"/>
+<artifact id="Observation/PlateletsObservation" key="Observation-PlateletsObservation" name="Platelets Observation"/>
+<artifact id="Observation/PotassiumObservation" key="Observation-PotassiumObservation" name="Potassium Observation"/>
 <artifact id="Practitioner/practitioner-1" key="Practitioner-1" name="Practitioner Example"/>
 <artifact id="Observation/observation-pregnancy-intent-example" key="Observation-observation-pregnancy-intent-example" name="Pregnancy Intent Example"/>
 <artifact id="Observation/observation-pregnancy-status-example" key="Observation-observation-pregnancy-status-example" name="Pregnancy Status Example"/>
@@ -76,6 +134,9 @@
 <artifact id="ServiceRequest/servicerequest-example" key="ServiceRequest-servicerequest-example" name="Service Request Example"/>
 <artifact id="ServiceRequest/example" key="ServiceRequest-example" name="ServiceRequest Example"/>
 <artifact id="Observation/observation-smoking-example" key="Observation-observation-smoking-example" name="Smoking Status Example"/>
+<artifact id="Observation/SodiumObservation" key="Observation-SodiumObservation" name="Sodium Observation"/>
+<artifact id="Observation/UreaNitrogenObservation" key="Observation-UreaNitrogenObservation" name="Urea Nitrogen Observation"/>
+<artifact id="Specimen/UrineSpecimen" key="Specimen-UrineSpecimen" name="Urine Specimen"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
