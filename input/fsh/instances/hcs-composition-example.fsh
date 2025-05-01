@@ -58,8 +58,8 @@ Usage: #example
 </div>
 """
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
-
-/* Medications Administered Section (sliceMedicationsAdministeredSection) - Optional */
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/hcs-medicationrequest)
+/* Medications Administered Section (sliceMedicationsAdministeredSection) - Optional 
 * section[sliceMedicationsAdministeredSection].code = $loinc#29549-3 "Medication administered"
 * section[sliceMedicationsAdministeredSection].text.status = #generated
 * section[sliceMedicationsAdministeredSection].text.div = """
@@ -69,7 +69,7 @@ Usage: #example
 """
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
 
-/* Admission Medications Section (sliceAdmissionMedicationsSection) - Optional */
+/* Admission Medications Section (sliceAdmissionMedicationsSection) - Optional 
 * section[sliceAdmissionMedicationsSection].code = $loinc#42346-7 "Medications on admission (narrative)"
 * section[sliceAdmissionMedicationsSection].text.status = #generated
 * section[sliceAdmissionMedicationsSection].text.div = """
@@ -77,9 +77,9 @@ Usage: #example
   <p>Patient reported taking Lisinopril 10mg daily prior to admission</p>
 </div>
 """
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/hcs-medicationrequest)
+*/
 
-/* Medications Section (sliceMedicationsSection) - Optional */
+/* Medications Section (sliceMedicationsSection) - Optional 
 * section[sliceMedicationsSection].code = $loinc#10160-0 "History of Medication use Narrative"
 * section[sliceMedicationsSection].text.status = #generated
 * section[sliceMedicationsSection].text.div = """
@@ -87,6 +87,7 @@ Usage: #example
   Taking Lantus
 </div>
 """
+*/
 
 /* Results Section (sliceResultsSection) - Optional */
 * section[sliceResultsSection].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
@@ -98,9 +99,10 @@ Usage: #example
 </div>
 """
 * section[sliceResultsSection].entry[sliceResultEntry] = Reference(Observation/observation-lab-example)
+* section[sliceResultsSection].entry[sliceResultEntry] = Reference(Observation/observation-clinical-example)
 * section[sliceResultsSection].entry[sliceDiagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-lab-example)
-//* section[sliceResultsSection].entry[sliceClinicalResultEntry] = Reference(Observation/observation-clinical-example)
-//* section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] = Reference(Observation/observation-screening-example)
+
+
 
 /* Notes Section (sliceNotesSection) - Optional */
 * section[sliceNotesSection].code = $loinc#28650-0 "Clinical notes and chart sections Set"
@@ -112,6 +114,16 @@ Usage: #example
 """
 * section[sliceNotesSection].entry[sliceDocumentReferenceEntry] = Reference(DocumentReference/documentreference-example)
 * section[sliceNotesSection].entry[sliceDiagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-note-example)
+
+// Plan of Treatment Section
+* section[sliceAssessmentAndPlanOfTreatmentSection].code = $loinc#51847-2 "Assessment and Plan of Treatment Section narrative"
+* section[sliceAssessmentAndPlanOfTreatmentSection].text.status = #generated
+* section[sliceAssessmentAndPlanOfTreatmentSection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  <ul>
+    <li>Referral to social worker for housing assistance</li>
+  </ul>
+</div>"
+* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceScreeningAssessmentEntry] = Reference(Observation/observation-screening-example)
 
 /* Plan of Treatment Section (slicePlanOfTreatmentSection) - Optional */
 * section[slicePlanOfTreatmentSection].code = $loinc#18776-5 "Plan of care note"

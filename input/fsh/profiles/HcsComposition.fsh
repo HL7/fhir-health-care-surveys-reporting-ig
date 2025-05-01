@@ -63,8 +63,8 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceImmunizationsSection 0..1 MS and
     sliceMedicalEquipmentSection 0..1 MS and
     sliceMedicationsSection 0..1 MS and
-    sliceMedicationsAdministeredSection 0..1 MS and
-    sliceAdmissionMedicationsSection 0..1 MS and
+   // sliceMedicationsAdministeredSection 0..1 MS and
+   // sliceAdmissionMedicationsSection 0..1 MS and
     sliceNotesSection 0..* MS and
     slicePregnancySection 0..1 MS and 
     sliceProceduresSection 0..1 MS and
@@ -260,6 +260,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[sliceMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
 
+/*
 // Medications Administered Section (USCDI: n/a - consider removing this section - all profiles referenced elsewhere in Composition (Medications Section))
 * section[sliceMedicationsAdministeredSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceMedicationsAdministeredSection] ^extension.valueString = "Section"
@@ -319,7 +320,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
 * section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
-
+*/
 // Problem Section (USCDI: Problems)
 * section[sliceProblemSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sliceProblemSection] ^extension.valueString = "Section"
