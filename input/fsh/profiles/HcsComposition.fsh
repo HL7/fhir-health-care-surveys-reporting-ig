@@ -101,8 +101,8 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[sliceAssessmentAndPlanOfTreatmentSection].code ^definition = "Assessment and Plan of Treatment Section code"
 * section[sliceAssessmentAndPlanOfTreatmentSection].code ^isModifier = false
 * section[sliceAssessmentAndPlanOfTreatmentSection].text 1.. MS
-* section[sliceAssessmentAndPlanOfTreatmentSection].text ^short = "Assessment and Plan of Treatment Section narrative"
-* section[sliceAssessmentAndPlanOfTreatmentSection].text ^definition = "Assessment and Plan of Treatment Section narrative"
+* section[sliceAssessmentAndPlanOfTreatmentSection].text ^short = "Evaluation + Plan note"
+* section[sliceAssessmentAndPlanOfTreatmentSection].text ^definition = "Evaluation + Plan note"
 * section[sliceAssessmentAndPlanOfTreatmentSection].entry MS
 * section[sliceAssessmentAndPlanOfTreatmentSection].entry ^slicing.discriminator.type = #profile
 * section[sliceAssessmentAndPlanOfTreatmentSection].entry ^slicing.discriminator.path = "resolve()"
