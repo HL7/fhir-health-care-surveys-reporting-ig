@@ -3,7 +3,7 @@ The section identifies the business needs including specific user stories outlin
 
 #### Business Need
 The purpose of the Health Care Surveys Content Implementation Guide (IG) is to identify the hospital (e.g., emergency department (ED), inpatient care) and ambulatory care data that will be extracted from Data Sources (e.g., Electronic Health Records (EHR), clinical data repository) via Fast Healthcare Interoperability Resources (FHIR®) Application Programming Interfaces (APIs) and sent to a system hosted at the federal level. This use case will help define how electronic data can be used in automated data collection, reducing burden for the healthcare provider and data source with the goal of increasing the submission of timely quality health care data to the National Center for Health Statistics (NCHS).
-In the past predominate ambulatory (manual medical record abstraction) and hospital (claims) data collection methods are burdensome for providers, lack clinical richness, and are inefficient for NCHS. The HL7 Clinical Document Architecture (CDA®) R2 Implementation Guide: National Health Care Surveys Release 1, Draft Standard for Trial Use (DSTU) Release 1.2 - US Realm, 2016, is available-as a standards-based as well as a Promoting Interoperability measure-data submission option for providers. This CDA IG has improved NCHS EHR data submissions, but some providers have found it burdensome and NCHS has identified some data quality issues in submissions by this method.
+In the past predominant ambulatory (manual medical record abstraction) and hospital (claims) data collection methods are burdensome for providers, lack clinical richness, and are inefficient for NCHS. The HL7 Clinical Document Architecture (CDA®) R2 Implementation Guide: National Health Care Surveys Release 1, Draft Standard for Trial Use (DSTU) Release 1.2 - US Realm, 2016, is available-as a standards-based as well as a Promoting Interoperability measure-data submission option for providers. This CDA IG has improved NCHS EHR data submissions, but some providers have found it burdensome and NCHS has identified some data quality issues in submissions by this method.
 
 Utilizing this IG, which is tightly aligned with newly available standards such as FHIR R4 APIs and the United States Core Date for Interoperability (USCDI)/US Core Profiles, for electronic reporting will increase the response rate of sampled hospitals and ambulatory health care providers to the National Hospital Care Survey (NHCS) and the National Ambulatory Medical Care Survey (NAMCS) over other data collection approaches. This will also increase the volume, quality, completeness, and timeliness of the data submitted to the NHCS and NAMCS. This reporting approach via automated means (without provider involvement) will reduce the burden associated with survey participation and reduce costs associated with recruiting hospital and ambulatory health care providers.
 
@@ -81,7 +81,7 @@ The following is a diagram of the workflow based on the above user story used fo
 * NCHS Data Store acting as a Data Receiver with FHIR capabilities
 * Knowledge Artifact Repository
 
-###### Interactions between Actors and Systems for Health Care Surveys
+###### Interactions between Actors and Systems for the Health Care Surveys FHIR System
 This section outlines the high-level interactions between the various Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
 
 {% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - National Health Care Surveys FHIR System" %}
@@ -102,5 +102,12 @@ The descriptions for each step in the above diagram include:
 
 * *or vendor developed solution
 
+##### Subscription and Non-Subscription Notification Models
+
+The diagram in Figure 2.4 illustrates two distinct approaches for detecting that a qualifying encounter with completed clinical documentation has been finalized. 
+
+Systems without FHIR Subscription capabilities can implement the alternative method shown, which employs scheduled tasks running at regular intervals.
+
 {% include img.html img="alternatives.png" caption="Figure 2.4 - Subscription & Scheduled Task Notification Models" %}
+
 
