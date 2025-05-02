@@ -80,12 +80,11 @@ The following is a diagram of the workflow based on the above user story used fo
 * eCR Now FHIR App or vendor developed solution
 * NCHS Data Store acting as a Data Receiver with FHIR capabilities
 * Knowledge Artifact Repository
-* Trust Service Provider
 
 ###### Interactions between Actors and Systems for Health Care Surveys
 This section outlines the high-level interactions between the various Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
 
-{% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - Healthcare Surveys Actors and Systems" %}
+{% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - National Health Care Surveys FHIR System" %}
 
 The descriptions for each step in the above diagram include:
 * Step 1: The National Center for Health Statistics (NCHS) Data Store (e.g., Data Receiver) creates a Knowledge Artifact and makes it available via the Knowledge Artifact Repository.
@@ -97,11 +96,9 @@ The descriptions for each step in the above diagram include:
 * Step 5: The Data Source notifies the eCR Now FHIR App* based on subscriptions that have been created in Step 3.
 * Step 6: The eCR Now FHIR App* queries the Data Source for patient’s data.
      * Step 6a: eCR Now FHIR App* receives the response from the Data Source with the patient’s data.
-* Step 7: After the creation of the report with identifiable data that needs to be submitted, the eCR Now FHIR App* invokes the Trust Service Provider to de-identify, anonymize, pseudonymize the report as needed.
-     * Step 7a: The eCR Now FHIR App* receives the de-identified, anonymized or pseudonymized report.
-* Step 8: The eCR Now FHIR App* submits the created report to the NCHS Data Store.
-* Step 9: The NCHS Data Store submits a response back to the eCR Now FHIR App* based on the submitted report. The Response transaction can be synchronous or asynchronous (after a period of time).
-* Step 10: The eCR Now FHIR App* writes back the response from the NCHS Data Store to the Data Source as appropriate. Note: The Response may have to be re-identified in some scenarios using Trust Services before it is written back to the EHR.
+* Step 7: The eCR Now FHIR App* submits the created report to the NCHS Data Store.
+* Step 8: The NCHS Data Store submits a response back to the eCR Now FHIR App* based on the submitted report. The Response transaction can be synchronous or asynchronous (after a period of time).
+* Step 9: The eCR Now FHIR App* writes back the response from the NCHS Data Store to the Data Source as appropriate. 
 
 * *or vendor developed solution
 
