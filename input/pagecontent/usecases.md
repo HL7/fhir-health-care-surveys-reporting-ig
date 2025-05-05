@@ -108,6 +108,6 @@ The diagram in Figure 2.4 illustrates two distinct approaches for detecting that
 
 Systems without FHIR Subscription capabilities can implement the alternative method shown, which employs scheduled tasks running at regular intervals.
 
-{% include img.html img="alternatives.png" caption="Figure 2.4 - Subscription & Scheduled Task Notification Models" %}
+{% include img.html img="alternatives.png" caption="Figure 2.4 - Subscription & Non-Subscription Models" %}
 
 
