@@ -1,4 +1,4 @@
-This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content Implementation Guide (IG).  The specification focuses on using the Health Data Exchange App (HDEA), Making Electronic Data More available for Research and Public Health's (MedMorph) backend services app, to report the health care survey data to National Center for Health Statistics (NCHS) data stores.
+This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content Implementation Guide (IG).  The specification focuses on using the Health Data Exchange App (HDEA) to report the health care survey data to National Center for Health Statistics (NCHS) data stores.
 
 ### Context
 
