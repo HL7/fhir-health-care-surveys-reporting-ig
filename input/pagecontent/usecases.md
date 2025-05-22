@@ -111,6 +111,6 @@ A FHIR Subscription is a standardized mechanism that enables automated notificat
 
 Systems without FHIR Subscription capabilities can implement the alternative method shown, which employs scheduled tasks running at regular intervals. Providers can also develop their own in-house functionality to accomplish an alternative method to subscriptions.
 
-{% include img.html img="alternatives.png" caption="Figure 2.4 - Subscription & Non-Subscription Models" %}
+{% include img.html img="alternatives.png" caption="Figure 2.4 - Subscription & Subscription Alternative Models" %}
 
 
