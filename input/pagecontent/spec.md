@@ -53,7 +53,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 
     * HDEA accessing data from the Data Source
-    * HDEA posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities per the MedMorph RA IG
+    * HDEA posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities
     
 
 * System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART on FHIR Backend Services by hosting Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.

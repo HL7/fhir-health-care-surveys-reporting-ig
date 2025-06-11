@@ -14,7 +14,7 @@ Description: "This is the MedicationAdmininstration Resource profile for the IG.
 * ^contact.telecom.value = "http://www.hl7.org/Special/committees/pher"
 * ^jurisdiction = urn:iso:std:iso:3166#US
 * . ^short = "HCS Medication Administration"
-* . ^definition = "Sets expectations for supported capabilities for MedicationAdmininstration resource in MedMorph Health Care Surveys IG."
+* . ^definition = "Sets expectations for supported capabilities for MedicationAdmininstration resource"
 * . ^mustSupport = false
 * statusReason 0..1 MS
 * medication[x] 1..1 MS
