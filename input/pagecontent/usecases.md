@@ -87,7 +87,7 @@ This section outlines the high-level interactions between the various Actors and
 {% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - The Health Care Surveys FHIR System" %}
 
 The descriptions for each step in the above diagram include:
-* Step 1: The National Center for Health Statistics (NCHS) Data Store (e.g., Data Receiver) creates a Knowledge Artifact and makes it available via the Knowledge Artifact Repository.
+* Step 1: The National Center for Health Statistics (NCHS) Data Store (e.g., Data Receiver) creates a Knowledge Artifact — a structured, computable, shareable representation of clinical knowledge, such as trigger codes, value-sets, or workflow logic  — and makes it available via the Knowledge Artifact Repository, a FHIR-based service that versions, indexes, and distributes knowledge artifacts to subscribed systems .
      * Step 1a: Knowledge Artifact Repositories which implement notifications, can optionally notify the subscribers (Data Source, eCR Now FHIR App (Health Care Surveys)*, Administrators) of changes in the Knowledge Artifacts.
 * Step 2: The eCR Now FHIR App (Health Care Surveys)* queries the Knowledge Artifact Repository to retrieve a Knowledge Artifact. 
      * Step 2a: eCR Now FHIR App (Health Care Surveys)* receives the Knowledge Artifact as a response to the query in Step 2.
