@@ -77,7 +77,7 @@ The following is a diagram of the workflow based on the above user story used fo
 #### Health Care Surveys Actors and Definitions 
 
 * Data Source (e.g., EHR, clinical data repository)
-* eCR Now FHIR App (Health Care Surveys) or vendor developed solution
+* *eCR Now FHIR App (Health Care Surveys) or vendor developed solution
 * NCHS Data Store acting as a Data Receiver with FHIR capabilities
 * Knowledge Artifact Repository
 
