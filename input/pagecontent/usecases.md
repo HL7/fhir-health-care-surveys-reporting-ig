@@ -104,7 +104,7 @@ The descriptions for each step in the above diagram include:
 
 ##### Subscription and Subscription Alternative Notification Models
 
-A FHIR Subscription is a standardized mechanism that enables automated notifications when specific healthcare events occur such as the closure of an encounter combined with the existence of data meeting certain criteria. The subscription establishes a proactive connection between FHIR servers and other systems, allowing for push-based data collection that eliminates the need for constant polling. The diagram in Figure 2.4 illustrates two distinct approaches for detecting that a qualifying encounter with completed clinical documentation has been finalized. 
+A FHIR Subscription is a standardized mechanism that enables automated notifications when specific healthcare events occur such as the closure of an encounter combined with the existence of data meeting certain criteria. The subscription establishes a proactive connection between FHIR servers and other systems, allowing for push-based data collection that eliminates the need for constant pUlling or manual processes. The diagram in Figure 2.4 illustrates two distinct approaches for detecting that a qualifying encounter with completed clinical documentation has been finalized. 
 
 Systems without FHIR Subscription capabilities can implement the alternative method shown, which employs scheduled tasks running at regular intervals. Providers can also develop their own in-house functionality to accomplish an alternative method to subscriptions.
 
