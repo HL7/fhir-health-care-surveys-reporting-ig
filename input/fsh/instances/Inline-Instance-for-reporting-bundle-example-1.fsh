@@ -19,4 +19,4 @@ Usage: #inline
 * source.contact.value = "+1 (917) 123 4567"
 * source.endpoint = "http://example.healthcare.org/fhir"
 * reason = $us-ph-triggerdefinition-namedevents#encounter-close
-* focus = Reference(healthcare-surveys-reporting-bundle)
+* focus.reference = "http://example.org/fhir/Bundle/healthcare-surveys-content-bundle"
