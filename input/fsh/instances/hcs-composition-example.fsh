@@ -58,7 +58,7 @@ Usage: #example
 </div>
 """
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/hcs-medicationrequest)
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] = Reference(MedicationRequest/hcs-MedicationRequestone-example)
 /* Medications Administered Section (sliceMedicationsAdministeredSection) - Optional 
 * section[sliceMedicationsAdministeredSection].code = $loinc#29549-3 "Medication administered"
 * section[sliceMedicationsAdministeredSection].text.status = #generated
@@ -116,7 +116,7 @@ Usage: #example
 * section[sliceNotesSection].entry[sliceDiagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-note-example)
 
 // Plan of Treatment Section
-* section[sliceAssessmentAndPlanOfTreatmentSection].code = $loinc#51847-2 "Assessment and Plan of Treatment Section narrative"
+* section[sliceAssessmentAndPlanOfTreatmentSection].code = $loinc#51847-2 "Evaluation + Plan note"
 * section[sliceAssessmentAndPlanOfTreatmentSection].text.status = #generated
 * section[sliceAssessmentAndPlanOfTreatmentSection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
   <ul>
@@ -283,6 +283,27 @@ Usage: #example
 * dosage.route = http://snomed.info/sct#26643006 "Oral route"
 * dosage.dose.value = 400
 * dosage.dose.unit = "mg"
+
+Instance: hcs-MedicationRequestone-example
+InstanceOf: HcsMedicationRequest
+Title: "Medication Request Example"
+Description: "An example showing a MedicationRequest for HCS reporting."
+Usage: #example
+* status = #entered-in-error
+* intent = #order
+* medicationCodeableConcept = $sct#27658006 "Amoxicillin-containing product"
+* subject = Reference(patient-ledner) 
+* authoredOn = "2025-11-01"
+* requester = Reference(practitioner-1)
+* encounter = Reference(encounter-ambulatory)
+* note.text = "Patient indicated that they thought it was Amoxicillin they were taking but it was really Erythromycin"
+
+
+
+
+
+
+
 
 // Lab Observation
 Instance: observation-lab-example
