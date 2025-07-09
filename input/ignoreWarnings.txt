@@ -115,9 +115,8 @@ There are multiple different potential matches for the url 'http://hl7.org/fhir/
 # 15 There are multiple different potential matches for the url  
 	There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
 
-
-
-
-
+# 17 US PH MessageHeader defines two extensions slices - examples have optional extension that are not defined in the profile - not matching is expected behavior
+INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile
+INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 
