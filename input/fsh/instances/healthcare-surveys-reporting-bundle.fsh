@@ -9,3 +9,5 @@ Usage: #example
 * entry[=].resource = Inline-Instance-for-reporting-bundle-example-1
 * entry[+].fullUrl = "http://example.org/fhir/Bundle/healthcare-surveys-content-bundle"
 * entry[=].resource = healthcare-surveys-content-bundle 
+* entry[+].fullUrl = "http://example.org/fhir/Organization/organization-pha"
+* entry[=].resource = organization-pha
