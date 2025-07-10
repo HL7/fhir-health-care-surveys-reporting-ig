@@ -3,7 +3,7 @@
   <a name="intro"> </a>
   <h3>Introduction</h3>
     <p>
-    The National Health Care Surveys, with its NHCS Clinical Document Architecture (CDA) Release 3, more closely aligned its data requirements with USCDI V3. 
+    The National Health Care Surveys, with its NHCS Clinical Document Architecture (CDA) Release 4, more closely aligned its data requirements with USCDI V3. 
     The alignment with USCDI is increased in this FHIR IG. The Health Care Survey Content Bundle is limited to data elements included in USCDI V1 as 
     operationalized by 17 US Core Resource Profiles v6.1. As medications administered during encounters have been collected in the National Health Care 
     Surveys for decades, it was felt this data was needed so as to not have gaps in collection years. Thus, the only exception to the US Core Profiles only 
@@ -14,7 +14,29 @@
     	<p>
     The Health Care Surveys Content Implementation Guide (IG) specifies how to enable health care organizations to implement <a href="usecases.html">Health Care Surveys Use Cases</a> outlined in the IG. 
    	</p>
-	<a name="technical"> </a>
+	<a name="relationto"> </a>
+<h3>Relation to Other Standards</h3>
+<p>
+This NHCS FHIR IG is based upon FHIR R4.0.1 and is a U.S. Realm Specification. It re-uses or further constrains FHIR resources published in the following FHIR IGs:
+</p>
+<ul>
+  <li>
+    <a href="http://hl7.org/fhir/us/core/STU6.1/">US Core Implementation Guide – STU 6.1.0</a> (2023-06-30), which aligns with U.S. Core Data for Interoperability (USCDI) v3, July 2021
+  </li>
+  <li>
+    <a href="https://hl7.org/fhir/us/ph-library/STU1/">US Public Health Profiles Library – STU 1.0.0</a> (2023-08-17)
+  </li>
+  <li>
+    <a href="http://hl7.org/fhir/smart-app-launch/STU2/">SMART App Launch – STU 2.0.0</a> (2021-11-26)
+  </li>
+  <li>
+    <a href="http://hl7.org/fhir/uv/subscriptions-backport/STU1.1">Subscriptions R5 Backport – STU 1.1.0</a> (2023-01-11)
+  </li>
+</ul>
+<p>
+In addition, this FHIR IG aligns with the <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=385">HL7 Clinical Document Architecture (CDA) ® R2 Implementation Guide: National Health Care Surveys (NHCS)</a>.
+</p>
+  <a name="technical"> </a>
 	<h3>Technical Overview</h3>
   <p>
     The main sections of this IG are:

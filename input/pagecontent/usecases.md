@@ -1,13 +1,29 @@
-### Business Need and User Stories
+### National Health Care Surveys
+
+The data collected through the National Ambulatory Medical Care Survey (NAMCS) are objective, reliable information about the provision and use of ambulatory medical care services in the United States. Findings are based on a sample of visits to non-federally employed, office-based physicians, as well as visits to health care providers at community health centers. 
+
+The data collected through the National Hospital Care Survey (NHCS) provide reliable and timely healthcare utilization data for hospital-based settings. Non-federal, non-institutional hospitals with six or more staffed inpatient beds are randomly selected to provide nationally representative data on hospital utilization. Participating hospitals are asked to submit all inpatient discharges and emergency department visits for a 12-month period.  
+While there are some differences, NAMCS and NHCS capture information about the patient, the visit, signs and symptoms, diagnoses, procedures, medications, and discharge disposition.  
+
+The intent of this implementation guide is to obtain as much survey information as possible from data currently available in EHRs. It is understood that not all of the data items indicated on the surveys may be captured by EHR systems at this time. 
+
+
+
+
+
+
 The section identifies the business needs including specific user stories outlining the health care surveys reporting data exchange needs.
 
-#### Business Need
-The purpose of the Health Care Surveys Content Implementation Guide (IG) is to identify the hospital (e.g., emergency department (ED), inpatient care) and ambulatory care data that will be extracted from Data Sources (e.g., Electronic Health Records (EHR), clinical data repository) via Fast Healthcare Interoperability Resources (FHIR®) Application Programming Interfaces (APIs) and sent to a system hosted at the federal level. This use case will help define how electronic data can be used in automated data collection thereby, reducing burden for the healthcare provider and data source (e.g. EHR system)with the goal of increasing the submission of timely quality health care data to the National Center for Health Statistics (NCHS). Historically, the predominate ambulatory and hospital  data collection methods have,been burdensome for providers due to manual processes,  with data lacking in the desired clinical richness and quality.  The HL7 Clinical Document Architecture (CDA®) R2 Implementation Guide: National Health Care Surveys Release 1, Draft Standard for Trial Use (DSTU) Release 1.2 - US Realm, 2016, and HL7® CDA® R2 Implementation Guide: National Health Care Surveys (NHCS), R1 STU Release 3.1 - US Realm are available-as a standards-based measure as well as a Promoting Interoperability (PI) and Merit-Based Incentive Payment System (MIPS) measure for hospitals and providers. These CDA IGs have improved NCHS EHR data submissions, but some providers have found it burdensome due to manual processes involved and NCHS has identified some data quality issues in submissions using the CDA standard. 
+### Business Need
+The purpose of the Health Care Surveys Content Implementation Guide (IG) is to identify the hospital (e.g., emergency department (ED), inpatient care) and ambulatory care data that will be extracted from Data Sources (e.g., Electronic Health Records (EHR), clinical data repository) via Fast Healthcare Interoperability Resources (FHIR®) Application Programming Interfaces (APIs) and sent to a system hosted at the federal level. This use case will help define how electronic data can be used in automated data collection, thereby reducing burden for the healthcare provider and data source (e.g. EHR system)with the goal of increasing the submission of timely quality health care data to the National Center for Health Statistics (NCHS).
+
+Historically, the predominate ambulatory and hospital  data collection methods have,been burdensome for providers due to manual processes,  with data lacking in the desired clinical richness and quality.  The HL7 Clinical Document Architecture (CDA®) R2 Implementation Guide: National Health Care Surveys Release 1, Draft Standard for Trial Use (DSTU) Release 1.2 - US Realm, 2016, and HL7® CDA® R2 Implementation Guide: National Health Care Surveys (NHCS), R1 STU Release 3.1 - US Realm are available-as a standards-based measure as well as a Promoting Interoperability (PI) and Merit-Based Incentive Payment System (MIPS) measure for hospitals and providers. These CDA IGs have improved NCHS EHR data submissions, but some providers have found it burdensome due to manual processes involved and NCHS has identified some data quality issues in submissions using the CDA standard. 
 
 This IG is in alignment with the Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule which adopts the United States Core Data for Interoperability (USCDI) Version 3.0, US Core Profiles V6.1.0 as the baseline standard as of January 1st, 2026.
 
 This FHIR IG references a framework for FHIR reporting based on the eCR Now framework automating the reporting of encounters closed for 48 hours. This automated reporting will increase the response rate of sampled hospitals and ambulatory health care providers to the National Hospital Care Survey (NHCS) and the National Ambulatory Medical Care Survey (NAMCS), respectively, over other data collection approaches while improving process efficiency. This reporting approach via automated means (without provider involvement) reduces the burden associated with survey participation and reduce costs associated with recruiting hospital and ambulatory health care providers. This will also increase the volume, quality, completeness, and timeliness of the data submitted to the NHCS and the NAMCS.   
 
+The National Center for Health Statistics (NCHS) plans to align the data elements in future releases of this IG with those that achieve recognition for voluntary implementation in the Standards Version Advancement Process (SVAP) or are required by regulation as part of USCDI.
 
 #### Goals of the Use Case
 
@@ -19,8 +35,6 @@ The goals of the Health Care Survey submission use case include:
 * Reduce the burden, including cost, associated with survey participation for hospitals, ambulatory health care providers, and data source vendors.
 * Reduce NCHS’s costs associated with recruiting hospital and ambulatory health care providers, and the processing of NHCS and NAMCS data.
 * Develop a complete use case supported by the eCR Now FHIR App- Health Care Surveys to allow the reporting of health care survey data from health care providers and systems to NCHS. 
-
-##### Scope of the Use Case
 
 **In-Scope**
 
@@ -81,7 +95,7 @@ The following is a diagram of the workflow based on the above user story used fo
 * NCHS Data Store acting as a Data Receiver with FHIR capabilities
 * Knowledge Artifact Repository
 
-###### Interactions between Actors and Systems for the Health Care Surveys FHIR System
+##### Interactions between Actors and Systems for the Health Care Surveys FHIR System
 This section outlines the high-level interactions between the various Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
 
 {% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - The Health Care Surveys FHIR System" %}
