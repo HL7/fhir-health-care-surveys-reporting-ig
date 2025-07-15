@@ -7,7 +7,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0"
 * status = #active
 * intent = #original-order
-* category = $sct#103693007 "Diagnostic procedure (procedure)"
+* category = $sct#363679005 "Imaging (procedure)"
 * category.text = "Diagnostics Procedure"
 * code = $loinc#24627-2
 * code.text = "Chest CT"

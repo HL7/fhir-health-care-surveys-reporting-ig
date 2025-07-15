@@ -19,8 +19,8 @@ Description: "This is the MedicationStatement Resource profile for the IG."
 * status 1..1 MS
 * medication[x] 1..1 MS
 * subject 1..1 MS
-* subject only Reference($us-core-patient)
+* subject only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0)
 * encounter 0..1 MS
-* encounter only Reference($us-core-encounter)
+* encounter only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0)
 * authoredOn 1..1 MS
 * dosageInstruction 0..1 MS

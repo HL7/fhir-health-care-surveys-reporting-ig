@@ -6,6 +6,18 @@
 # This has been approved by the CPG on 7/13/2023 per the ticket : https://jira.hl7.org/browse/FHIR-41578. Motion Brett Marquard/Eric Haas: 13-0-0 
 US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
 
+# 01 US Core 6.1.0 is the version that is cited in regulation for 2026, the next release of the US Public Health Profiles Library will move to the next cited release of US Core
+WARNING: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
+
+# 02 Inherited from US Core Slicing
+INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
+INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
+
+#03 Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
+INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile
+INFORMATION: Bundle/hcs-content-bundle-example: Bundle.entry[x]: This element does not match any known slice defined in the profile
+
+
 # 01 There are multiple different potential matches for the url  
 There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
 

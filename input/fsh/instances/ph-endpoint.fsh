@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthEndpoint
 Title: "Public Health Organization Endpoint example"
 Description: "An example showing a Public Health Organization Endpoint"
 Usage: #example
-* identifier.system = "http://example.pha.org/enpoint-identifier"
+* identifier.system = "http://example.org/pha/enpoint-identifier"
 * identifier.value = "pha-endpoint-id"
 * status = #active
 * connectionType = $endpoint-connection-type#hl7-fhir-rest
@@ -16,4 +16,4 @@ Usage: #example
 * payloadType = $resource-types#Bundle
 * payloadMimeType[0] = #application/fhir+xml
 * payloadMimeType[+] = #application/fhir+json
-* address = "http://example.pha.org/fhir"
+* address = "http://example.org/pha-fhir"
