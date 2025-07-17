@@ -8,6 +8,7 @@ Description: "This is the MedicationStatement Resource profile for the IG."
 * ^version = "1.0.1"
 * ^status = #active
 * ^experimental = false
+* ^extension[$compliesWithProfile][+].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * ^date = "2023-06-01"
 * ^publisher = "HL7 International - Public Health Work Group"
 * ^contact.telecom.system = #url

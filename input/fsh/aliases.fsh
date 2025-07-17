@@ -67,3 +67,4 @@ Alias: $subscriber-relationship = http://terminology.hl7.org/CodeSystem/subscrib
 Alias: $coverage-class = http://terminology.hl7.org/CodeSystem/coverage-class
 Alias: $USPHPlanDefAction = http://hl7.org/fhir/us/ph-library/ValueSet/us-ph-valueset-plandefinition-action
 Alias: $v3-TribalEntityUS = http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS
+Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile

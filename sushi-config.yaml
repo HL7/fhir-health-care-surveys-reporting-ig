@@ -1,6 +1,10 @@
 packageId: hl7.fhir.us.health-care-surveys-reporting
 canonical: http://hl7.org/fhir/us/health-care-surveys-reporting
 fhirVersion: 4.0.1
+parameters:
+  show-inherited-invariants: false
+  path-expansion-params: "../../input/Parameters-expansion-parameters-health-care.json"
+  pin-canonicals: pin-multiples
 applyExtensionMetadataToRoot: false
 id: hl7.fhir.us.health-care-surveys-reporting
 name: HealthcareSurveysReporting

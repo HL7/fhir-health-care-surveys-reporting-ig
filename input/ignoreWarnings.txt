@@ -13,121 +13,35 @@ WARNING: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on
 INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
 INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
 
-#03 Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
+# 03 Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile
 INFORMATION: Bundle/hcs-content-bundle-example: Bundle.entry[x]: This element does not match any known slice defined in the profile
 
+# 04 These are the correct pinned versions 
 
-# 01 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
+INFORMATION: StructureDefinition.baseDefinition: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[17].type[1].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[17].type[1].targetProfile[1]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[17].type[1].targetProfile[2]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[17].type[1].targetProfile[3]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[17].type[1].targetProfile[4]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[18].type[1].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[23].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[23].type[0].targetProfile[1]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[23].type[0].targetProfile[2]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[23].type[0].targetProfile[3]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[23].type[0].targetProfile[4]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[27].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[78].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[79].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[37].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[80].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[81].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.differential.element[17].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.differential.element[18].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
 
-# 02 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 03 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 04 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 05 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 06 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 07 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 08 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 09 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 10 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 11 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 12 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-report-and-note-codes'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 13 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 14 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActCode'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '3.0.0', found versions: 2.0.0, 2018-08-12, 3.0.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 15 There are multiple different potential matches for the url  
-	There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer. Using version '6.1.0', found versions: 5.0.1, 6.1.0
-
-# 17 US PH MessageHeader defines two extensions slices - examples have optional extension that are not defined in the profile - not matching is expected behavior
+# 05 US PH MessageHeader defines two extensions slices - examples have optional extension that are not defined in the profile - not matching is expected behavior
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
