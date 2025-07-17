@@ -1,4 +1,4 @@
-Alias: $v3-ParticipationFunction = http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction
+Alias: $v3-ParticipationFunction = http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction|3.0.0
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $sct = http://snomed.info/sct
@@ -68,3 +68,4 @@ Alias: $coverage-class = http://terminology.hl7.org/CodeSystem/coverage-class
 Alias: $USPHPlanDefAction = http://hl7.org/fhir/us/ph-library/ValueSet/us-ph-valueset-plandefinition-action
 Alias: $v3-TribalEntityUS = http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS
 Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
+Alias: $raceEthnicity = urn:oid:2.16.840.1.113883.6.238

@@ -13,7 +13,6 @@ Description: """This value set was established through considerable analysis and
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1099.27"
 * ^version = "20230706"
-* ^status = #active
 * ^date = "2023-07-06T01:01:05-04:00"
 * ^publisher = "HL7 US Realm Program Management Steward"
 * ^experimental = false

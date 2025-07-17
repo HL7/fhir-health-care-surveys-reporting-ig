@@ -11,7 +11,7 @@ Usage: #inline
 * eventCoding = $us-ph-messageheader-message-types#healthcare-survey-report-message
 * destination.name = "PHA endpoint"
 * destination.endpoint = "http://example.org/pha-fhir"
-* sender = Reference(organization-healthcare)
+* sender.reference = "Organization/organization-healthcare"
 * source.name = "Healthcare Organization"
 * source.software = "Backend Service App"
 * source.version = "3.1.45.AABB"

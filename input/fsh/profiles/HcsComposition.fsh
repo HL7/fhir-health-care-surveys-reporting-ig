@@ -6,7 +6,6 @@ Description: "This Composition profile is used to organize the healthcare survey
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #pher
 * ^version = "1.0.1"
-* ^status = #active
 * ^experimental = false
 * ^date = "2025-01-19T06:17:31-07:00"
 * ^publisher = "HL7 International - Public Health Work Group"

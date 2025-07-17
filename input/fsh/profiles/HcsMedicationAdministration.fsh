@@ -6,7 +6,6 @@ Description: "This is the MedicationAdmininstration Resource profile for the IG.
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #pher
 * ^version = "1.0.1"
-* ^status = #active
 * ^experimental = false
 * ^date = "2023-06-01"
 * ^publisher = "HL7 International - Public Health Work Group"

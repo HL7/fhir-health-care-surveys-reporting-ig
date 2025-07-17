@@ -12,6 +12,9 @@ WARNING: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on
 # 02 Inherited from US Core Slicing
 INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
 INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
+INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.snapshot.element[12].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
 # 03 Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile

@@ -23,6 +23,8 @@ extension:
     valueCode: pher
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: draft
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 2
 jurisdiction: urn:iso:std:iso:3166#US
 status: draft
 version: 2.0.0

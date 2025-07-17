@@ -8,7 +8,6 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #pher
 * ^version = "1.0.1"
-* ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 International - Public Health Work Group"
 * ^date = "2023-06-01"

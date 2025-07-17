@@ -12,7 +12,6 @@ Description: "removed two codes that were not in the original version of the cod
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113883.1.11.10267"
 * ^version = "20240605"
-* ^status = #active
 * ^date = "2024-06-05T01:20:19-04:00"
 * ^publisher = "HL7 US Realm Program Management Steward"
 * ^experimental = false
