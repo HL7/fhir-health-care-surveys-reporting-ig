@@ -3,16 +3,23 @@
   <a name="intro"> </a>
   <h3>Introduction</h3>
     <p>
-    The National Health Care Surveys, with its NHCS Clinical Document Architecture (CDA) Release 4, more closely aligned its data requirements with USCDI V3. 
-    The alignment with USCDI is increased in this FHIR IG. The Health Care Survey Content Bundle is limited to data elements included in USCDI V1 as 
-    operationalized by 17 US Core Resource Profiles v6.1. As medications administered during encounters have been collected in the National Health Care 
-    Surveys for decades, it was felt this data was needed so as to not have gaps in collection years. Thus, the only exception to the US Core Profiles only 
-    heuristic is the HCS MedicationAdministration Profile, which is also included in the Health Care Survey Content Bundle. The National Center for Health Statistics (NCHS) plans to align the 
-    data elements in future releases of this IG with those that achieve recognition for voluntary implementation in the 
-    Standards Version Advancement Process (SVAP) or are required by regulation as part of USCDI.
-	</p>
-    	<p>
-    The Health Care Surveys Content Implementation Guide (IG) specifies how to enable health care organizations to implement <a href="usecases.html">Health Care Surveys Use Cases</a> outlined in the IG. 
+    This US-specific implemmentation guide (IG) provides guidance on the exchange of information for the National Center for Health Statistics (NCHS) National Health Care Surveys (NHCS). The data are collected through surveys of ambulatory, inpatient, and outpatient care services in the United States: the National Ambulatory Medical Care Survey (NAMCS) and the <a href="https://www.cdc.gov/nchs/healthcare-surveys/about/index.html ">National Hospital Care Survey (NHCS)</a>.
+    These surveys produce nationally representative data to answer key questions about health care usage, quality, and disparities for public health professionals, researchers, and health care policy makers.
+    </p>
+    <p>
+    This IG supports interoperability between FHIR-enabled electronic health record (EHR) systems and NCHS recipient systems for three settings: 
+    <ul>
+        <li>Emergency department encounter, for data collected by NHCS</li>
+        <li>Inpatient encounter, for data collected by NHCS</li>
+        <li>Outpatient encounter, for data collected NHCS and NAMCS</li>
+    </ul>
+    </p>
+    <p>This Implementation Guide (IG) improves the process of gathering data for national health surveys by automating the extraction of information from electronic health records (EHRs) and securely transmitting it to the National Center for Health Statistics (NCHS). The IG utilizes the Fast Healthcare Interoperability Resources (FHIR) standard along with US Core profiles, which specify how common clinical concepts are represented in FHIR. It also leverages a Reference Architecture (RA) framework for automated reporting and the electronic Case Reporting (eCR) Now FHIR application, customized to accommodate the Health Care Surveys' content and structural requirements.</p>
+
+    <p>From a regulatory alignment standpoint, this IG is closely aligned with USCDI Version 3.0 and US Core 6.1.0 as specified in the Assistant Secretary for Technology Policy (ASTP)'s Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule. While this NHCS FHIR IG aligns with USCDI V3/US Core 6.1.0 to the greatest extent possible, there is one exception. Since medications administered during encounters have been collected in the National Health Care Surveys for decades, and to avoid gaps in collection years, the IG includes the HCS Medication Administration Profile as the only deviation from standard US Core Profiles. Future releases will continue to align with ASTP's Health IT Certification Program regulations, the Standards Version Advancement Process (SVAP), USCDI, and other relevant digital standards for healthcare interoperability.</p>
+
+
+    <p> The Health Care Surveys Content Implementation Guide (IG) specifies how to enable health care organizations to implement <a href="usecases.html">Health Care Surveys Use Cases</a> outlined in the IG. 
    	</p>
 	<a name="relationto"> </a>
 <h3>Relation to Other Standards</h3>
@@ -53,4 +60,5 @@ In addition, this FHIR IG aligns with the <a href="https://www.hl7.org/implement
       <a href="downloads.html">Downloads</a> - Allows downloading a copy of this implementation guide and other useful information.
     </li>
   </ul>
+   <p><strong>Note:</strong> Value sets in this Implementation Guide are developed by outside entities (e.g., HL7) and cannot be altered by NCHS. In compliance with Executive Order 14168 (January 20, 2025), the National Health Care Surveys will only publish patient encounter records where the "patient sex" or "gender" variable options are "male" or "female." In addition, we will not publish any data related to structured evaluation of risk for the social determinants of health domains. These actions will be implemented pending further direction by the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health IT.</p>
 </div>
