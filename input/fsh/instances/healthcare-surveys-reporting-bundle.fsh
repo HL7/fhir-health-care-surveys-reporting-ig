@@ -6,6 +6,6 @@ Usage: #example
 * type = #message
 * timestamp = "2020-11-20T11:15:33-10:00"
 * entry[0].fullUrl = "http://example.org/fhir/MessageHeader/messageheader-example-reportheader"
-* entry[=].resource = Inline-Instance-for-reporting-bundle-example-1
+* entry[=].resource = messageheader-example-reportheader
 * entry[+].fullUrl = "http://example.org/fhir/Bundle/healthcare-surveys-content-bundle"
 * entry[=].resource = healthcare-surveys-content-bundle 

@@ -4,8 +4,6 @@ Title: "Public Health Organization Example"
 Description: "An example showing a Public Health Organization"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
-* identifier.system = "http://example.org/pha-fhir"
-* identifier.value = "1063494177"
 * active = true
 * name = "Example PHA Organization"
 * telecom.system = #phone

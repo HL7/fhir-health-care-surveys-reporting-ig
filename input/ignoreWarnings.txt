@@ -43,9 +43,24 @@ INFORMATION: StructureDefinition.snapshot.element[80].type[0].targetProfile[0]: 
 INFORMATION: StructureDefinition.snapshot.element[81].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
 INFORMATION: StructureDefinition.differential.element[17].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
 INFORMATION: StructureDefinition.differential.element[18].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.baseDefinition: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+INFORMATION: StructureDefinition.snapshot.element[13].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-category to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+
 
 # 05 US PH MessageHeader defines two extensions slices - examples have optional extension that are not defined in the profile - not matching is expected behavior
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
+#06 Canonical URLs do resolve 
+WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
+WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
 
+#07 Required use of 6.1.0 to meet regulatory requirements
+WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[0]: The ImplementationGuide uses package hl7.terminology.r4#6.1.0 released on 2024-11-17, but the most recent appropriate version is 6.5.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.1.0 released on 2024-04-27, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
+
+#07 Inherited through US Core Profiles 
+INFORMATION: ServiceRequest/example: ServiceRequest.category[0]: Reference to draft ValueSet http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1

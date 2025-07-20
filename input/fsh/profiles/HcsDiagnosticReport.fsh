@@ -1,5 +1,5 @@
 Profile: HcsDiagnosticReport
-Parent: DiagnosticReport
+Parent: USCoreDiagnosticReportProfileNoteExchange
 Id: hcs-diagnosticreport
 Title: "Health Care Survey Report Diagnostic Report"
 Description: "This Diagnostic Report profile is for healthcare survey report content."
@@ -14,7 +14,7 @@ Description: "This Diagnostic Report profile is for healthcare survey report con
 * status 1..1 MS
 * status from http://hl7.org/fhir/ValueSet/diagnostic-report-status
 * status ^comment = "[USC01] registered | partial | preliminary | final | amended | corrected | appended"
-
+/*
 * category 1..* MS
 * category only CodeableConcept
 * category ^slicing.discriminator.type = #pattern
@@ -26,7 +26,7 @@ Description: "This Diagnostic Report profile is for healthcare survey report con
 * category 1..* MS
 * category from http://hl7.org/fhir/ValueSet/diagnostic-service-sections|6.1.0 (required)
 * category from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-category|6.1.0 (required)
-
+*/
 * code 1..1 MS
 * code only CodeableConcept
 * code from http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-report-and-note-codes|6.1.0 (extensible)
@@ -42,9 +42,8 @@ Description: "This Diagnostic Report profile is for healthcare survey report con
 * encounter ^comment = "(USCDI)Health care event when test ordered"
 
 * effective[x] 0..1 MS
-* effective[x] ^constraint[1].key = "C"
-* effective[x] ^constraint[1].severity = #error
-* effective[x] ^constraint[1].human = "Either effectiveDateTime or effectivePeriod must be present"
+* effective[x] only dateTime or Period
+
 * effective[x] ^comment = "(USCDI) Diagnostically relevant time (typically the time of the procedure)"
 * effectiveDateTime MS
 * effectivePeriod MS

@@ -1,0 +1,10 @@
+{
+	"package-id": "hl7.fhir.us.health-care-surveys-reporting",
+	"version": "2.0.0-ballot",
+	"path": "http://hl7.org/fhir/us/health-care-surveys-reporting/2025Sep",
+	"mode": "working",
+	"status": "ballot",
+	"sequence": "STU 2",
+	"desc": "STU 2 for National Health Care Surveys, alignment with US Core 6.1.0 / USCDI V3.0 data elements",
+	"first": false
+}

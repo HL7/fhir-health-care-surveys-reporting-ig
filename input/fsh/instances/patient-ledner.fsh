@@ -41,4 +41,4 @@ Usage: #example
 * communication.language = urn:ietf:bcp:47#en "English"
 * communication.preferred = true
 * generalPractitioner = Reference(Practitioner/practitioner-1)
-* managingOrganization = Reference(organization-healthcare) "Healthcare Example"
+* managingOrganization = Reference(Organization/organization-healthcare) "Healthcare Example"

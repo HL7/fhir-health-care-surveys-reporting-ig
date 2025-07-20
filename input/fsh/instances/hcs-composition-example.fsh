@@ -134,7 +134,7 @@ Usage: #example
 </div>
 """
 * section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] = Reference(ServiceRequest/servicerequest-example)
-* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntry] = Reference(CarePlan/careplan-example)
+/* * section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntry] = Reference(CarePlan/careplan-example)
 
 /* Immunizations Section (sliceImmunizationsSection) - Optional */
 * section[sliceImmunizationsSection].code = $loinc#11369-6 "History of Immunization Narrative"
@@ -347,7 +347,7 @@ Usage: #example
 // Clinical Observation
 Instance: observation-clinical-example
 InstanceOf: $us-core-observation-clinical-result
-Title: "Clinical Observation Example"
+Title: "Body Temperature Clinical Observation Example"
 Description: "An example of an Observation (Clinical Result)"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-result|6.1.0"
@@ -368,7 +368,7 @@ Usage: #example
 // Screening Assessment* clinicalStatus = $condition-clinical#active "Active"
 Instance: observation-screening-example
 InstanceOf: $us-core-observation-screening-assessment
-Title: "Screening Assessment Example"
+Title: "PHQ9 Screening Assessment Example"
 Description: "An example of an Observation (Screening Assessment)"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment|6.1.0"
@@ -431,7 +431,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0"
 * status = #active
 * intent = #order
-* category[us-core] =  http://snomed.info/sct#386053000 "Evaluation procedure (procedure)"
+* category =  http://snomed.info/sct#386053000 "Evaluation procedure (procedure)"
 * priority = #routine
 * code = http://loinc.org#24627-2 "CT Chest"
 * subject = Reference(Patient/patient-ledner)
@@ -442,6 +442,7 @@ Usage: #example
 * reasonCode = http://snomed.info/sct#195662009 "Acute viral pharyngitis"
 
 // Care Plan
+/*
 Instance: careplan-example
 InstanceOf:  $us-core-careplan
 Title: "Care Plan Example"
@@ -464,7 +465,7 @@ Usage: #example
 * activity.detail.status = #in-progress
 * activity.detail.description = "Rest and increase fluid intake"
 * activity.detail.code = http://snomed.info/sct#304510005 "Advice to avoid exercise"
-
+*/
 // Immunization
 Instance: immunization-example
 InstanceOf: $us-core-immunization
@@ -873,7 +874,7 @@ Usage: #example
 // Diagnostic Report - Lab
 Instance: diagnosticreport-example
 InstanceOf: USCoreDiagnosticReportProfileLaboratoryReporting
-Title: "Diagnostic Report Laboratory Example"
+Title: "Diagnostic CBC Report Laboratory Example"
 Description: "An example of a DiagnosticReport (Laboratory – Profile Alternate)"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"

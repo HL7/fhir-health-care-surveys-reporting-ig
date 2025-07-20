@@ -6,7 +6,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0"
 * identifier.type = $v2-0203#MB "Member Number"
 * identifier.type.text = "An identifier for the insured of an insurance policy (this insured always has a subscriber), usually assigned by the insurance carrier."
-* identifier.system = "https://www.upmchealthplan.com/fhir/memberidentifier"
+* identifier.system = "https://www.example.org/upmchealthplan.com/fhir/memberidentifier"
 * identifier.value = "88800933501"
 * identifier.assigner = Reference(organization-payer-2) "UPMC Health Plan"
 * status = #active

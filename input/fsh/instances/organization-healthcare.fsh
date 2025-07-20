@@ -1,11 +1,9 @@
 Instance: organization-healthcare
-InstanceOf: USCoreOrganizationProfile
+InstanceOf: USPublicHealthOrganization
 Title: "Healthcare Organization Example"
 Description: "An example showing a HealthCare Organization"
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
-* identifier.system = "http://example.org/healthcare.org/fhir"
-* identifier.value = "1234567898"
+* meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-organization"
 * active = true
 * name = "Example Healthcare Organization"
 * telecom.system = #phone
