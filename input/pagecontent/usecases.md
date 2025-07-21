@@ -1,6 +1,6 @@
 ### National Health Care Surveys
 
-The National Center for Health Statistics (NCHS) manages a family of surveys that provide comprehensive information about healthcare organizations and providers, the services they deliver, and the patients they serve across diverse healthcare settings. These data enable researchers, policymakers, and health professionals to understand healthcare providers, patient populations, and the management and delivery of patient care throughout the United States.
+The National Center for Health Statistics (NCHS) conduct a family of surveys that provide comprehensive information about healthcare organizations and providers, the services they deliver, and the patients they serve across diverse healthcare settings. These data enable researchers, policymakers, and health professionals to understand healthcare providers, patient populations, and the management and delivery of patient care throughout the United States.
 
 This implementation guide focuses on two key surveys: the **National Ambulatory Medical Care Survey (NAMCS)** and the **National Hospital Care Survey (NHCS)**.
 
@@ -11,6 +11,8 @@ The **NHCS** enables the collection of reliable and timely healthcare utilizatio
 While there are some differences between the surveys, both NAMCS and NHCS capture comprehensive information about patients, visits, signs and symptoms, diagnoses, procedures, medications, and discharge dispositions.
 
 The intent of this implementation guide is to obtain as much survey information as possible from data currently available in electronic health record (EHR) systems. It is understood that not all data items indicated on the surveys may be captured by EHR systems at this time. 
+
+The section identifies the business needs, including specific user stories outlining the health care surveys reporting data exchange needs.
 
 ### Business Need
 The purpose of the Health Care Surveys Content Implementation Guide (IG) is to identify hospital (e.g., emergency department (ED), inpatient care) and ambulatory care data that will be extracted from data sources (e.g., Electronic Health Records (EHR), clinical data repository) via Fast Healthcare Interoperability Resources (FHIR®) Application Programming Interfaces (APIs) and sent to a system hosted at the federal level. This use case will help define how electronic data can be used in automated data collection, thereby reducing burden for healthcare providers and data sources (e.g., EHR systems) with the goal of increasing the submission of timely, quality healthcare data to NCHS.
