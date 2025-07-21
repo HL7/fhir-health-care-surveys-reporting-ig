@@ -780,7 +780,6 @@ Description: "An example of a Coverage"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0"
 * status = #active
-* type = http://terminology.hl7.org/CodeSystem/v3-ActCode#EHCPOL "extended healthcare"
 * policyHolder = Reference(Patient/patient-ledner)
 * subscriber = Reference(Patient/patient-ledner)
 * subscriberId = "XYZ123456789"
@@ -809,7 +808,6 @@ Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1234567893"
 * active = true
-* type = http://terminology.hl7.org/CodeSystem/organization-type#prov "Healthcare Provider"
 * name = "General Hospital"
 * telecom[0].system = #phone
 * telecom[0].value = "555-555-5555"

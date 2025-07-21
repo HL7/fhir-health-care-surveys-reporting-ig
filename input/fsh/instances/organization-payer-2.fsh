@@ -1,5 +1,5 @@
 Instance: organization-payer-2
-InstanceOf: USCoreOrganizationProfile|6.1.0
+InstanceOf: USCoreOrganizationProfile
 Title: "Payer 2"
 Description: "Payer 2"
 Usage: #example
@@ -8,8 +8,6 @@ Usage: #example
   * system = "urn:oid:2.16.840.1.113883.6.300"
   * value = "95216"
 * active = true
-* type = http://terminology.hl7.org/CodeSystem/organization-type#pay
-  * text = "Payer"
 * name = "UPMC Health Plan"
 * telecom[0]
   * system = #phone

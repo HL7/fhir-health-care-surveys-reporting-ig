@@ -4,6 +4,7 @@ Title: "Patient Example"
 Description: "An example showing a Patient for HCS reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
+/*
 * extension[race].extension[ombCategory].url = "ombCategory"
 * extension[race].extension[ombCategory].valueCoding = $raceEthnicity#2106-3 "White"
 * extension[race].extension[text].url = "text"
@@ -14,6 +15,7 @@ Usage: #example
 * extension[ethnicity].extension[text].url = "text"
 * extension[ethnicity].extension[text].valueString = "Not Hispanic or Latino"
 * extension[ethnicity].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+*/
 * extension[birthsex].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
 * extension[birthsex].valueCode = #F
 * extension[tribalAffiliation].extension[tribalAffiliation].url = "tribalAffiliation"

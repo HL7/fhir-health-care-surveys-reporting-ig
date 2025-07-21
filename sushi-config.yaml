@@ -10,7 +10,7 @@ id: hl7.fhir.us.health-care-surveys-reporting
 name: HealthcareSurveysReporting
 title: Health Care Surveys Reporting
 copyrightYear: 2025+
-releaseLabel: STU 2.0.0
+releaseLabel: STU 2 - Ballot
 description: >
   This implementation guide (IG) provides Health Level Seven (HL7 FHIR) resources to define standards. 
   This guide contains a library of FHIR profiles and is compliant with FHIR Release 4.
@@ -29,14 +29,6 @@ jurisdiction: urn:iso:std:iso:3166#US
 status: draft
 version: 2.0.0
 dependencies:
-  hl7.terminology.r4:
-    version: 6.1.0
-    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
-    id: hl7tx
-  hl7.fhir.uv.extensions.r4:
-    version: 5.1.0
-    uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
-    id: hl7ext
   hl7.fhir.us.core:
     version: 6.1.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core#6.1.0
@@ -46,10 +38,14 @@ dependencies:
     uri: http://hl7.org/fhir/us/ph-library/ImplementationGuide/hl7.fhir.us.ph-library#1.0.0
     id: hl7fhirusphlibrary
   hl7.fhir.uv.smart-app-launch:
-    version: 2.0.0
+    version: 2.2.0
     uri: http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch
     id: smartapplaunch
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
     id: subscriptionsIg
+  hl7.terminology.r4:
+    version: 6.5.0
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+    id: hl7tx
