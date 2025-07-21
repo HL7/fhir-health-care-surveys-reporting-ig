@@ -1,26 +1,13 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
-
-# This has been approved by the CPG on 7/13/2023 per the ticket : https://jira.hl7.org/browse/FHIR-41578. Motion Brett Marquard/Eric Haas: 13-0-0 
-US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
-
 # 01 US Core 6.1.0 is the version that is cited in regulation for 2026, the next release of the US Public Health Profiles Library will move to the next cited release of US Core
-WARNING: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
+WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
 # 02 Inherited from US Core Slicing
-INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
-INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+
-INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.differential.element[2].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.snapshot.element[12].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
-# 03 Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
-INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile
-INFORMATION: Bundle/hcs-content-bundle-example: Bundle.entry[x]: This element does not match any known slice defined in the profile
-
-# 04 These are the correct pinned versions 
+# 03 These are the correct pinned versions 
 
 INFORMATION: StructureDefinition.baseDefinition: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
 INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
@@ -48,19 +35,19 @@ INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinne
 INFORMATION: StructureDefinition.snapshot.element[13].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-category to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
 
 
-# 05 US PH MessageHeader defines two extensions slices - examples have optional extension that are not defined in the profile - not matching is expected behavior
-INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile
+# 04 US PH MessageHeader defines two extensions slices - examples have optional extension that are not defined in the profile - not matching is expected behavior
+
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-#06 Canonical URLs do resolve 
+# 05 Canonical URLs do resolve 
+
 WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
 WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
 
-#07 Required use of 6.1.0 to meet regulatory requirements
-WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[0]: The ImplementationGuide uses package hl7.terminology.r4#6.1.0 released on 2024-11-17, but the most recent appropriate version is 6.5.0. This reference is getting old and the more recent version should be considered
-WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.1.0 released on 2024-04-27, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
-WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[2]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
-
-#07 Inherited through US Core Profiles 
+# 06 Inherited through US Core Profiles 
 INFORMATION: ServiceRequest/example: ServiceRequest.category[0]: Reference to draft ValueSet http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1
+
+# 07 IG Dependenies
+
+WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.uv.extensions.r4#5.1.0 released on 2024-04-27, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
