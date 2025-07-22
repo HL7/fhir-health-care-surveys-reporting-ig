@@ -9,3 +9,7 @@ Usage: #example
 * entry[=].resource = messageheader-example-reportheader
 * entry[+].fullUrl = "http://example.org/fhir/Bundle/healthcare-surveys-content-bundle"
 * entry[=].resource = healthcare-surveys-content-bundle 
+* entry[+].fullUrl  = "http://example.org/fhir/Organization/organization-healthcare"
+* entry[=].resource = organization-healthcare
+* entry[+].fullUrl  = "http://example.org/fhir/Endpoint/healthcare-endpoint"
+* entry[=].resource = healthcare-endpoint
