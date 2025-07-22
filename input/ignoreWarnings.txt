@@ -48,9 +48,8 @@ INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resourc
 
 # 05 Canonical URLs do resolve 
 
-WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
-WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
-
+WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
+WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 # 06 Inherited through US Core Profiles 
 INFORMATION: ServiceRequest/example: ServiceRequest.category[0]: Reference to draft ValueSet http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1
 
