@@ -41,8 +41,6 @@ INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resourc
 
 # 05 The binding for PlanDefinition.action.action.condition.expression.language includes IETF BCP 13 (MIME‑type registry)
 
-WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
-WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
 WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
 
@@ -52,8 +50,5 @@ INFORMATION: StructureDefinition/hcs-composition: StructureDefinition.snapshot.e
 # 07 The hcs-reporting-bundle profile slices Bundle.entry[] into two named slices (MessageHeader and contentBundle) but leaves the slice group OPEN.Entries 2 (Organization) and 3 (Endpoint) are intentionally outside the named slices; this is permitted by the profile. 
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# 08 Inherited through US Core Profiles
-INFORMATION: ServiceRequest/example: ServiceRequest.category[0]: Reference to draft ValueSet http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1
 
 

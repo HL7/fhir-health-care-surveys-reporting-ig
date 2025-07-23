@@ -5,6 +5,7 @@ parameters:
   show-inherited-invariants: false
   path-expansion-params: "../../input/Parameters-expansion-parameters-health-care.json"
   pin-canonicals: pin-multiples
+  auto-oid-root: 2.16.840.1.113883.4.642.40.59
 applyExtensionMetadataToRoot: false
 id: hl7.fhir.us.health-care-surveys-reporting
 name: HealthcareSurveysReporting
