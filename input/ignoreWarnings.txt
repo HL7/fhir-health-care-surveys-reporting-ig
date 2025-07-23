@@ -43,6 +43,8 @@ INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resourc
 
 WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
 WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt' does not resolve
+RNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[439].binding.extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
+WARNING: StructureDefinition/hcs-plandefinition: StructureDefinition.snapshot.element[523].binding.extension[0].value.ofType(canonical): A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 
 # 06 Inherited through Composition Parent Composition.language - Composition.language element binding in FHIR R4 with HL7 Terminology 5.2.0 contains the deprecated extension
 INFORMATION: StructureDefinition/hcs-composition: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
