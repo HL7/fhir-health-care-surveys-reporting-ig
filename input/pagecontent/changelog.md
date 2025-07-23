@@ -4,15 +4,8 @@
 
 |JIRA Ticket|Ticket Description|
 |---------|----------|
-[FHIR-43293](https://jira.hl7.org/browse/FHIR-43293) | Remove Trust Service Provider from Actors and Systems diagram |
-[FHIR-43291](https://jira.hl7.org/browse/FHIR-43291) | Fix CI Build Link |
-<!-- <table border="1">
-    <thead>
-       <tr style="background-color:#DCDCDC">
-            <th style="text-align: center; vertical-align: middle;">Artifact</th>
-            <th style="text-align: center; vertical-align: middle;">Change Description</th>
-        </tr>
-    </thead> -->
+|[FHIR-43293](https://jira.hl7.org/browse/FHIR-43293) | Remove Trust Service Provider from Actors and Systems diagram |
+|[FHIR-43291](https://jira.hl7.org/browse/FHIR-43291) | Fix CI Build Link |
 
 #### Detailed Description of Changes
 
@@ -38,11 +31,11 @@
         </tr>
         <tr>
             <td>All relevant profiles</td>
-            <td>Aligned with <a href="https://hl7.org/fhir/us/core/STU6.1/index.html">US Core 6.1.0</td>
+            <td>Aligned with <a href="https://hl7.org/fhir/us/core/STU6.1/index.html">US Core 6.1.0</a></td>
         </tr>
         <tr>
             <td>All examples</td>
-            <td>Aligned with <a href="https://hl7.org/fhir/us/core/STU6.1/index.html">US Core 6.1.0</td>
+            <td>Aligned with <a href="https://hl7.org/fhir/us/core/STU6.1/index.html">US Core 6.1.0</a></td>
         </tr>
         <tr>
             <td><a href="StructureDefinition-hcs-diagnosticreport.html">HCS Diagnostic Report</a></td>
@@ -67,10 +60,6 @@
         <tr>
             <td>Specifications</td>
             <td>MedMorph Decoupling & HDEA App Rebranding - Rebrand term HDEA app to "eCR Now FHIR App-Health Care Surveys"</td>
-        </tr>
-        <tr>
-            <td>Trust Service Provider Removal (FHIR-43293)</td>
-            <td>Remove Trust Service Provider from section 2.1.5 Health Care Surveys Actors and Definitions AND Figure 2.3</td>
         </tr>
     </tbody>
 </table>
