@@ -39,7 +39,7 @@ INFORMATION: StructureDefinition.snapshot.element[79].binding.valueSet: Pinned t
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# 05 Note for Reviewers: Although it appears that two warnings have 0 uses, if those two are removed, they will always become warnings. The binding for PlanDefinition.action.action.condition.expression.language includes IETF BCP 13 (MIME-type registry).
+# 05 The binding for PlanDefinition.action.action.condition.expression.language includes IETF BCP 13 (MIME-type registry).
 
 A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 
