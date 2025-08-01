@@ -124,4 +124,4 @@ Systems without FHIR Subscription capabilities can implement the alternative met
 
 {% include img.html img="alternatives.png" caption="Figure 2.4 - Subscription & Subscription Alternative Models" %}s
 
-
+The Python script depicted in Step 3 of the Subscription Alternative Model will be made available in a public GitHub repository before publication (link to be provided).
