@@ -1,5 +1,5 @@
 Instance: hcs-composition-content-example
-InstanceOf: HcsComposition
+InstanceOf: HealthCareSurveysComposition
 Usage: #inline
 
 * identifier.value = "c03eab8c-11e8-4d0c-ad2a-b385395e27db"

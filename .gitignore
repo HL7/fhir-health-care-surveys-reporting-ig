@@ -10,3 +10,8 @@
 /template
 /temp
 /_delete-folders.bat
+/_build.bat
+/fhir_validator.bat
+/testing-files
+/validation.html
+/validator_cli.jar

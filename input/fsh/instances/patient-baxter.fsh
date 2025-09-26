@@ -3,7 +3,7 @@ InstanceOf: USCorePatientProfile
 Title: "Patient Example"
 Description: "An example showing a Patient for HCS reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 /*
 * extension[race].extension[ombCategory].url = "ombCategory"
 * extension[race].extension[ombCategory].valueCoding = $raceEthnicity#2106-3 "White"

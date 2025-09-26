@@ -1,30 +1,20 @@
-Profile: HcsComposition
+Profile: HealthCareSurveysComposition
 Parent: Composition
 Id: hcs-composition
-Title: "Health Care Survey Report Composition"
+Title: "Health Care Surveys Composition"
 Description: "This Composition profile is used to organize the healthcare survey report content."
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #pher
-* ^version = "1.0.1"
-* ^experimental = false
-* ^date = "2025-01-19T06:17:31-07:00"
-* ^publisher = "HL7 International - Public Health Work Group"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/pher"
-* ^jurisdiction = urn:iso:std:iso:3166#US
 * . MS
-* . ^short = "Hcs Composition Profile"
-* . ^definition = "The Health Care Survey Report Composition profile establishes the core elements, extensions, vocabularies and value sets for representing heath care survey report. "
+* . ^short = "Health Care Surveys Composition"
+* . ^definition = "The Health Care Surveys Composition profile establishes the core elements, extensions, vocabularies and value sets for representing heath care surveys. "
 * . ^isModifier = false
 * identifier 1..1 MS
-* identifier ^short = "Health Care Survey Report Composition identifier"
-* identifier ^definition = "Health Care Survey Report Composition identifier. This is equivalent to ClinicalDocument.setId in CDA. The identifier of the containing Bundle is equivalent to ClinicalDocument.id in CDA. "
+* identifier ^short = "Health Care Surveys Composition identifier"
+* identifier ^definition = "Health Care Surveys Composition identifier. This is equivalent to ClinicalDocument.setId in CDA. The identifier of the containing Bundle is equivalent to ClinicalDocument.id in CDA. "
 * status = #final (exactly)
 * status MS
 * type = $loinc#75619-7
 * type MS
-* type ^short = "Health Care Survey Report"
-* type ^definition = "The type of this Composition is a Health Care Survey Report"
+* type ^short = "National Health Care Surveys report"
 * subject 1.. MS
 * subject only Reference($us-core-patient)
 * subject ^short = "Patient who is the subject of the report."
@@ -246,10 +236,10 @@ Description: "This Composition profile is used to organize the healthcare survey
     sliceMedicationRequest 0..* MS and
     sliceMedicationDispense 0..* MS and
     sliceMedicationReferences 0..* MS
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration)
+* section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(HealthCareSurveysMedicationAdministration)
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest)
+* section[sliceMedicationsSection].entry[sliceMedicationRequest] only Reference(USCoreMedicationRequestProfile)
 * section[sliceMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Result Entry"
 * section[sliceMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
 * section[sliceMedicationsSection].entry[sliceMedicationDispense] only Reference($us-core-medicationdispense)

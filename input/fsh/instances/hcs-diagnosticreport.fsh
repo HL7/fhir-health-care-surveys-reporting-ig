@@ -1,5 +1,5 @@
 Instance: hcs-diagnosticreport
-InstanceOf: HcsDiagnosticReport
+InstanceOf: USCoreDiagnosticReportProfileNoteExchange
 Description: "Example of a DiagnosticReport resource"
 Usage: #example
 

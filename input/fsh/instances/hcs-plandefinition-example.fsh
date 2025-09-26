@@ -1,5 +1,5 @@
 Instance: hcs-plandefinition-example
-InstanceOf: HCSPlanDefinition
+InstanceOf: HealthCareSurveysPlanDefinition
 Title: "National Health Care Surveys PlanDefinition"
 Description: "National Health Care Surveys PlanDefinition: Workflow Definition example"
 Usage: #example

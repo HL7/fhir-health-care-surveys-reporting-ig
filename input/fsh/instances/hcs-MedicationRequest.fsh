@@ -1,5 +1,5 @@
 Instance: hcs-MedicationRequest
-InstanceOf: HcsMedicationRequest
+InstanceOf: USCoreMedicationRequestProfile
 Title: "MedicationRequest Example"
 Description: "An example showing a MedicationRequest for HCS reporting."
 Usage: #example

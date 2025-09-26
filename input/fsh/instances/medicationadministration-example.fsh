@@ -1,5 +1,5 @@
 Instance: medicationadministration-example
-InstanceOf: HcsMedicationAdministration
+InstanceOf: HealthCareSurveysMedicationAdministration
 Title: "HCS Medication Administration Example"
 Description: "An example showing a Medication Administration resource"
 Usage: #example

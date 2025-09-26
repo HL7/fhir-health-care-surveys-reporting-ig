@@ -1,19 +1,9 @@
-Profile: HCSPlanDefinition
+Profile: HealthCareSurveysPlanDefinition
 Parent: USPublicHealthPlanDefinition
 Id: hcs-plandefinition
 Title: "Health Care Surveys PlanDefinition"
 Description: "This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."
 
-// A minimal status and publisher
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #pher
-* ^version = "1.0.1"
-* ^experimental = false
-* ^publisher = "HL7 International - Public Health Work Group"
-* ^date = "2023-06-01"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.hl7.org/Special/committees/pher"
-* ^jurisdiction = urn:iso:std:iso:3166#US
 * . ^short = "Health Care Surveys Knowledge Artifact"
 * . ^definition = "This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."
 * . MS
