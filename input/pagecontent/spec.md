@@ -1,4 +1,4 @@
-This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content Implementation Guide (IG).  The specification focuses on using the Health Data Exchange App (HDEA) to report the health care survey data to National Center for Health Statistics (NCHS) data stores.
+This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content Implementation Guide (IG).  The specification focuses on using the eCR Now FHIR App-Health Care Surveys to report the health care survey data to National Center for Health Statistics (NCHS) data stores.
 
 ### Context
 
@@ -49,18 +49,18 @@ This IG leverages the [SMART App Launch IG]({{site.data.fhir.ver.smartapplaunch}
 
 This section outlines how the SMART on FHIR Backend Services Authorization will be used by the Health Care Surveys Content IG.
 
-* The system actors namely Data Source, HDEA and the NCHS Data Store are required to use the SMART on FHIR Backend Services Authorization mechanisms as outlined below for the following interactions:
+* The system actors namely Data Source, eCR Now FHIR App-Health Care Surveys and the NCHS Data Store are required to use the SMART on FHIR Backend Services Authorization mechanisms as outlined below for the following interactions:
 
 
-    * HDEA accessing data from the Data Source
-    * HDEA posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities
+    * eCR Now FHIR App-Health Care Surveys accessing data from the Data Source
+    * eCR Now FHIR App-Health Care Surveys posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities
     
 
 * System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART on FHIR Backend Services by hosting Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
 * System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
-* When System actors act as clients (e.g., HDEA), they **SHALL** share their JSON Web Key Set (JWKS) with the server System actors (e.g., EHR and NCHS Data Store) using Uniform Resource Locators (URLs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
+* When System actors act as clients (e.g., eCR Now FHIR App-Health Care Surveys), they **SHALL** share their JSON Web Key Set (JWKS) with the server System actors (e.g., EHR and NCHS Data Store) using Uniform Resource Locators (URLs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
 * System actors acting as clients **SHALL** obtain the access token as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
@@ -68,7 +68,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The NCHS Data Store **SHALL** support the system/*.read and system/*.write scopes. 
 
-* The health care organization's existing processes along with the Data Source's authorization server **SHALL** verify any organizational policy requirements (for example, registration of the HDEA, authorizing requested scopes, testing and verification of HDEA implementation in sandbox environment prior to production) before allowing the HDEA to access the data to be included in the health care survey report. 
+* The health care organization's existing processes along with the Data Source's authorization server **SHALL** verify any organizational policy requirements (for example, registration of the eCR Now FHIR App-Health Care Surveys, authorizing requested scopes, testing and verification of eCR Now FHIR App-Health Care Surveys implementation in sandbox environment prior to production) before allowing the eCR Now FHIR App-Health Care Surveys to access the data to be included in the health care survey report. 
  
 
 ##### Knowledge Artifact and Knowledge Artifact Repository Requirements 
@@ -97,7 +97,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The Data Source **SHALL** support the creation of Subscriptions 
 
-* The Data Source **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to notify the HDEA.
+* The Data Source **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to notify the eCR Now FHIR App-Health Care Surveys.
 
 * The Data Source **SHALL** support Notification Bundles with [``full resource payload``]({{site.data.fhir.ver.subscriptionsIg}}/payloads.html#full-resource) as outlined in the Backport Subscriptions IG. 
 
@@ -108,62 +108,62 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Data API Requirements
 
-* The Data Source **SHALL** support the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) for the HDEA to access patient data.
+* The Data Source **SHALL** support the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) for the eCR Now FHIR App-Health Care Surveys to access patient data.
 
  
-##### HDEA Requirements 
+##### eCR Now FHIR App-Health Care Surveys Requirements 
 
 
 ###### Authorization Requirements
 
-* The HDEA **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-requirements) outlined above as a client. 
+* The eCR Now FHIR App-Health Care Surveys **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-requirements) outlined above as a client. 
 
 
 ###### Subscription Requirements
 
-* The HDEA **SHALL** create Subscriptions 
+* The eCR Now FHIR App-Health Care Surveys **SHALL** create Subscriptions 
 
-* The HDEA **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the Data Source.
+* The eCR Now FHIR App-Health Care Surveys **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the Data Source.
 
 
 ###### Subscription Notification API 
 
-* The HDEA **SHALL** support a POST API <BSA Base URL>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source. 
+* The eCR Now FHIR App-Health Care Surveys **SHALL** support a POST API <BSA Base URL>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source. 
 
 
 ###### Knowledge Artifact Processing Requirements 
 
-* The HDEA **SHALL** allow the health care organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the health care organization.
+* The eCR Now FHIR App-Health Care Surveys **SHALL** allow the health care organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the health care organization.
 
-* The HDEA **SHALL** process the Health Care Surveys Knowledge Artifact and create Subscription resources in the Data Source for each trigger event.
+* The eCR Now FHIR App-Health Care Surveys **SHALL** process the Health Care Surveys Knowledge Artifact and create Subscription resources in the Data Source for each trigger event.
 
-* For the health care surveys, the HDEA **SHALL** create the Subscription  
+* For the health care surveys, the eCR Now FHIR App-Health Care Surveys **SHALL** create the Subscription  
 
-* Upon deactivation of a Knowledge Artifact, The HDEA **SHALL** delete the Subscriptions previously created by the HDEA for the Knowledge Artifact (e.g., delete the Subscription created for encounter-end trigger event). 
+* Upon deactivation of a Knowledge Artifact, The eCR Now FHIR App-Health Care Surveys **SHALL** delete the Subscriptions previously created by the eCR Now FHIR App-Health Care Surveys for the Knowledge Artifact (e.g., delete the Subscription created for encounter-end trigger event). 
 
-* The HDEA **SHALL** implement FhirPath expression processing to process the Health Care Surveys Knowledge Artifact actions.
+* The eCR Now FHIR App-Health Care Surveys **SHALL** implement FhirPath expression processing to process the Health Care Surveys Knowledge Artifact actions.
 
-* The HDEA **SHALL** use the default queries outlined by the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
+* The eCR Now FHIR App-Health Care Surveys **SHALL** use the default queries outlined by the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
 
-* The HDEA **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a health care organization.
+* The eCR Now FHIR App-Health Care Surveys **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a health care organization.
 
 
 ###### Data API Requirements 
 
-* The HDEA acting as a client **SHALL** use the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) to access patient data from the Data Source.
+* The eCR Now FHIR App-Health Care Surveys acting as a client **SHALL** use the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) to access patient data from the Data Source.
 
 
 ###### Report Generation Requirements 
 
-* The HDEA **SHALL** create a health care survey report following the constraints identified in [Health Care Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).
+* The eCR Now FHIR App-Health Care Surveys **SHALL** create a health care survey report following the constraints identified in [Health Care Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).
 
-* The HDEA **SHALL** package the health care survey report following the constraints identified in [Health Care Survey Reporting Bundle](StructureDefinition-hcs-reporting-bundle.html).
+* The eCR Now FHIR App-Health Care Surveys **SHALL** package the health care survey report following the constraints identified in [Health Care Survey Reporting Bundle](StructureDefinition-hcs-reporting-bundle.html).
 
-* The HDEA **SHALL** submit the message containing the health care survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
+* The eCR Now FHIR App-Health Care Surveys **SHALL** submit the message containing the health care survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
 
 ###### Use of Non-FHIR Based Approaches to Submit the Health Care Surveys Report
 
-* The HDEA **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.
+* The eCR Now FHIR App-Health Care Surveys **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.
 
 
 ###### Message Receiving and Processing Requirements

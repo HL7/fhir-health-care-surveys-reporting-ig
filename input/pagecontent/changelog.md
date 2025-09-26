@@ -1,3 +1,15 @@
+### STU 2
+
+#### Jira Tickets
+
+|JIRA Ticket|Ticket Description|
+|---------|----------|
+|[FHIR-52966](https://jira.hl7.org/browse/FHIR-52966) | Remove MedicationRequest profile and use US Core MedicationRequest |
+|[FHIR-52305](https://jira.hl7.org/browse/FHIR-52305) | Fix typo in Introduction |
+|[FHIR-52226](https://jira.hl7.org/browse/FHIR-52226) | Update Specification page to align with rest of IG - update Health Data Exchange App and HDEA to eCR Now FHIR App-Health Care Surveys |
+|[FHIR-51719](https://jira.hl7.org/browse/FHIR-51719) | Fix typo on Use Cases page |
+
+
 ### STU 2 - Ballot
 
 #### Jira Tickets
@@ -5,7 +17,6 @@
 |JIRA Ticket|Ticket Description|
 |---------|----------|
 |[FHIR-43293](https://jira.hl7.org/browse/FHIR-43293) | Remove Trust Service Provider from Actors and Systems diagram |
-|[FHIR-43291](https://jira.hl7.org/browse/FHIR-43291) | Fix CI Build Link |
 
 #### Detailed Description of Changes
 
@@ -40,10 +51,6 @@
         <tr>
             <td><a href="StructureDefinition-hcs-diagnosticreport.html">HCS Diagnostic Report</a></td>
             <td>New Profile</td>
-        </tr>
-        <tr>
-            <td><a href="StructureDefinition-hcs-content-bundle.html">Health Care Surveys Content Bundle</a></td>
-            <td>Add date option or date limiter to resources to support reduction in bundle sizes and limit duplicates. Condition and Observation entries will be constrained to patient encounter.</td>
         </tr>
         <tr>
             <td><a href="StructureDefinition-hcs-composition.html">Health Care Survey Report Composition</a></td>

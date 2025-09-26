@@ -11,7 +11,7 @@
     <ul>
         <li>Emergency department encounter, for data collected by NHCS</li>
         <li>Inpatient encounter, for data collected by NHCS</li>
-        <li>Outpatient encounter, for data collected NHCS and NAMCS</li>
+        <li>Outpatient encounter, for data collected by NHCS and NAMCS</li>
     </ul>
     </p>
     <p>This Implementation Guide (IG) improves the process of gathering data for national health surveys by automating the extraction of information from electronic health records (EHRs) and securely transmitting it to the National Center for Health Statistics (NCHS). The IG utilizes the Fast Healthcare Interoperability Resources (FHIR) standard along with US Core profiles, which specify how common clinical concepts are represented in FHIR. It also leverages a Reference Architecture (RA) framework for automated reporting and the electronic Case Reporting (eCR) Now FHIR application, customized to accommodate the Health Care Surveys' content and structural requirements.</p>
