@@ -5,11 +5,11 @@ Description: "A Patient Example"
 Usage: #example
 * identifier.system = "urn:system"
 * identifier.value = "patient-ledner"
-* name.family = "Ledner144"
-* name.given = "Dominique369"
+* name.family = "Ledner"
+* name.given = "Dominique"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * identifier[0].system = "urn:oid:2.16.840.1.113883.4.3.6"
-* identifier[=].value = "patient-OakleyAnnie"
+* identifier[=].value = "patient-LednerDominique"
 * identifier[+].use = #usual
 * identifier[=].type.text = "SHID"
 * identifier[=].system = "http://example.org/hospital.smarthealth"
@@ -26,7 +26,7 @@ Usage: #example
 * telecom[=].value = "1-(303)555-1212"
 * telecom[=].use = #home
 * telecom[+].system = #email
-* telecom[=].value = "annie.oakley@example.com"
+* telecom[=].value = "dominique.ledner@example.com"
 * gender = #female
 * birthDate = "1965-06-22"
 * deceasedBoolean = false

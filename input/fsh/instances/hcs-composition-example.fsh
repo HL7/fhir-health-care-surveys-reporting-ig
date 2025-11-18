@@ -7,7 +7,7 @@ Usage: #example
 * identifier.value = "c03eab8c-11e8-4d0c-ad2a-b385395e27db"
 * status = #final
 * type = $loinc#75619-7
-* subject = Reference(Patient/patient-ledner) "Amy Shaw"
+* subject = Reference(Patient/patient-ledner)
 * encounter = Reference(encounter-ambulatory) "Ambulatory Office Visit"
 * date = "2023-01-02T22:13:23Z"
 * author = Reference(Practitioner/practitioner-nichols) "Nicholas Joseph"
@@ -58,7 +58,7 @@ Usage: #example
 </div>
 """
 * section[medicationsSection].entry[medicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
-* section[medicationsSection].entry[medicationRequest] = Reference(MedicationRequest/hcs-MedicationRequestone-example)
+* section[medicationsSection].entry[medicationRequest] = Reference(MedicationRequest/MedicationRequestone-example)
 /* Medications Administered Section (medicationsAdministeredSection) - Optional 
 * section[medicationsAdministeredSection].code = $loinc#29549-3 "Medication administered"
 * section[medicationsAdministeredSection].text.status = #generated
@@ -90,7 +90,7 @@ Usage: #example
 */
 
 /* Results Section (resultsSection) - Optional */
-* section[resultsSection].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
+* section[resultsSection].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data note"
 * section[resultsSection].text.status = #generated
 * section[resultsSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -137,7 +137,7 @@ Usage: #example
 /* * section[planOfTreatmentSection].entry[carePlanEntry] = Reference(CarePlan/careplan-example)
 
 /* Immunizations Section (immunizationsSection) - Optional */
-* section[immunizationsSection].code = $loinc#11369-6 "History of Immunization Narrative"
+* section[immunizationsSection].code = $loinc#11369-6 "History of Immunization note"
 * section[immunizationsSection].text.status = #generated
 * section[immunizationsSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -159,7 +159,7 @@ Usage: #example
 * section[proceduresSection].entry = Reference(Procedure/procedure-example)
 
 /* Vital Signs Section (vitalSignsSection) - Optional */
-* section[vitalSignsSection].code = $loinc#8716-3 "Vital signs"
+* section[vitalSignsSection].code = $loinc#8716-3 "Vital signs note"
 * section[vitalSignsSection].text.status = #generated
 * section[vitalSignsSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
@@ -183,7 +183,7 @@ Usage: #example
 * section[vitalSignsSection].entry[respiratoryRateEntry] = Reference(Observation/observation-resprate-example)
 
 /* Social History Section (socialHistorySection) - Optional */
-* section[socialHistorySection].code = $loinc#29762-2 "Social History Narrative"
+* section[socialHistorySection].code = $loinc#29762-2 "Social history note"
 * section[socialHistorySection].text.status = #generated
 * section[socialHistorySection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

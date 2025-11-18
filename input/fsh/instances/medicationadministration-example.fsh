@@ -5,7 +5,7 @@ Description: "An example showing a Medication Administration resource"
 Usage: #example
 * status = #completed
 * medicationCodeableConcept = $rxnorm#285018 "Lantus 100 UNT/ML Injectable Solution"
-* subject = Reference(Patient/patient-ledner) "Donald Duck"
+* subject = Reference(Patient/patient-ledner)
 * effectivePeriod.start = "2015-01-15T04:30:00+01:00"
 * effectivePeriod.end = "2015-01-15T14:30:00+01:00"
 * performer.actor = Reference(Practitioner/practitioner-nichols)

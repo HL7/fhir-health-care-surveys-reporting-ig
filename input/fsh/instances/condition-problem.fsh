@@ -12,5 +12,5 @@ Usage: #example
 * category[us-core].text = "Problem"
 * code = $sct#442311008 "Liveborn born in hospital"
 * code.text = "Single liveborn, born in hospital"
-* subject = Reference(Patient/patient-ledner) "Amy V. Shaw"
+* subject = Reference(Patient/patient-ledner)
 * onsetDateTime = "2016-08-10"

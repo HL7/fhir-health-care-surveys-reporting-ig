@@ -5,7 +5,7 @@ Usage: #inline
 * identifier.value = "c03eab8c-11e8-4d0c-ad2a-b385395e27db"
 * status = #final
 * type = $loinc#75619-7
-* subject = Reference(Patient/patient-ledner) "Amy Shaw"
+* subject = Reference(Patient/patient-ledner)
 * encounter = Reference(Encounter/encounter-ambulatory) "Ambulatory Office Visit"
 * date = "2023-01-02T22:13:23Z"
 * author = Reference(Practitioner/practitioner-nichols) "Nicholas Joseph"

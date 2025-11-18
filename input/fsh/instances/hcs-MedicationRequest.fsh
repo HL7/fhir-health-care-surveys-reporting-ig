@@ -6,7 +6,7 @@ Usage: #example
 * status = #entered-in-error
 * intent = #order
 * medicationCodeableConcept = $sct#27658006 "Amoxicillin-containing product"
-* subject = Reference(patient-ledner) "Dominique"
+* subject = Reference(patient-ledner)
 * authoredOn = "2015-11-01"
 * requester = Reference(practitioner-nichols) "Dr. Smith"
 * encounter = Reference(encounter-ambulatory)
