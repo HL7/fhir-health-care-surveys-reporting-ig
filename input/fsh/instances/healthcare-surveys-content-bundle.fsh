@@ -17,7 +17,7 @@ Usage: #inline
 * entry.resource.encounter.reference = "Encounter/encounter-ambulatory"
 * entry.resource.encounter.display = "Ambulatory Office Visit"
 * entry.resource.date = "2023-01-02T22:13:23Z"
-* entry.resource.author.reference = "Practitioner/practitioner-1"
+* entry.resource.author.reference = "Practitioner/practitioner-nichols"
 * entry.resource.author.display = "Nicholas Joseph"
 * entry.resource.title = "National Health Care Surveys report"
 * entry.resource.section[0].title = "Reason for Visit Section"

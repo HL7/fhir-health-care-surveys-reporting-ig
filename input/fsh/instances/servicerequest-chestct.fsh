@@ -13,4 +13,4 @@ Usage: #example
 * code.text = "Chest CT"
 * subject = Reference(Patient/patient-ledner)
 * occurrenceDateTime = "2013-05-08T09:33:27+07:00"
-* requester = Reference(Practitioner/practitioner-1)
+* requester = Reference(Practitioner/practitioner-nichols)

@@ -8,7 +8,7 @@ Description: "Bundle Resource profile for exchanging health care surveys report.
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
-    sliceMessageHeader 1..1 MS and
+    messageHeader 1..1 MS and
     contentBundle 1..1 MS
-* entry[sliceMessageHeader].resource only USPublicHealthMessageHeader
+* entry[messageHeader].resource only USPublicHealthMessageHeader
 * entry[contentBundle].resource only HealthcareSurveysContentBundle

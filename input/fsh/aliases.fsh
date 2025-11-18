@@ -69,3 +69,4 @@ Alias: $USPHPlanDefAction = http://hl7.org/fhir/us/ph-library/ValueSet/us-ph-val
 Alias: $v3-TribalEntityUS = http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS
 Alias: $compliesWithProfile = http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile
 Alias: $raceEthnicity = urn:oid:2.16.840.1.113883.6.238
+Alias: $us-core-observation-occupation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-occupation

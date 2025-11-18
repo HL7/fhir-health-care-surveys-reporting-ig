@@ -34,7 +34,7 @@ INFORMATION: StructureDefinition.snapshot.element[37].binding.valueSet: Pinned t
 INFORMATION: StructureDefinition.snapshot.element[78].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 INFORMATION: StructureDefinition.snapshot.element[79].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 
-# 04 US PH MessageHeader defines two extensions slices - examples have optional extension that are not defined in the profile - not matching is expected behavior
+# 04 US PH MessageHeader defines two extensions s - examples have optional extension that are not defined in the profile - not matching is expected behavior
 
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -46,7 +46,7 @@ A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp
 # 06 Inherited through Composition Parent Composition.language - Composition.language element binding in FHIR R4 with HL7 Terminology 5.2.0 contains the deprecated extension
 INFORMATION: StructureDefinition/hcs-composition: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
-# 07 The hcs-reporting-bundle profile slices Bundle.entry[] into two named slices (MessageHeader and contentBundle) but leaves the slice group OPEN.Entries 2 (Organization) and 3 (Endpoint) are intentionally outside the named slices; this is permitted by the profile. 
+# 07 The hcs-reporting-bundle profile s Bundle.entry[] into two named s (MessageHeader and contentBundle) but leaves the slice group OPEN.Entries 2 (Organization) and 3 (Endpoint) are intentionally outside the named s; this is permitted by the profile. 
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 

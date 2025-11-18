@@ -8,6 +8,6 @@ Usage: #example
 * medicationCodeableConcept = $sct#27658006 "Amoxicillin-containing product"
 * subject = Reference(patient-ledner) "Dominique"
 * authoredOn = "2015-11-01"
-* requester = Reference(practitioner-1) "Dr. Smith"
+* requester = Reference(practitioner-nichols) "Dr. Smith"
 * encounter = Reference(encounter-ambulatory)
 * note.text = "Patient indicated that they thought it was Amoxicillin they were taking but it was really Erythromycin"

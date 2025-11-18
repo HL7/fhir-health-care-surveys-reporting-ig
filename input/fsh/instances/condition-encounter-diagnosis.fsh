@@ -14,5 +14,5 @@ Usage: #example
 * encounter = Reference(encounter-ambulatory) "Ambulatory Office Visit"
 * onsetDateTime = "2023-01-02"
 * recordedDate = "2023-01-02"
-* recorder = Reference(practitioner-1) "Nicholas Joseph"
-* asserter = Reference(practitioner-1) "Nicholas Joseph"
+* recorder = Reference(practitioner-nichols) "Nicholas Joseph"
+* asserter = Reference(practitioner-nichols) "Nicholas Joseph"

@@ -1,0 +1,25 @@
+// Immunization
+Instance: immunization-example
+InstanceOf: $us-core-immunization
+Title: "Immunization Example"
+Description: "An example of an Immunization"
+Usage: #example
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
+* status = #completed
+* vaccineCode = http://hl7.org/fhir/sid/cvx#158 "Influenza, injectable, quadrivalent"
+* patient = Reference(Patient/patient-ledner)
+* occurrenceDateTime = "2024-10-15"
+* primarySource = true
+* location = Reference(location-example)
+* manufacturer = Reference(organization-example)
+* lotNumber = "123456A"
+* expirationDate = "2025-06-30"
+* site = http://snomed.info/sct#368208006 "Left upper arm structure"
+* route = http://snomed.info/sct#78421000 "Intramuscular route"
+* doseQuantity.value = 0.5
+* doseQuantity.unit = "mL"
+* performer.actor = Reference(Practitioner/practitioner-nichols)
+* isSubpotent = false
+* education.documentType = "VIS"
+* education.presentationDate = "2024-10-15"
+* education.publicationDate = "2024-08-01"

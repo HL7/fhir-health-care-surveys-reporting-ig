@@ -19,7 +19,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action.code 0..1
 * action.code from $USPHPlanDefAction (extensible)
 
-// 2) Define slices for your five actions
+// 2) Define s for your five actions
 * action contains
     startWorkflow 1..1 and
     executeReportingWorkflow 1..1 and

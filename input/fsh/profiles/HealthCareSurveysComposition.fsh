@@ -41,546 +41,557 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section contains
-    sliceReasonForVisitSection 1..1 MS and
-    sliceProblemSection 1..1 MS and
-    sliceAllergiesSection 1..1 MS and
-    sliceAssessmentAndPlanOfTreatmentSection 0..1 MS and
-    slicePlanOfTreatmentSection 0..1 MS and
-    sliceCareTeamSection 0..1 MS and
-    sliceCoverageSection 0..1 MS and
-    sliceGoalsSection 0..1 MS and
-    sliceImmunizationsSection 0..1 MS and
-    sliceMedicalEquipmentSection 0..1 MS and
-    sliceMedicationsSection 0..1 MS and
-   // sliceMedicationsAdministeredSection 0..1 MS and
-   // sliceAdmissionMedicationsSection 0..1 MS and
-    sliceNotesSection 0..* MS and
-    slicePregnancySection 0..1 MS and 
-    sliceProceduresSection 0..1 MS and
-    sliceResultsSection 0..1 MS and
-    sliceSocialHistorySection 0..1 MS and
-    sliceVitalSignsSection 0..* MS
+    reasonForVisitSection 1..1 MS and
+    problemSection 1..1 MS and
+    allergiesSection 1..1 MS and
+    assessmentAndPlanOfTreatmentSection 0..1 MS and
+    planOfTreatmentSection 0..1 MS and
+    careTeamSection 0..1 MS and
+    coverageSection 0..1 MS and
+    goalsSection 0..1 MS and
+    immunizationsSection 0..1 MS and
+    medicalEquipmentSection 0..1 MS and
+    medicationsSection 0..1 MS and
+   // medicationsAdministeredSection 0..1 MS and
+   // admissionMedicationsSection 0..1 MS and
+    clinicalNotesSection 0..* MS and
+    pregnancySection 0..1 MS and 
+    proceduresSection 0..1 MS and
+    resultsSection 0..1 MS and
+    socialHistorySection 0..1 MS and
+    vitalSignsSection 0..* MS
 
 // Allergies (USCDI: Allergies and Intolerances - consider renaming section)
-* section[sliceAllergiesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceAllergiesSection] ^extension.valueString = "Section"
-* section[sliceAllergiesSection] ^short = "Allergies Section (USCDI: Allergies and Intolerances)"
-* section[sliceAllergiesSection] ^definition = "This section lists and describes all the patient's current allergies on the maintained allergy list."
-* section[sliceAllergiesSection] ^isModifier = false
-* section[sliceAllergiesSection].code 1.. MS
-* section[sliceAllergiesSection].code = $loinc#48765-2
-* section[sliceAllergiesSection].code ^short = "Allergies Section code"
-* section[sliceAllergiesSection].code ^definition = "Allergies Section code"
-* section[sliceAllergiesSection].code ^isModifier = false
-* section[sliceAllergiesSection].text 1.. MS
-* section[sliceAllergiesSection].text ^short = "Allergies Section narrative"
-* section[sliceAllergiesSection].text ^definition = "Allergies Section narrative"
-* section[sliceAllergiesSection].entry only Reference($us-core-allergyintolerance)
-* section[sliceAllergiesSection].entry MS
+* section[allergiesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[allergiesSection] ^extension.valueString = "Section"
+* section[allergiesSection] ^short = "Allergies Section (USCDI: Allergies and Intolerances)"
+* section[allergiesSection] ^definition = "This section lists and describes all the patient's current allergies on the maintained allergy list."
+* section[allergiesSection] ^isModifier = false
+* section[allergiesSection].code 1.. MS
+* section[allergiesSection].code = $loinc#48765-2
+* section[allergiesSection].code ^short = "Allergies Section code"
+* section[allergiesSection].code ^definition = "Allergies Section code"
+* section[allergiesSection].code ^isModifier = false
+* section[allergiesSection].text 1.. MS
+* section[allergiesSection].text ^short = "Allergies Section narrative"
+* section[allergiesSection].text ^definition = "Allergies Section narrative"
+* section[allergiesSection].entry only Reference($us-core-allergyintolerance)
+* section[allergiesSection].entry MS
 
 // Assessment and Plan of Treatment Section (USCDI: Assessment and Plan of Treatment Section)
-* section[sliceAssessmentAndPlanOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceAssessmentAndPlanOfTreatmentSection] ^extension.valueString = "Section"
-* section[sliceAssessmentAndPlanOfTreatmentSection] ^short = "Assessment Section (USCDI: Assessment and Plan of Treatment)"
-* section[sliceAssessmentAndPlanOfTreatmentSection] ^definition = "Health professional’s conclusions and working assumptions that will guide treatment of the patient."
-* section[sliceAssessmentAndPlanOfTreatmentSection] ^isModifier = false
-* section[sliceAssessmentAndPlanOfTreatmentSection].code 1.. MS
-* section[sliceAssessmentAndPlanOfTreatmentSection].code = $loinc#51847-2
-* section[sliceAssessmentAndPlanOfTreatmentSection].code ^short = "Assessment and Plan of Treatment Section code"
-* section[sliceAssessmentAndPlanOfTreatmentSection].code ^definition = "Assessment and Plan of Treatment Section code"
-* section[sliceAssessmentAndPlanOfTreatmentSection].code ^isModifier = false
-* section[sliceAssessmentAndPlanOfTreatmentSection].text 1.. MS
-* section[sliceAssessmentAndPlanOfTreatmentSection].text ^short = "Evaluation + Plan note"
-* section[sliceAssessmentAndPlanOfTreatmentSection].text ^definition = "Evaluation + Plan note"
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry MS
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry ^slicing.discriminator.type = #profile
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry ^slicing.rules = #open
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry contains
-    sliceScreeningAssessmentEntry 0..* MS and
-    sliceQuestionnaireResponseEntry 0..* MS and
-    sliceCarePlanEntry 0..* MS
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceScreeningAssessmentEntry] only Reference($us-core-observation-screening-assessment or $us-core-simple-observation)
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceScreeningAssessmentEntry] ^short = "Screening Assessment Entries"
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceScreeningAssessmentEntry] ^isModifier = false
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceQuestionnaireResponseEntry] only Reference($us-core-questionnaireresponse)
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceQuestionnaireResponseEntry] ^short = "Questionnaire Response Entries"
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceQuestionnaireResponseEntry] ^isModifier = false
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceCarePlanEntry] only Reference($us-core-careplan)
-* section[sliceAssessmentAndPlanOfTreatmentSection].entry[sliceCarePlanEntry] ^short = "CarePlan Entries"
+* section[assessmentAndPlanOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[assessmentAndPlanOfTreatmentSection] ^extension.valueString = "Section"
+* section[assessmentAndPlanOfTreatmentSection] ^short = "Assessment Section (USCDI: Assessment and Plan of Treatment)"
+* section[assessmentAndPlanOfTreatmentSection] ^definition = "Health professional’s conclusions and working assumptions that will guide treatment of the patient."
+* section[assessmentAndPlanOfTreatmentSection] ^isModifier = false
+* section[assessmentAndPlanOfTreatmentSection].code 1.. MS
+* section[assessmentAndPlanOfTreatmentSection].code = $loinc#51847-2
+* section[assessmentAndPlanOfTreatmentSection].code ^short = "Assessment and Plan of Treatment Section code"
+* section[assessmentAndPlanOfTreatmentSection].code ^definition = "Assessment and Plan of Treatment Section code"
+* section[assessmentAndPlanOfTreatmentSection].code ^isModifier = false
+* section[assessmentAndPlanOfTreatmentSection].text 1.. MS
+* section[assessmentAndPlanOfTreatmentSection].text ^short = "Evaluation + Plan note"
+* section[assessmentAndPlanOfTreatmentSection].text ^definition = "Evaluation + Plan note"
+* section[assessmentAndPlanOfTreatmentSection].entry MS
+* section[assessmentAndPlanOfTreatmentSection].entry ^slicing.discriminator.type = #profile
+* section[assessmentAndPlanOfTreatmentSection].entry ^slicing.discriminator.path = "resolve()"
+* section[assessmentAndPlanOfTreatmentSection].entry ^slicing.rules = #open
+* section[assessmentAndPlanOfTreatmentSection].entry contains
+    screeningAssessmentEntry 0..* MS and
+    questionnaireResponseEntry 0..* MS and
+    carePlanEntry 0..* MS
+* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessmentEntry] only Reference($us-core-observation-screening-assessment or $us-core-simple-observation)
+* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessmentEntry] ^short = "Screening Assessment Entries"
+* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessmentEntry] ^isModifier = false
+* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponseEntry] only Reference($us-core-questionnaireresponse)
+* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponseEntry] ^short = "Questionnaire Response Entries"
+* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponseEntry] ^isModifier = false
+* section[assessmentAndPlanOfTreatmentSection].entry[carePlanEntry] only Reference($us-core-careplan)
+* section[assessmentAndPlanOfTreatmentSection].entry[carePlanEntry] ^short = "CarePlan Entries"
 
 // Plan of Treatment Section (USCDI: Assessment and Plan of Treatment - consider renaming to Assessment and Plan of Treatment Section and using LOINC Evaluation + Plan note (See Assessment and Plan of Treatment Section above))
-* section[slicePlanOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[slicePlanOfTreatmentSection] ^extension.valueString = "Section"
-* section[slicePlanOfTreatmentSection] ^short = "Plan of Treatment Section (USCDI: Assessment and Plan of Treatment)"
-* section[slicePlanOfTreatmentSection] ^definition = "This section, contains data that define pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed. "
-* section[slicePlanOfTreatmentSection] ^isModifier = false
-* section[slicePlanOfTreatmentSection].code 1.. MS
-* section[slicePlanOfTreatmentSection].code = $loinc#18776-5
-* section[slicePlanOfTreatmentSection].code ^short = "Plan of care note"
-* section[slicePlanOfTreatmentSection].code ^definition = "Plan of Treatment code"
-* section[slicePlanOfTreatmentSection].code ^isModifier = false
-* section[slicePlanOfTreatmentSection].text 1.. MS
-* section[slicePlanOfTreatmentSection].text ^short = "Plan of Treatment narrative"
-* section[slicePlanOfTreatmentSection].text ^definition = "Plan of Treatment narrative"
-* section[slicePlanOfTreatmentSection].entry MS
-* section[slicePlanOfTreatmentSection].entry ^slicing.discriminator.type = #profile
-* section[slicePlanOfTreatmentSection].entry ^slicing.discriminator.path = "resolve()"
-* section[slicePlanOfTreatmentSection].entry ^slicing.rules = #open
-* section[slicePlanOfTreatmentSection].entry contains
-    sliceMedicationRequest 0..* MS and
-    sliceMedicationReferences 0..* MS and
-    sliceProcedureOrders 0..* MS and
-    sliceCarePlanEntry 0..* MS
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] only Reference($us-core-medicationrequest)
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] ^short = "Medication Request Entries"
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationRequest] ^isModifier = false
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
-* section[slicePlanOfTreatmentSection].entry[sliceMedicationReferences] ^isModifier = false
-* section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] only Reference($us-core-servicerequest)
-* section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] ^short = "Procedure Order Entries"
-* section[slicePlanOfTreatmentSection].entry[sliceProcedureOrders] ^isModifier = false
-* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntry] only Reference($us-core-careplan)
-* section[slicePlanOfTreatmentSection].entry[sliceCarePlanEntry] ^short = "CarePlan Entries"
+* section[planOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[planOfTreatmentSection] ^extension.valueString = "Section"
+* section[planOfTreatmentSection] ^short = "Plan of Treatment Section (USCDI: Assessment and Plan of Treatment)"
+* section[planOfTreatmentSection] ^definition = "This section, contains data that define pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed. "
+* section[planOfTreatmentSection] ^isModifier = false
+* section[planOfTreatmentSection].code 1.. MS
+* section[planOfTreatmentSection].code = $loinc#18776-5
+* section[planOfTreatmentSection].code ^short = "Plan of care note"
+* section[planOfTreatmentSection].code ^definition = "Plan of Treatment code"
+* section[planOfTreatmentSection].code ^isModifier = false
+* section[planOfTreatmentSection].text 1.. MS
+* section[planOfTreatmentSection].text ^short = "Plan of Treatment narrative"
+* section[planOfTreatmentSection].text ^definition = "Plan of Treatment narrative"
+* section[planOfTreatmentSection].entry MS
+* section[planOfTreatmentSection].entry ^slicing.discriminator.type = #profile
+* section[planOfTreatmentSection].entry ^slicing.discriminator.path = "resolve()"
+* section[planOfTreatmentSection].entry ^slicing.rules = #open
+* section[planOfTreatmentSection].entry contains
+    medicationRequest 0..* MS and
+    medicationReferences 0..* MS and
+    procedureOrders 0..* MS and
+    carePlanEntry 0..* MS
+* section[planOfTreatmentSection].entry[medicationRequest] only Reference($us-core-medicationrequest)
+* section[planOfTreatmentSection].entry[medicationRequest] ^short = "Medication Request Entries"
+* section[planOfTreatmentSection].entry[medicationRequest] ^isModifier = false
+* section[planOfTreatmentSection].entry[medicationReferences] only Reference($us-core-medication)
+* section[planOfTreatmentSection].entry[medicationReferences] ^short = "Medication Reference Entries"
+* section[planOfTreatmentSection].entry[medicationReferences] ^isModifier = false
+* section[planOfTreatmentSection].entry[procedureOrders] only Reference($us-core-servicerequest)
+* section[planOfTreatmentSection].entry[procedureOrders] ^short = "Procedure Order Entries"
+* section[planOfTreatmentSection].entry[procedureOrders] ^isModifier = false
+* section[planOfTreatmentSection].entry[carePlanEntry] only Reference($us-core-careplan)
+* section[planOfTreatmentSection].entry[carePlanEntry] ^short = "CarePlan Entries"
 
 // Care Team Section (USCDI: Care Team Members)
-* section[sliceCareTeamSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceCareTeamSection] ^extension.valueString = "Section"
-* section[sliceCareTeamSection] ^short = "Care Team Section (USCDI: Care Team Members)"
-* section[sliceCareTeamSection] ^definition = "This section lists and describes all the patient's current care team members."
-* section[sliceCareTeamSection] ^isModifier = false
-* section[sliceCareTeamSection].code 1.. MS
-* section[sliceCareTeamSection].code = $loinc#85847-2
-* section[sliceCareTeamSection].code ^short = "Care Team Section code"
-* section[sliceCareTeamSection].code ^definition = "Care Team Section code"
-* section[sliceCareTeamSection].code ^isModifier = false
-* section[sliceCareTeamSection].text 1.. MS
-* section[sliceCareTeamSection].text ^short = "Care Team Section narrative"
-* section[sliceCareTeamSection].text ^definition = "Care Team Section narrative"
-* section[sliceCareTeamSection].entry only Reference($us-core-careteam)
-* section[sliceCareTeamSection].entry MS
+* section[careTeamSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[careTeamSection] ^extension.valueString = "Section"
+* section[careTeamSection] ^short = "Care Team Section (USCDI: Care Team Members)"
+* section[careTeamSection] ^definition = "This section lists and describes all the patient's current care team members."
+* section[careTeamSection] ^isModifier = false
+* section[careTeamSection].code 1.. MS
+* section[careTeamSection].code = $loinc#85847-2
+* section[careTeamSection].code ^short = "Care Team Section code"
+* section[careTeamSection].code ^definition = "Care Team Section code"
+* section[careTeamSection].code ^isModifier = false
+* section[careTeamSection].text 1.. MS
+* section[careTeamSection].text ^short = "Care Team Section narrative"
+* section[careTeamSection].text ^definition = "Care Team Section narrative"
+* section[careTeamSection].entry only Reference($us-core-careteam)
+* section[careTeamSection].entry MS
 
 // Goals Section (USCDI: Goals)
-* section[sliceGoalsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceGoalsSection] ^extension.valueString = "Section"
-* section[sliceGoalsSection] ^short = "Goals Section (USCDI: Goals)"
-* section[sliceGoalsSection] ^definition = "This section lists and describes the patient's goals."
-* section[sliceGoalsSection] ^isModifier = false
-* section[sliceGoalsSection].code 1.. MS
-* section[sliceGoalsSection].code = $loinc#61146-7
-* section[sliceGoalsSection].code ^short = "Goals Section code"
-* section[sliceGoalsSection].code ^definition = "Goals Section code"
-* section[sliceGoalsSection].code ^isModifier = false
-* section[sliceGoalsSection].text 1.. MS
-* section[sliceGoalsSection].text ^short = "Goals Section narrative"
-* section[sliceGoalsSection].text ^definition = "Goals Section narrative"
-* section[sliceGoalsSection].entry only Reference($us-core-goal)
-* section[sliceGoalsSection].entry MS
+* section[goalsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[goalsSection] ^extension.valueString = "Section"
+* section[goalsSection] ^short = "Goals Section (USCDI: Goals)"
+* section[goalsSection] ^definition = "This section lists and describes the patient's goals."
+* section[goalsSection] ^isModifier = false
+* section[goalsSection].code 1.. MS
+* section[goalsSection].code = $loinc#61146-7
+* section[goalsSection].code ^short = "Goals Section code"
+* section[goalsSection].code ^definition = "Goals Section code"
+* section[goalsSection].code ^isModifier = false
+* section[goalsSection].text 1.. MS
+* section[goalsSection].text ^short = "Goals Section narrative"
+* section[goalsSection].text ^definition = "Goals Section narrative"
+* section[goalsSection].entry only Reference($us-core-goal)
+* section[goalsSection].entry MS
 
 // Coverage Section (USCDI: Health Insurance Information - consider renaming section to Health Insurance Information Section - LOINC code is "Payment sources Document", either that or rename to Payment Sources Section to match C-CDA)
-* section[sliceCoverageSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceCoverageSection] ^extension.valueString = "Section"
-* section[sliceCoverageSection] ^short = "Coverage Section (USCDI: Health Insurance Information)"
-* section[sliceCoverageSection] ^definition = "This section lists the patient's coverage."
-* section[sliceCoverageSection] ^isModifier = false
-* section[sliceCoverageSection].code 1.. MS
-* section[sliceCoverageSection].code = $loinc#48768-6
-* section[sliceCoverageSection].code ^short = "Coverage Section code"
-* section[sliceCoverageSection].code ^definition = "Coverage Section code"
-* section[sliceCoverageSection].code ^isModifier = false
-* section[sliceCoverageSection].text 1.. MS
-* section[sliceCoverageSection].text ^short = "Coverage Section narrative"
-* section[sliceCoverageSection].text ^definition = "Coverage Section narrative"
-* section[sliceCoverageSection].entry only Reference(USCoreCoverageProfile)
-* section[sliceCoverageSection].entry MS
+* section[coverageSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[coverageSection] ^extension.valueString = "Section"
+* section[coverageSection] ^short = "Coverage Section (USCDI: Health Insurance Information)"
+* section[coverageSection] ^definition = "This section lists the patient's coverage."
+* section[coverageSection] ^isModifier = false
+* section[coverageSection].code 1.. MS
+* section[coverageSection].code = $loinc#48768-6
+* section[coverageSection].code ^short = "Coverage Section code"
+* section[coverageSection].code ^definition = "Coverage Section code"
+* section[coverageSection].code ^isModifier = false
+* section[coverageSection].text 1.. MS
+* section[coverageSection].text ^short = "Coverage Section narrative"
+* section[coverageSection].text ^definition = "Coverage Section narrative"
+* section[coverageSection].entry only Reference(USCoreCoverageProfile)
+* section[coverageSection].entry MS
 
 // Immunizations Section (USCDI: Immunizations)
-* section[sliceImmunizationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceImmunizationsSection] ^extension.valueString = "Section"
-* section[sliceImmunizationsSection] ^short = "Immunizations Section (USCDI: Immunization)"
-* section[sliceImmunizationsSection] ^definition = "The Immunizations Section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization Section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized."
-* section[sliceImmunizationsSection] ^isModifier = false
-* section[sliceImmunizationsSection].code 1.. MS
-* section[sliceImmunizationsSection].code = $loinc#11369-6
-* section[sliceImmunizationsSection].code ^short = "Immunizations code"
-* section[sliceImmunizationsSection].code ^definition = "Immunizations code"
-* section[sliceImmunizationsSection].code ^isModifier = false
-* section[sliceImmunizationsSection].text 1.. MS
-* section[sliceImmunizationsSection].text ^short = "Immunizations narrative"
-* section[sliceImmunizationsSection].text ^definition = "Immunizations narrative"
-* section[sliceImmunizationsSection].entry only Reference($us-core-immunization)
-* section[sliceImmunizationsSection].entry MS
-* section[sliceImmunizationsSection].entry ^isModifier = false
+* section[immunizationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[immunizationsSection] ^extension.valueString = "Section"
+* section[immunizationsSection] ^short = "Immunizations Section (USCDI: Immunization)"
+* section[immunizationsSection] ^definition = "The Immunizations Section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization Section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized."
+* section[immunizationsSection] ^isModifier = false
+* section[immunizationsSection].code 1.. MS
+* section[immunizationsSection].code = $loinc#11369-6
+* section[immunizationsSection].code ^short = "Immunizations code"
+* section[immunizationsSection].code ^definition = "Immunizations code"
+* section[immunizationsSection].code ^isModifier = false
+* section[immunizationsSection].text 1.. MS
+* section[immunizationsSection].text ^short = "Immunizations narrative"
+* section[immunizationsSection].text ^definition = "Immunizations narrative"
+* section[immunizationsSection].entry only Reference($us-core-immunization)
+* section[immunizationsSection].entry MS
+* section[immunizationsSection].entry ^isModifier = false
 
 // Medications Section (USCDI: Medications)
-* section[sliceMedicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceMedicationsSection] ^extension.valueString = "Section"
-* section[sliceMedicationsSection] ^short = "Medications Section (USCDI: Medications)"
-* section[sliceMedicationsSection] ^definition = "The Medications Section contains a patient's current medications and pertinent medication history. At a minimum, the currently active medications are listed."
-* section[sliceMedicationsSection] ^isModifier = false
-* section[sliceMedicationsSection].code 1.. MS
-* section[sliceMedicationsSection].code = $loinc#10160-0
-* section[sliceMedicationsSection].code ^short = "Medications Section code"
-* section[sliceMedicationsSection].code ^definition = "Medications Section code"
-* section[sliceMedicationsSection].code ^isModifier = false
-* section[sliceMedicationsSection].text 1.. MS
-* section[sliceMedicationsSection].text ^short = "Medications Section narrative"
-* section[sliceMedicationsSection].text ^definition = "Medications Section narrative"
-* section[sliceMedicationsSection].entry MS
-* section[sliceMedicationsSection].entry ^slicing.discriminator.type = #profile
-* section[sliceMedicationsSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceMedicationsSection].entry ^slicing.rules = #open
-* section[sliceMedicationsSection].entry contains
-    sliceMedicationAdministration 0..* MS and
-    sliceMedicationRequest 0..* MS and
-    sliceMedicationDispense 0..* MS and
-    sliceMedicationReferences 0..* MS
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(HealthCareSurveysMedicationAdministration)
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] only Reference(USCoreMedicationRequestProfile)
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Result Entry"
-* section[sliceMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationDispense] only Reference($us-core-medicationdispense)
-* section[sliceMedicationsSection].entry[sliceMedicationDispense] ^short = "Medication Dispense Entry"
-* section[sliceMedicationsSection].entry[sliceMedicationDispense] ^isModifier = false
-* section[sliceMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
-* section[sliceMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
-* section[sliceMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
+* section[medicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[medicationsSection] ^extension.valueString = "Section"
+* section[medicationsSection] ^short = "Medications Section (USCDI: Medications)"
+* section[medicationsSection] ^definition = "The Medications Section contains a patient's current medications and pertinent medication history. At a minimum, the currently active medications are listed."
+* section[medicationsSection] ^isModifier = false
+* section[medicationsSection].code 1.. MS
+* section[medicationsSection].code = $loinc#10160-0
+* section[medicationsSection].code ^short = "Medications Section code"
+* section[medicationsSection].code ^definition = "Medications Section code"
+* section[medicationsSection].code ^isModifier = false
+* section[medicationsSection].text 1.. MS
+* section[medicationsSection].text ^short = "Medications Section narrative"
+* section[medicationsSection].text ^definition = "Medications Section narrative"
+* section[medicationsSection].entry MS
+* section[medicationsSection].entry ^slicing.discriminator.type = #profile
+* section[medicationsSection].entry ^slicing.discriminator.path = "resolve()"
+* section[medicationsSection].entry ^slicing.rules = #open
+* section[medicationsSection].entry contains
+    medicationAdministration 0..* MS and
+    medicationRequest 0..* MS and
+    medicationDispense 0..* MS and
+    medicationReferences 0..* MS
+* section[medicationsSection].entry[medicationAdministration] only Reference(HealthCareSurveysMedicationAdministration)
+* section[medicationsSection].entry[medicationAdministration] ^short = "Medication Administration Entry"
+* section[medicationsSection].entry[medicationAdministration] ^isModifier = false
+* section[medicationsSection].entry[medicationRequest] only Reference(USCoreMedicationRequestProfile)
+* section[medicationsSection].entry[medicationRequest] ^short = "Medication Result Entry"
+* section[medicationsSection].entry[medicationRequest] ^isModifier = false
+* section[medicationsSection].entry[medicationDispense] only Reference($us-core-medicationdispense)
+* section[medicationsSection].entry[medicationDispense] ^short = "Medication Dispense Entry"
+* section[medicationsSection].entry[medicationDispense] ^isModifier = false
+* section[medicationsSection].entry[medicationReferences] only Reference($us-core-medication)
+* section[medicationsSection].entry[medicationReferences] ^short = "Medication Reference Entries"
+* section[medicationsSection].entry[medicationReferences] ^isModifier = false
 
 /*
 // Medications Administered Section (USCDI: n/a - consider removing this section - all profiles referenced elsewhere in Composition (Medications Section))
-* section[sliceMedicationsAdministeredSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceMedicationsAdministeredSection] ^extension.valueString = "Section"
-* section[sliceMedicationsAdministeredSection] ^short = "Medications Administered Section"
-* section[sliceMedicationsAdministeredSection] ^definition = "The Medications Administered Section defines medications administered during the encounter."
-* section[sliceMedicationsAdministeredSection] ^isModifier = false
-* section[sliceMedicationsAdministeredSection].code 1.. MS
-* section[sliceMedicationsAdministeredSection].code = $loinc#29549-3
-* section[sliceMedicationsAdministeredSection].code ^short = "Medications Administered Section code"
-* section[sliceMedicationsAdministeredSection].code ^definition = "Medications Administered Section code"
-* section[sliceMedicationsAdministeredSection].code ^isModifier = false
-* section[sliceMedicationsAdministeredSection].text 1.. MS
-* section[sliceMedicationsAdministeredSection].text ^short = "Medications Administered Section narrative"
-* section[sliceMedicationsAdministeredSection].text ^definition = "Medications Administered Section narrative"
-* section[sliceMedicationsAdministeredSection].entry MS
-* section[sliceMedicationsAdministeredSection].entry ^slicing.discriminator.type = #profile
-* section[sliceMedicationsAdministeredSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceMedicationsAdministeredSection].entry ^slicing.rules = #open
-* section[sliceMedicationsAdministeredSection].entry contains
-    sliceMedicationAdministration 0..* MS and
-    sliceMedicationReferences 0..* MS
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration)
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationReferences] ^isModifier = false
+* section[medicationsAdministeredSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[medicationsAdministeredSection] ^extension.valueString = "Section"
+* section[medicationsAdministeredSection] ^short = "Medications Administered Section"
+* section[medicationsAdministeredSection] ^definition = "The Medications Administered Section defines medications administered during the encounter."
+* section[medicationsAdministeredSection] ^isModifier = false
+* section[medicationsAdministeredSection].code 1.. MS
+* section[medicationsAdministeredSection].code = $loinc#29549-3
+* section[medicationsAdministeredSection].code ^short = "Medications Administered Section code"
+* section[medicationsAdministeredSection].code ^definition = "Medications Administered Section code"
+* section[medicationsAdministeredSection].code ^isModifier = false
+* section[medicationsAdministeredSection].text 1.. MS
+* section[medicationsAdministeredSection].text ^short = "Medications Administered Section narrative"
+* section[medicationsAdministeredSection].text ^definition = "Medications Administered Section narrative"
+* section[medicationsAdministeredSection].entry MS
+* section[medicationsAdministeredSection].entry ^slicing.discriminator.type = #profile
+* section[medicationsAdministeredSection].entry ^slicing.discriminator.path = "resolve()"
+* section[medicationsAdministeredSection].entry ^slicing.rules = #open
+* section[medicationsAdministeredSection].entry contains
+    medicationAdministration 0..* MS and
+    medicationReferences 0..* MS
+* section[medicationsAdministeredSection].entry[medicationAdministration] only Reference(HcsMedicationAdministration)
+* section[medicationsAdministeredSection].entry[medicationAdministration] ^short = "Medication Administration Entry"
+* section[medicationsAdministeredSection].entry[medicationAdministration] ^isModifier = false
+* section[medicationsAdministeredSection].entry[medicationReferences] only Reference($us-core-medication)
+* section[medicationsAdministeredSection].entry[medicationReferences] ^short = "Medication Reference Entries"
+* section[medicationsAdministeredSection].entry[medicationReferences] ^isModifier = false
 
 // Admission Medications Section (USCDI: n/a - consider removing this section - all profiles referenced elsewhere in Composition and dates should be enough to figure out if medications were taken by patient prior to admission)
-* section[sliceAdmissionMedicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceAdmissionMedicationsSection] ^extension.valueString = "Section"
-* section[sliceAdmissionMedicationsSection] ^short = "Admission Medications Section"
-* section[sliceAdmissionMedicationsSection] ^definition = "The Admissions Medications Section contains the medications taken by the patient prior to and at the time of admission to the facility."
-* section[sliceAdmissionMedicationsSection] ^isModifier = false
-* section[sliceAdmissionMedicationsSection].code 1.. MS
-* section[sliceAdmissionMedicationsSection].code = $loinc#42346-7
-* section[sliceAdmissionMedicationsSection].code ^short = "Admission Medications Section code"
-* section[sliceAdmissionMedicationsSection].code ^definition = "Admission Medications Section code"
-* section[sliceAdmissionMedicationsSection].code ^isModifier = false
-* section[sliceAdmissionMedicationsSection].text 1.. MS
-* section[sliceAdmissionMedicationsSection].text ^short = "Admission Medications Section narrative"
-* section[sliceAdmissionMedicationsSection].text ^definition = "Admission Medications Section narrative"
-* section[sliceAdmissionMedicationsSection].entry MS
-* section[sliceAdmissionMedicationsSection].entry ^slicing.discriminator.type = #profile
-* section[sliceAdmissionMedicationsSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceAdmissionMedicationsSection].entry ^slicing.rules = #open
-* section[sliceAdmissionMedicationsSection].entry contains
-    sliceMedicationAdministration 0..* MS and
-    sliceMedicationRequest 0..* MS and
-    sliceMedicationReferences 0..* MS
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] only Reference(HcsMedicationAdministration)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration Entry"
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^isModifier = false
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] only Reference(HcsMedicationRequest)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^short = "Medication Request Entry"
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^isModifier = false
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] only Reference($us-core-medication)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^short = "Medication Reference Entries"
-* section[sliceAdmissionMedicationsSection].entry[sliceMedicationReferences] ^isModifier = false
+* section[admissionMedicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[admissionMedicationsSection] ^extension.valueString = "Section"
+* section[admissionMedicationsSection] ^short = "Admission Medications Section"
+* section[admissionMedicationsSection] ^definition = "The Admissions Medications Section contains the medications taken by the patient prior to and at the time of admission to the facility."
+* section[admissionMedicationsSection] ^isModifier = false
+* section[admissionMedicationsSection].code 1.. MS
+* section[admissionMedicationsSection].code = $loinc#42346-7
+* section[admissionMedicationsSection].code ^short = "Admission Medications Section code"
+* section[admissionMedicationsSection].code ^definition = "Admission Medications Section code"
+* section[admissionMedicationsSection].code ^isModifier = false
+* section[admissionMedicationsSection].text 1.. MS
+* section[admissionMedicationsSection].text ^short = "Admission Medications Section narrative"
+* section[admissionMedicationsSection].text ^definition = "Admission Medications Section narrative"
+* section[admissionMedicationsSection].entry MS
+* section[admissionMedicationsSection].entry ^slicing.discriminator.type = #profile
+* section[admissionMedicationsSection].entry ^slicing.discriminator.path = "resolve()"
+* section[admissionMedicationsSection].entry ^slicing.rules = #open
+* section[admissionMedicationsSection].entry contains
+    medicationAdministration 0..* MS and
+    medicationRequest 0..* MS and
+    medicationReferences 0..* MS
+* section[admissionMedicationsSection].entry[medicationAdministration] only Reference(HcsMedicationAdministration)
+* section[admissionMedicationsSection].entry[medicationAdministration] ^short = "Medication Administration Entry"
+* section[admissionMedicationsSection].entry[medicationAdministration] ^isModifier = false
+* section[admissionMedicationsSection].entry[medicationRequest] only Reference(HcsMedicationRequest)
+* section[admissionMedicationsSection].entry[medicationRequest] ^short = "Medication Request Entry"
+* section[admissionMedicationsSection].entry[medicationRequest] ^isModifier = false
+* section[admissionMedicationsSection].entry[medicationReferences] only Reference($us-core-medication)
+* section[admissionMedicationsSection].entry[medicationReferences] ^short = "Medication Reference Entries"
+* section[admissionMedicationsSection].entry[medicationReferences] ^isModifier = false
 */
 // Problem Section (USCDI: Problems)
-* section[sliceProblemSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceProblemSection] ^extension.valueString = "Section"
-* section[sliceProblemSection] ^short = "Problem Section (USCDI: Problems)"
-* section[sliceProblemSection] ^definition = "This section lists and describes all the patient's current problems on the maintained problem list."
-* section[sliceProblemSection] ^isModifier = false
-* section[sliceProblemSection].code 1.. MS
-* section[sliceProblemSection].code = $loinc#11450-4
-* section[sliceProblemSection].code ^short = "Problem Section code"
-* section[sliceProblemSection].code ^definition = "Problem Section code"
-* section[sliceProblemSection].code ^isModifier = false
-* section[sliceProblemSection].text 1.. MS
-* section[sliceProblemSection].text ^short = "Problem Section narrative"
-* section[sliceProblemSection].text ^definition = "Problem Section narrative"
-* section[sliceProblemSection].entry MS
-* section[sliceProblemSection].entry ^slicing.discriminator.type = #profile
-* section[sliceProblemSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceProblemSection].entry ^slicing.rules = #open
-* section[sliceProblemSection].entry contains 
-    sliceProblemsHealthConcerns 0..* MS and
-    sliceEncounterDiagnosis 0..* MS
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] only Reference(USCoreConditionProblemsHealthConcernsProfile)
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^short = "Problems Health Concerns Entry"
-* section[sliceProblemSection].entry[sliceProblemsHealthConcerns] ^isModifier = false
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] only Reference(USCoreConditionEncounterDiagnosisProfile)
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^short = "Encounter Diagnosis Entry"
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^definition = "References to Conditions that represent encounter diagnoses"
-* section[sliceProblemSection].entry[sliceEncounterDiagnosis] ^isModifier = false
+* section[problemSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[problemSection] ^extension.valueString = "Section"
+* section[problemSection] ^short = "Problem Section (USCDI: Problems)"
+* section[problemSection] ^definition = "This section lists and describes all the patient's current problems on the maintained problem list."
+* section[problemSection] ^isModifier = false
+* section[problemSection].code 1.. MS
+* section[problemSection].code = $loinc#11450-4
+* section[problemSection].code ^short = "Problem Section code"
+* section[problemSection].code ^definition = "Problem Section code"
+* section[problemSection].code ^isModifier = false
+* section[problemSection].text 1.. MS
+* section[problemSection].text ^short = "Problem Section narrative"
+* section[problemSection].text ^definition = "Problem Section narrative"
+* section[problemSection].entry MS
+* section[problemSection].entry ^slicing.discriminator.type = #profile
+* section[problemSection].entry ^slicing.discriminator.path = "resolve()"
+* section[problemSection].entry ^slicing.rules = #open
+* section[problemSection].entry contains 
+    problemsHealthConcerns 0..* MS and
+    encounterDiagnosis 0..* MS
+* section[problemSection].entry[problemsHealthConcerns] only Reference(USCoreConditionProblemsHealthConcernsProfile)
+* section[problemSection].entry[problemsHealthConcerns] ^short = "Problems Health Concerns Entry"
+* section[problemSection].entry[problemsHealthConcerns] ^isModifier = false
+* section[problemSection].entry[encounterDiagnosis] only Reference(USCoreConditionEncounterDiagnosisProfile)
+* section[problemSection].entry[encounterDiagnosis] ^short = "Encounter Diagnosis Entry"
+* section[problemSection].entry[encounterDiagnosis] ^definition = "References to Conditions that represent encounter diagnoses"
+* section[problemSection].entry[encounterDiagnosis] ^isModifier = false
 
 // Reason for Visit Section
-* section[sliceReasonForVisitSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceReasonForVisitSection] ^extension.valueString = "Section"
-* section[sliceReasonForVisitSection] ^short = "Reason for Visit Section"
-* section[sliceReasonForVisitSection] ^definition = "This section records the reason for the patient's visit (the provider’s description of the reason for visit)."
-* section[sliceReasonForVisitSection] ^isModifier = false
-* section[sliceReasonForVisitSection].code 1.. MS
-* section[sliceReasonForVisitSection].code = $loinc#29299-5
-* section[sliceReasonForVisitSection].code ^short = "Reason for Visit code"
-* section[sliceReasonForVisitSection].code ^definition = "Reason for Visit code"
-* section[sliceReasonForVisitSection].code ^isModifier = false
-* section[sliceReasonForVisitSection].text 1.. MS
-* section[sliceReasonForVisitSection].text ^short = "Reason for Visit narrative"
-* section[sliceReasonForVisitSection].text ^definition = "Reason for Visit narrative"
+* section[reasonForVisitSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[reasonForVisitSection] ^extension.valueString = "Section"
+* section[reasonForVisitSection] ^short = "Reason for Visit Section"
+* section[reasonForVisitSection] ^definition = "This section records the reason for the patient's visit (the provider’s description of the reason for visit)."
+* section[reasonForVisitSection] ^isModifier = false
+* section[reasonForVisitSection].code 1.. MS
+* section[reasonForVisitSection].code = $loinc#29299-5
+* section[reasonForVisitSection].code ^short = "Reason for Visit code"
+* section[reasonForVisitSection].code ^definition = "Reason for Visit code"
+* section[reasonForVisitSection].code ^isModifier = false
+* section[reasonForVisitSection].text 1.. MS
+* section[reasonForVisitSection].text ^short = "Reason for Visit narrative"
+* section[reasonForVisitSection].text ^definition = "Reason for Visit narrative"
 
 // Results Section (USCDI: Laboratory, Clinical Tests)
-* section[sliceResultsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceResultsSection] ^extension.valueString = "Section"
-* section[sliceResultsSection] ^short = "Results Section (USCDI: Laboratory, Clinical Tests)"
-* section[sliceResultsSection] ^definition = "The Results Section contains observations of results generated by laboratories, imaging procedures, and other procedures. The scope includes observations such as hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray, ultrasound, CT, MRI, angiography, echocardiography, nuclear medicine, pathology, and procedure observations. The section often includes notable results such as abnormal values or relevant trends, and could contain all results for the period of time being documented.\n\nLaboratory results are typically generated by laboratories providing analytic services in areas such as chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These observations are based on analysis of specimens obtained from the patient and submitted to the laboratory. Imaging results are typically generated by a clinician reviewing the output of an imaging procedure, such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac echocardiogram.\n\nProcedure results are typically generated by a clinician to provide more granular information about component observations made during a procedure, such as where a gastroenterologist reports the size of a polyp observed during a colonoscopy.\n"
-* section[sliceResultsSection] ^isModifier = false
-* section[sliceResultsSection].code 1.. MS
-* section[sliceResultsSection].code = $loinc#30954-2
-* section[sliceResultsSection].code ^short = "Results Section code"
-* section[sliceResultsSection].code ^definition = "Results Section code"
-* section[sliceResultsSection].code ^isModifier = false
-* section[sliceResultsSection].text 1.. MS
-* section[sliceResultsSection].text ^short = "Results Section narrative"
-* section[sliceResultsSection].text ^definition = "Results Section narrative"
-* section[sliceResultsSection].entry MS
-* section[sliceResultsSection].entry ^slicing.discriminator.type = #profile
-* section[sliceResultsSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceResultsSection].entry ^slicing.rules = #open
-* section[sliceResultsSection].entry contains
-    // sliceLabResultEntry 0..* MS and
-    sliceResultEntry 0..* MS and
-    sliceDiagnosticReportEntry 0..* MS
-    // sliceClinicalResultEntry 0..* MS and
-    // sliceScreeningAssessmentEntry 0..* MS and
-    // sliceQuestionnaireResponseEntry 0..* MS
-* section[sliceResultsSection].entry[sliceResultEntry] only Reference($us-core-observation-lab or $us-core-observation-clinical-result)
-* section[sliceResultsSection].entry[sliceResultEntry] ^short = "Result Entries"
-* section[sliceResultsSection].entry[sliceResultEntry] ^isModifier = false
-* section[sliceResultsSection].entry[sliceDiagnosticReportEntry] only Reference($us-core-diagnosticreport-lab)
-* section[sliceResultsSection].entry[sliceDiagnosticReportEntry] ^short = "Diagnostic Result Entries"
-* section[sliceResultsSection].entry[sliceDiagnosticReportEntry] ^isModifier = false
-// * section[sliceResultsSection].entry[sliceLabResultEntry] only Reference($us-core-observation-lab)
-// * section[sliceResultsSection].entry[sliceLabResultEntry] ^short = "Lab Result Entries"
-// * section[sliceResultsSection].entry[sliceLabResultEntry] ^isModifier = false
-// * section[sliceResultsSection].entry[sliceClinicalResultEntry] only Reference($us-core-observation-clinical-result)
-// * section[sliceResultsSection].entry[sliceClinicalResultEntry] ^short = "Clinical Result Entries"
-// * section[sliceResultsSection].entry[sliceClinicalResultEntry] ^isModifier = false
-// * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] only Reference($us-core-observation-screening-assessment)
-// * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^short = "Screening Assessment Entries"
-// * section[sliceResultsSection].entry[sliceScreeningAssessmentEntry] ^isModifier = false
+* section[resultsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[resultsSection] ^extension.valueString = "Section"
+* section[resultsSection] ^short = "Results Section (USCDI: Laboratory, Clinical Tests)"
+* section[resultsSection] ^definition = "The Results Section contains observations of results generated by laboratories, imaging procedures, and other procedures. The scope includes observations such as hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray, ultrasound, CT, MRI, angiography, echocardiography, nuclear medicine, pathology, and procedure observations. The section often includes notable results such as abnormal values or relevant trends, and could contain all results for the period of time being documented.\n\nLaboratory results are typically generated by laboratories providing analytic services in areas such as chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These observations are based on analysis of specimens obtained from the patient and submitted to the laboratory. Imaging results are typically generated by a clinician reviewing the output of an imaging procedure, such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac echocardiogram.\n\nProcedure results are typically generated by a clinician to provide more granular information about component observations made during a procedure, such as where a gastroenterologist reports the size of a polyp observed during a colonoscopy.\n"
+* section[resultsSection] ^isModifier = false
+* section[resultsSection].code 1.. MS
+* section[resultsSection].code = $loinc#30954-2
+* section[resultsSection].code ^short = "Results Section code"
+* section[resultsSection].code ^definition = "Results Section code"
+* section[resultsSection].code ^isModifier = false
+* section[resultsSection].text 1.. MS
+* section[resultsSection].text ^short = "Results Section narrative"
+* section[resultsSection].text ^definition = "Results Section narrative"
+* section[resultsSection].entry MS
+* section[resultsSection].entry ^slicing.discriminator.type = #profile
+* section[resultsSection].entry ^slicing.discriminator.path = "resolve()"
+* section[resultsSection].entry ^slicing.rules = #open
+* section[resultsSection].entry contains
+    // labResultEntry 0..* MS and
+    resultEntry 0..* MS and
+    diagnosticReportEntry 0..* MS
+    // clinicalResultEntry 0..* MS and
+    // screeningAssessmentEntry 0..* MS and
+    // questionnaireResponseEntry 0..* MS
+* section[resultsSection].entry[resultEntry] only Reference($us-core-observation-lab or $us-core-observation-clinical-result)
+* section[resultsSection].entry[resultEntry] ^short = "Result Entries"
+* section[resultsSection].entry[resultEntry] ^isModifier = false
+* section[resultsSection].entry[diagnosticReportEntry] only Reference($us-core-diagnosticreport-lab)
+* section[resultsSection].entry[diagnosticReportEntry] ^short = "Diagnostic Result Entries"
+* section[resultsSection].entry[diagnosticReportEntry] ^isModifier = false
+// * section[resultsSection].entry[labResultEntry] only Reference($us-core-observation-lab)
+// * section[resultsSection].entry[labResultEntry] ^short = "Lab Result Entries"
+// * section[resultsSection].entry[labResultEntry] ^isModifier = false
+// * section[resultsSection].entry[clinicalResultEntry] only Reference($us-core-observation-clinical-result)
+// * section[resultsSection].entry[clinicalResultEntry] ^short = "Clinical Result Entries"
+// * section[resultsSection].entry[clinicalResultEntry] ^isModifier = false
+// * section[resultsSection].entry[screeningAssessmentEntry] only Reference($us-core-observation-screening-assessment)
+// * section[resultsSection].entry[screeningAssessmentEntry] ^short = "Screening Assessment Entries"
+// * section[resultsSection].entry[screeningAssessmentEntry] ^isModifier = false
 //* removed us-core-questionnaireresponse
-// * section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] only Reference($us-core-questionnaireresponse )
-// * section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^short = "Questionnaire Response Entries"
-// * section[sliceResultsSection].entry[sliceQuestionnaireResponseEntry] ^isModifier = false
+// * section[resultsSection].entry[questionnaireResponseEntry] only Reference($us-core-questionnaireresponse )
+// * section[resultsSection].entry[questionnaireResponseEntry] ^short = "Questionnaire Response Entries"
+// * section[resultsSection].entry[questionnaireResponseEntry] ^isModifier = false
 
-// Notes Section (USCDI: Clinical Notes - consider renaming to Clinical Notes Section)
-* section[sliceNotesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceNotesSection] ^extension.valueString = "Section"
-* section[sliceNotesSection] ^short = "Clinical and Diagnostic Reports Section"
-* section[sliceNotesSection] ^definition = "The Notes Section contains clinical notes and diagnostic reports."
-* section[sliceNotesSection] ^isModifier = false
-* section[sliceNotesSection].code 1.. MS
-* section[sliceNotesSection].code = $loinc#28650-0
-* section[sliceNotesSection].code ^short = "Clinical Notes Section code"
-* section[sliceNotesSection].code ^definition = "Clinical Notes Section code"
-* section[sliceNotesSection].code ^isModifier = false
-* section[sliceNotesSection].text 1.. MS
-* section[sliceNotesSection].text ^short = "Notes Section narrative"
-* section[sliceNotesSection].text ^definition = "Notes Section narrative"
-* section[sliceNotesSection].entry MS
-* section[sliceNotesSection].entry ^slicing.discriminator.type = #profile
-* section[sliceNotesSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceNotesSection].entry ^slicing.rules = #open
-* section[sliceNotesSection].entry contains
-    sliceDocumentReferenceEntry 0..* MS and
-    sliceDiagnosticReportEntry 0..* MS
-* section[sliceNotesSection].entry[sliceDocumentReferenceEntry] only Reference($us-core-documentreference)
-* section[sliceNotesSection].entry[sliceDocumentReferenceEntry] ^short = "Document Reference Entries"
-* section[sliceNotesSection].entry[sliceDocumentReferenceEntry] ^isModifier = false
-* section[sliceNotesSection].entry[sliceDiagnosticReportEntry] only Reference($us-core-diagnosticreport-note)
-* section[sliceNotesSection].entry[sliceDiagnosticReportEntry] ^short = "Diagnostic Report Entries"
-* section[sliceNotesSection].entry[sliceDiagnosticReportEntry] ^isModifier = false
+// Clinical Notes Section (USCDI: Clinical Notes)
+* section[clinicalNotesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[clinicalNotesSection] ^extension.valueString = "Section"
+* section[clinicalNotesSection] ^short = "Clinical Notes Section"
+* section[clinicalNotesSection] ^definition = "The Clinical Notes Section contains clinical notes and diagnostic reports."
+* section[clinicalNotesSection] ^isModifier = false
+* section[clinicalNotesSection].code 1.. MS
+* section[clinicalNotesSection].code = $loinc#28650-0
+* section[clinicalNotesSection].code ^short = "Clinical Notes Section code"
+* section[clinicalNotesSection].code ^definition = "Clinical Notes Section code"
+* section[clinicalNotesSection].code ^isModifier = false
+* section[clinicalNotesSection].text 1.. MS
+* section[clinicalNotesSection].text ^short = "Clinical Notes Section narrative"
+* section[clinicalNotesSection].text ^definition = "Clinical Notes Section narrative"
+* section[clinicalNotesSection].entry MS
+* section[clinicalNotesSection].entry ^slicing.discriminator.type = #profile
+* section[clinicalNotesSection].entry ^slicing.discriminator.path = "resolve()"
+* section[clinicalNotesSection].entry ^slicing.rules = #open
+* section[clinicalNotesSection].entry contains
+    documentReferenceEntry 0..* MS and
+    diagnosticReportEntry 0..* MS
+* section[clinicalNotesSection].entry[documentReferenceEntry] only Reference($us-core-documentreference)
+* section[clinicalNotesSection].entry[documentReferenceEntry] ^short = "Document Reference Entries"
+* section[clinicalNotesSection].entry[documentReferenceEntry] ^isModifier = false
+* section[clinicalNotesSection].entry[diagnosticReportEntry] only Reference($us-core-diagnosticreport-note)
+* section[clinicalNotesSection].entry[diagnosticReportEntry] ^short = "Diagnostic Report Entries"
+* section[clinicalNotesSection].entry[diagnosticReportEntry] ^isModifier = false
 
 // Procedures Section (USCDI: Procedures)
-* section[sliceProceduresSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceProceduresSection] ^extension.valueString = "Section"
-* section[sliceProceduresSection] ^short = "Procedures Section (USCDI: Procedures)"
-* section[sliceProceduresSection] ^definition = "This section describes all interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. The section should include notable procedures, but can contain all procedures for the period of time being summarized."
-* section[sliceProceduresSection] ^isModifier = false
-* section[sliceProceduresSection].code 1.. MS
-* section[sliceProceduresSection].code = $loinc#47519-4
-* section[sliceProceduresSection].code ^short = "Procedures Section code"
-* section[sliceProceduresSection].code ^definition = "Procedures Section code"
-* section[sliceProceduresSection].code ^isModifier = false
-* section[sliceProceduresSection].text 1.. MS
-* section[sliceProceduresSection].text ^short = "Procedures Section narrative"
-* section[sliceProceduresSection].text ^definition = "Procedures Section narrative"
-* section[sliceProceduresSection].entry MS
-* section[sliceProceduresSection].entry ^slicing.discriminator.type = #profile
-* section[sliceProceduresSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceProceduresSection].entry ^slicing.rules = #open
-* section[sliceProceduresSection].entry contains
-    sliceProcedure 0..* MS and
-    sliceProcedureOrder 0..* MS
-* section[sliceProceduresSection].entry[sliceProcedure] only Reference($us-core-procedure)
-* section[sliceProceduresSection].entry[sliceProcedure] ^short = "Procedure Entries"
-* section[sliceProceduresSection].entry[sliceProcedureOrder] only Reference($us-core-servicerequest)
-* section[sliceProceduresSection].entry[sliceProcedureOrder] ^short = "Procedure Order Entries"
+* section[proceduresSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[proceduresSection] ^extension.valueString = "Section"
+* section[proceduresSection] ^short = "Procedures Section (USCDI: Procedures)"
+* section[proceduresSection] ^definition = "This section describes all interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. The section should include notable procedures, but can contain all procedures for the period of time being summarized."
+* section[proceduresSection] ^isModifier = false
+* section[proceduresSection].code 1.. MS
+* section[proceduresSection].code = $loinc#47519-4
+* section[proceduresSection].code ^short = "Procedures Section code"
+* section[proceduresSection].code ^definition = "Procedures Section code"
+* section[proceduresSection].code ^isModifier = false
+* section[proceduresSection].text 1.. MS
+* section[proceduresSection].text ^short = "Procedures Section narrative"
+* section[proceduresSection].text ^definition = "Procedures Section narrative"
+* section[proceduresSection].entry MS
+* section[proceduresSection].entry ^slicing.discriminator.type = #profile
+* section[proceduresSection].entry ^slicing.discriminator.path = "resolve()"
+* section[proceduresSection].entry ^slicing.rules = #open
+* section[proceduresSection].entry contains
+    procedure 0..* MS and
+    procedureOrder 0..* MS
+* section[proceduresSection].entry[procedure] only Reference($us-core-procedure)
+* section[proceduresSection].entry[procedure] ^short = "Procedure Entries"
+* section[proceduresSection].entry[procedureOrder] only Reference($us-core-servicerequest)
+* section[proceduresSection].entry[procedureOrder] ^short = "Procedure Order Entries"
 
 
 // Vital Signs Section (USCDI: Vital Signs)
-* section[sliceVitalSignsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceVitalSignsSection] ^extension.valueString = "Section"
-* section[sliceVitalSignsSection] ^short = "Vital Signs Section (USCDI: Vital Signs)"
-* section[sliceVitalSignsSection] ^definition = "The Vital Signs Section contains relevant vital signs for the report. The section should include notable vital signs such as the most recent, maximum and/or minimum, baseline, or relevant trends. Vital signs are represented in the same way as other results, but are aggregated into their own section to follow clinical conventions."
-* section[sliceVitalSignsSection] ^isModifier = false
-* section[sliceVitalSignsSection].code 1.. MS
-* section[sliceVitalSignsSection].code = $loinc#8716-3
-* section[sliceVitalSignsSection].code ^short = "Vital Signs code"
-* section[sliceVitalSignsSection].code ^definition = "Vital Signs code"
-* section[sliceVitalSignsSection].code ^isModifier = false
-* section[sliceVitalSignsSection].text 1.. MS
-* section[sliceVitalSignsSection].text ^short = "Vital Signs narrative"
-* section[sliceVitalSignsSection].text ^definition = "Vital Signs narrative"
-//* section[sliceVitalSignsSection].entry only Reference($us-core-vital-signs)
-* section[sliceVitalSignsSection].entry MS
-* section[sliceVitalSignsSection].entry ^slicing.discriminator.type = #profile
-* section[sliceVitalSignsSection].entry ^slicing.discriminator.path = "resolve()"
-* section[sliceVitalSignsSection].entry ^slicing.rules = #open
-* section[sliceVitalSignsSection].entry contains
-    sliceBloodPressureEntry 0..* MS and
-    sliceBodyWeightEntry 0..* MS and
-    sliceBodyHeightEntry 0..* MS and
-    sliceHeartRateEntry 0..* MS and
-    slicePulseOximetryEntry 0..* MS and
-    sliceBMIEntry 0..* MS and
-    slicePediatricWeightForHeightEntry 0..* MS and
-    slicePediatricHeadOccipitalFrontalCircumferenceEntry 0..* MS and
-    slicePediatricBMIForAgeEntry 0..* MS and
-    sliceBodyTemperatureEntry 0..* MS and
-    sliceHeadCircumferenceEntry 0..* MS and
-    sliceRespiratoryRateEntry 0..* MS
-* section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] only Reference($us-core-blood-pressure)
-* section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] ^short = "Blood Pressure Entries"
-* section[sliceVitalSignsSection].entry[sliceBloodPressureEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] only Reference($us-core-body-weight)
-* section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] ^short = "Body Weight Entries"
-* section[sliceVitalSignsSection].entry[sliceBodyWeightEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] only Reference($us-core-body-height)
-* section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] ^short = "Body Height Entries"
-* section[sliceVitalSignsSection].entry[sliceBodyHeightEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceHeartRateEntry] only Reference($us-core-heart-rate)
-* section[sliceVitalSignsSection].entry[sliceHeartRateEntry] ^short = "Heart Rate Entries"
-* section[sliceVitalSignsSection].entry[sliceHeartRateEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] only Reference($us-core-pulse-oximetry)
-* section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] ^short = "Pulse Oximetry Entries"
-* section[sliceVitalSignsSection].entry[slicePulseOximetryEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBMIEntry] only Reference($us-core-bmi)
-* section[sliceVitalSignsSection].entry[sliceBMIEntry] ^short = "BMI Entries"
-* section[sliceVitalSignsSection].entry[sliceBMIEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePediatricWeightForHeightEntry] only Reference($pediatric-weight-for-height)
-* section[sliceVitalSignsSection].entry[slicePediatricWeightForHeightEntry] ^short = "Pediatric Weight For Height Entries"
-* section[sliceVitalSignsSection].entry[slicePediatricWeightForHeightEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePediatricHeadOccipitalFrontalCircumferenceEntry] only Reference($head-occipital-frontal-circumference-percentile)
-* section[sliceVitalSignsSection].entry[slicePediatricHeadOccipitalFrontalCircumferenceEntry] ^short = "Pediatric Head Occipital Frontal Circumference Percentile Entries"
-* section[sliceVitalSignsSection].entry[slicePediatricHeadOccipitalFrontalCircumferenceEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[slicePediatricBMIForAgeEntry] only Reference($pediatric-bmi-for-age)
-* section[sliceVitalSignsSection].entry[slicePediatricBMIForAgeEntry] ^short = "Pediatric BMI For Age Entries"
-* section[sliceVitalSignsSection].entry[slicePediatricBMIForAgeEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] only Reference($us-core-body-temperature)
-* section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] ^short = "Body Temperature Entries"
-* section[sliceVitalSignsSection].entry[sliceBodyTemperatureEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceHeadCircumferenceEntry] only Reference($us-core-head-circumference)
-* section[sliceVitalSignsSection].entry[sliceHeadCircumferenceEntry] ^short = "Head Circumference Entries"
-* section[sliceVitalSignsSection].entry[sliceHeadCircumferenceEntry] ^isModifier = false
-* section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] only Reference($us-core-respiratory-rate)
-* section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] ^short = "Respiratory Rate Entries"
-* section[sliceVitalSignsSection].entry[sliceRespiratoryRateEntry] ^isModifier = false
+* section[vitalSignsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[vitalSignsSection] ^extension.valueString = "Section"
+* section[vitalSignsSection] ^short = "Vital Signs Section (USCDI: Vital Signs)"
+* section[vitalSignsSection] ^definition = "The Vital Signs Section contains relevant vital signs for the report. The section should include notable vital signs such as the most recent, maximum and/or minimum, baseline, or relevant trends. Vital signs are represented in the same way as other results, but are aggregated into their own section to follow clinical conventions."
+* section[vitalSignsSection] ^isModifier = false
+* section[vitalSignsSection].code 1.. MS
+* section[vitalSignsSection].code = $loinc#8716-3
+* section[vitalSignsSection].code ^short = "Vital Signs code"
+* section[vitalSignsSection].code ^definition = "Vital Signs code"
+* section[vitalSignsSection].code ^isModifier = false
+* section[vitalSignsSection].text 1.. MS
+* section[vitalSignsSection].text ^short = "Vital Signs narrative"
+* section[vitalSignsSection].text ^definition = "Vital Signs narrative"
+//* section[vitalSignsSection].entry only Reference($us-core-vital-signs)
+* section[vitalSignsSection].entry MS
+* section[vitalSignsSection].entry ^slicing.discriminator.type = #profile
+* section[vitalSignsSection].entry ^slicing.discriminator.path = "resolve()"
+* section[vitalSignsSection].entry ^slicing.rules = #open
+* section[vitalSignsSection].entry contains
+    bloodPressureEntry 0..* MS and
+    bodyWeightEntry 0..* MS and
+    bodyHeightEntry 0..* MS and
+    heartRateEntry 0..* MS and
+    pulseOximetryEntry 0..* MS and
+    bMIEntry 0..* MS and
+    pediatricWeightForHeightEntry 0..* MS and
+    pediatricHeadOccipitalFrontalCircumferenceEntry 0..* MS and
+    pediatricBMIForAgeEntry 0..* MS and
+    bodyTemperatureEntry 0..* MS and
+    headCircumferenceEntry 0..* MS and
+    respiratoryRateEntry 0..* MS
+* section[vitalSignsSection].entry[bloodPressureEntry] only Reference($us-core-blood-pressure)
+* section[vitalSignsSection].entry[bloodPressureEntry] ^short = "Blood Pressure Entries"
+* section[vitalSignsSection].entry[bloodPressureEntry] ^isModifier = false
+* section[vitalSignsSection].entry[bodyWeightEntry] only Reference($us-core-body-weight)
+* section[vitalSignsSection].entry[bodyWeightEntry] ^short = "Body Weight Entries"
+* section[vitalSignsSection].entry[bodyWeightEntry] ^isModifier = false
+* section[vitalSignsSection].entry[bodyHeightEntry] only Reference($us-core-body-height)
+* section[vitalSignsSection].entry[bodyHeightEntry] ^short = "Body Height Entries"
+* section[vitalSignsSection].entry[bodyHeightEntry] ^isModifier = false
+* section[vitalSignsSection].entry[heartRateEntry] only Reference($us-core-heart-rate)
+* section[vitalSignsSection].entry[heartRateEntry] ^short = "Heart Rate Entries"
+* section[vitalSignsSection].entry[heartRateEntry] ^isModifier = false
+* section[vitalSignsSection].entry[pulseOximetryEntry] only Reference($us-core-pulse-oximetry)
+* section[vitalSignsSection].entry[pulseOximetryEntry] ^short = "Pulse Oximetry Entries"
+* section[vitalSignsSection].entry[pulseOximetryEntry] ^isModifier = false
+* section[vitalSignsSection].entry[bMIEntry] only Reference($us-core-bmi)
+* section[vitalSignsSection].entry[bMIEntry] ^short = "BMI Entries"
+* section[vitalSignsSection].entry[bMIEntry] ^isModifier = false
+* section[vitalSignsSection].entry[pediatricWeightForHeightEntry] only Reference($pediatric-weight-for-height)
+* section[vitalSignsSection].entry[pediatricWeightForHeightEntry] ^short = "Pediatric Weight For Height Entries"
+* section[vitalSignsSection].entry[pediatricWeightForHeightEntry] ^isModifier = false
+* section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumferenceEntry] only Reference($head-occipital-frontal-circumference-percentile)
+* section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumferenceEntry] ^short = "Pediatric Head Occipital Frontal Circumference Percentile Entries"
+* section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumferenceEntry] ^isModifier = false
+* section[vitalSignsSection].entry[pediatricBMIForAgeEntry] only Reference($pediatric-bmi-for-age)
+* section[vitalSignsSection].entry[pediatricBMIForAgeEntry] ^short = "Pediatric BMI For Age Entries"
+* section[vitalSignsSection].entry[pediatricBMIForAgeEntry] ^isModifier = false
+* section[vitalSignsSection].entry[bodyTemperatureEntry] only Reference($us-core-body-temperature)
+* section[vitalSignsSection].entry[bodyTemperatureEntry] ^short = "Body Temperature Entries"
+* section[vitalSignsSection].entry[bodyTemperatureEntry] ^isModifier = false
+* section[vitalSignsSection].entry[headCircumferenceEntry] only Reference($us-core-head-circumference)
+* section[vitalSignsSection].entry[headCircumferenceEntry] ^short = "Head Circumference Entries"
+* section[vitalSignsSection].entry[headCircumferenceEntry] ^isModifier = false
+* section[vitalSignsSection].entry[respiratoryRateEntry] only Reference($us-core-respiratory-rate)
+* section[vitalSignsSection].entry[respiratoryRateEntry] ^short = "Respiratory Rate Entries"
+* section[vitalSignsSection].entry[respiratoryRateEntry] ^isModifier = false
 
-// Social History Section (USCDI: Health Status/Assessments - Smoking Status)
-* section[sliceSocialHistorySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceSocialHistorySection] ^extension.valueString = "Section"
-* section[sliceSocialHistorySection] ^short = "Social History Section (USCDI: Health Status/Assessments - Smoking Status)"
-* section[sliceSocialHistorySection] ^definition = "This section contains social history data that influence a patient’s physical, psychological or emotional health such as occupation, home environment, travel history, and disability status."
-* section[sliceSocialHistorySection] ^isModifier = false
-* section[sliceSocialHistorySection].code 1.. MS
-* section[sliceSocialHistorySection].code = $loinc#29762-2
-* section[sliceSocialHistorySection].code ^short = "Social History Section code"
-* section[sliceSocialHistorySection].code ^definition = "Social History Section code"
-* section[sliceSocialHistorySection].code ^isModifier = false
-* section[sliceSocialHistorySection].text 1.. MS
-* section[sliceSocialHistorySection].text ^short = "Social History Section narrative"
-* section[sliceSocialHistorySection].text ^definition = "Social History Section narrative"
-* section[sliceSocialHistorySection].entry 0..1 MS
-* section[sliceSocialHistorySection].entry only Reference($us-core-smokingstatus)
+// Social History Section (USCDI: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)
+* section[socialHistorySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[socialHistorySection] ^extension.valueString = "Section"
+* section[socialHistorySection] ^short = "Social History Section (USCDI: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)"
+* section[socialHistorySection] ^definition = "This section contains social history data that influence a patient’s physical, psychological or emotional health."
+* section[socialHistorySection] ^isModifier = false
+* section[socialHistorySection].code 1.. MS
+* section[socialHistorySection].code = $loinc#29762-2
+* section[socialHistorySection].code ^short = "Social History Section code"
+* section[socialHistorySection].code ^definition = "Social History Section code"
+* section[socialHistorySection].code ^isModifier = false
+* section[socialHistorySection].text 1.. MS
+* section[socialHistorySection].text ^short = "Social History Section narrative"
+* section[socialHistorySection].text ^definition = "Social History Section narrative"
+* section[socialHistorySection].entry MS
+* section[socialHistorySection].entry ^slicing.discriminator.type = #profile
+* section[socialHistorySection].entry ^slicing.discriminator.path = "resolve()"
+* section[socialHistorySection].entry ^slicing.rules = #open
+* section[socialHistorySection].entry contains
+    smokingStatus 0..* MS and
+    occupation 0..* MS
+* section[socialHistorySection].entry[smokingStatus] only Reference($us-core-smokingstatus)
+* section[socialHistorySection].entry[smokingStatus] ^short = "US Core Smoking Status Observation"
+* section[socialHistorySection].entry[smokingStatus] ^definition = "US Core Smoking Status Observation entry"
+* section[socialHistorySection].entry[occupation] only Reference($us-core-observation-occupation)
+* section[socialHistorySection].entry[occupation] ^short = "US Core Observation Occupation Observation"
+* section[socialHistorySection].entry[occupation] ^definition = "US Core Observation Occupation Observation entry"
 
-// Medical Equipment Section
-* section[sliceMedicalEquipmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[sliceMedicalEquipmentSection] ^extension.valueString = "Section"
-* section[sliceMedicalEquipmentSection] ^short = "Medical Equipment Section"
-* section[sliceMedicalEquipmentSection] ^definition = "This section lists and describes all the patient's current implanted devices."
-* section[sliceMedicalEquipmentSection] ^isModifier = false
-* section[sliceMedicalEquipmentSection].code 1.. MS
-* section[sliceMedicalEquipmentSection].code = $loinc#46264-8
-* section[sliceMedicalEquipmentSection].code ^short = "Medical Equipment Section code"
-* section[sliceMedicalEquipmentSection].code ^definition = "Medical Equipment Section code"
-* section[sliceMedicalEquipmentSection].code ^isModifier = false
-* section[sliceMedicalEquipmentSection].text 1.. MS
-* section[sliceMedicalEquipmentSection].text ^short = "Medical Equipment Section narrative"
-* section[sliceMedicalEquipmentSection].text ^definition = "Medical Equipment Section narrative"
-* section[sliceMedicalEquipmentSection].entry only Reference($us-core-implantable-device)
-* section[sliceMedicalEquipmentSection].entry MS
+// Medical Equipment Section (USCDI: Unique Device Identifier(s) for a patient's implantable device(s))
+* section[medicalEquipmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[medicalEquipmentSection] ^extension.valueString = "Section"
+* section[medicalEquipmentSection] ^short = "Medical Equipment Section (USCDI: Unique Device Identifier(s) for a patient's implantable device(s))"
+* section[medicalEquipmentSection] ^definition = "This section lists and describes all the patient's current implanted devices."
+* section[medicalEquipmentSection] ^isModifier = false
+* section[medicalEquipmentSection].code 1.. MS
+* section[medicalEquipmentSection].code = $loinc#46264-8
+* section[medicalEquipmentSection].code ^short = "Medical Equipment Section code"
+* section[medicalEquipmentSection].code ^definition = "Medical Equipment Section code"
+* section[medicalEquipmentSection].code ^isModifier = false
+* section[medicalEquipmentSection].text 1.. MS
+* section[medicalEquipmentSection].text ^short = "Medical Equipment Section narrative"
+* section[medicalEquipmentSection].text ^definition = "Medical Equipment Section narrative"
+* section[medicalEquipmentSection].entry only Reference($us-core-implantable-device)
+* section[medicalEquipmentSection].entry MS
 
 // Pregnancy Section (USCDI: Health Status/Assessments - Pregnancy Status)
-* section[slicePregnancySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[slicePregnancySection] ^extension.valueString = "Section"
-* section[slicePregnancySection] ^short = "Pregnancy Section"
-* section[slicePregnancySection] ^definition = "This section contains pregnancy data"
-* section[slicePregnancySection] ^isModifier = false
-* section[slicePregnancySection].code 1.. MS
-* section[slicePregnancySection].code = $loinc#90767-5
-* section[slicePregnancySection].code ^short = "Pregnancy Section code"
-* section[slicePregnancySection].code ^definition = "Pregnancy Section code"
-* section[slicePregnancySection].code ^isModifier = false
-* section[slicePregnancySection].text 1.. MS
-* section[slicePregnancySection].text ^short = "Pregnancy Section narrative"
-* section[slicePregnancySection].text ^definition = "Pregnancy Section narrative"
-* section[slicePregnancySection].entry MS
-* section[slicePregnancySection].entry ^slicing.discriminator.type = #profile
-* section[slicePregnancySection].entry ^slicing.discriminator.path = "resolve()"
-* section[slicePregnancySection].entry ^slicing.rules = #open
-* section[slicePregnancySection].entry contains
-    slicePregnancyStatusObservation 0..* MS and
-    slicePregnancyIntent 0..* MS
-* section[slicePregnancySection].entry[slicePregnancyStatusObservation] only Reference($us-core-observation-pregnancystatus)
-* section[slicePregnancySection].entry[slicePregnancyStatusObservation] ^short = "Pregnancy Status Observation"
-* section[slicePregnancySection].entry[slicePregnancyStatusObservation] ^definition = "Pregnancy Status Observation entry"
-* section[slicePregnancySection].entry[slicePregnancyIntent] only Reference($us-core-observation-pregnancyintent)
-* section[slicePregnancySection].entry[slicePregnancyIntent] ^short = "Pregnancy Intent"
-* section[slicePregnancySection].entry[slicePregnancyIntent] ^definition = "Pregnancy Intent entry"
+* section[pregnancySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[pregnancySection] ^extension.valueString = "Section"
+* section[pregnancySection] ^short = "Pregnancy Section (USCDI: Health Status/Assessments - Pregnancy Status)"
+* section[pregnancySection] ^definition = "This section contains pregnancy data"
+* section[pregnancySection] ^isModifier = false
+* section[pregnancySection].code 1.. MS
+* section[pregnancySection].code = $loinc#90767-5
+* section[pregnancySection].code ^short = "Pregnancy Section code"
+* section[pregnancySection].code ^definition = "Pregnancy Section code"
+* section[pregnancySection].code ^isModifier = false
+* section[pregnancySection].text 1.. MS
+* section[pregnancySection].text ^short = "Pregnancy Section narrative"
+* section[pregnancySection].text ^definition = "Pregnancy Section narrative"
+* section[pregnancySection].entry MS
+* section[pregnancySection].entry ^slicing.discriminator.type = #profile
+* section[pregnancySection].entry ^slicing.discriminator.path = "resolve()"
+* section[pregnancySection].entry ^slicing.rules = #open
+* section[pregnancySection].entry contains
+    pregnancyStatusObservation 0..* MS and
+    pregnancyIntent 0..* MS
+* section[pregnancySection].entry[pregnancyStatusObservation] only Reference($us-core-observation-pregnancystatus)
+* section[pregnancySection].entry[pregnancyStatusObservation] ^short = "Pregnancy Status Observation"
+* section[pregnancySection].entry[pregnancyStatusObservation] ^definition = "Pregnancy Status Observation entry"
+* section[pregnancySection].entry[pregnancyIntent] only Reference($us-core-observation-pregnancyintent)
+* section[pregnancySection].entry[pregnancyIntent] ^short = "Pregnancy Intent"
+* section[pregnancySection].entry[pregnancyIntent] ^definition = "Pregnancy Intent entry"

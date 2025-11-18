@@ -8,7 +8,7 @@ Usage: #example
 * identifier.type.text = "An identifier for the insured of an insurance policy (this insured always has a subscriber), usually assigned by the insurance carrier."
 * identifier.system = "https://www.example.org/upmchealthplan.com/fhir/memberidentifier"
 * identifier.value = "88800933501"
-* identifier.assigner = Reference(organization-payer-2) "UPMC Health Plan"
+* identifier.assigner = Reference(organization-payer-upmc) "UPMC Health Plan"
 * status = #active
 * policyHolder = Reference(patient-ledner)
 * subscriber = Reference(patient-ledner)
@@ -18,7 +18,7 @@ Usage: #example
 * relationship = $subscriber-relationship#self
 * relationship.text = "Self"
 * period.start = "2020-01-01"
-* payor = Reference(organization-payer-2) "UPMC Health Plan"
+* payor = Reference(organization-payer-upmc) "UPMC Health Plan"
 * class[0].type = $coverage-class#group "Group"
 * class[=].type.text = "An employee group"
 * class[=].value = "MCHMO1"

@@ -40,5 +40,5 @@ Usage: #example
 * maritalStatus.coding[+] = $v3-MaritalStatus#M
 * communication.language = urn:ietf:bcp:47#en "English"
 * communication.preferred = true
-* generalPractitioner = Reference(Practitioner/practitioner-1)
+* generalPractitioner = Reference(Practitioner/practitioner-nichols)
 * managingOrganization = Reference(Organization/organization-healthcare) "Healthcare Example"

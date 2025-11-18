@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/health-care-surveys-reporting/2025Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-health-care-surveys-reporting" defaultVersion="2.0.0" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-health-care-surveys-reporting" url="http://hl7.org/fhir/us/health-care-surveys-reporting">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/health-care-surveys-reporting/2025Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-health-care-surveys-reporting" defaultVersion="2.0.0" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-health-care-surveys-reporting-ig" url="http://hl7.org/fhir/us/health-care-surveys-reporting">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-health-care-surveys-reporting"/>
 <version code="2.0.0" url="http://hl7.org/fhir/us/health-care-surveys-reporting/STU2"/>
 <version code="2.0.0-ballot" url="http://hl7.org/fhir/us/health-care-surveys-reporting/2025Sep"/>
@@ -61,14 +61,17 @@
 <artifact deprecated="true" id="MedicationStatement/example" key="MedicationStatement-example" name="MedicationStatement Example"/>
 <artifact id="MessageHeader/messageheader-example-reportheader" key="MessageHeader-messageheader-example-reportheader" name="MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"/>
 <artifact id="PlanDefinition/hcs-plandefinition-example" key="PlanDefinition-hcs-plandefinition-example" name="National Health Care Surveys PlanDefinition"/>
+<artifact id="Observation/observation-occupation-example" key="Observation-observation-occupation-example" name="Occupation Example"/>
 <artifact id="Organization/organization-example" key="Organization-organization-example" name="Organization Example"/>
 <artifact id="Observation/observation-screening-example" key="Observation-observation-screening-example" name="PHQ9 Screening Assessment Example"/>
 <artifact deprecated="true" id="ValueSet/2.16.840.1.113883.1.11.10267" key="ValueSet-2.16.840.1.113883.1.11.10267" name="ParticipationFunction"/>
 <artifact id="Patient/patient-ledner" key="Patient-1" name="Patient 1 - Example"/>
 <artifact id="Patient/patient-baxter" key="Patient-example" name="Patient Example"/>
-<artifact id="Organization/organization-payer-2" key="Organization-organization-payer-2" name="Payer 2"/>
-<artifact id="Organization/organization-payer-example" key="Organization-organization-payer-example" name="Payer Organization Example"/>
-<artifact id="Practitioner/practitioner-1" key="Practitioner-1" name="Practitioner Example"/>
+<artifact deprecated="true" id="Organization/organization-payer-2" key="Organization-organization-payer-2" name="Payer 2"/>
+<artifact deprecated="true" id="Organization/organization-payer-example" key="Organization-organization-payer-example" name="Payer Organization Example"/>
+<artifact id="Organization/organization-payer-bcbs" key="Organization-organization-payer-bcbs" name="Payer Organization Example - Blue Cross Blue Shield"/>
+<artifact id="Organization/organization-payer-upmc" key="Organization-organization-payer-upmc" name="Payer Organization Example - UPMC"/>
+<artifact id="Practitioner/practitioner-nichols" key="Practitioner-1" name="Practitioner Example"/>
 <artifact id="Observation/observation-pregnancy-intent-example" key="Observation-observation-pregnancy-intent-example" name="Pregnancy Intent Example"/>
 <artifact id="Observation/observation-pregnancy-status-example" key="Observation-observation-pregnancy-status-example" name="Pregnancy Status Example"/>
 <artifact id="Procedure/procedure-example" key="Procedure-procedure-example" name="Procedure Example"/>
@@ -85,12 +88,12 @@
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="changelog" name="Changelog"/>
-<page key="changes" name="Changes"/>
+<page deprecated="true" key="changes" name="Changes"/>
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="index" name="Home"/>
 <page key="spec" name="Spec"/>
 <page key="toc" name="Table of Contents"/>
-<page key="usecase" name="Usecase"/>
+<page deprecated="true" key="usecase" name="Usecase"/>
 <page key="usecases" name="Usecases"/>
 </specification>

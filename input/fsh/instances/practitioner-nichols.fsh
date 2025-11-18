@@ -1,4 +1,4 @@
-Instance: practitioner-1
+Instance: practitioner-nichols
 InstanceOf: USCorePractitionerProfile
 Title: "Practitioner Example"
 Description: "An example showing a Practitioner"

@@ -1,7 +1,7 @@
-Instance: organization-payer-2
+Instance: organization-payer-upmc
 InstanceOf: USCoreOrganizationProfile
-Title: "Payer 2"
-Description: "Payer 2"
+Title: "Payer Organization Example - UPMC"
+Description: "An example of an Organization (Payer - UPMC Health Plan)"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * identifier
