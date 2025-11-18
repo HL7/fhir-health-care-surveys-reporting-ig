@@ -13,7 +13,7 @@ title: Health Care Surveys Reporting
 copyrightYear: 2025+
 releaseLabel: STU 2
 description: "This implementation guide (IG) provides Health Level Seven (HL7 FHIR) resources to define standards. 
-  This guide contains a library of FHIR profiles and is compliant with FHIR Release 4.
+  This guide contains a library of FHIR profiles and is compliant with FHIR Release 4."
 publisher:
   name: HL7 International / Public Health
   url: http://www.hl7.org/Special/committees/pher
