@@ -13,4 +13,5 @@ Usage: #example
 * code = $sct#442311008 "Liveborn born in hospital"
 * code.text = "Single liveborn, born in hospital"
 * subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory) "Ambulatory Office Visit"
 * onsetDateTime = "2016-08-10"

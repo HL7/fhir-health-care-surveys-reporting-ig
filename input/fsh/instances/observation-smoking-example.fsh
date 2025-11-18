@@ -9,6 +9,7 @@ Usage: #example
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#72166-2 "Tobacco smoking status"
 * subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory) "Ambulatory Office Visit"
 * effectiveDateTime = "2025-01-02"
 * performer = Reference(Practitioner/practitioner-nichols)
 * valueCodeableConcept = http://snomed.info/sct#266919005 "Never smoked tobacco"

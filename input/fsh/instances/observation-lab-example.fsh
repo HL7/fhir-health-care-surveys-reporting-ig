@@ -9,6 +9,7 @@ Usage: #example
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code = http://loinc.org#26464-8 "Leukocytes [#/volume] in Blood"
 * subject = Reference(Patient/patient-ledner)
+* encounter = Reference(Encounter/encounter-ambulatory) "Ambulatory Office Visit"
 * effectiveDateTime = "2025-01-02"
 * issued = "2025-01-02T10:30:00Z"
 * performer = Reference(Practitioner/practitioner-nichols)

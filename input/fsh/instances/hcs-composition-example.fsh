@@ -58,7 +58,7 @@ Usage: #example
 </div>
 """
 * section[medicationsSection].entry[medicationAdministration] = Reference(MedicationAdministration/medicationadministrationone-example)
-* section[medicationsSection].entry[medicationRequest] = Reference(MedicationRequest/MedicationRequestone-example)
+* section[medicationsSection].entry[medicationRequest] = Reference(MedicationRequest/MedicationRequest-example)
 /* Medications Administered Section (medicationsAdministeredSection) - Optional 
 * section[medicationsAdministeredSection].code = $loinc#29549-3 "Medication administered"
 * section[medicationsAdministeredSection].text.status = #generated
