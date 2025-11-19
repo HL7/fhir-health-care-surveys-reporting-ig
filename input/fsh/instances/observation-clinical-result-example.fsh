@@ -1,7 +1,7 @@
 Instance: observation-clinical-result-example
 InstanceOf: USCoreBodyTemperatureProfile
-Title: "Clinical Observation Example"
-Description: "An example of an Observation (Body Temperature – Alternate Profile)"
+Title: "Observation - Body Temperature (Alternate Profile)"
+Description: "Example clinical observation of elevated body temperature using the alternate US Core body temperature profile."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature"
 * status = #final

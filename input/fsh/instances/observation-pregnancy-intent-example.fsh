@@ -1,8 +1,8 @@
 // Pregnancy Intent Observation
 Instance: observation-pregnancy-intent-example
 InstanceOf: $us-core-observation-pregnancyintent
-Title: "Pregnancy Intent Example"
-Description: "An example of an Observation (Pregnancy Intent)"
+Title: "Observation - Pregnancy Intent"
+Description: "Example pregnancy intention observation indicating patient is not pregnant for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent"
 * status = #final

@@ -1,7 +1,7 @@
 Instance: observation-occupation-example
 InstanceOf: $us-core-observation-occupation
-Title: "Occupation Example"
-Description: "An example of an Occupation observation conforming to US Core."
+Title: "Observation - Occupation and Industry"
+Description: "Example occupation observation for a Certified Nursing Assistant (CNA) working in home nursing services."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-occupation"
 * status = #final

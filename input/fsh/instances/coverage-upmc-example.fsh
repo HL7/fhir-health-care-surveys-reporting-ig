@@ -1,7 +1,7 @@
 Instance: coverage-upmc-example
 InstanceOf: USCoreCoverageProfile
-Title: "Coverage Example 1"
-Description: "Coverage Example 1"
+Title: "Coverage - UPMC Health Plan"
+Description: "Example health insurance coverage with UPMC Medicare HMO plan for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage"
 * identifier.type = $v2-0203#MB "Member Number"

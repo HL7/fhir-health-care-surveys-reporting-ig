@@ -1,8 +1,8 @@
 // Body Temperature Observation
 Instance: observation-temperature-example
 InstanceOf: $us-core-body-temperature
-Title: "Body Temperature Example"
-Description: "An example of an Observation (Body Temperature)"
+Title: "Observation - Body Temperature"
+Description: "Example body temperature observation (37.0 C) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature"
 * status = #final

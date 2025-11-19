@@ -1,8 +1,8 @@
 // Coverage
 Instance: coverage-bcbs-example
 InstanceOf: USCoreCoverageProfile
-Title: "Coverage Example"
-Description: "An example of a Coverage"
+Title: "Coverage - Blue Cross Blue Shield HMO"
+Description: "Example health insurance coverage with Blue Cross Blue Shield HMO plan for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage"
 * status = #active

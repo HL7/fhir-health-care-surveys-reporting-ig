@@ -1,7 +1,7 @@
 Instance: servicerequest-chestct
 InstanceOf: USCoreServiceRequestProfile
-Title: "ServiceRequest Example"
-Description: "An example showing a ServiceRequest for HCS reporting."
+Title: "ServiceRequest - Chest CT Order"
+Description: "Example service request for a chest CT imaging procedure for healthcare surveys reporting."
 Usage: #example
 * id = "example"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest"

@@ -1,8 +1,8 @@
 // Lab Observation
 Instance: observation-clinical-result-xray-example
 InstanceOf: $us-core-observation-clinical-result
-Title: "Observation - X-ray Example"
-Description: "An example of an X-ray Observation (Clinical Result)"
+Title: "Observation - Chest X-ray Clinical Result"
+Description: "Example radiology observation of chest x-ray showing clear lungs with no acute abnormality."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-result"
 * status = #final

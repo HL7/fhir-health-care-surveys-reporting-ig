@@ -1,8 +1,8 @@
 // Device Example
 Instance: device-example
 InstanceOf:  $us-core-implantable-device
-Title: "Implantable Device Example"
-Description: "An example of a Device (Implantable)"
+Title: "Device - Cardiac Pacemaker"
+Description: "Example implantable cardiac pacemaker device (Model X1000) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device"
 * status = #active

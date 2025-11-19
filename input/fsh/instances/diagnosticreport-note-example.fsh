@@ -1,8 +1,8 @@
 // Diagnostic Report - Note
 Instance: diagnosticreport-note-example
 InstanceOf:  $us-core-diagnosticreport-note
-Title: "Diagnostic Report Note Example"
-Description: "An example of a DiagnosticReport (Note/Radiology)"
+Title: "DiagnosticReport - Chest X-ray Radiology Note"
+Description: "Example radiology diagnostic report for chest PA and lateral x-ray showing no acute abnormality."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
 * status = #final

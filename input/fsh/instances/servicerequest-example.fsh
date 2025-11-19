@@ -1,8 +1,8 @@
 // Service Request
 Instance: servicerequest-example
 InstanceOf: $us-core-servicerequest
-Title: "Service Request Example"
-Description: "An example of a ServiceRequest"
+Title: "ServiceRequest - CT Chest Evaluation"
+Description: "Example service request for a CT chest evaluation procedure for acute viral pharyngitis."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest"
 * status = #active

@@ -1,7 +1,7 @@
 Instance: patient-ledner
 InstanceOf: USCorePatientProfile
-Title: "Patient 1 - Example"
-Description: "A Patient Example"
+Title: "Patient - Dominique Ledner"
+Description: "Example patient Dominique Ledner with comprehensive demographic information for healthcare surveys reporting."
 Usage: #example
 * identifier.system = "urn:system"
 * identifier.value = "patient-ledner"

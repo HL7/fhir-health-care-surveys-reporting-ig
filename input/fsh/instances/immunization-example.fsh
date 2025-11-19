@@ -1,8 +1,8 @@
 // Immunization
 Instance: immunization-example
 InstanceOf: $us-core-immunization
-Title: "Immunization Example"
-Description: "An example of an Immunization"
+Title: "Immunization - Influenza Vaccine"
+Description: "Example influenza vaccination administered via intramuscular route to left upper arm in October 2024."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
 * status = #completed

@@ -1,8 +1,8 @@
 // Blood Pressure Observation
 Instance: observation-bp-example
 InstanceOf:  $us-core-blood-pressure
-Title: "Blood Pressure Example"
-Description: "An example of an Observation (Blood Pressure)"
+Title: "Observation - Blood Pressure"
+Description: "Example blood pressure observation (120/80 mmHg) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
 * status = #final

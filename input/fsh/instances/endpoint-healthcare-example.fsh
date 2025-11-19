@@ -1,7 +1,7 @@
 Instance: endpoint-healthcare-example
 InstanceOf: USPublicHealthEndpoint
-Title: "Healthcare Organization Endpoint example"
-Description: "An example showing a Healthcare Organization Endpoint"
+Title: "Endpoint - Healthcare Organization FHIR Server"
+Description: "Example FHIR endpoint for a healthcare organization that sends and receives healthcare survey data."
 Usage: #example
 * identifier.system = "http://example.org/healthcare.org/enpoint-identifier"
 * identifier.value = "endpoint-healthcare-example-id"

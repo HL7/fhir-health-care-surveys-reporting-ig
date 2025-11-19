@@ -1,7 +1,7 @@
 Instance: healthcare-surveys-reporting-bundle
 InstanceOf: HealthcareSurveysReportingBundle
-Title: "HCS Reporting Bundle Example"
-Description: "An example showing a Reporting Bundle for HCS"
+Title: "Bundle - Healthcare Surveys Reporting Message"
+Description: "Example message bundle containing healthcare survey report data sent from healthcare organization to public health agency."
 Usage: #example
 * type = #message
 * timestamp = "2020-11-20T11:15:33-10:00"

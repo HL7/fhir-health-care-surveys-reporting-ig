@@ -1,7 +1,7 @@
 Instance: endpoint-pha-example
 InstanceOf: USPublicHealthEndpoint
-Title: "Public Health Organization Endpoint example"
-Description: "An example showing a Public Health Organization Endpoint"
+Title: "Endpoint - Public Health Agency FHIR Server"
+Description: "Example FHIR endpoint for a public health agency that receives healthcare survey reports."
 Usage: #example
 * identifier.system = "http://example.org/pha/enpoint-identifier"
 * identifier.value = "endpoint-pha-id"

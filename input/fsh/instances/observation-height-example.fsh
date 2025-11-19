@@ -1,8 +1,8 @@
 // Height Observation
 Instance: observation-height-example
 InstanceOf: $us-core-body-height
-Title: "Body Height Example"
-Description: "An example of an Observation (Body Height)"
+Title: "Observation - Body Height"
+Description: "Example body height observation (170 cm) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height"
 * status = #final

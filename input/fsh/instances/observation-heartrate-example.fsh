@@ -1,8 +1,8 @@
 // Heart Rate Observation
 Instance: observation-heartrate-example
 InstanceOf:  $us-core-heart-rate
-Title: "Heart Rate Example"
-Description: "An example of an Observation (Heart Rate)"
+Title: "Observation - Heart Rate"
+Description: "Example heart rate observation (70 beats/minute) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate"
 * status = #final

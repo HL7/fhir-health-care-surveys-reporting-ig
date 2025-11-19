@@ -1,7 +1,7 @@
 Instance: hcs-composition-example
 InstanceOf: HealthCareSurveysComposition
-Title: "Composition Example"
-Description: "An example showing a Composition for HCS"
+Title: "Composition - National Healthcare Surveys Report"
+Description: "Example comprehensive healthcare surveys composition including patient information, clinical data, and survey results."
 Usage: #example
 
 * identifier.value = "c03eab8c-11e8-4d0c-ad2a-b385395e27db"

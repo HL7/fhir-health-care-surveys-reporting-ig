@@ -1,7 +1,7 @@
 Instance: MedicationRequest-example
 InstanceOf: USCoreMedicationRequestProfile
-Title: "Medication Request Example"
-Description: "An example showing a MedicationRequest for HCS reporting."
+Title: "MedicationRequest - Amoxicillin (Entered in Error)"
+Description: "Example medication request entered in error, originally documented as Amoxicillin but corrected to Erythromycin."
 Usage: #example
 * status = #entered-in-error
 * intent = #order

@@ -1,8 +1,8 @@
 // Pregnancy Status Observation
 Instance: observation-pregnancy-status-example
 InstanceOf: $us-core-observation-pregnancystatus
-Title: "Pregnancy Status Example"
-Description: "An example of an Observation (Pregnancy Status)"
+Title: "Observation - Pregnancy Status"
+Description: "Example pregnancy status observation indicating patient is not pregnant for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus"
 * status = #final

@@ -1,8 +1,8 @@
 // Problem - Health Concern
 Instance: condition-problem-pharyngitis-example
 InstanceOf: $us-core-condition-problems-health-concerns
-Description: "An example of a Condition (Health Concern)"
-Title: "Health Concern Example"
+Title: "Condition - Acute Viral Pharyngitis"
+Description: "Example condition representing active acute viral pharyngitis health concern."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
 * clinicalStatus = $condition-clinical#active "Active"

@@ -1,7 +1,7 @@
 Instance: encounter-ambulatory
 InstanceOf: USCoreEncounterProfile
-Title: "Encounter Example"
-Description: "An Encounter example for HCS reporting."
+Title: "Encounter - Ambulatory Office Visit"
+Description: "Example of a finished ambulatory encounter representing a normal delivery office visit for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
 * status = #finished

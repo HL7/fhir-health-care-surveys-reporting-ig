@@ -1,8 +1,8 @@
 // Care Team
 Instance: careteam-example
 InstanceOf: $us-core-careteam
-Title: "Care Team Example"
-Description: "An example of a CareTeam"
+Title: "CareTeam - Respiratory Care Team"
+Description: "Example respiratory care team with primary care physician and specialist for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam"
 * status = #active

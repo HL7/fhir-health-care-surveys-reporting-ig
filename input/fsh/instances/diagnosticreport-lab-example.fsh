@@ -1,8 +1,8 @@
 // Diagnostic Report - Lab
 Instance: diagnosticreport-lab-example
 InstanceOf: $us-core-diagnosticreport-lab
-Title: "Diagnostic Report Laboratory Example"
-Description: "An example of a DiagnosticReport (Laboratory)"
+Title: "DiagnosticReport - CBC Panel Laboratory"
+Description: "Example laboratory diagnostic report for a complete blood count (CBC) panel with automated count."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
 * status = #final

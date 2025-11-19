@@ -1,8 +1,8 @@
 // Lab Observation
 Instance: observation-lab-example
 InstanceOf: USCoreLaboratoryResultObservationProfile
-Title: "Laboratory Observation Example"
-Description: "An example of an Observation (Laboratory Result)"
+Title: "Observation - Leukocytes Laboratory Result"
+Description: "Example laboratory observation of leukocytes (white blood cells) in blood for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
 * status = #final

@@ -1,8 +1,8 @@
 // Organization - Provider
 Instance: organization-example
 InstanceOf:  $us-core-organization
-Title: "Organization Example"
-Description: "An example of an Organization (Provider)"
+Title: "Organization - General Hospital"
+Description: "Example healthcare provider organization General Hospital for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"

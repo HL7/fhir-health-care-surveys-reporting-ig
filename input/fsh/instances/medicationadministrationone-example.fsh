@@ -1,8 +1,8 @@
 // Medication Administration - Ibuprofen
 Instance: medicationadministrationone-example
 InstanceOf: HealthCareSurveysMedicationAdministration
-Title: "Medication Administration Example"
-Description: "An example of a MedicationAdministration"
+Title: "MedicationAdministration - Lantus Insulin"
+Description: "Example of a medication administration of Lantus 100 UNT/ML Injectable Solution for healthcare surveys reporting."
 Usage: #example
 * status = #completed
 * medicationCodeableConcept = $rxnorm#285018 "Lantus 100 UNT/ML Injectable Solution"

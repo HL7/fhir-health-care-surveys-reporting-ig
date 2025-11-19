@@ -1,7 +1,7 @@
 Instance: medicationadministration-example
 InstanceOf: HealthCareSurveysMedicationAdministration
-Title: "HCS Medication Administration Example"
-Description: "An example showing a Medication Administration resource"
+Title: "MedicationAdministration - Lantus Subcutaneous"
+Description: "Example medication administration of Lantus 20 Units subcutaneously before breakfast for healthcare surveys reporting."
 Usage: #example
 * status = #completed
 * medicationCodeableConcept = $rxnorm#285018 "Lantus 100 UNT/ML Injectable Solution"

@@ -1,8 +1,8 @@
 // Smoking Status Observation
 Instance: observation-smoking-example
 InstanceOf: $us-core-smokingstatus
-Title: "Smoking Status Example"
-Description: "An example of an Observation (Smoking Status)"
+Title: "Observation - Smoking Status"
+Description: "Example smoking status observation indicating patient never smoked tobacco for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus"
 * status = #final

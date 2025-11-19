@@ -1,8 +1,8 @@
 // Screening Assessment
 Instance: observation-screening-assessment-example
 InstanceOf: USCoreObservationScreeningAssessmentProfile
-Title: "Screening Assessment Example"
-Description: "An example of an Observation (Screening Assessment – Alternate Profile)"
+Title: "Observation - PHQ-9 Screening (Alternate Profile)"
+Description: "Example PHQ-9 depression screening assessment using the alternate US Core screening assessment profile."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment"
 * status = #final

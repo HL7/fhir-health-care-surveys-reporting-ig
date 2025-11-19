@@ -1,8 +1,8 @@
 // Clinical Observation
 Instance: observation-clinical-example
 InstanceOf: $us-core-observation-clinical-result
-Title: "Body Temperature Clinical Observation Example"
-Description: "An example of an Observation (Clinical Result)"
+Title: "Observation - Body Temperature (Clinical Result)"
+Description: "Example clinical observation of elevated body temperature (37.8 C) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-result"
 * status = #final

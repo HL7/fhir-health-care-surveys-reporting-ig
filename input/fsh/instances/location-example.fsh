@@ -1,8 +1,8 @@
 // Location
 Instance: location-example
 InstanceOf: USCoreLocation
-Title: "Location Example"
-Description: "An example of a Location"
+Title: "Location - General Hospital Main Campus"
+Description: "Example hospital location representing the main campus of General Hospital for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
 * identifier.system = "http://www.acme.org/location"

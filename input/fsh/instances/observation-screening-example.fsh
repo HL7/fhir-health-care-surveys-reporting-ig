@@ -1,8 +1,8 @@
 // Screening Assessment* clinicalStatus = $condition-clinical#active "Active"
 Instance: observation-screening-example
 InstanceOf: $us-core-observation-screening-assessment
-Title: "PHQ9 Screening Assessment Example"
-Description: "An example of an Observation (Screening Assessment)"
+Title: "Observation - PHQ-9 Depression Screening"
+Description: "Example screening assessment observation using the PHQ-9 quick depression assessment panel for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment"
 * status = #final

@@ -1,7 +1,7 @@
 Instance: condition-encounter-diagnosis-example
 InstanceOf: USCoreConditionEncounterDiagnosisProfile
-Title: "Encounter Diagnosis Example"
-Description: "An example of an encounter diagnosis condition for HCS"
+Title: "Condition - Acute Bronchitis (Encounter Diagnosis)"
+Description: "Example encounter diagnosis of acute bronchitis confirmed during ambulatory office visit."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis-example"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"

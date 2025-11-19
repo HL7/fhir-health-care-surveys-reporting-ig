@@ -1,8 +1,8 @@
 // Goal
 Instance: goal-example
 InstanceOf: $us-core-goal
-Title: "Goal Example"
-Description: "An example of a Goal"
+Title: "Goal - Resolution of Acute Bronchitis"
+Description: "Example patient goal to resolve acute bronchitis within 2 weeks with improved rest and hydration."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal"
 * lifecycleStatus = #active

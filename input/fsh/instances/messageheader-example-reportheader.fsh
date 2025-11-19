@@ -1,7 +1,7 @@
 Instance: messageheader-example-reportheader
 InstanceOf: USPublicHealthMessageHeader
-Title: "MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"
-Description: "MessageHeader example used in the HCS Bundle sent from Healthcare org to PHA"
+Title: "MessageHeader - Healthcare Survey Report Header"
+Description: "Example MessageHeader used in the Healthcare Surveys Bundle sent from a healthcare organization to a public health agency."
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encrypted-extension"
 * extension[=].valueBoolean = false

@@ -1,8 +1,8 @@
 // BMI Observation
 Instance: observation-bmi-example
 InstanceOf: $us-core-bmi
-Title: "BMI Example"
-Description: "An example of an Observation (BMI)"
+Title: "Observation - Body Mass Index"
+Description: "Example BMI observation (23.5 kg/m2) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi"
 * status = #final

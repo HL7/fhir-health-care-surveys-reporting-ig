@@ -1,8 +1,8 @@
 // Document Reference
 Instance: documentreference-example
 InstanceOf: $us-core-documentreference
-Title: "Document Reference Example"
-Description: "An example of a DocumentReference"
+Title: "DocumentReference - Consultation Note"
+Description: "Example document reference for a consultation note related to acute bronchitis diagnosis."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
 * status = #current

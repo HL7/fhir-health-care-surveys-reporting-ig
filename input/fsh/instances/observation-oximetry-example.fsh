@@ -1,8 +1,8 @@
 // Pulse Oximetry Observation
 Instance: observation-oximetry-example
 InstanceOf: $us-core-pulse-oximetry
-Title: "Pulse Oximetry Example"
-Description: "An example of an Observation (Pulse Oximetry)"
+Title: "Observation - Pulse Oximetry"
+Description: "Example pulse oximetry observation (98% oxygen saturation) for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry"
 * status = #final

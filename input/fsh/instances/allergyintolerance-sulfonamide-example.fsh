@@ -1,7 +1,7 @@
 Instance: allergyintolerance-sulfonamide-example
 InstanceOf: USCoreAllergyIntolerance
-Title: "AllergyIntolerance Example"
-Description: "An example showing an AllergyIntolerance for HCS reporting."
+Title: "AllergyIntolerance - Sulfonamide"
+Description: "Example allergy intolerance to sulfonamide antibacterial causing mild skin rash for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance"
 * clinicalStatus = $allergyintolerance-clinical#active

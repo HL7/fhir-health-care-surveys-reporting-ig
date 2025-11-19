@@ -1,8 +1,8 @@
 // Procedure
 Instance: procedure-example
 InstanceOf: $us-core-procedure
-Title: "Procedure Example"
-Description: "An example of a Procedure"
+Title: "Procedure - Appendectomy"
+Description: "Example procedure representing an appendectomy performed in 1995 for healthcare surveys reporting."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
 * status = #completed
