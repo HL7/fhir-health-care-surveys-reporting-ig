@@ -13,4 +13,5 @@ Usage: #example
 * effectiveDateTime = "2025-01-02T10:00:00Z"
 * issued = "2025-01-02T11:30:00Z"
 * performer = Reference(Practitioner/practitioner-nichols)
+* result = Reference(Observation/observation-clinical-result-xray-example)
 * conclusion = "No acute radiographic abnormality"

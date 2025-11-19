@@ -9,6 +9,7 @@
 |[FHIR-51723](https://jira.hl7.org/browse/FHIR-51723) | Remove DiagnosticReport profile and use US Core DiagnosticReport |
 |[FHIR-52226](https://jira.hl7.org/browse/FHIR-52226) | Update Specification page to align with rest of IG - update Health Data Exchange App and HDEA to eCR Now FHIR App-Health Care Surveys |
 |[FHIR-52227](https://jira.hl7.org/browse/FHIR-52227) | Fix typo (extra "s" at bottom of page) on Use Cases Page |
+|[FHIR-52302](https://jira.hl7.org/browse/FHIR-52302) | Add reference to imaging Observation instance from DiagnosicReport instance |
 |[FHIR-52305](https://jira.hl7.org/browse/FHIR-52305) | Fix typo in Introduction |
 |[FHIR-52381](https://jira.hl7.org/browse/FHIR-52381) | Remove repeated based-on profile constraints |
 |[FHIR-52382](https://jira.hl7.org/browse/FHIR-52382) | Add Github link for the subscription alternative |

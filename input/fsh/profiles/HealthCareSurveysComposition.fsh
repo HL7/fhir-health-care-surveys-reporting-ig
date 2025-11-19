@@ -26,7 +26,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * author MS
 * author only Reference($us-core-practitionerrole or $us-core-practitioner or $us-core-organization or Device)
 * author ^short = "The author(s) of the document"
-* author ^definition = "It is possible to have multiple authors - especially in the case where the default author is the organization. Author information can contain the HDEA/BSA as a Device Author. "
+* author ^definition = "It is possible to have multiple authors - especially in the case where the default author is the organization. Author information can contain the \"eCR Now FHIR App-Health Care Surveys\" as a Device Author. "
 * title = "National Health Care Surveys report" (exactly)
 * title MS
 * section MS
