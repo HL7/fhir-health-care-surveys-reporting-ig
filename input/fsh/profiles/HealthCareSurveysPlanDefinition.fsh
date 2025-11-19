@@ -6,7 +6,6 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 
 * . ^short = "Health Care Surveys Knowledge Artifact"
 * . ^definition = "This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."
-* . MS
 
 // 1) Define slicing on PlanDefinition.action
 * action ^slicing.discriminator.type = #value

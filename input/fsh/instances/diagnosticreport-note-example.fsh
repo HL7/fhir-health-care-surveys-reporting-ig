@@ -1,5 +1,5 @@
 // Diagnostic Report - Note
-Instance: diagnosticreport-note-exchange-example
+Instance: diagnosticreport-note-example
 InstanceOf:  $us-core-diagnosticreport-note
 Title: "Diagnostic Report Note Example"
 Description: "An example of a DiagnosticReport (Note/Radiology)"

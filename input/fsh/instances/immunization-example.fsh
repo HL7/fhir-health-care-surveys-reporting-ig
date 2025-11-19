@@ -6,7 +6,7 @@ Description: "An example of an Immunization"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
 * status = #completed
-* vaccineCode = http://hl7.org/fhir/sid/cvx#158 "Influenza, injectable, quadrivalent"
+* vaccineCode = http://hl7.org/fhir/sid/cvx#158 "Influenza, split virus, quadrivalent, preservative"
 * patient = Reference(Patient/patient-ledner)
 * occurrenceDateTime = "2024-10-15"
 * primarySource = true

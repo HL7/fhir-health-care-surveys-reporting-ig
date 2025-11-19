@@ -10,9 +10,9 @@ Usage: #example
 * category[us-core].text = "Encounter Diagnosis"
 * code.coding[0] = http://snomed.info/sct#10509002 "Acute bronchitis (disorder)"
 * code.text = "Acute bronchitis"
-* subject = Reference(Patient/patient-ledner) "Amy Shaw"
+* subject = Reference(Patient/patient-ledner)
 * encounter = Reference(Encounter/encounter-ambulatory) "Ambulatory Office Visit"
 * onsetDateTime = "2023-01-02"
 * recordedDate = "2023-01-02"
-* recorder = Reference(Practitioner/practitioner-nichols) "Nicholas Joseph"
-* asserter = Reference(Practitioner/practitioner-nichols) "Nicholas Joseph"
+* recorder = Reference(Practitioner/practitioner-nichols)
+* asserter = Reference(Practitioner/practitioner-nichols)

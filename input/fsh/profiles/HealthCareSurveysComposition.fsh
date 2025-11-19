@@ -3,7 +3,6 @@ Parent: Composition
 Id: hcs-composition
 Title: "Health Care Surveys Composition"
 Description: "This Composition profile is used to organize the healthcare survey report content."
-* . MS
 * . ^short = "Health Care Surveys Composition"
 * . ^definition = "The Health Care Surveys Composition profile establishes the core elements, extensions, vocabularies and value sets for representing heath care surveys. "
 * . ^isModifier = false

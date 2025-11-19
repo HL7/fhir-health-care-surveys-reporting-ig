@@ -3,7 +3,7 @@ InstanceOf: $us-core-observation-occupation
 Title: "Occupation Example"
 Description: "An example of an Occupation observation conforming to US Core."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-example"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-occupation"
 * status = #final
 * category[socialhistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#11341-5 "History of Occupation"
