@@ -4,13 +4,18 @@
 
 |JIRA Ticket|Ticket Description|
 |---------|----------|
-|[FHIR-52966](https://jira.hl7.org/browse/FHIR-52966) | Remove MedicationRequest profile and use US Core MedicationRequest |
-|[FHIR-52305](https://jira.hl7.org/browse/FHIR-52305) | Fix typo in Introduction |
-|[FHIR-52226](https://jira.hl7.org/browse/FHIR-52226) | Update Specification page to align with rest of IG - update Health Data Exchange App and HDEA to eCR Now FHIR App-Health Care Surveys |
-|[FHIR-51719](https://jira.hl7.org/browse/FHIR-51719) | Fix typo on Use Cases page |
-|[FHIR-52850](https://jira.hl7.org/browse/FHIR-52850) | Standardize profile names |
-|[FHIR-51723](https://jira.hl7.org/browse/FHIR-51723) | Remove DiagnosticReport profile and use US Core DiagnosticReport |
+|[FHIR-51719](https://jira.hl7.org/browse/FHIR-51719) | Fix typo (wrong capitalization) on Use Cases page |
 |[FHIR-51720](https://jira.hl7.org/browse/FHIR-51720) | Remove duplicate pages |
+|[FHIR-51723](https://jira.hl7.org/browse/FHIR-51723) | Remove DiagnosticReport profile and use US Core DiagnosticReport |
+|[FHIR-52226](https://jira.hl7.org/browse/FHIR-52226) | Update Specification page to align with rest of IG - update Health Data Exchange App and HDEA to eCR Now FHIR App-Health Care Surveys |
+|[FHIR-52227](https://jira.hl7.org/browse/FHIR-52227) | Fix typo (extra "s" at bottom of page) on Use Cases Page |
+|[FHIR-52305](https://jira.hl7.org/browse/FHIR-52305) | Fix typo in Introduction |
+|[FHIR-52474](https://jira.hl7.org/browse/FHIR-52474) | Add reference to Encounter from all Observations and Conditions where it was missing |
+|[FHIR-52475](https://jira.hl7.org/browse/FHIR-52475) | Add reference to Encounter from Lab Observation instance |
+|[FHIR-52479](https://jira.hl7.org/browse/FHIR-52479) | Delete duplicate MedicationRequest instance |
+|[FHIR-52850](https://jira.hl7.org/browse/FHIR-52850) | Standardize profile names |
+|[FHIR-52966](https://jira.hl7.org/browse/FHIR-52966) | Remove MedicationRequest profile and use US Core MedicationRequest |
+|[FHIR-53095](https://jira.hl7.org/browse/FHIR-53095) | Add reference to US Core Observation Occupation profile from the Composition Social History Section |
 
 
 ### STU 2 - Ballot
