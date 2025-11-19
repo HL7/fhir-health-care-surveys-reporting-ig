@@ -3,7 +3,7 @@ Parent: Bundle
 Id: hcs-reporting-bundle
 Title: "Health Care Surveys Reporting Bundle"
 Description: "Bundle Resource profile for exchanging health care surveys report. This bundle contains the MessageHeader resource used for routing and the Health Care Surveys Content Bundle specifying the content."
-* entry ..* MS
+* entry MS
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open

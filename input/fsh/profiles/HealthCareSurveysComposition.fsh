@@ -18,19 +18,15 @@ Description: "This Composition profile is used to organize the healthcare survey
 * subject only Reference($us-core-patient)
 * subject ^short = "Patient who is the subject of the report."
 * subject ^definition = "This Patient profile represents the subject of the healthcare survey report."
-* subject ^isModifier = false
 * encounter 1.. MS
 * encounter only Reference($us-core-encounter)
 * encounter ^short = "Encounter related to the public health event"
 * encounter ^definition = "This Encounter profile represents the encounter related to the healthcare survey report."
-* encounter ^isModifier = false
 * date MS
-* date ^isModifier = false
-* author ..* MS
+* author MS
 * author only Reference($us-core-practitionerrole or $us-core-practitioner or $us-core-organization or Device)
 * author ^short = "The author(s) of the document"
 * author ^definition = "It is possible to have multiple authors - especially in the case where the default author is the organization. Author information can contain the HDEA/BSA as a Device Author. "
-* author ^isModifier = false
 * title = "National Health Care Surveys report" (exactly)
 * title MS
 * section MS
@@ -51,8 +47,6 @@ Description: "This Composition profile is used to organize the healthcare survey
     immunizationsSection 0..1 MS and
     medicalEquipmentSection 0..1 MS and
     medicationsSection 0..1 MS and
-   // medicationsAdministeredSection 0..1 MS and
-   // admissionMedicationsSection 0..1 MS and
     clinicalNotesSection 0..* MS and
     pregnancySection 0..1 MS and 
     proceduresSection 0..1 MS and
