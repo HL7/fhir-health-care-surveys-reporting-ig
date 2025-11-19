@@ -1,5 +1,5 @@
 // Coverage
-Instance: coverage-example
+Instance: coverage-bcbs-example
 InstanceOf: USCoreCoverageProfile
 Title: "Coverage Example"
 Description: "An example of a Coverage"
@@ -14,7 +14,7 @@ Usage: #example
 * relationship = http://terminology.hl7.org/CodeSystem/subscriber-relationship#self "Self"
 * period.start = "2025-01-01"
 * period.end = "2025-12-31"
-* payor = Reference(organization-payer-bcbs)
+* payor = Reference(Organization/organization-payer-bcbs)
 * class[0].type = http://terminology.hl7.org/CodeSystem/coverage-class#group "Group"
 * class[0].value = "ABC987"
 * class[0].name = "Group Name"

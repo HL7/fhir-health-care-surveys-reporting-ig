@@ -16,6 +16,6 @@ Usage: #example
 * statusDate = "2025-01-02"
 * statusReason = "Treatment initiated"
 * expressedBy = Reference(Patient/patient-ledner)
-* addresses = Reference(problem-healthconcern-example)
+* addresses = Reference(Condition/condition-problem-healthconcern-example)
 * note.text = "Patient understands the plan and is committed to improved rest and hydration"
 * note.time = "2025-01-02T10:30:00Z"

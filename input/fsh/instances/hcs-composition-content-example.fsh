@@ -30,7 +30,7 @@ Usage: #inline
   <p>Single liveborn, born in hospital</p>
 </div>
 """
-* section[problemSection].entry[problemsHealthConcerns] = Reference(Condition/condition-problem)
+* section[problemSection].entry[problemsHealthConcerns] = Reference(Condition/condition-problem-liveborn-example)
 
 /* Allergies Section (allergiesSection) */
 * section[allergiesSection].title = "Allergies Section"
@@ -41,7 +41,7 @@ Usage: #inline
   <p>Allergy to Sulfonide</p>
 </div>
 """
-* section[allergiesSection].entry = Reference(AllergyIntolerance/allergyintolerance-sulfonamide)
+* section[allergiesSection].entry = Reference(AllergyIntolerance/allergyintolerance-sulfonamide-example)
 
 /* Medications Section (medicationsSection) */
 * section[medicationsSection].title = "Medications Section"
@@ -52,5 +52,5 @@ Usage: #inline
   Taking Lantus
 </div>
 """
-* section[medicationsSection].entry[medicationAdministration] = Reference(medicationadministration-example)
+* section[medicationsSection].entry[medicationAdministration] = Reference(MedicationAdministration/medicationadministration-example)
 

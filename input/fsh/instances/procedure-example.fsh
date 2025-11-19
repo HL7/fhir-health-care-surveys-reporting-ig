@@ -11,4 +11,4 @@ Usage: #example
 * performedDateTime = "1995-06-12"
 * recorder = Reference(Practitioner/practitioner-nichols)
 * asserter = Reference(Patient/patient-ledner)
-* location = Reference(location-example)
+* location = Reference(Location/location-example)

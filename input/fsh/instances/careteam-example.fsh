@@ -13,9 +13,9 @@ Usage: #example
 * participant[0].role = http://snomed.info/sct#446050000 "Primary care physician (occupation)"
 * participant[0].member = Reference(Practitioner/practitioner-nichols)
 * participant[0].period.start = "2025-01-02"
-* participant[0].onBehalfOf = Reference(organization-example)
+* participant[0].onBehalfOf = Reference(Organization/organization-example)
 * participant[1].role = http://snomed.info/sct#309343006 "Physician"
 * participant[1].member = Reference(Practitioner/practitioner-nichols)
 * participant[1].period.start = "2025-01-02"
-* participant[1].onBehalfOf = Reference(organization-example)
+* participant[1].onBehalfOf = Reference(Organization/organization-example)
 // Remove the problematic note.author line

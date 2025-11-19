@@ -8,7 +8,7 @@ Usage: #example
 * status = #final
 * type = $loinc#75619-7
 * subject = Reference(Patient/patient-ledner)
-* encounter = Reference(encounter-ambulatory) "Ambulatory Office Visit"
+* encounter = Reference(Encounter/encounter-ambulatory) "Ambulatory Office Visit"
 * date = "2023-01-02T22:13:23Z"
 * author = Reference(Practitioner/practitioner-nichols) "Nicholas Joseph"
 * title = "National Health Care Surveys report"
@@ -33,8 +33,8 @@ Usage: #example
   <p>Acute bronchitis</p>
 </div>
 """
-* section[problemSection][=].entry[problemsHealthConcerns] = Reference(Condition/condition-problem)
-* section[problemSection][=].entry[encounterDiagnosis] = Reference(Condition/condition-encounter-diagnosis)
+* section[problemSection][=].entry[problemsHealthConcerns] = Reference(Condition/condition-problem-liveborn-example)
+* section[problemSection][=].entry[encounterDiagnosis] = Reference(Condition/condition-encounter-diagnosis-example)
 
 
 /* Allergies Section (allergiesSection) */
@@ -46,7 +46,7 @@ Usage: #example
   <p>Allergy to Sulfonide</p>
 </div>
 """
-* section[allergiesSection].entry = Reference(AllergyIntolerance/allergyintolerance-sulfonamide)
+* section[allergiesSection].entry = Reference(AllergyIntolerance/allergyintolerance-sulfonamide-example)
 
 /* Medications Section (medicationsSection) */
 * section[medicationsSection].title = "Medications Section"
@@ -248,4 +248,4 @@ Usage: #example
   <p>Group: ABC987</p>
 </div>
 """
-* section[coverageSection].entry = Reference(Coverage/coverage-example)
+* section[coverageSection].entry = Reference(Coverage/coverage-bcbs-example)

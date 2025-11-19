@@ -10,8 +10,8 @@ Usage: #example
 * patient = Reference(Patient/patient-ledner)
 * occurrenceDateTime = "2024-10-15"
 * primarySource = true
-* location = Reference(location-example)
-* manufacturer = Reference(organization-example)
+* location = Reference(Location/location-example)
+* manufacturer = Reference(Organization/organization-example)
 * lotNumber = "123456A"
 * expirationDate = "2025-06-30"
 * site = http://snomed.info/sct#368208006 "Left upper arm structure"

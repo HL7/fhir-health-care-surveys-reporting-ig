@@ -11,5 +11,5 @@ Usage: #example
 * entry[=].resource = healthcare-surveys-content-bundle 
 * entry[+].fullUrl  = "http://example.org/fhir/Organization/organization-healthcare"
 * entry[=].resource = organization-healthcare
-* entry[+].fullUrl  = "http://example.org/fhir/Endpoint/healthcare-endpoint"
-* entry[=].resource = healthcare-endpoint
+* entry[+].fullUrl  = "http://example.org/fhir/Endpoint/endpoint-healthcare-example"
+* entry[=].resource = endpoint-healthcare-example

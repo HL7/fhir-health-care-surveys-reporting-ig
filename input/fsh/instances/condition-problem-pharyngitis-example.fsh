@@ -1,10 +1,10 @@
 // Problem - Health Concern
-Instance: problem-healthconcern-example
+Instance: condition-problem-pharyngitis-example
 InstanceOf: $us-core-condition-problems-health-concerns
 Description: "An example of a Condition (Health Concern)"
 Title: "Health Concern Example"
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problem-liveborn-examples-health-concerns"
 * clinicalStatus = $condition-clinical#active "Active"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed

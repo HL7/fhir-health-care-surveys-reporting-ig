@@ -21,4 +21,4 @@ Usage: #example
 * address.postalCode = "12345"
 * address.country = "US"
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
-* managingOrganization = Reference(organization-example)
+* managingOrganization = Reference(Organization/organization-example)

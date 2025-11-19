@@ -1,10 +1,10 @@
-Instance: healthcare-endpoint
+Instance: endpoint-healthcare-example
 InstanceOf: USPublicHealthEndpoint
 Title: "Healthcare Organization Endpoint example"
 Description: "An example showing a Healthcare Organization Endpoint"
 Usage: #example
 * identifier.system = "http://example.org/healthcare.org/enpoint-identifier"
-* identifier.value = "healthcare-endpoint-id"
+* identifier.value = "endpoint-healthcare-example-id"
 * status = #active
 * connectionType = $endpoint-connection-type#hl7-fhir-rest
 * name = "HealthCareSenderAndReceiver"

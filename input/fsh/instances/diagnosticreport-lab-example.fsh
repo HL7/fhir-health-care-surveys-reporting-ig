@@ -13,5 +13,5 @@ Usage: #example
 * effectiveDateTime = "2025-01-02"
 * issued = "2025-01-02T11:00:00Z"
 * performer = Reference(Practitioner/practitioner-nichols)
-* result = Reference(observation-lab-example)
+* result = Reference(Observation/observation-lab-example)
 * conclusion = "CBC within normal limits"

@@ -28,12 +28,12 @@ Usage: #inline
 * entry.resource.section[=].code = $loinc#11450-4 "Problem list - Reported"
 * entry.resource.section[=].text.status = #generated
 * entry.resource.section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<p>Single liveborn, born in hospital</p></div>"
-* entry.resource.section[=].entry.reference = "Condition/condition-problem"
+* entry.resource.section[=].entry.reference = "Condition/condition-problem-liveborn-example"
 * entry.resource.section[+].title = "Allergies Section"
 * entry.resource.section[=].code = $loinc#48765-2 "Allergies and adverse reactions Document"
 * entry.resource.section[=].text.status = #generated
 * entry.resource.section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<p>Allergy to Sulfonide</p></div>"
-* entry.resource.section[=].entry.reference = "AllergyIntolerance/allergyintolerance-sulfonamide"
+* entry.resource.section[=].entry.reference = "AllergyIntolerance/allergyintolerance-sulfonamide-example"
 * entry.resource.section[+].title = "Medications Section"
 * entry.resource.section[=].code = $loinc#10160-0 "History of Medication use Narrative"
 * entry.resource.section[=].text.status = #generated

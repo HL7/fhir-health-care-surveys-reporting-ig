@@ -1,10 +1,10 @@
-Instance: ph-endpoint
+Instance: endpoint-pha-example
 InstanceOf: USPublicHealthEndpoint
 Title: "Public Health Organization Endpoint example"
 Description: "An example showing a Public Health Organization Endpoint"
 Usage: #example
 * identifier.system = "http://example.org/pha/enpoint-identifier"
-* identifier.value = "pha-endpoint-id"
+* identifier.value = "endpoint-pha-id"
 * status = #active
 * connectionType = $endpoint-connection-type#hl7-fhir-rest
 * name = "PHAReceiver"

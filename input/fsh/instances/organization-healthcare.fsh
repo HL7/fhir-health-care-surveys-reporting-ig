@@ -14,4 +14,4 @@ Usage: #example
 * address.city = "Atlanta"
 * address.state = "GA"
 * address.postalCode = "81452"
-* endpoint = Reference(healthcare-endpoint)
+* endpoint = Reference(Endpoint/endpoint-healthcare-example)

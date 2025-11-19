@@ -1,4 +1,4 @@
-Instance: allergyintolerance-sulfonamide
+Instance: allergyintolerance-sulfonamide-example
 InstanceOf: USCoreAllergyIntolerance
 Title: "AllergyIntolerance Example"
 Description: "An example showing an AllergyIntolerance for HCS reporting."

@@ -4,7 +4,7 @@ Title: "National Health Care Surveys PlanDefinition"
 Description: "National Health Care Surveys PlanDefinition: Workflow Definition example"
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-receiver-address-extension"
-* extension[=].valueReference.reference = "Endpoint/ph-endpoint"
+* extension[=].valueReference.reference = "Endpoint/endpoint-pha-example"
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-receiver-jwks-url-extension"
 * extension[=].valueUrl = "http://example.org/jwks/123"
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encryption-algorithm-extension"
