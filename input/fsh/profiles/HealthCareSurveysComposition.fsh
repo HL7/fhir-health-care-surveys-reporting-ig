@@ -66,6 +66,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[allergiesSection].text ^definition = "Allergies Section narrative"
 * section[allergiesSection].entry only Reference($us-core-allergyintolerance)
 * section[allergiesSection].entry MS
+* section[allergiesSection].entry ^short = "AllergyIntolerance Entries (USCDI Data Elements: Substance (Medication), Substance (Drug Class), Reaction)"
 
 // Assessment and Plan of Treatment Section (USCDI Data Class: Assessment and Plan of Treatment Section)
 * section[assessmentAndPlanOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -368,13 +369,11 @@ Description: "This Composition profile is used to organize the healthcare survey
     smokingStatus 0..* MS and
     occupation 0..* MS
 * section[socialHistorySection].entry[smokingStatus] only Reference($us-core-smokingstatus)
-* section[socialHistorySection].entry[smokingStatus] ^short = "US Core Smoking Status Observation"
-* section[socialHistorySection].entry[smokingStatus] ^definition = "US Core Smoking Status Observation entry"
+* section[socialHistorySection].entry[smokingStatus] ^short = "Smoking Status Entries (USCDI Data Elements: Smoking Status)"
 * section[socialHistorySection].entry[occupation] only Reference($us-core-observation-occupation)
-* section[socialHistorySection].entry[occupation] ^short = "US Core Observation Occupation Observation"
-* section[socialHistorySection].entry[occupation] ^definition = "US Core Observation Occupation Observation entry"
+* section[socialHistorySection].entry[occupation] ^short = "Occupation Entries (USCDI Data Elements: Occupation, Occupation Industry)"
 
-// Medical Equipment Section (USCDI Data Class: Unique Device Identifier(s) for a patient's implantable device(s))
+// Medical Equipment Section (USCDI Data Class: Unique Device Identifier(s) for a Patient's Implantable Device(s))
 * section[medicalEquipmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[medicalEquipmentSection] ^extension.valueString = "Section"
 * section[medicalEquipmentSection] ^short = "Medical Equipment Section (USCDI Data Class: Unique Device Identifier(s) for a patient's implantable device(s))"
@@ -388,6 +387,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[medicalEquipmentSection].text ^definition = "Medical Equipment Section narrative"
 * section[medicalEquipmentSection].entry only Reference($us-core-implantable-device)
 * section[medicalEquipmentSection].entry MS
+* section[medicalEquipmentSection].entry ^short = "Implantable Device Entries (USCDI Data Elements: Unique Device Identifier(s) for a patient's implantable device(s))"
 
 // Pregnancy Section (USCDI Data Class: Health Status/Assessments - Pregnancy Status)
 * section[pregnancySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -409,8 +409,6 @@ Description: "This Composition profile is used to organize the healthcare survey
     pregnancyStatusObservation 0..* MS and
     pregnancyIntent 0..* MS
 * section[pregnancySection].entry[pregnancyStatusObservation] only Reference($us-core-observation-pregnancystatus)
-* section[pregnancySection].entry[pregnancyStatusObservation] ^short = "Pregnancy Status Observation"
-* section[pregnancySection].entry[pregnancyStatusObservation] ^definition = "Pregnancy Status Observation entry"
+* section[pregnancySection].entry[pregnancyStatusObservation] ^short = "Pregnancy Status Entries (USCDI Data Elements: Pregnancy Status)"
 * section[pregnancySection].entry[pregnancyIntent] only Reference($us-core-observation-pregnancyintent)
-* section[pregnancySection].entry[pregnancyIntent] ^short = "Pregnancy Intent"
-* section[pregnancySection].entry[pregnancyIntent] ^definition = "Pregnancy Intent entry"
+* section[pregnancySection].entry[pregnancyIntent] ^short = "Pregnancy Intent Entries (USCDI Data Elements: Pregnancy Status)"
