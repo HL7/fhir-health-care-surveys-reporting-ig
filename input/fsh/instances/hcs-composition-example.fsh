@@ -179,7 +179,7 @@ Usage: #example
 * section[vitalSignsSection].entry[bodyHeight] = Reference(Observation/observation-height-example)
 * section[vitalSignsSection].entry[heartRate] = Reference(Observation/observation-heartrate-example)
 * section[vitalSignsSection].entry[pulseOximetry] = Reference(Observation/observation-oximetry-example)
-* section[vitalSignsSection].entry[bMI] = Reference(Observation/observation-bmi-example)
+// * section[vitalSignsSection].entry[bMI] = Reference(Observation/observation-bmi-example)
 * section[vitalSignsSection].entry[bodyTemperature] = Reference(Observation/observation-temperature-example)
 * section[vitalSignsSection].entry[respiratoryRate] = Reference(Observation/observation-resprate-example)
 

@@ -422,7 +422,6 @@ Description: "This Composition profile is used to organize the healthcare survey
     bodyHeight 0..* MS and
     heartRate 0..* MS and
     pulseOximetry 0..* MS and
-    bMI 0..* MS and
     pediatricWeightForHeight 0..* MS and
     pediatricHeadOccipitalFrontalCircumference 0..* MS and
     pediatricBMIForAge 0..* MS and
@@ -438,8 +437,8 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[vitalSignsSection].entry[heartRate] ^short = "Heart Rate Entries"
 * section[vitalSignsSection].entry[pulseOximetry] only Reference($us-core-pulse-oximetry)
 * section[vitalSignsSection].entry[pulseOximetry] ^short = "Pulse Oximetry Entries"
-* section[vitalSignsSection].entry[bMI] only Reference($us-core-bmi)
-* section[vitalSignsSection].entry[bMI] ^short = "BMI Entries"
+// * section[vitalSignsSection].entry[bMI] only Reference($us-core-bmi)
+// * section[vitalSignsSection].entry[bMI] ^short = "BMI Entries"
 * section[vitalSignsSection].entry[pediatricWeightForHeight] only Reference($pediatric-weight-for-height)
 * section[vitalSignsSection].entry[pediatricWeightForHeight] ^short = "Pediatric Weight For Height Entries"
 * section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumference] only Reference($head-occipital-frontal-circumference-percentile)
