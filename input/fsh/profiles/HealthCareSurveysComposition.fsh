@@ -70,7 +70,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 // Assessment and Plan of Treatment Section (USCDI: Assessment and Plan of Treatment Section)
 * section[assessmentAndPlanOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[assessmentAndPlanOfTreatmentSection] ^extension.valueString = "Section"
-* section[assessmentAndPlanOfTreatmentSection] ^short = "Assessment Section (USCDI: Assessment and Plan of Treatment)"
+* section[assessmentAndPlanOfTreatmentSection] ^short = "Assessment Section (USCDI: Assessment and Plan of Treatment, Health Status/Assessments)"
 * section[assessmentAndPlanOfTreatmentSection] ^definition = "Health professional’s conclusions and working assumptions that will guide treatment of the patient."
 * section[assessmentAndPlanOfTreatmentSection].code 1.. MS
 * section[assessmentAndPlanOfTreatmentSection].code = $loinc#51847-2
@@ -94,41 +94,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] only Reference($us-core-careplan)
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] ^short = "CarePlan Entries (USCDI Data Elements: Assessment and Plan of Treatment)"
 
-
-// Plan of Treatment Section (USCDI: Assessment and Plan of Treatment - consider renaming to Assessment and Plan of Treatment Section and using LOINC Evaluation + Plan note (See Assessment and Plan of Treatment Section above))
-// * section[planOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-// * section[planOfTreatmentSection] ^extension.valueString = "Section"
-// * section[planOfTreatmentSection] ^short = "Plan of Treatment Section (USCDI: Assessment and Plan of Treatment)"
-// * section[planOfTreatmentSection] ^definition = "This section, contains data that define pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed. "
-// * section[planOfTreatmentSection].code 1.. MS
-// * section[planOfTreatmentSection].code = $loinc#18776-5
-// * section[planOfTreatmentSection].code ^short = "Plan of care note"
-// * section[planOfTreatmentSection].code ^definition = "Plan of Treatment code"
-// * section[planOfTreatmentSection].text 1.. MS
-// * section[planOfTreatmentSection].text ^short = "Plan of Treatment narrative"
-// * section[planOfTreatmentSection].text ^definition = "Plan of Treatment narrative"
-// * section[planOfTreatmentSection].entry MS
-// * section[planOfTreatmentSection].entry ^slicing.discriminator.type = #profile
-// * section[planOfTreatmentSection].entry ^slicing.discriminator.path = "resolve()"
-// * section[planOfTreatmentSection].entry ^slicing.rules = #open
-// * section[planOfTreatmentSection].entry contains
-//     medicationRequest 0..* MS and
-//     medicationReferences 0..* MS and
-//     procedureOrders 0..* MS and
-//     carePlan 0..* MS
-// * section[planOfTreatmentSection].entry[medicationRequest] only Reference($us-core-medicationrequest)
-// * section[planOfTreatmentSection].entry[medicationRequest] ^short = "Medication Request Entries"
-// * section[planOfTreatmentSection].entry[medicationReferences] only Reference($us-core-medication)
-// * section[planOfTreatmentSection].entry[medicationReferences] ^short = "Medication Reference Entries"
-// * section[planOfTreatmentSection].entry[procedureOrders] only Reference($us-core-servicerequest)
-// * section[planOfTreatmentSection].entry[procedureOrders] ^short = "Procedure Order Entries"
-// * section[planOfTreatmentSection].entry[carePlan] only Reference($us-core-careplan)
-// * section[planOfTreatmentSection].entry[carePlan] ^short = "CarePlan Entries"
-
 // Care Team Section (USCDI: Care Team Members)
 * section[careTeamSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[careTeamSection] ^extension.valueString = "Section"
-* section[careTeamSection] ^short = "Care Team Section (USCDI: Care Team Members)"
+* section[careTeamSection] ^short = "Care Team Section (USCDI Data Class: Care Team Members)"
 * section[careTeamSection] ^definition = "This section lists and describes all the patient's current care team members."
 * section[careTeamSection].code 1.. MS
 * section[careTeamSection].code = $loinc#85847-2
@@ -139,6 +108,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[careTeamSection].text ^definition = "Care Team Section narrative"
 * section[careTeamSection].entry only Reference($us-core-careteam)
 * section[careTeamSection].entry MS
+* section[careTeamSection].entry ^short = "Care Team Entries (USCDI Data Elements: Care Team Members - Name, Identifier, Location, Telecom, Role)"
 
 // Goals Section (USCDI: Goals)
 * section[goalsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -154,6 +124,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[goalsSection].text ^definition = "Goals Section narrative"
 * section[goalsSection].entry only Reference($us-core-goal)
 * section[goalsSection].entry MS
+* section[goalsSection].entry ^short = "Goal Entries (USCDI Data Elements: Patient Goals, SDOH Goals)"
 
 // Coverage Section (USCDI: Health Insurance Information - consider renaming section to Health Insurance Information Section - LOINC code is "Payment sources Document", either that or rename to Payment Sources Section to match C-CDA)
 * section[coverageSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -169,6 +140,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[coverageSection].text ^definition = "Coverage Section narrative"
 * section[coverageSection].entry only Reference(USCoreCoverageProfile)
 * section[coverageSection].entry MS
+* section[coverageSection].entry ^short = "Coverage Entries (USCDI Data Elements: Coverage Status, Coverage Type, Relationship to Subscriber, Member Identifier, Subscriber Identifier, Group Number, Payer Identifier)"
 
 // Immunizations Section (USCDI: Immunizations)
 * section[immunizationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -184,6 +156,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[immunizationsSection].text ^definition = "Immunizations narrative"
 * section[immunizationsSection].entry only Reference($us-core-immunization)
 * section[immunizationsSection].entry MS
+* section[immunizationsSection].entry ^short = "Immunization Entries (USCDI Data Elements: Immunizations)"
 
 // Medications Section (USCDI: Medications)
 * section[medicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -208,72 +181,18 @@ Description: "This Composition profile is used to organize the healthcare survey
     medicationReferences 0..* MS and
     medication 0..* MS
 * section[medicationsSection].entry[medicationAdministration] only Reference(HealthCareSurveysMedicationAdministration)
-* section[medicationsSection].entry[medicationAdministration] ^short = "Medication Administration Entry"
+* section[medicationsSection].entry[medicationAdministration] ^short = "MedicationAdministration Entries (USCDI Data Elements: Medications, Dose, Dose Unit of Measure, Indication)"
 * section[medicationsSection].entry[medicationRequest] only Reference(USCoreMedicationRequestProfile)
-* section[medicationsSection].entry[medicationRequest] ^short = "Medication Result Entry"
+* section[medicationsSection].entry[medicationRequest] ^short = "MedicationRequest Entries (USCDI Data Elements: Medications, Dose, Dose Unit of Measure, Indication)"
 * section[medicationsSection].entry[medicationDispense] only Reference($us-core-medicationdispense)
-* section[medicationsSection].entry[medicationDispense] ^short = "Medication Dispense Entry"
-* section[medicationsSection].entry[medicationReferences] only Reference($us-core-medication)
-* section[medicationsSection].entry[medicationReferences] ^short = "Medication Reference Entries"
+* section[medicationsSection].entry[medicationDispense] ^short = "MedicationDispense Entries (USCDI Data Elements: Medications, Dose, Dose Unit of Measure, Indication, Fill Status)"
 * section[medicationsSection].entry[medication] only Reference($us-core-medication)
-* section[medicationsSection].entry[medication] ^short = "Medication Reference Entries"
+* section[medicationsSection].entry[medication] ^short = "Medication Entries (USCDI Data Elements: Medications)"
 
-/*
-// Medications Administered Section (USCDI: n/a - consider removing this section - all profiles referenced elsewhere in Composition (Medications Section))
-* section[medicationsAdministeredSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[medicationsAdministeredSection] ^extension.valueString = "Section"
-* section[medicationsAdministeredSection] ^short = "Medications Administered Section"
-* section[medicationsAdministeredSection] ^definition = "The Medications Administered Section defines medications administered during the encounter."
-* section[medicationsAdministeredSection].code 1.. MS
-* section[medicationsAdministeredSection].code = $loinc#29549-3
-* section[medicationsAdministeredSection].code ^short = "Medications Administered Section code"
-* section[medicationsAdministeredSection].code ^definition = "Medications Administered Section code"
-* section[medicationsAdministeredSection].text 1.. MS
-* section[medicationsAdministeredSection].text ^short = "Medications Administered Section narrative"
-* section[medicationsAdministeredSection].text ^definition = "Medications Administered Section narrative"
-* section[medicationsAdministeredSection].entry MS
-* section[medicationsAdministeredSection].entry ^slicing.discriminator.type = #profile
-* section[medicationsAdministeredSection].entry ^slicing.discriminator.path = "resolve()"
-* section[medicationsAdministeredSection].entry ^slicing.rules = #open
-* section[medicationsAdministeredSection].entry contains
-    medicationAdministration 0..* MS and
-    medicationReferences 0..* MS
-* section[medicationsAdministeredSection].entry[medicationAdministration] only Reference(HcsMedicationAdministration)
-* section[medicationsAdministeredSection].entry[medicationAdministration] ^short = "Medication Administration Entry"
-* section[medicationsAdministeredSection].entry[medicationReferences] only Reference($us-core-medication)
-* section[medicationsAdministeredSection].entry[medicationReferences] ^short = "Medication Reference Entries"
-
-// Admission Medications Section (USCDI: n/a - consider removing this section - all profiles referenced elsewhere in Composition and dates should be enough to figure out if medications were taken by patient prior to admission)
-* section[admissionMedicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[admissionMedicationsSection] ^extension.valueString = "Section"
-* section[admissionMedicationsSection] ^short = "Admission Medications Section"
-* section[admissionMedicationsSection] ^definition = "The Admissions Medications Section contains the medications taken by the patient prior to and at the time of admission to the facility."
-* section[admissionMedicationsSection].code 1.. MS
-* section[admissionMedicationsSection].code = $loinc#42346-7
-* section[admissionMedicationsSection].code ^short = "Admission Medications Section code"
-* section[admissionMedicationsSection].code ^definition = "Admission Medications Section code"
-* section[admissionMedicationsSection].text 1.. MS
-* section[admissionMedicationsSection].text ^short = "Admission Medications Section narrative"
-* section[admissionMedicationsSection].text ^definition = "Admission Medications Section narrative"
-* section[admissionMedicationsSection].entry MS
-* section[admissionMedicationsSection].entry ^slicing.discriminator.type = #profile
-* section[admissionMedicationsSection].entry ^slicing.discriminator.path = "resolve()"
-* section[admissionMedicationsSection].entry ^slicing.rules = #open
-* section[admissionMedicationsSection].entry contains
-    medicationAdministration 0..* MS and
-    medicationRequest 0..* MS and
-    medicationReferences 0..* MS
-* section[admissionMedicationsSection].entry[medicationAdministration] only Reference(HcsMedicationAdministration)
-* section[admissionMedicationsSection].entry[medicationAdministration] ^short = "Medication Administration Entry"
-* section[admissionMedicationsSection].entry[medicationRequest] only Reference(HcsMedicationRequest)
-* section[admissionMedicationsSection].entry[medicationRequest] ^short = "Medication Request Entry"
-* section[admissionMedicationsSection].entry[medicationReferences] only Reference($us-core-medication)
-* section[admissionMedicationsSection].entry[medicationReferences] ^short = "Medication Reference Entries"
-*/
 // Problem Section (USCDI: Problems)
 * section[problemSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[problemSection] ^extension.valueString = "Section"
-* section[problemSection] ^short = "Problem Section (USCDI: Problems)"
+* section[problemSection] ^short = "Problem Section (USCDI: Problems, Encounter)"
 * section[problemSection] ^definition = "This section lists and describes all the patient's current problems on the maintained problem list."
 * section[problemSection].code 1.. MS
 * section[problemSection].code = $loinc#11450-4
@@ -290,10 +209,9 @@ Description: "This Composition profile is used to organize the healthcare survey
     problemsHealthConcerns 0..* MS and
     encounterDiagnosis 0..* MS
 * section[problemSection].entry[problemsHealthConcerns] only Reference(USCoreConditionProblemsHealthConcernsProfile)
-* section[problemSection].entry[problemsHealthConcerns] ^short = "Problems Health Concerns Entry"
+* section[problemSection].entry[problemsHealthConcerns] ^short = "Problems Health Concerns Entries (USCDI Data Elements: Date of Resolution, Date of Diagnosis, SDOH Problems/Health Concerns)"
 * section[problemSection].entry[encounterDiagnosis] only Reference(USCoreConditionEncounterDiagnosisProfile)
-* section[problemSection].entry[encounterDiagnosis] ^short = "Encounter Diagnosis Entry"
-* section[problemSection].entry[encounterDiagnosis] ^definition = "References to Conditions that represent encounter diagnoses"
+* section[problemSection].entry[encounterDiagnosis] ^short = "Encounter Diagnosis Entries (USCDI Data Elements: Encounter Diagnosis)"
 
 // Reason for Visit Section
 * section[reasonForVisitSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -325,25 +243,13 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[resultsSection].entry ^slicing.discriminator.path = "resolve()"
 * section[resultsSection].entry ^slicing.rules = #open
 * section[resultsSection].entry contains
-    // labResult 0..* MS and
     result 0..* MS and
     diagnosticReport 0..* MS
-    // clinicalResult 0..* MS and
-    // screeningAssessment 0..* MS and
-    // questionnaireResponse 0..* MS
 * section[resultsSection].entry[result] only Reference($us-core-observation-lab or $us-core-observation-clinical-result)
-* section[resultsSection].entry[result] ^short = "Result Entries"
-* section[resultsSection].entry[diagnosticReport] only Reference($us-core-diagnosticreport-lab)
-* section[resultsSection].entry[diagnosticReport] ^short = "Diagnostic Result Entries"
-// * section[resultsSection].entry[labResult] only Reference($us-core-observation-lab)
-// * section[resultsSection].entry[labResult] ^short = "Lab Result Entries"
-// * section[resultsSection].entry[clinicalResult] only Reference($us-core-observation-clinical-result)
-// * section[resultsSection].entry[clinicalResult] ^short = "Clinical Result Entries"
-// * section[resultsSection].entry[screeningAssessment] only Reference($us-core-observation-screening-assessment)
-// * section[resultsSection].entry[screeningAssessment] ^short = "Screening Assessment Entries"
-//* removed us-core-questionnaireresponse
-// * section[resultsSection].entry[questionnaireResponse] only Reference($us-core-questionnaireresponse )
-// * section[resultsSection].entry[questionnaireResponse] ^short = "Questionnaire Response Entries"
+* section[resultsSection].entry[result] ^short = "Result Entries (USCDI Data Elements: Laboratory Tests, Laboratory Values/Results, Laboratory Specimen Type, Laboratory Result Status, Clinical Test, Clinical Test Result/Report)"
+* section[resultsSection].entry[diagnosticReport] only Reference($us-core-diagnosticreport-lab or $us-core-diagnosticreport-note)
+* section[resultsSection].entry[diagnosticReport] ^short = "Diagnostic Result Entries (USCDI Data Elements: Laboratory Tests, Laboratory Values/Results, Laboratory Specimen Type, Laboratory Result Status, Clinical Test, Clinical Test Result/Report)"
+
 
 // Clinical Notes Section (USCDI: Clinical Notes)
 * section[clinicalNotesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -365,9 +271,9 @@ Description: "This Composition profile is used to organize the healthcare survey
     documentReference 0..* MS and
     diagnosticReport 0..* MS
 * section[clinicalNotesSection].entry[documentReference] only Reference($us-core-documentreference)
-* section[clinicalNotesSection].entry[documentReference] ^short = "Document Reference Entries"
+* section[clinicalNotesSection].entry[documentReference] ^short = "Document Reference Entries (USCDI Data Elements: Consultation Note, Discharge Summary Note, History & Physical, Imaging Narrative, Laboratory Report Narrative, Pathology Report Narrative, Procedure Note, Progress Note)"
 * section[clinicalNotesSection].entry[diagnosticReport] only Reference($us-core-diagnosticreport-note)
-* section[clinicalNotesSection].entry[diagnosticReport] ^short = "Diagnostic Report Entries"
+* section[clinicalNotesSection].entry[diagnosticReport] ^short = "Diagnostic Report Entries (USCDI Data Elements: Imaging Narrative, Laboratory Report Narrative, Pathology Report Narrative, Procedure Note)"
 
 // Procedures Section (USCDI: Procedures)
 * section[proceduresSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -389,9 +295,9 @@ Description: "This Composition profile is used to organize the healthcare survey
     procedure 0..* MS and
     procedureOrder 0..* MS
 * section[proceduresSection].entry[procedure] only Reference($us-core-procedure)
-* section[proceduresSection].entry[procedure] ^short = "Procedure Entries"
+* section[proceduresSection].entry[procedure] ^short = "Procedure Entries (USCDI Data Elements: Procedure, SDOH Interventions)"
 * section[proceduresSection].entry[procedureOrder] only Reference($us-core-servicerequest)
-* section[proceduresSection].entry[procedureOrder] ^short = "Procedure Order Entries"
+* section[proceduresSection].entry[procedureOrder] ^short = "Procedure Order Entries (USCDI Data Elements: Reason for Referral, SDOH Interventions)"
 
 // Vital Signs Section (USCDI: Vital Signs)
 * section[vitalSignsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -422,27 +328,25 @@ Description: "This Composition profile is used to organize the healthcare survey
     bodyTemperature 0..* MS and
     respiratoryRate 0..* MS
 * section[vitalSignsSection].entry[bloodPressure] only Reference($us-core-blood-pressure)
-* section[vitalSignsSection].entry[bloodPressure] ^short = "Blood Pressure Entries"
+* section[vitalSignsSection].entry[bloodPressure] ^short = "Blood Pressure Entries (USCDI Data Elements: Systolic Blood Pressure, Diastolic Blood Pressure)"
 * section[vitalSignsSection].entry[bodyWeight] only Reference($us-core-body-weight)
-* section[vitalSignsSection].entry[bodyWeight] ^short = "Body Weight Entries"
+* section[vitalSignsSection].entry[bodyWeight] ^short = "Body Weight Entries (USCDI Data Elements: Body Weight)"
 * section[vitalSignsSection].entry[bodyHeight] only Reference($us-core-body-height)
-* section[vitalSignsSection].entry[bodyHeight] ^short = "Body Height Entries"
+* section[vitalSignsSection].entry[bodyHeight] ^short = "Body Height Entries (USCDI Data Elements: Body Height)"
 * section[vitalSignsSection].entry[heartRate] only Reference($us-core-heart-rate)
-* section[vitalSignsSection].entry[heartRate] ^short = "Heart Rate Entries"
+* section[vitalSignsSection].entry[heartRate] ^short = "Heart Rate Entries (USCDI Data Elements: Heart Rate)"
 * section[vitalSignsSection].entry[pulseOximetry] only Reference($us-core-pulse-oximetry)
-* section[vitalSignsSection].entry[pulseOximetry] ^short = "Pulse Oximetry Entries"
-// * section[vitalSignsSection].entry[bMI] only Reference($us-core-bmi)
-// * section[vitalSignsSection].entry[bMI] ^short = "BMI Entries"
+* section[vitalSignsSection].entry[pulseOximetry] ^short = "Pulse Oximetry Entries (USCDI Data Elements: Pulse Oximetry)"
 * section[vitalSignsSection].entry[pediatricWeightForHeight] only Reference($pediatric-weight-for-height)
-* section[vitalSignsSection].entry[pediatricWeightForHeight] ^short = "Pediatric Weight For Height Entries"
+* section[vitalSignsSection].entry[pediatricWeightForHeight] ^short = "Pediatric Weight For Height Entries (USCDI Data Elements: Pediatric Weight For Length Percentile (Birth to 36 months))"
 * section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumference] only Reference($head-occipital-frontal-circumference-percentile)
-* section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumference] ^short = "Pediatric Head Occipital Frontal Circumference Percentile Entries"
+* section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumference] ^short = "Pediatric Head Occipital Frontal Circumference Percentile Entries (USCDI Data Elements: Occipital Frontal Head Circumference Percentile (Birth to 36 months))"
 * section[vitalSignsSection].entry[pediatricBMIForAge] only Reference($pediatric-bmi-for-age)
-* section[vitalSignsSection].entry[pediatricBMIForAge] ^short = "Pediatric BMI For Age Entries"
+* section[vitalSignsSection].entry[pediatricBMIForAge] ^short = "Pediatric BMI For Age Entries (USCDI Data Elements: BMI Percentile (2-20 years old))"
 * section[vitalSignsSection].entry[bodyTemperature] only Reference($us-core-body-temperature)
-* section[vitalSignsSection].entry[bodyTemperature] ^short = "Body Temperature Entries"
+* section[vitalSignsSection].entry[bodyTemperature] ^short = "Body Temperature Entries (USCDI Data Elements: Body Temperature)"
 * section[vitalSignsSection].entry[respiratoryRate] only Reference($us-core-respiratory-rate)
-* section[vitalSignsSection].entry[respiratoryRate] ^short = "Respiratory Rate Entries"
+* section[vitalSignsSection].entry[respiratoryRate] ^short = "Respiratory Rate Entries (USCDI Data Elements: Respiratory Rate)"
 
 // Social History Section (USCDI: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)
 * section[socialHistorySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
