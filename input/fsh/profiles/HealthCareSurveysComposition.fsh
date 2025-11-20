@@ -427,7 +427,6 @@ Description: "This Composition profile is used to organize the healthcare survey
     pediatricHeadOccipitalFrontalCircumference 0..* MS and
     pediatricBMIForAge 0..* MS and
     bodyTemperature 0..* MS and
-    headCircumference 0..* MS and
     respiratoryRate 0..* MS
 * section[vitalSignsSection].entry[bloodPressure] only Reference($us-core-blood-pressure)
 * section[vitalSignsSection].entry[bloodPressure] ^short = "Blood Pressure Entries"
@@ -449,8 +448,6 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[vitalSignsSection].entry[pediatricBMIForAge] ^short = "Pediatric BMI For Age Entries"
 * section[vitalSignsSection].entry[bodyTemperature] only Reference($us-core-body-temperature)
 * section[vitalSignsSection].entry[bodyTemperature] ^short = "Body Temperature Entries"
-* section[vitalSignsSection].entry[headCircumference] only Reference($us-core-head-circumference)
-* section[vitalSignsSection].entry[headCircumference] ^short = "Head Circumference Entries"
 * section[vitalSignsSection].entry[respiratoryRate] only Reference($us-core-respiratory-rate)
 * section[vitalSignsSection].entry[respiratoryRate] ^short = "Respiratory Rate Entries"
 
