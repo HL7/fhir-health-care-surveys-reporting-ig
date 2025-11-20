@@ -52,10 +52,10 @@ Description: "This Composition profile is used to organize the healthcare survey
     socialHistorySection 0..1 MS and
     vitalSignsSection 0..* MS
 
-// Allergies (USCDI: Allergies and Intolerances - consider renaming section)
+// Allergies (USCDI Data Class: Allergies and Intolerances - consider renaming section)
 * section[allergiesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[allergiesSection] ^extension.valueString = "Section"
-* section[allergiesSection] ^short = "Allergies Section (USCDI: Allergies and Intolerances)"
+* section[allergiesSection] ^short = "Allergies Section (USCDI Data Class: Allergies and Intolerances)"
 * section[allergiesSection] ^definition = "This section lists and describes all the patient's current allergies on the maintained allergy list."
 * section[allergiesSection].code 1.. MS
 * section[allergiesSection].code = $loinc#48765-2
@@ -67,10 +67,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[allergiesSection].entry only Reference($us-core-allergyintolerance)
 * section[allergiesSection].entry MS
 
-// Assessment and Plan of Treatment Section (USCDI: Assessment and Plan of Treatment Section)
+// Assessment and Plan of Treatment Section (USCDI Data Class: Assessment and Plan of Treatment Section)
 * section[assessmentAndPlanOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[assessmentAndPlanOfTreatmentSection] ^extension.valueString = "Section"
-* section[assessmentAndPlanOfTreatmentSection] ^short = "Assessment Section (USCDI: Assessment and Plan of Treatment, Health Status/Assessments)"
+* section[assessmentAndPlanOfTreatmentSection] ^short = "Assessment Section (USCDI Data Class: Assessment and Plan of Treatment, Health Status/Assessments)"
 * section[assessmentAndPlanOfTreatmentSection] ^definition = "Health professional’s conclusions and working assumptions that will guide treatment of the patient."
 * section[assessmentAndPlanOfTreatmentSection].code 1.. MS
 * section[assessmentAndPlanOfTreatmentSection].code = $loinc#51847-2
@@ -94,7 +94,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] only Reference($us-core-careplan)
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] ^short = "CarePlan Entries (USCDI Data Elements: Assessment and Plan of Treatment)"
 
-// Care Team Section (USCDI: Care Team Members)
+// Care Team Section (USCDI Data Class: Care Team Members)
 * section[careTeamSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[careTeamSection] ^extension.valueString = "Section"
 * section[careTeamSection] ^short = "Care Team Section (USCDI Data Class: Care Team Members)"
@@ -110,10 +110,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[careTeamSection].entry MS
 * section[careTeamSection].entry ^short = "Care Team Entries (USCDI Data Elements: Care Team Members - Name, Identifier, Location, Telecom, Role)"
 
-// Goals Section (USCDI: Goals)
+// Goals Section (USCDI Data Class: Goals)
 * section[goalsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[goalsSection] ^extension.valueString = "Section"
-* section[goalsSection] ^short = "Goals Section (USCDI: Goals)"
+* section[goalsSection] ^short = "Goals Section (USCDI Data Class: Goals)"
 * section[goalsSection] ^definition = "This section lists and describes the patient's goals."
 * section[goalsSection].code 1.. MS
 * section[goalsSection].code = $loinc#61146-7
@@ -126,10 +126,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[goalsSection].entry MS
 * section[goalsSection].entry ^short = "Goal Entries (USCDI Data Elements: Patient Goals, SDOH Goals)"
 
-// Coverage Section (USCDI: Health Insurance Information - consider renaming section to Health Insurance Information Section - LOINC code is "Payment sources Document", either that or rename to Payment Sources Section to match C-CDA)
+// Coverage Section (USCDI Data Class: Health Insurance Information - consider renaming section to Health Insurance Information Section - LOINC code is "Payment sources Document", either that or rename to Payment Sources Section to match C-CDA)
 * section[coverageSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[coverageSection] ^extension.valueString = "Section"
-* section[coverageSection] ^short = "Coverage Section (USCDI: Health Insurance Information)"
+* section[coverageSection] ^short = "Coverage Section (USCDI Data Class: Health Insurance Information)"
 * section[coverageSection] ^definition = "This section lists the patient's coverage."
 * section[coverageSection].code 1.. MS
 * section[coverageSection].code = $loinc#48768-6
@@ -142,10 +142,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[coverageSection].entry MS
 * section[coverageSection].entry ^short = "Coverage Entries (USCDI Data Elements: Coverage Status, Coverage Type, Relationship to Subscriber, Member Identifier, Subscriber Identifier, Group Number, Payer Identifier)"
 
-// Immunizations Section (USCDI: Immunizations)
+// Immunizations Section (USCDI Data Class: Immunizations)
 * section[immunizationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[immunizationsSection] ^extension.valueString = "Section"
-* section[immunizationsSection] ^short = "Immunizations Section (USCDI: Immunization)"
+* section[immunizationsSection] ^short = "Immunizations Section (USCDI Data Class: Immunization)"
 * section[immunizationsSection] ^definition = "The Immunizations Section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization Section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized."
 * section[immunizationsSection].code 1.. MS
 * section[immunizationsSection].code = $loinc#11369-6
@@ -158,10 +158,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[immunizationsSection].entry MS
 * section[immunizationsSection].entry ^short = "Immunization Entries (USCDI Data Elements: Immunizations)"
 
-// Medications Section (USCDI: Medications)
+// Medications Section (USCDI Data Class: Medications)
 * section[medicationsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[medicationsSection] ^extension.valueString = "Section"
-* section[medicationsSection] ^short = "Medications Section (USCDI: Medications)"
+* section[medicationsSection] ^short = "Medications Section (USCDI Data Class: Medications)"
 * section[medicationsSection] ^definition = "The Medications Section contains a patient's current medications and pertinent medication history. At a minimum, the currently active medications are listed."
 * section[medicationsSection].code 1.. MS
 * section[medicationsSection].code = $loinc#10160-0
@@ -189,10 +189,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[medicationsSection].entry[medication] only Reference($us-core-medication)
 * section[medicationsSection].entry[medication] ^short = "Medication Entries (USCDI Data Elements: Medications)"
 
-// Problem Section (USCDI: Problems)
+// Problem Section (USCDI Data Class: Problems)
 * section[problemSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[problemSection] ^extension.valueString = "Section"
-* section[problemSection] ^short = "Problem Section (USCDI: Problems, Encounter)"
+* section[problemSection] ^short = "Problem Section (USCDI Data Class: Problems, Encounter)"
 * section[problemSection] ^definition = "This section lists and describes all the patient's current problems on the maintained problem list."
 * section[problemSection].code 1.. MS
 * section[problemSection].code = $loinc#11450-4
@@ -226,10 +226,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[reasonForVisitSection].text ^short = "Reason for Visit narrative"
 * section[reasonForVisitSection].text ^definition = "Reason for Visit narrative"
 
-// Results Section (USCDI: Laboratory, Clinical Tests)
+// Results Section (USCDI Data Class: Laboratory, Clinical Tests)
 * section[resultsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[resultsSection] ^extension.valueString = "Section"
-* section[resultsSection] ^short = "Results Section (USCDI: Laboratory, Clinical Tests)"
+* section[resultsSection] ^short = "Results Section (USCDI Data Class: Laboratory, Clinical Tests)"
 * section[resultsSection] ^definition = "The Results Section contains observations of results generated by laboratories, imaging procedures, and other procedures. The scope includes observations such as hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray, ultrasound, CT, MRI, angiography, echocardiography, nuclear medicine, pathology, and procedure observations. The section often includes notable results such as abnormal values or relevant trends, and could contain all results for the period of time being documented.\n\nLaboratory results are typically generated by laboratories providing analytic services in areas such as chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These observations are based on analysis of specimens obtained from the patient and submitted to the laboratory. Imaging results are typically generated by a clinician reviewing the output of an imaging procedure, such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac echocardiogram.\n\nProcedure results are typically generated by a clinician to provide more granular information about component observations made during a procedure, such as where a gastroenterologist reports the size of a polyp observed during a colonoscopy.\n"
 * section[resultsSection].code 1.. MS
 * section[resultsSection].code = $loinc#30954-2
@@ -251,7 +251,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[resultsSection].entry[diagnosticReport] ^short = "Diagnostic Result Entries (USCDI Data Elements: Laboratory Tests, Laboratory Values/Results, Laboratory Specimen Type, Laboratory Result Status, Clinical Test, Clinical Test Result/Report)"
 
 
-// Clinical Notes Section (USCDI: Clinical Notes)
+// Clinical Notes Section (USCDI Data Class: Clinical Notes)
 * section[clinicalNotesSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[clinicalNotesSection] ^extension.valueString = "Section"
 * section[clinicalNotesSection] ^short = "Clinical Notes Section"
@@ -275,10 +275,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[clinicalNotesSection].entry[diagnosticReport] only Reference($us-core-diagnosticreport-note)
 * section[clinicalNotesSection].entry[diagnosticReport] ^short = "Diagnostic Report Entries (USCDI Data Elements: Imaging Narrative, Laboratory Report Narrative, Pathology Report Narrative, Procedure Note)"
 
-// Procedures Section (USCDI: Procedures)
+// Procedures Section (USCDI Data Class: Procedures)
 * section[proceduresSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[proceduresSection] ^extension.valueString = "Section"
-* section[proceduresSection] ^short = "Procedures Section (USCDI: Procedures)"
+* section[proceduresSection] ^short = "Procedures Section (USCDI Data Class: Procedures)"
 * section[proceduresSection] ^definition = "This section describes all interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. The section should include notable procedures, but can contain all procedures for the period of time being summarized."
 * section[proceduresSection].code 1.. MS
 * section[proceduresSection].code = $loinc#47519-4
@@ -299,10 +299,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[proceduresSection].entry[procedureOrder] only Reference($us-core-servicerequest)
 * section[proceduresSection].entry[procedureOrder] ^short = "Procedure Order Entries (USCDI Data Elements: Reason for Referral, SDOH Interventions)"
 
-// Vital Signs Section (USCDI: Vital Signs)
+// Vital Signs Section (USCDI Data Class: Vital Signs)
 * section[vitalSignsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[vitalSignsSection] ^extension.valueString = "Section"
-* section[vitalSignsSection] ^short = "Vital Signs Section (USCDI: Vital Signs)"
+* section[vitalSignsSection] ^short = "Vital Signs Section (USCDI Data Class: Vital Signs)"
 * section[vitalSignsSection] ^definition = "The Vital Signs Section contains relevant vital signs for the report. The section should include notable vital signs such as the most recent, maximum and/or minimum, baseline, or relevant trends. Vital signs are represented in the same way as other results, but are aggregated into their own section to follow clinical conventions."
 * section[vitalSignsSection].code 1.. MS
 * section[vitalSignsSection].code = $loinc#8716-3
@@ -348,10 +348,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[vitalSignsSection].entry[respiratoryRate] only Reference($us-core-respiratory-rate)
 * section[vitalSignsSection].entry[respiratoryRate] ^short = "Respiratory Rate Entries (USCDI Data Elements: Respiratory Rate)"
 
-// Social History Section (USCDI: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)
+// Social History Section (USCDI Data Class: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)
 * section[socialHistorySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[socialHistorySection] ^extension.valueString = "Section"
-* section[socialHistorySection] ^short = "Social History Section (USCDI: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)"
+* section[socialHistorySection] ^short = "Social History Section (USCDI Data Class: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)"
 * section[socialHistorySection] ^definition = "This section contains social history data that influence a patient’s physical, psychological or emotional health."
 * section[socialHistorySection].code 1.. MS
 * section[socialHistorySection].code = $loinc#29762-2
@@ -374,10 +374,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[socialHistorySection].entry[occupation] ^short = "US Core Observation Occupation Observation"
 * section[socialHistorySection].entry[occupation] ^definition = "US Core Observation Occupation Observation entry"
 
-// Medical Equipment Section (USCDI: Unique Device Identifier(s) for a patient's implantable device(s))
+// Medical Equipment Section (USCDI Data Class: Unique Device Identifier(s) for a patient's implantable device(s))
 * section[medicalEquipmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[medicalEquipmentSection] ^extension.valueString = "Section"
-* section[medicalEquipmentSection] ^short = "Medical Equipment Section (USCDI: Unique Device Identifier(s) for a patient's implantable device(s))"
+* section[medicalEquipmentSection] ^short = "Medical Equipment Section (USCDI Data Class: Unique Device Identifier(s) for a patient's implantable device(s))"
 * section[medicalEquipmentSection] ^definition = "This section lists and describes all the patient's current implanted devices."
 * section[medicalEquipmentSection].code 1.. MS
 * section[medicalEquipmentSection].code = $loinc#46264-8
@@ -389,10 +389,10 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[medicalEquipmentSection].entry only Reference($us-core-implantable-device)
 * section[medicalEquipmentSection].entry MS
 
-// Pregnancy Section (USCDI: Health Status/Assessments - Pregnancy Status)
+// Pregnancy Section (USCDI Data Class: Health Status/Assessments - Pregnancy Status)
 * section[pregnancySection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[pregnancySection] ^extension.valueString = "Section"
-* section[pregnancySection] ^short = "Pregnancy Section (USCDI: Health Status/Assessments - Pregnancy Status)"
+* section[pregnancySection] ^short = "Pregnancy Section (USCDI Data Class: Health Status/Assessments - Pregnancy Status)"
 * section[pregnancySection] ^definition = "This section contains pregnancy data"
 * section[pregnancySection].code 1.. MS
 * section[pregnancySection].code = $loinc#90767-5
