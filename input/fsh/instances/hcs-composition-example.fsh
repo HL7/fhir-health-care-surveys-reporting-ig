@@ -134,7 +134,7 @@ Usage: #example
 //   <p>Continue symptomatic treatment. Return if symptoms worsen or fail to improve within 5 days.</p>
 // </div>
 // """
-* section[assessmentAndPlanOfTreatmentSection].entry[procedureOrders] = Reference(ServiceRequest/servicerequest-example)
+// * section[assessmentAndPlanOfTreatmentSection].entry[procedureOrders] = Reference(ServiceRequest/servicerequest-example)
 /* * section[planOfTreatmentSection].entry[carePlan] = Reference(CarePlan/careplan-example)
 
 /* Immunizations Section (immunizationsSection) - Optional */
@@ -250,3 +250,14 @@ Usage: #example
 </div>
 """
 * section[coverageSection].entry = Reference(Coverage/coverage-bcbs-example)
+
+
+/* Procedures Section (proceduresSection) - Optional */
+* section[proceduresSection].code = $loinc#47519-4 " 	History of Procedures Document"
+* section[proceduresSection].text.status = #generated
+* section[proceduresSection].text.div = """
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <p>service request for a CT chest evaluation procedure for acute viral pharyngitis</p>
+</div>
+"""
+* section[proceduresSection].entry[procedureOrder] = Reference(ServiceRequest/servicerequest-example)

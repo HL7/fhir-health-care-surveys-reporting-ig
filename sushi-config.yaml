@@ -45,3 +45,7 @@ dependencies:
     version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
     id: subscriptionsIg
+  hl7.fhir.uv.sdc: 
+    version: 3.0.0
+    uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc#3.0.0
+    id: sdcIg

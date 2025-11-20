@@ -86,22 +86,14 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[assessmentAndPlanOfTreatmentSection].entry contains
     screeningAssessment 0..* MS and
     questionnaireResponse 0..* MS and
-    carePlan 0..* MS and
-    medicationRequest 0..* MS and
-    medication 0..* MS and
-    procedureOrders 0..* MS
+    carePlan 0..* MS
 * section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] only Reference($us-core-observation-screening-assessment or $us-core-simple-observation)
-* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] ^short = "Screening Assessment Entries"
+* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] ^short = "Assessment Entries (USCDI Data Elements: SDOH Assessment, Functional Status, Disability Status, Mental/Cogntive Status)"
 * section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] only Reference($us-core-questionnaireresponse)
-* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] ^short = "Questionnaire Response Entries"
+* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] ^short = "Questionnaire Responses Entries (USCDI Data Elements: SDOH Assessment, Functional Status, Disability Status, Mental/Cogntive Status)"
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] only Reference($us-core-careplan)
-* section[assessmentAndPlanOfTreatmentSection].entry[carePlan] ^short = "CarePlan Entries"
-* section[assessmentAndPlanOfTreatmentSection].entry[medicationRequest] only Reference($us-core-medicationrequest)
-* section[assessmentAndPlanOfTreatmentSection].entry[medicationRequest] ^short = "Medication Request Entries"
-* section[assessmentAndPlanOfTreatmentSection].entry[medication] only Reference($us-core-medication)
-* section[assessmentAndPlanOfTreatmentSection].entry[medication] ^short = "Medication Reference Entries"
-* section[assessmentAndPlanOfTreatmentSection].entry[procedureOrders] only Reference($us-core-servicerequest)
-* section[assessmentAndPlanOfTreatmentSection].entry[procedureOrders] ^short = "Procedure Order Entries"
+* section[assessmentAndPlanOfTreatmentSection].entry[carePlan] ^short = "CarePlan Entries (USCDI Data Elements: Assessment and Plan of Treatment)"
+
 
 // Plan of Treatment Section (USCDI: Assessment and Plan of Treatment - consider renaming to Assessment and Plan of Treatment Section and using LOINC Evaluation + Plan note (See Assessment and Plan of Treatment Section above))
 // * section[planOfTreatmentSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -213,7 +205,8 @@ Description: "This Composition profile is used to organize the healthcare survey
     medicationAdministration 0..* MS and
     medicationRequest 0..* MS and
     medicationDispense 0..* MS and
-    medicationReferences 0..* MS
+    medicationReferences 0..* MS and
+    medication 0..* MS
 * section[medicationsSection].entry[medicationAdministration] only Reference(HealthCareSurveysMedicationAdministration)
 * section[medicationsSection].entry[medicationAdministration] ^short = "Medication Administration Entry"
 * section[medicationsSection].entry[medicationRequest] only Reference(USCoreMedicationRequestProfile)
@@ -222,6 +215,8 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[medicationsSection].entry[medicationDispense] ^short = "Medication Dispense Entry"
 * section[medicationsSection].entry[medicationReferences] only Reference($us-core-medication)
 * section[medicationsSection].entry[medicationReferences] ^short = "Medication Reference Entries"
+* section[medicationsSection].entry[medication] only Reference($us-core-medication)
+* section[medicationsSection].entry[medication] ^short = "Medication Reference Entries"
 
 /*
 // Medications Administered Section (USCDI: n/a - consider removing this section - all profiles referenced elsewhere in Composition (Medications Section))
@@ -397,7 +392,6 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[proceduresSection].entry[procedure] ^short = "Procedure Entries"
 * section[proceduresSection].entry[procedureOrder] only Reference($us-core-servicerequest)
 * section[proceduresSection].entry[procedureOrder] ^short = "Procedure Order Entries"
-
 
 // Vital Signs Section (USCDI: Vital Signs)
 * section[vitalSignsSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
