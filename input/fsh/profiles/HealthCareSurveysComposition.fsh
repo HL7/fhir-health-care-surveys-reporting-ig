@@ -39,7 +39,6 @@ Description: "This Composition profile is used to organize the healthcare survey
     problemSection 1..1 MS and
     allergiesSection 1..1 MS and
     assessmentAndPlanOfTreatmentSection 0..1 MS and
-    planOfTreatmentSection 0..1 MS and
     careTeamSection 0..1 MS and
     coverageSection 0..1 MS and
     goalsSection 0..1 MS and
@@ -87,7 +86,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[assessmentAndPlanOfTreatmentSection].entry contains
     screeningAssessment 0..* MS and
     questionnaireResponse 0..* MS and
-    carePlan 0..* MS
+    carePlan 0..* MS and
     medicationRequest 0..* MS and
     medication 0..* MS and
     procedureOrders 0..* MS

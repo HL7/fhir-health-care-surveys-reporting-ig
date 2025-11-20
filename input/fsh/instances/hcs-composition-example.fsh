@@ -98,9 +98,9 @@ Usage: #example
   <p>CMP Results: Glucose 98, BUN 14, Cr 0.8, Na 140, K 3.8, Cl 102</p>
 </div>
 """
-* section[resultsSection].entry[resultEntry] = Reference(Observation/observation-lab-example)
-* section[resultsSection].entry[resultEntry] = Reference(Observation/observation-clinical-example)
-* section[resultsSection].entry[diagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-lab-example)
+* section[resultsSection].entry[result] = Reference(Observation/observation-lab-example)
+* section[resultsSection].entry[result] = Reference(Observation/observation-clinical-example)
+* section[resultsSection].entry[diagnosticReport] = Reference(DiagnosticReport/diagnosticreport-lab-example)
 
 
 
@@ -112,29 +112,30 @@ Usage: #example
   <p>Patient presented with one week history of cough and low-grade fever. Lungs clear on examination. No lymphadenopathy.</p>
 </div>
 """
-* section[clinicalNotesSection].entry[documentReferenceEntry] = Reference(DocumentReference/documentreference-example)
-* section[clinicalNotesSection].entry[diagnosticReportEntry] = Reference(DiagnosticReport/diagnosticreport-note-example)
+* section[clinicalNotesSection].entry[documentReference] = Reference(DocumentReference/documentreference-example)
+* section[clinicalNotesSection].entry[diagnosticReport] = Reference(DiagnosticReport/diagnosticreport-note-example)
 
-// Plan of Treatment Section
+// Assessment and Plan of Treatment Section (assessmentAndPlanOfTreatmentSection) - Optional */
 * section[assessmentAndPlanOfTreatmentSection].code = $loinc#51847-2 "Evaluation + Plan note"
 * section[assessmentAndPlanOfTreatmentSection].text.status = #generated
 * section[assessmentAndPlanOfTreatmentSection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
   <ul>
     <li>Referral to social worker for housing assistance</li>
   </ul>
-</div>"
-* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessmentEntry] = Reference(Observation/observation-screening-example)
-
-/* Plan of Treatment Section (planOfTreatmentSection) - Optional */
-* section[planOfTreatmentSection].code = $loinc#18776-5 "Plan of care note"
-* section[planOfTreatmentSection].text.status = #generated
-* section[planOfTreatmentSection].text.div = """
-<div xmlns="http://www.w3.org/1999/xhtml">
   <p>Continue symptomatic treatment. Return if symptoms worsen or fail to improve within 5 days.</p>
-</div>
-"""
-* section[planOfTreatmentSection].entry[procedureOrders] = Reference(ServiceRequest/servicerequest-example)
-/* * section[planOfTreatmentSection].entry[carePlanEntry] = Reference(CarePlan/careplan-example)
+</div>"
+* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] = Reference(Observation/observation-screening-example)
+
+// /* Plan of Treatment Section (planOfTreatmentSection) - Optional */
+// * section[planOfTreatmentSection].code = $loinc#18776-5 "Plan of care note"
+// * section[planOfTreatmentSection].text.status = #generated
+// * section[planOfTreatmentSection].text.div = """
+// <div xmlns="http://www.w3.org/1999/xhtml">
+//   <p>Continue symptomatic treatment. Return if symptoms worsen or fail to improve within 5 days.</p>
+// </div>
+// """
+* section[assessmentAndPlanOfTreatmentSection].entry[procedureOrders] = Reference(ServiceRequest/servicerequest-example)
+/* * section[planOfTreatmentSection].entry[carePlan] = Reference(CarePlan/careplan-example)
 
 /* Immunizations Section (immunizationsSection) - Optional */
 * section[immunizationsSection].code = $loinc#11369-6 "History of Immunization note"
@@ -173,14 +174,14 @@ Usage: #example
   <p>BMI: 23.5 kg/m²</p>
 </div>
 """
-* section[vitalSignsSection].entry[bloodPressureEntry] = Reference(Observation/observation-bp-example)
-* section[vitalSignsSection].entry[bodyWeightEntry] = Reference(Observation/observation-weight-example)
-* section[vitalSignsSection].entry[bodyHeightEntry] = Reference(Observation/observation-height-example)
-* section[vitalSignsSection].entry[heartRateEntry] = Reference(Observation/observation-heartrate-example)
-* section[vitalSignsSection].entry[pulseOximetryEntry] = Reference(Observation/observation-oximetry-example)
-* section[vitalSignsSection].entry[bMIEntry] = Reference(Observation/observation-bmi-example)
-* section[vitalSignsSection].entry[bodyTemperatureEntry] = Reference(Observation/observation-temperature-example)
-* section[vitalSignsSection].entry[respiratoryRateEntry] = Reference(Observation/observation-resprate-example)
+* section[vitalSignsSection].entry[bloodPressure] = Reference(Observation/observation-bp-example)
+* section[vitalSignsSection].entry[bodyWeight] = Reference(Observation/observation-weight-example)
+* section[vitalSignsSection].entry[bodyHeight] = Reference(Observation/observation-height-example)
+* section[vitalSignsSection].entry[heartRate] = Reference(Observation/observation-heartrate-example)
+* section[vitalSignsSection].entry[pulseOximetry] = Reference(Observation/observation-oximetry-example)
+* section[vitalSignsSection].entry[bMI] = Reference(Observation/observation-bmi-example)
+* section[vitalSignsSection].entry[bodyTemperature] = Reference(Observation/observation-temperature-example)
+* section[vitalSignsSection].entry[respiratoryRate] = Reference(Observation/observation-resprate-example)
 
 /* Social History Section (socialHistorySection) - Optional */
 * section[socialHistorySection].code = $loinc#29762-2 "Social history note"
