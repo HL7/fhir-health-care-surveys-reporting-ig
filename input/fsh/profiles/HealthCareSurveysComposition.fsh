@@ -90,7 +90,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] only Reference($us-core-observation-screening-assessment or $us-core-simple-observation)
 * section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] ^short = "Assessment Entries (USCDI Data Elements: SDOH Assessment, Functional Status, Disability Status, Mental/Cogntive Status)"
 * section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] only Reference($us-core-questionnaireresponse)
-* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] ^short = "Questionnaire Responses Entries (USCDI Data Elements: SDOH Assessment, Functional Status, Disability Status, Mental/Cogntive Status)"
+* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] ^short = "QuestionnaireResponse Entries (USCDI Data Elements: SDOH Assessment, Functional Status, Disability Status, Mental/Cogntive Status)"
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] only Reference($us-core-careplan)
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] ^short = "CarePlan Entries (USCDI Data Elements: Assessment and Plan of Treatment)"
 
