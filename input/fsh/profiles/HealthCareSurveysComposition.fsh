@@ -190,7 +190,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[medicationsSection].entry[medication] only Reference($us-core-medication)
 * section[medicationsSection].entry[medication] ^short = "Medication Entries (USCDI Data Elements: Medications)"
 
-// Problem Section (USCDI Data Class: Problems)
+// Problem Section (USCDI Data Class: Problems, Health Status Assessments)
 * section[problemSection] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[problemSection] ^extension.valueString = "Section"
 * section[problemSection] ^short = "Problem Section (USCDI Data Class: Problems, Encounter)"
@@ -210,7 +210,7 @@ Description: "This Composition profile is used to organize the healthcare survey
     problemsHealthConcerns 0..* MS and
     encounterDiagnosis 0..* MS
 * section[problemSection].entry[problemsHealthConcerns] only Reference(USCoreConditionProblemsHealthConcernsProfile)
-* section[problemSection].entry[problemsHealthConcerns] ^short = "Problems Health Concerns Entries (USCDI Data Elements: Date of Resolution, Date of Diagnosis, SDOH Problems/Health Concerns)"
+* section[problemSection].entry[problemsHealthConcerns] ^short = "Problems Health Concerns Entries (USCDI Data Elements: Date of Resolution, Date of Diagnosis, SDOH Problems/Health Concerns, Health Concernt, Disability Status, Functional Status, Mental/Cognitive Status)"
 * section[problemSection].entry[encounterDiagnosis] only Reference(USCoreConditionEncounterDiagnosisProfile)
 * section[problemSection].entry[encounterDiagnosis] ^short = "Encounter Diagnosis Entries (USCDI Data Elements: Encounter Diagnosis)"
 

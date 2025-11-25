@@ -2,7 +2,7 @@
 
 This profile is used to represent the clinical content present within a health care survey report.
 
-**Sections and Population Criteria**
+### Sections and Population Criteria
 
 The following sections and population criteria should be used to create the composition resource below.
 
@@ -30,3 +30,11 @@ The following sections and population criteria should be used to create the comp
 
 The above data has to be populated by the implementers of the DataSource actor.
  
+ ### USCDI Mappings
+
+ USCDI V3.1 mappings are noted in the Descriptions & Constraints section of the profile below. For comprehensive mappings see [US Core USCDI Guidance](https://hl7.org/fhir/us/core/STU6.1/uscdi.html).
+
+  * [US Core RelatedPerson Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-relatedperson.html) (USCDI Data Class: Patient Demographics \| USCDI Data Elements: Related Person's Name, Related Person's Relationship) is referenced from the following US Core Profiles:
+     * [US Core CareTeam Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-careplan.html), [US Core Coverage Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-coverage.html), [US Core DocumentReference Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-documentreference.html), [US Core Encounter Profile]({{site.data.fhir.ver.hl7fhiruscore}}/https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-encounter.html), [US Core MedicationDispense Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-medicationdispense.html), [US Core MedicationRequest Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-medicationrequest.html), [US Core Observation Screening Assessment Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-observation-screening-assessment.html), [US Core Provenance Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-provenance.html), [US Core QuestionnaireResponse Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-questionnaireresponse.html), [US Core ServiceRequest Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-servicerequest.html) and [US Core Simple Observation Profile]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-simple-observation.html)
+  * [US Core Provenance Profie]({{site.data.fhir.ver.hl7fhiruscore}}/) (USCDI Data Class: Provenance \| USCDI Data Elements: Author Time Stamp, Author Organization) **SHALL** be supported for the following US Core resources:
+      * AllergyIntolerance, CarePlan, CareTeam, Condition, Coverage, Device, DiagnosticReport, DocumentReference, Encounter, Goal, Immunization, MedicationDispense, MedicationRequest, Observation, Patient, Procedure, QuestionnaireResponse, RelatedPerson, ServiceRequest
