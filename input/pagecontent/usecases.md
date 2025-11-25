@@ -1,4 +1,4 @@
-### National Health Care Surveys
+### Background
 
 The National Center for Health Statistics (NCHS) conduct a family of surveys that provide comprehensive information about healthcare organizations and providers, the services they deliver, and the patients they serve across diverse healthcare settings. These data enable researchers, policymakers, and health professionals to understand healthcare providers, patient populations, and the management and delivery of patient care throughout the United States.
 
@@ -19,11 +19,13 @@ The purpose of the Health Care Surveys Content Implementation Guide (IG) is to i
 
 Historically, the predominant ambulatory and hospital data collection methods have been burdensome for providers due to manual processes, resulting in data lacking in desired clinical richness and quality. The HL7 Clinical Document Architecture (CDA®) R2 Implementation Guide: National Health Care Surveys Release 1, Draft Standard for Trial Use (DSTU) Release 1.2 - US Realm, 2016, and HL7® CDA® R2 Implementation Guide: National Health Care Surveys (NHCS), R1 STU Release 3.1 - US Realm are available as standards-based measures as well as Promoting Interoperability (PI) and Merit-Based Incentive Payment System (MIPS) measures for hospitals and providers. These CDA IGs have improved NCHS EHR data submissions, but some providers have found them burdensome due to the manual processes involved. NCHS has also identified data quality issues in submissions using the CDA standard.
 
-This IG aligns with the Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule, which adopts the United States Core Data for Interoperability (USCDI) Version 3.0 and US Core Profiles V6.1.0 as the baseline standard as of January 1, 2026.
+This IG aligns with the Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule, which adopts the United States Core Data for Interoperability (USCDI) Version 3 and US Core Profiles V6.1.0 as the baseline standard as of January 1, 2026.
 
 This FHIR IG references a framework for FHIR reporting based on the eCR Now framework, automating the reporting of encounters closed for 48 hours. This automated reporting will increase the response rate of sampled hospitals and ambulatory healthcare providers to the NHCS and the NAMCS, respectively, over other data collection approaches while improving process efficiency. This reporting approach via automated means (without provider involvement) will reduce the burden associated with survey participation and costs associated with recruiting hospital and ambulatory healthcare providers. This will also increase the volume, quality, completeness, and timeliness of the data submitted to the NHCS and the NAMCS.
 
 NCHS plans to align the data elements in future releases of this IG with those that achieve recognition for voluntary implementation in the Standards Version Advancement Process (SVAP) or are required by regulation as part of USCDI.
+
+### Use Cases
 
 #### Goals of the Use Case
 
@@ -53,7 +55,7 @@ The goals of the Health Care Survey submission use case include:
 * Policies of the clinical care setting to collect consent for data sharing. (Provider participation in the National Health Care Surveys is by invitation by NCHS if selected as part of the nationally representative samples of hospitals or providers. Consent for participation in each National Health Care Survey is obtained during the manual recruitment process.)
 
 
-#### **User Story #1: Ambulatory Setting** 
+#### User Story #1: Ambulatory Setting
 
 **Background:** The National Ambulatory Medical Care Survey (NAMCS) is based on a sample of patient visits to non-federally employed office-based providers who are primarily engaged in direct patient care. NAMCS was redesigned and launched as the Health Center (HC) Component in 2021, the Provider Survey Component in 2023, and is planning to launch the Provider Electronic Component. The Health Center Component samples from health centers while the two provider components sample from physicians and advanced practice providers. NAMCS collects an encounter-based set of demographic and clinical data generally available in a medical record for any type of visit. 
 
@@ -71,7 +73,7 @@ The following is a diagram of the workflow based on the above user story used fo
 <br/>
 
 
-#### **User Story #2 – Hospital Setting**
+#### User Story #2 – Hospital Setting
 
 **Background:** The National Hospital Care Survey (NHCS) is an electronic data collection, gathering Uniform Bill (UB) 04 administrative claims data or electronic data from sampled hospitals. NHCS is designed to provide reliable and timely nationally representative healthcare utilization data for hospital-based settings. NHCS collects all inpatient discharges and ED encounters from sampled hospitals for a survey period of one year. NHCS’ sample is drawn from all non-federal US hospitals with a staffed inpatient bed size > 6. 
 
@@ -96,6 +98,7 @@ The following is a diagram of the workflow based on the above user story used fo
 * Knowledge Artifact Repository
 
 ##### Interactions between Actors and Systems for the Health Care Surveys FHIR System
+
 This section outlines the high-level interactions between the various Actors and Systems listed above. These interactions are shown in Figure 2.3 along with the descriptions of each step.
 
 {% include img.html img="healthcare-survey-actors-and-systems.png" caption="Figure 2.3 - The Health Care Surveys FHIR System" %}
