@@ -14,4 +14,6 @@ Description: "This is the MedicationAdmininstration Resource profile for the IG.
 * context only Reference($us-core-encounter)
 * effective[x] MS
 * performer MS
+* reasonCode MS
+* reasonReference MS
 * dosage MS

@@ -66,10 +66,6 @@ The following is a diagram of the workflow based on the above user story used fo
 
 
 {% include img.html img="healthcare-surveys-reporting-workflow-userstory1.png" caption="Figure 2.1 - Ambulatory Setting Health Care Survey Reporting Workflow" %}
-
-<br/>
-
-
 <br/>
 
 
@@ -83,10 +79,6 @@ The following is a diagram of the workflow based on the above user story used fo
 
 
 {% include img.html img="healthcare-surveys-reporting-workflow-userstory2.png" caption="Figure 2.2 - Hospital Setting Health Care Survey Reporting Workflow" %}
-
-<br/>
-
-
 <br/>
 
 
