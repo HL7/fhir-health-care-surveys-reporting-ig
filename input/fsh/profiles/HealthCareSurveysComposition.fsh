@@ -179,7 +179,6 @@ Description: "This Composition profile is used to organize the healthcare survey
     medicationAdministration 0..* MS and
     medicationRequest 0..* MS and
     medicationDispense 0..* MS and
-    medicationReferences 0..* MS and
     medication 0..* MS
 * section[medicationsSection].entry[medicationAdministration] only Reference(HealthCareSurveysMedicationAdministration)
 * section[medicationsSection].entry[medicationAdministration] ^short = "MedicationAdministration Entries (USCDI Data Elements: Medications, Dose, Dose Unit of Measure, Indication)"
