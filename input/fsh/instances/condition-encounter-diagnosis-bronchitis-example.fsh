@@ -3,7 +3,6 @@ InstanceOf: USCoreConditionEncounterDiagnosisProfile
 Title: "Condition - Acute Bronchitis (Encounter Diagnosis)"
 Description: "Example encounter diagnosis of acute bronchitis confirmed during ambulatory office visit."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis-example"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"
 * clinicalStatus = $condition-clinical#active "Active"
 * category[us-core] = $condition-category#encounter-diagnosis "Encounter Diagnosis"

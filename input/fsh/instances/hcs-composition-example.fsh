@@ -253,7 +253,7 @@ Usage: #example
 
 
 /* Procedures Section (proceduresSection) - Optional */
-* section[proceduresSection].code = $loinc#47519-4 " 	History of Procedures Document"
+* section[proceduresSection].code = $loinc#47519-4 "History of Procedures Document"
 * section[proceduresSection].text.status = #generated
 * section[proceduresSection].text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
