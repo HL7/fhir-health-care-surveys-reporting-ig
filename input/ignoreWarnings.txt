@@ -1,13 +1,13 @@
 == Suppressed Messages ==
 
-# 01 US Core 6.1.0 is the version that is cited in regulation for 2026, the next release of the National Health Care Surveys will move to the next cited release of US Core
+# 01: US Core 6.1.0 is the version that is cited in regulation for 2026, the next release of the National Health Care Surveys will move to the next cited release of US Core
 WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
-# 02 Inherited from US Core Slicing
+# 02: Inherited from US Core Slicing
 INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.snapshot.element[12].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
-# 03 These are the correct pinned versions 
+# 03: These are the correct pinned versions 
 
 Pinned the version of http://hl7.org/fhir/StructureDefinition/ActivityDefinition to 4.0.1
 Pinned the version of http://hl7.org/fhir/StructureDefinition/Bundle to 4.0.1
@@ -100,20 +100,19 @@ Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-p
 Pinned the version of http://hl7.org/fhir/us/ph-library/ValueSet/us-ph-valueset-plandefinition-action to 1.0.0
 Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0
 
-# 04 US PH MessageHeader defines two extensions s - examples have optional extension that are not defined in the profile - not matching is expected behavior
-
+# 04: US PH MessageHeader defines two extensions - examples have optional extension that are not defined in the profile - not matching is expected behavior
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# 05 The binding for PlanDefinition.action.action.condition.expression.language includes IETF BCP 13 (MIME-type registry).
-
+# 05: The binding for PlanDefinition.action.action.condition.expression.language includes IETF BCP 13 (MIME-type registry).
 A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 
-# 06 Inherited through Composition Parent Composition.language - Composition.language element binding in FHIR R4 with HL7 Terminology 5.2.0 contains the deprecated extension
+# 06: Inherited through Composition Parent Composition.language - Composition.language element binding in FHIR R4 with HL7 Terminology 5.2.0 contains the deprecated extension
 INFORMATION: StructureDefinition/hcs-composition: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 
-# 07 The hcs-reporting-bundle profile s Bundle.entry[] into two named s (MessageHeader and contentBundle) but leaves the slice group OPEN.Entries 2 (Organization) and 3 (Endpoint) are intentionally outside the named s; this is permitted by the profile. 
+# 07: The hcs-reporting-bundle profile Bundle.entry[] into two named s (MessageHeader and contentBundle) but leaves the slice group OPEN.Entries 2 (Organization) and 3 (Endpoint) are intentionally outside the named s; this is permitted by the profile. 
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
 
-
+# 08: We will investigate adding conformance clauses in the next release
+The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
