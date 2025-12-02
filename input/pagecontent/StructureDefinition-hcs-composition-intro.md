@@ -6,9 +6,13 @@ This profile is used to represent the clinical content present within a health c
 
 The following sections and population criteria should be used to create the composition resource below.
 
+To support reduction in Bundle sizes and limit duplicate data, in most cases data should be limited to the current encounter.
+
 * Patient: The patient who is the subject of the encounter
 * Encounter: The encounter that was closed (updated documentation to be added to the encounter before stating it is closed)
-* Conditions: Encounter diagnosis for the closed encounter; all statuses except inactive; verificationStatus = confirmed
+* Conditions/Problems/HealthConcerns: 
+  * Encounter diagnosis for the closed encounter
+  * All statuses except inactive; verificationStatus = confirmed
 * MedicationRequests: Medication requested during the encounter with status = active and completed; intent = order.
 * MedicationAdministration: Medication administered during the encounter with status = active.
 * Medications: Medications referenced by MedicationRequests and MedicationAdministration.
