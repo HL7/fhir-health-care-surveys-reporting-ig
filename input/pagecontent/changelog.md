@@ -64,10 +64,6 @@
             <td>Aligned with <a href="https://hl7.org/fhir/us/core/STU6.1/index.html">US Core 6.1.0</a></td>
         </tr>
         <tr>
-            <td><a href="StructureDefinition-hcs-diagnosticreport.html">HCS Diagnostic Report</a></td>
-            <td>New Profile</td>
-        </tr>
-        <tr>
             <td><a href="StructureDefinition-hcs-composition.html">Health Care Survey Report Composition</a></td>
             <td>Update HCS Composition verbiage to reflect continuity regarding procedures</td>
         </tr>
