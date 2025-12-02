@@ -6,6 +6,7 @@
 |---------|----------|
 |[FHIR-51719](https://jira.hl7.org/browse/FHIR-51719) | Fix typo (wrong capitalization) on Use Cases page |
 |[FHIR-51720](https://jira.hl7.org/browse/FHIR-51720) | Remove duplicate pages |
+|[FHIR-51722](https://jira.hl7.org/browse/FHIR-51722) | Add guidance that DiagnosticReport will be used for Procedure Note |
 |[FHIR-51723](https://jira.hl7.org/browse/FHIR-51723) | Remove DiagnosticReport profile and use US Core DiagnosticReport |
 |[FHIR-52226](https://jira.hl7.org/browse/FHIR-52226) | Update Specification page to align with rest of IG - update Health Data Exchange App and HDEA to eCR Now FHIR App-Health Care Surveys |
 |[FHIR-52227](https://jira.hl7.org/browse/FHIR-52227) | Fix typo (extra "s" at bottom of page) on Use Cases Page |
@@ -19,6 +20,8 @@
 |[FHIR-52850](https://jira.hl7.org/browse/FHIR-52850) | Standardize profile names |
 |[FHIR-52966](https://jira.hl7.org/browse/FHIR-52966) | Remove MedicationRequest profile and use US Core MedicationRequest |
 |[FHIR-53095](https://jira.hl7.org/browse/FHIR-53095) | Add reference to US Core Observation Occupation profile from the Composition Social History Section |
+
+
 
 
 ### STU 2 - Ballot

@@ -7,28 +7,31 @@ This profile is used to represent the clinical content present within a health c
 The following sections and population criteria should be used to create the composition resource below.
 
 * Patient: The patient who is the subject of the encounter
-* Encounter: The encounter that was closed (Updated documentation has to be added to the encounter before saying it is closed)
-* Conditions: Encounter diagnosis for the closed encounter; all Statuses except InActive; verificationStatus = Confirmed
-* MedicationRequests: Medication requested during the encounter and status = Active and Completed; intent = order.
-* MedicationAdministration: Medication administered during the encounter and status = active.
+* Encounter: The encounter that was closed (updated documentation to be added to the encounter before stating it is closed)
+* Conditions: Encounter diagnosis for the closed encounter; all statuses except inactive; verificationStatus = confirmed
+* MedicationRequests: Medication requested during the encounter with status = active and completed; intent = order.
+* MedicationAdministration: Medication administered during the encounter with status = active.
 * Medications: Medications referenced by MedicationRequests and MedicationAdministration.
-* Vital Signs: Vital signs for the encounter with status = final or amended.
-* Allergies: Allergies associated with the patient with status = active; verification status= confirmed.
+* Vital Signs: Vital signs for the encounter with status = final or status = amended.
+* Allergies: Allergies associated with the patient with status = active; verificationStatus = confirmed.
 * Procedures: All interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. 
 * ServiceRequest: Procedures ordered during the encounter.
 * Immunizations: Immunizations associated with the patient.
-* LabResults: Results linked to the encounter or ordered during the encounter or results received during the encounter plus thresholds. (72 hours after the encounter close) and status = final and preliminary.
-* Lab Reporting: Results linked to the encounter or ordered during the encounter or results received during the encounter plus thresholds. (72 hours after the encounter close) and status = final and preliminary 
-* Diagnostic Report Notes: Results linked to the encounter or ordered during the encounter or results received during the encounter plus thresholds. (72 hours after the encounter close) and Status = final and preliminary. Imaging data is NOT to be sent.
+* LabResults: Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 72 hours) after the encounter closes with status = final or status = preliminary.
+* Lab Reporting: Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 72 hours) after the encounter closes with status = final or status = preliminary. 
+* Diagnostic Report Notes: 
+  * Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 72 hours) after the encounter closes with status = final or status = preliminary. 
+  * Procedure Notes. 
+  * Imaging data is NOT to be sent.
 * Clinical Notes: All notes created during the encounter.
 * Care Team: Associated with the patient with status = active.
-* CarePlan: Associated with the encounter with status = draft and active.
-* Goals: status = proposed | planned | accepted | active.
+* CarePlan: Associated with the encounter with status = draft or status = active.
+* Goals: status = proposed or status = planned or status = accepted or status = active.
 * Smoking Status: Associated with the patient.
-* Implantable Devices: Devices associated with the patient.
+* Implantable Devices: Associated with the patient.
 * Pregnancy Status: Associated with the patient.
 
-The above data has to be populated by the implementers of the DataSource actor.
+The above data to be populated by the implementers of the DataSource actor.
  
 ### USCDI Mappings
 
