@@ -78,7 +78,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[allergiesSection].text 1.. MS
 * section[allergiesSection].text ^short = "Allergies Section narrative"
 * section[allergiesSection].text ^definition = "Allergies Section narrative"
-* section[allergiesSection].entry only Reference($us-core-allergyintolerance)
+* section[allergiesSection].entry only Reference(USCoreAllergyIntolerance)
 * section[allergiesSection].entry MS
 * section[allergiesSection].entry ^short = "AllergyIntolerance Entries (USCDI Data Elements: Substance (Medication), Substance (Drug Class), Reaction)"
 
