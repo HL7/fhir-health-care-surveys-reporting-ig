@@ -1,6 +1,6 @@
 // Blood Pressure Observation
 Instance: observation-bp-example
-InstanceOf:  USCoreBloodPressureProfile
+InstanceOf: $USCoreBloodPressureProfile
 Title: "Observation - Blood Pressure"
 Description: "Example blood pressure observation (120/80 mmHg) for healthcare surveys reporting."
 Usage: #example

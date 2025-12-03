@@ -1,6 +1,6 @@
 // Organization - Provider
 Instance: organization-example
-InstanceOf:  USCoreOrganizationProfile
+InstanceOf: $USCoreOrganizationProfile
 Title: "Organization - General Hospital"
 Description: "Example healthcare provider organization General Hospital for healthcare surveys reporting."
 Usage: #example

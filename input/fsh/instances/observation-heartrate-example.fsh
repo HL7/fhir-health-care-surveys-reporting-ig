@@ -1,6 +1,6 @@
 // Heart Rate Observation
 Instance: observation-heartrate-example
-InstanceOf:  USCoreHeartRateProfile
+InstanceOf: $USCoreHeartRateProfile
 Title: "Observation - Heart Rate"
 Description: "Example heart rate observation (70 beats/minute) for healthcare surveys reporting."
 Usage: #example

@@ -8,96 +8,40 @@ INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.snaps
 INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
 # 03: These are the correct pinned versions 
-Pinned the version of http://hl7.org/fhir/StructureDefinition/ActivityDefinition to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Bundle to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Composition to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Device to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/DomainResource to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Element to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Extension to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Group to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Library to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/MedicationAdministration to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/PlanDefinition to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Questionnaire to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/Schedule to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/StructureDefinition to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/StructureMap to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/ValueSet to 4.0.1
-Pinned the version of http://hl7.org/fhir/StructureDefinition/shareableplandefinition to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/action-participant-role to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/action-type to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/all-languages to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/clinical-findings to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/condition-code to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/definition-topic to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/goal-category to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/goal-priority to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/goal-start-event to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/jurisdiction to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/languages to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/observation-codes to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/plan-definition-type to 4.0.1
-Pinned the version of http://hl7.org/fhir/ValueSet/subject-type to 4.0.1
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-head-circumference to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationdispense to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-result to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-occupation to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus to 6.1.0
-Pinned the version of http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-composition to 2.0.0
-Pinned the version of http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle to 2.0.0
-Pinned the version of http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-medicationadministration to 2.0.0
-Pinned the version of http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-plandefinition to 2.0.0
-Pinned the version of http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle to 2.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-async-indicator-extension to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encrypted-extension to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encryption-algorithm-extension to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-expected-response-time-extension to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-plandefinition to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-receiver-address-extension to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-receiver-jwks-url-extension to 1.0.0
-Pinned the version of http://hl7.org/fhir/us/ph-library/ValueSet/us-ph-valueset-plandefinition-action to 1.0.0
-Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus to 6.1.0 from choices of 5.0.1 (hl7.fhir.us.core#5.0.1), 6.1.0 (hl7.fhir.us.core#6.1.0)
+Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology#5.5.0)
 
 # 04: US PH MessageHeader defines two extensions - examples have optional extension that are not defined in the profile - not matching is expected behavior
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -123,3 +67,6 @@ The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.s
 
 # 11: ERROR: This will be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build)
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
+
+# 12: The following code system is not discoverable because they are code systems in THO, but THO doesn't define the codes. They have been checked and the identifiers are correct
+A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH' could not be found, so the code cannot be validated

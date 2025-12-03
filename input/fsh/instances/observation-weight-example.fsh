@@ -1,6 +1,6 @@
 // Weight Observation
 Instance: observation-weight-example
-InstanceOf:  USCoreBodyWeightProfile
+InstanceOf: $USCoreBodyWeightProfile
 Title: "Observation - Body Weight"
 Description: "Example body weight observation (68 kg) for healthcare surveys reporting."
 Usage: #example

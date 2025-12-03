@@ -9,7 +9,7 @@ Usage: #example
 * code = http://loinc.org#11341-5 "History of Occupation"
 * subject = Reference(Patient/patient-ledner)
 * encounter = Reference(Encounter/encounter-ambulatory)
-* effectiveDateTime = "2025-01-02T09:30:00Z"
+* effectivePeriod.start = "2025-01-02T09:30:00Z"
 * performer = Reference(Practitioner/practitioner-nichols)
 * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH#31-1014.00.007136 "Certified Nursing Assistant (CNA) [Nursing Assistants]"
 * component[0].code = http://loinc.org#86188-0 "History of Occupation Industry"

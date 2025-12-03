@@ -1,6 +1,6 @@
 // Respiratory Rate Observation
 Instance: observation-resprate-example
-InstanceOf:  USCoreRespiratoryRateProfile
+InstanceOf: $USCoreRespiratoryRateProfile
 Title: "Observation - Respiratory Rate"
 Description: "Example respiratory rate observation (16 breaths/minute) for healthcare surveys reporting."
 Usage: #example

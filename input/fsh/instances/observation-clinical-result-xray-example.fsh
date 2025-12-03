@@ -13,4 +13,4 @@ Usage: #example
 * effectiveDateTime = "2025-01-02"
 * issued = "2025-01-02T10:30:00Z"
 * performer = Reference(Practitioner/practitioner-nichols)
-* valueString = "LINES AND TUBES: None.\n LUNGS AND PLEURA:\n Clear lungs. Normal pulmonary vascularity.\n No pleural effusion.\n No pneumothorax.\n HEART, MEDIASTINUM AND HILA:\n Heart is normal in size.\n Normal mediastinal and hilar contour.\n BONES AND SOFT TISSUES:\n No acute abnormality.\n"
+* valueString = "LINES AND TUBES: None.\n LUNGS AND PLEURA:\n Clear lungs. Normal pulmonary vascularity.\n No pleural effusion.\n No pneumothorax.\n HEART, MEDIASTINUM AND HILA:\n Heart is normal in size.\n Normal mediastinal and hilar contour.\n BONES AND SOFT TISSUES:\n No acute abnormality."
