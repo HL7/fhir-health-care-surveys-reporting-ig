@@ -1,5 +1,5 @@
 Instance: encounter-ambulatory
-InstanceOf: USCoreEncounterProfile
+InstanceOf: $USCoreEncounterProfile
 Title: "Encounter - Ambulatory Office Visit"
 Description: "Example of a finished ambulatory encounter representing a normal delivery office visit for healthcare surveys reporting."
 Usage: #example

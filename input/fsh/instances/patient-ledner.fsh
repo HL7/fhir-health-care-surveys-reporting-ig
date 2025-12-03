@@ -1,5 +1,5 @@
 Instance: patient-ledner
-InstanceOf: USCorePatientProfile
+InstanceOf: $USCorePatientProfile
 Title: "Patient - Dominique Ledner"
 Description: "Example patient Dominique Ledner with comprehensive demographic information for healthcare surveys reporting."
 Usage: #example

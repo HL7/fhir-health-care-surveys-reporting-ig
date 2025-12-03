@@ -1,6 +1,6 @@
 // Pulse Oximetry Observation
 Instance: observation-oximetry-example
-InstanceOf: USCorePulseOximetryProfile
+InstanceOf: $USCorePulseOximetryProfile
 Title: "Observation - Pulse Oximetry"
 Description: "Example pulse oximetry observation (98% oxygen saturation) for healthcare surveys reporting."
 Usage: #example

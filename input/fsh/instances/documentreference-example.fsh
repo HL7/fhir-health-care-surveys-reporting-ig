@@ -1,6 +1,6 @@
 // Document Reference
 Instance: documentreference-example
-InstanceOf: USCoreDocumentReferenceProfile
+InstanceOf: $USCoreDocumentReferenceProfile
 Title: "DocumentReference - Consultation Note"
 Description: "Example document reference for a consultation note related to acute bronchitis diagnosis."
 Usage: #example

@@ -1,5 +1,5 @@
 Instance: observation-clinical-result-example
-InstanceOf: USCoreBodyTemperatureProfile
+InstanceOf: $USCoreBodyTemperatureProfile
 Title: "Observation - Body Temperature (Alternate Profile)"
 Description: "Example clinical observation of elevated body temperature using the alternate US Core body temperature profile."
 Usage: #example

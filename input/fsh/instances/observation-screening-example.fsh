@@ -1,6 +1,6 @@
 // Screening Assessment* clinicalStatus = $condition-clinical#active "Active"
 Instance: observation-screening-example
-InstanceOf: USCoreObservationScreeningAssessmentProfile
+InstanceOf: $USCoreObservationScreeningAssessmentProfile
 Title: "Observation - PHQ-9 Depression Screening"
 Description: "Example screening assessment observation using the PHQ-9 quick depression assessment panel for healthcare surveys reporting."
 Usage: #example

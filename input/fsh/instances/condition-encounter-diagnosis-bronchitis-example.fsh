@@ -1,5 +1,5 @@
 Instance: condition-encounter-diagnosis-example
-InstanceOf: USCoreConditionEncounterDiagnosisProfile
+InstanceOf: $USCoreConditionEncounterDiagnosisProfile
 Title: "Condition - Acute Bronchitis (Encounter Diagnosis)"
 Description: "Example encounter diagnosis of acute bronchitis confirmed during ambulatory office visit."
 Usage: #example

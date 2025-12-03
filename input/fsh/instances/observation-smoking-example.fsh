@@ -1,6 +1,6 @@
 // Smoking Status Observation
 Instance: observation-smoking-example
-InstanceOf: USCoreSmokingStatusProfile
+InstanceOf: $USCoreSmokingStatusProfile
 Title: "Observation - Smoking Status"
 Description: "Example smoking status observation indicating patient never smoked tobacco for healthcare surveys reporting."
 Usage: #example

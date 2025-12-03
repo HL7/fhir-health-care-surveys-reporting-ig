@@ -1,6 +1,6 @@
 // Coverage
 Instance: coverage-bcbs-example
-InstanceOf: USCoreCoverageProfile
+InstanceOf: $USCoreCoverageProfile
 Title: "Coverage - Blue Cross Blue Shield HMO"
 Description: "Example health insurance coverage with Blue Cross Blue Shield HMO plan for healthcare surveys reporting."
 Usage: #example

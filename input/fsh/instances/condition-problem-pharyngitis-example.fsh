@@ -1,6 +1,6 @@
 // Problem - Health Concern
 Instance: condition-problem-pharyngitis-example
-InstanceOf: USCoreConditionProblemsHealthConcernsProfile
+InstanceOf: $USCoreConditionProblemsHealthConcernsProfile
 Title: "Condition - Acute Viral Pharyngitis"
 Description: "Example condition representing active acute viral pharyngitis health concern."
 Usage: #example

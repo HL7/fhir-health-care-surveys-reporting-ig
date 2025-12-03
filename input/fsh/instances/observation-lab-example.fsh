@@ -1,6 +1,6 @@
 // Lab Observation
 Instance: observation-lab-example
-InstanceOf: USCoreLaboratoryResultObservationProfile
+InstanceOf: $USCoreLaboratoryResultObservationProfile
 Title: "Observation - Leukocytes Laboratory Result"
 Description: "Example laboratory observation of leukocytes (white blood cells) in blood for healthcare surveys reporting."
 Usage: #example

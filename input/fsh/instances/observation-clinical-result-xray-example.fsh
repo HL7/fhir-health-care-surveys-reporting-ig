@@ -1,6 +1,6 @@
 // Lab Observation
 Instance: observation-clinical-result-xray-example
-InstanceOf: USCoreObservationClinicalResultProfile
+InstanceOf: $USCoreObservationClinicalResultProfile
 Title: "Observation - Chest X-ray Clinical Result"
 Description: "Example radiology observation of chest x-ray showing clear lungs with no acute abnormality."
 Usage: #example

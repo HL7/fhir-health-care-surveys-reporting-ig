@@ -1,6 +1,6 @@
 // Diagnostic Report - Lab
 Instance: diagnosticreport-lab-example
-InstanceOf: USCoreDiagnosticReportProfileLaboratoryReporting
+InstanceOf: $USCoreDiagnosticReportProfileLaboratoryReporting
 Title: "DiagnosticReport - CBC Panel Laboratory"
 Description: "Example laboratory diagnostic report for a complete blood count (CBC) panel with automated count."
 Usage: #example

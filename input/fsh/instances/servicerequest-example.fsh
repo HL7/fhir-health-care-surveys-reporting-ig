@@ -1,6 +1,6 @@
 // Service Request
 Instance: servicerequest-example
-InstanceOf: USCoreServiceRequestProfile
+InstanceOf: $USCoreServiceRequestProfile
 Title: "ServiceRequest - CT Chest Evaluation"
 Description: "Example service request for a CT chest evaluation procedure for acute viral pharyngitis."
 Usage: #example

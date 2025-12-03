@@ -1,6 +1,6 @@
 // Location
 Instance: location-example
-InstanceOf: USCoreLocation
+InstanceOf: $USCoreLocation
 Title: "Location - General Hospital Main Campus"
 Description: "Example hospital location representing the main campus of General Hospital for healthcare surveys reporting."
 Usage: #example

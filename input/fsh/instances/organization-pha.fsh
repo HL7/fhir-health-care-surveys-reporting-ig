@@ -1,5 +1,5 @@
 Instance: organization-pha
-InstanceOf: USCoreOrganizationProfile
+InstanceOf: $USCoreOrganizationProfile
 Title: "Organization - Example Public Health Agency"
 Description: "Example public health agency organization that receives and processes healthcare survey reports."
 Usage: #example

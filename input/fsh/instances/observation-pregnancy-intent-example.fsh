@@ -1,6 +1,6 @@
 // Pregnancy Intent Observation
 Instance: observation-pregnancy-intent-example
-InstanceOf: USCoreObservationPregnancyIntentProfile
+InstanceOf: $USCoreObservationPregnancyIntentProfile
 Title: "Observation - Pregnancy Intent"
 Description: "Example pregnancy intention observation indicating patient is not pregnant for healthcare surveys reporting."
 Usage: #example

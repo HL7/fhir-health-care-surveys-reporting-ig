@@ -1,6 +1,6 @@
 // Organization - Payer
 Instance: organization-payer-bcbs
-InstanceOf: USCoreOrganizationProfile
+InstanceOf: $USCoreOrganizationProfile
 Title: "Payer Organization Example - Blue Cross Blue Shield"
 Description: "An example of an Organization (Payer - Blue Cross Blue Shield)"
 Usage: #example

@@ -1,6 +1,6 @@
 // Screening Assessment
 Instance: observation-screening-assessment-example
-InstanceOf: USCoreObservationScreeningAssessmentProfile
+InstanceOf: $USCoreObservationScreeningAssessmentProfile
 Title: "Observation - PHQ-9 Screening (Alternate Profile)"
 Description: "Example PHQ-9 depression screening assessment using the alternate US Core screening assessment profile."
 Usage: #example

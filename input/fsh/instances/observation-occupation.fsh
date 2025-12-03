@@ -1,5 +1,5 @@
 Instance: observation-occupation-example
-InstanceOf: USCoreObservationOccupationProfile
+InstanceOf: $USCoreObservationOccupationProfile
 Title: "Observation - Occupation and Industry"
 Description: "Example occupation observation for a Certified Nursing Assistant (CNA) working in home nursing services."
 Usage: #example

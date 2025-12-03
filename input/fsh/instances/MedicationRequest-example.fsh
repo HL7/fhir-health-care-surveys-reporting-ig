@@ -1,5 +1,5 @@
 Instance: MedicationRequest-example
-InstanceOf: USCoreMedicationRequestProfile
+InstanceOf: $USCoreMedicationRequestProfile
 Title: "MedicationRequest - Amoxicillin (Entered in Error)"
 Description: "Example medication request entered in error, originally documented as Amoxicillin but corrected to Erythromycin."
 Usage: #example

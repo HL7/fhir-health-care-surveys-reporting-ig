@@ -1,6 +1,6 @@
 // Care Team
 Instance: careteam-example
-InstanceOf: USCoreCareTeam
+InstanceOf: $USCoreCareTeam
 Title: "CareTeam - Respiratory Care Team"
 Description: "Example respiratory care team with primary care physician and specialist for healthcare surveys reporting."
 Usage: #example

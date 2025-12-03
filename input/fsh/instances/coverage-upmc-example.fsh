@@ -1,5 +1,5 @@
 Instance: coverage-upmc-example
-InstanceOf: USCoreCoverageProfile
+InstanceOf: $USCoreCoverageProfile
 Title: "Coverage - UPMC Health Plan"
 Description: "Example health insurance coverage with UPMC Medicare HMO plan for healthcare surveys reporting."
 Usage: #example

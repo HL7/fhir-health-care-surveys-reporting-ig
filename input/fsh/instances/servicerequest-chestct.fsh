@@ -1,5 +1,5 @@
 Instance: servicerequest-chestct
-InstanceOf: USCoreServiceRequestProfile
+InstanceOf: $USCoreServiceRequestProfile
 Title: "ServiceRequest - Chest CT Order"
 Description: "Example service request for a chest CT imaging procedure for healthcare surveys reporting."
 Usage: #example

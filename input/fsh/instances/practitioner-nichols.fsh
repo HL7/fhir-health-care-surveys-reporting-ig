@@ -1,5 +1,5 @@
 Instance: practitioner-nichols
-InstanceOf: USCorePractitionerProfile
+InstanceOf: $USCorePractitionerProfile
 Title: "Practitioner - Dr. Joseph Nichols"
 Description: "Example practitioner Dr. Joseph P Nichols, MD, used for healthcare surveys reporting scenarios."
 Usage: #example

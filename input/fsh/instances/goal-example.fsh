@@ -1,6 +1,6 @@
 // Goal
 Instance: goal-example
-InstanceOf: USCoreGoalProfile
+InstanceOf: $USCoreGoalProfile
 Title: "Goal - Resolution of Acute Bronchitis"
 Description: "Example patient goal to resolve acute bronchitis within 2 weeks with improved rest and hydration."
 Usage: #example

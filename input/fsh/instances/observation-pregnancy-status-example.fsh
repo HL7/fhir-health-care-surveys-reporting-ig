@@ -1,6 +1,6 @@
 // Pregnancy Status Observation
 Instance: observation-pregnancy-status-example
-InstanceOf: USCoreObservationPregnancyStatusProfile
+InstanceOf: $USCoreObservationPregnancyStatusProfile
 Title: "Observation - Pregnancy Status"
 Description: "Example pregnancy status observation indicating patient is not pregnant for healthcare surveys reporting."
 Usage: #example

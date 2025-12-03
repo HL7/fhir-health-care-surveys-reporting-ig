@@ -1,6 +1,6 @@
 // Immunization
 Instance: immunization-example
-InstanceOf: USCoreImmunizationProfile
+InstanceOf: $USCoreImmunizationProfile
 Title: "Immunization - Influenza Vaccine"
 Description: "Example influenza vaccination administered via intramuscular route to left upper arm in October 2024."
 Usage: #example

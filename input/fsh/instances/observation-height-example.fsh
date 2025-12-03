@@ -1,6 +1,6 @@
 // Height Observation
 Instance: observation-height-example
-InstanceOf: USCoreBodyHeightProfile
+InstanceOf: $USCoreBodyHeightProfile
 Title: "Observation - Body Height"
 Description: "Example body height observation (170 cm) for healthcare surveys reporting."
 Usage: #example

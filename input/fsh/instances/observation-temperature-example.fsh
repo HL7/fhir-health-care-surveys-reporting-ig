@@ -1,6 +1,6 @@
 // Body Temperature Observation
 Instance: observation-temperature-example
-InstanceOf: USCoreBodyTemperatureProfile
+InstanceOf: $USCoreBodyTemperatureProfile
 Title: "Observation - Body Temperature"
 Description: "Example body temperature observation (37.0 C) for healthcare surveys reporting."
 Usage: #example

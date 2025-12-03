@@ -1,6 +1,6 @@
 // Procedure
 Instance: procedure-example
-InstanceOf: USCoreProcedureProfile
+InstanceOf: $USCoreProcedureProfile
 Title: "Procedure - Appendectomy"
 Description: "Example procedure representing an appendectomy performed in 1995 for healthcare surveys reporting."
 Usage: #example

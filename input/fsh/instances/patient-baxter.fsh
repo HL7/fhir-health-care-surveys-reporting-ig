@@ -1,5 +1,5 @@
 Instance: patient-baxter
-InstanceOf: USCorePatientProfile
+InstanceOf: $USCorePatientProfile
 Title: "Patient - Amy Baxter"
 Description: "Example patient Amy Baxter with tribal affiliation, used for healthcare surveys reporting scenarios."
 Usage: #example

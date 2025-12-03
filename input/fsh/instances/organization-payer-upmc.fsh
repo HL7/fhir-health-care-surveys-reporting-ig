@@ -1,5 +1,5 @@
 Instance: organization-payer-upmc
-InstanceOf: USCoreOrganizationProfile
+InstanceOf: $USCoreOrganizationProfile
 Title: "Payer Organization Example - UPMC"
 Description: "An example of an Organization (Payer - UPMC Health Plan)"
 Usage: #example

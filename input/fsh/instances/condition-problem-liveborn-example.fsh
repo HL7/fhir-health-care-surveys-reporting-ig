@@ -1,5 +1,5 @@
 Instance: condition-problem-liveborn-example
-InstanceOf: USCoreConditionProblemsHealthConcernsProfile
+InstanceOf: $USCoreConditionProblemsHealthConcernsProfile
 Title: "Condition - Single Liveborn in Hospital"
 Description: "Example condition representing a single liveborn birth in hospital for healthcare surveys reporting."
 Usage: #example

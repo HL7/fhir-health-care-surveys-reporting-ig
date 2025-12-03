@@ -8,7 +8,6 @@ INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.snaps
 INFORMATION: StructureDefinition/hcs-medicationrequest: StructureDefinition.snapshot.element[13].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
 # 03: These are the correct pinned versions 
-
 Pinned the version of http://hl7.org/fhir/StructureDefinition/ActivityDefinition to 4.0.1
 Pinned the version of http://hl7.org/fhir/StructureDefinition/Bundle to 4.0.1
 Pinned the version of http://hl7.org/fhir/StructureDefinition/Composition to 4.0.1

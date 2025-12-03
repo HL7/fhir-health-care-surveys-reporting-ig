@@ -1,6 +1,6 @@
 // Clinical Observation
 Instance: observation-clinical-example
-InstanceOf: USCoreObservationClinicalResultProfile
+InstanceOf: $USCoreObservationClinicalResultProfile
 Title: "Observation - Body Temperature (Clinical Result)"
 Description: "Example clinical observation of elevated body temperature (37.8 C) for healthcare surveys reporting."
 Usage: #example

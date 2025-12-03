@@ -1,5 +1,5 @@
 Instance: allergyintolerance-sulfonamide-example
-InstanceOf: USCoreAllergyIntolerance
+InstanceOf: $USCoreAllergyIntolerance
 Title: "AllergyIntolerance - Sulfonamide"
 Description: "Example allergy intolerance to sulfonamide antibacterial causing mild skin rash for healthcare surveys reporting."
 Usage: #example
