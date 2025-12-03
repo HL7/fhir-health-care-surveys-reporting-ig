@@ -54,7 +54,7 @@ In addition, this FHIR IG aligns with the <a href="https://www.hl7.org/implement
 	    with prior to reading the remainder of the IG.  
     </li>
     <li>
-      <a href="spec.html">Detailed Specification</a> - The formal specification identifying the requirements for the implementers.
+      <a href="specification.html">Detailed Specification</a> - The formal specification identifying the requirements for the implementers.
     </li>
     <li>
       <a href="downloads.html">Downloads</a> - Allows downloading a copy of this implementation guide and other useful information.

@@ -90,7 +90,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Authorization Requirements 
 
-* The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-requirements) outlined above as a Server. 
+* The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a Server. 
  
 
 ###### Subscription Requirements
@@ -116,7 +116,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ###### Authorization Requirements
 
-* The eCR Now FHIR App-Health Care Surveys **SHALL** support the [SMART on FHIR Backend Services Authorization](spec.html#smart-on-fhir-backend-services-requirements) outlined above as a client. 
+* The eCR Now FHIR App-Health Care Surveys **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a client. 
 
 
 ###### Subscription Requirements
