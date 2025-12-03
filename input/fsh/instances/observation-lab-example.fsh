@@ -4,7 +4,7 @@ InstanceOf: USCoreLaboratoryResultObservationProfile
 Title: "Observation - Leukocytes Laboratory Result"
 Description: "Example laboratory observation of leukocytes (white blood cells) in blood for healthcare surveys reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * code = http://loinc.org#26464-8 "Leukocytes [#/volume] in Blood"

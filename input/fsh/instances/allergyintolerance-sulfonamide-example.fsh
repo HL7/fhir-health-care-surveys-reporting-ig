@@ -3,7 +3,6 @@ InstanceOf: USCoreAllergyIntolerance
 Title: "AllergyIntolerance - Sulfonamide"
 Description: "Example allergy intolerance to sulfonamide antibacterial causing mild skin rash for healthcare surveys reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance"
 * clinicalStatus = $allergyintolerance-clinical#active
 * verificationStatus = $allergyintolerance-verification#confirmed
 * category = #medication

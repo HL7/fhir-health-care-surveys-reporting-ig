@@ -4,7 +4,7 @@ Title: "ServiceRequest - Chest CT Order"
 Description: "Example service request for a chest CT imaging procedure for healthcare surveys reporting."
 Usage: #example
 * id = "example"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest"
+
 * status = #active
 * intent = #original-order
 * category = $sct#363679005 "Imaging (procedure)"

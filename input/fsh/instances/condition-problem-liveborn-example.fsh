@@ -3,7 +3,6 @@ InstanceOf: USCoreConditionProblemsHealthConcernsProfile
 Title: "Condition - Single Liveborn in Hospital"
 Description: "Example condition representing a single liveborn birth in hospital for healthcare surveys reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
 * clinicalStatus = $condition-clinical#active "Active"
 * clinicalStatus.text = "Active"
 * verificationStatus = $condition-ver-status#confirmed "Confirmed"

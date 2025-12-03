@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthOrganization
 Title: "Organization - Example Healthcare Organization"
 Description: "Example healthcare organization that submits survey data to public health agencies."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-organization"
+
 * active = true
 * name = "Example Healthcare Organization"
 * telecom.system = #phone

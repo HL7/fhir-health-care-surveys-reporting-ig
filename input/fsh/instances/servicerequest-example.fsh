@@ -1,10 +1,10 @@
 // Service Request
 Instance: servicerequest-example
-InstanceOf: $us-core-servicerequest
+InstanceOf: USCoreServiceRequestProfile
 Title: "ServiceRequest - CT Chest Evaluation"
 Description: "Example service request for a CT chest evaluation procedure for acute viral pharyngitis."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest"
+
 * status = #active
 * intent = #order
 * category =  http://snomed.info/sct#386053000 "Evaluation procedure (procedure)"

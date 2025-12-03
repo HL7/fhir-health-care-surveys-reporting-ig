@@ -3,7 +3,7 @@ InstanceOf: USCoreOrganizationProfile
 Title: "Payer Organization Example - UPMC"
 Description: "An example of an Organization (Payer - UPMC Health Plan)"
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+
 * identifier
   * system = "urn:oid:2.16.840.1.113883.6.300"
   * value = "95216"

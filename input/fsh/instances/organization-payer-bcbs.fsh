@@ -1,10 +1,10 @@
 // Organization - Payer
 Instance: organization-payer-bcbs
-InstanceOf: $us-core-organization
+InstanceOf: USCoreOrganizationProfile
 Title: "Payer Organization Example - Blue Cross Blue Shield"
 Description: "An example of an Organization (Payer - Blue Cross Blue Shield)"
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1234567893"
 * active = true

@@ -1,10 +1,10 @@
 // Body Temperature Observation
 Instance: observation-temperature-example
-InstanceOf: $us-core-body-temperature
+InstanceOf: USCoreBodyTemperatureProfile
 Title: "Observation - Body Temperature"
 Description: "Example body temperature observation (37.0 C) for healthcare surveys reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature"
+
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"

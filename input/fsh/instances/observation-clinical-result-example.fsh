@@ -3,7 +3,7 @@ InstanceOf: USCoreBodyTemperatureProfile
 Title: "Observation - Body Temperature (Alternate Profile)"
 Description: "Example clinical observation of elevated body temperature using the alternate US Core body temperature profile."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature"
+
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#8310-5 "Body temperature"

@@ -1,10 +1,9 @@
 // Document Reference
 Instance: documentreference-example
-InstanceOf: $us-core-documentreference
+InstanceOf: USCoreDocumentReferenceProfile
 Title: "DocumentReference - Consultation Note"
 Description: "Example document reference for a consultation note related to acute bronchitis diagnosis."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
 * status = #current
 * type = http://loinc.org#11488-4 "Consult note"
 * category[uscore] = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note "Clinical Note"

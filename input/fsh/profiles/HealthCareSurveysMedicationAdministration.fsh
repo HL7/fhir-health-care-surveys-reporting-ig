@@ -9,9 +9,9 @@ Description: "This is the MedicationAdmininstration Resource profile for the IG.
 * statusReason MS
 * medication[x] MS
 * subject MS
-* subject only Reference($us-core-patient)
+* subject only Reference(USCorePatientProfile)
 * context MS
-* context only Reference($us-core-encounter)
+* context only Reference(USCoreEncounterProfile)
 * effective[x] MS
 * performer MS
 * reasonCode MS

@@ -3,7 +3,7 @@ InstanceOf: USCoreOrganizationProfile
 Title: "Organization - Example Public Health Agency"
 Description: "Example public health agency organization that receives and processes healthcare survey reports."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+
 * active = true
 * name = "Example PHA Organization"
 * telecom.system = #phone

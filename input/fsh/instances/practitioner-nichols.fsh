@@ -3,7 +3,7 @@ InstanceOf: USCorePractitionerProfile
 Title: "Practitioner - Dr. Joseph Nichols"
 Description: "Example practitioner Dr. Joseph P Nichols, MD, used for healthcare surveys reporting scenarios."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+
 * identifier.use = #official
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "9941339100"

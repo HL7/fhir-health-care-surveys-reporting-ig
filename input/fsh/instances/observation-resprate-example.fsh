@@ -1,10 +1,10 @@
 // Respiratory Rate Observation
 Instance: observation-resprate-example
-InstanceOf:  $us-core-respiratory-rate
+InstanceOf:  USCoreRespiratoryRateProfile
 Title: "Observation - Respiratory Rate"
 Description: "Example respiratory rate observation (16 breaths/minute) for healthcare surveys reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate"
+
 * status = #final
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = http://loinc.org#9279-1 "Respiratory rate"

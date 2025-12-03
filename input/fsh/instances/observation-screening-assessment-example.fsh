@@ -4,7 +4,7 @@ InstanceOf: USCoreObservationScreeningAssessmentProfile
 Title: "Observation - PHQ-9 Screening (Alternate Profile)"
 Description: "Example PHQ-9 depression screening assessment using the alternate US Core screening assessment profile."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment"
+
 * status = #final
 * category[survey] = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = http://loinc.org#44249-1 "PHQ-9 quick depression assessment panel [Reported.PHQ]"

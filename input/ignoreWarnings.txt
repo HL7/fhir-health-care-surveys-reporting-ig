@@ -1,7 +1,7 @@
 == Suppressed Messages ==
 
-# 01: US Core 6.1.0 is the version that is cited in regulation for 2026, the next release of the National Health Care Surveys will move to the next cited release of US Core
-WARNING: ImplementationGuide/hl7.fhir.us.health-care-surveys-reporting: ImplementationGuide.dependsOn[1]: The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
+# 01: This IG is aligning with USCDI V3 and US Core 6.1.0 is the version that aligns with USCDI V3
+The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
 # 02: Inherited from US Core Slicing
 INFORMATION: StructureDefinition/hcs-diagnosticreport: StructureDefinition.snapshot.element[12].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -117,12 +117,10 @@ INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[3]: This e
 # 08: We will investigate adding conformance clauses in the next release
 The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
 
-# 09: ERROR: The Subscriptions backport IG was mistakenly release as FHIR 4.0.0 instead of 4.0.1. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Subscriptions.20backport.20issue
+# 09: ERROR: The Subscriptions backport IG was mistakenly released as FHIR 4.0.0 instead of 4.0.1. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Subscriptions.20backport.20issue
 This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 
-# 10: This IG is aligning with USCDI V3 and US Core 6.1.0 is the version that aligns with USCDI V3
-The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
-# 11: This will be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build)
+# 11: ERROR: This will be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build)
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'

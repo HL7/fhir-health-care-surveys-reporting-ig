@@ -3,7 +3,7 @@ InstanceOf: USCoreEncounterProfile
 Title: "Encounter - Ambulatory Office Visit"
 Description: "Example of a finished ambulatory encounter representing a normal delivery office visit for healthcare surveys reporting."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+
 * status = #finished
 * class = $v3-ActCode#AMB "ambulatory"
 * type = $sct#177184002 "Normal delivery procedure (procedure)"

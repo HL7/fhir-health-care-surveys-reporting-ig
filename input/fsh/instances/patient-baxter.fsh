@@ -3,7 +3,7 @@ InstanceOf: USCorePatientProfile
 Title: "Patient - Amy Baxter"
 Description: "Example patient Amy Baxter with tribal affiliation, used for healthcare surveys reporting scenarios."
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+
 /*
 * extension[race].extension[ombCategory].url = "ombCategory"
 * extension[race].extension[ombCategory].valueCoding = $raceEthnicity#2106-3 "White"

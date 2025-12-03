@@ -14,16 +14,16 @@ Description: "This Composition profile is used to organize the healthcare survey
 * type MS
 * type ^short = "National Health Care Surveys report"
 * subject 1.. MS
-* subject only Reference($us-core-patient)
+* subject only Reference(USCorePatientProfile)
 * subject ^short = "Patient who is the subject of the report."
 * subject ^definition = "This Patient profile represents the subject of the healthcare survey report."
 * encounter 1.. MS
-* encounter only Reference($us-core-encounter)
+* encounter only Reference(USCoreEncounterProfile)
 * encounter ^short = "Encounter related to the public health event"
 * encounter ^definition = "This Encounter profile represents the encounter related to the healthcare survey report."
 * date MS
 * author MS
-* author only Reference($us-core-practitionerrole or $us-core-practitioner or $us-core-organization or Device)
+* author only Reference(USCorePractitionerRoleProfile or USCorePractitionerProfile or USCoreOrganizationProfile or Device)
 * author ^short = "The author(s) of the document"
 * author ^definition = "It is possible to have multiple authors - especially in the case where the default author is the organization. Author information can contain the \"eCR Now FHIR App-Health Care Surveys\" as a Device Author. "
 * title = "National Health Care Surveys report" (exactly)
@@ -102,11 +102,11 @@ Description: "This Composition profile is used to organize the healthcare survey
     screeningAssessment 0..* MS and
     questionnaireResponse 0..* MS and
     carePlan 0..* MS
-* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] only Reference($us-core-observation-screening-assessment or $us-core-simple-observation)
+* section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] only Reference(USCoreObservationScreeningAssessmentProfile or USCoreSimpleObservationProfile)
 * section[assessmentAndPlanOfTreatmentSection].entry[screeningAssessment] ^short = "Assessment Entries (USCDI Data Elements: SDOH Assessment, Functional Status, Disability Status, Mental/Cogntive Status)"
-* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] only Reference($us-core-questionnaireresponse)
+* section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] only Reference(USCoreQuestionnaireResponseProfile)
 * section[assessmentAndPlanOfTreatmentSection].entry[questionnaireResponse] ^short = "QuestionnaireResponse Entries (USCDI Data Elements: SDOH Assessment, Functional Status, Disability Status, Mental/Cogntive Status)"
-* section[assessmentAndPlanOfTreatmentSection].entry[carePlan] only Reference($us-core-careplan)
+* section[assessmentAndPlanOfTreatmentSection].entry[carePlan] only Reference(USCoreCarePlanProfile)
 * section[assessmentAndPlanOfTreatmentSection].entry[carePlan] ^short = "CarePlan Entries (USCDI Data Elements: Assessment and Plan of Treatment)"
 
 // Care Team Section (USCDI Data Class: Care Team Members)
@@ -121,7 +121,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[careTeamSection].text 1.. MS
 * section[careTeamSection].text ^short = "Care Team Section narrative"
 * section[careTeamSection].text ^definition = "Care Team Section narrative"
-* section[careTeamSection].entry only Reference($us-core-careteam)
+* section[careTeamSection].entry only Reference(USCoreCareTeam)
 * section[careTeamSection].entry MS
 * section[careTeamSection].entry ^short = "Care Team Entries (USCDI Data Elements: Care Team Members - Name, Identifier, Location, Telecom, Role)"
 
@@ -137,7 +137,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[goalsSection].text 1.. MS
 * section[goalsSection].text ^short = "Goals Section narrative"
 * section[goalsSection].text ^definition = "Goals Section narrative"
-* section[goalsSection].entry only Reference($us-core-goal)
+* section[goalsSection].entry only Reference(USCoreGoalProfile)
 * section[goalsSection].entry MS
 * section[goalsSection].entry ^short = "Goal Entries (USCDI Data Elements: Patient Goals, SDOH Goals)"
 
@@ -184,9 +184,9 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[resultsSection].entry contains
     result 0..* MS and
     diagnosticReport 0..* MS
-* section[resultsSection].entry[result] only Reference($us-core-observation-lab or $us-core-observation-clinical-result)
+* section[resultsSection].entry[result] only Reference(USCoreLaboratoryResultObservationProfile or USCoreObservationClinicalResultProfile)
 * section[resultsSection].entry[result] ^short = "Result Entries (USCDI Data Elements: Laboratory Tests, Laboratory Values/Results, Laboratory Specimen Type, Laboratory Result Status, Clinical Test, Clinical Test Result/Report)"
-* section[resultsSection].entry[diagnosticReport] only Reference($us-core-diagnosticreport-lab or $us-core-diagnosticreport-note)
+* section[resultsSection].entry[diagnosticReport] only Reference(USCoreDiagnosticReportProfileLaboratoryReporting or USCoreDiagnosticReportProfileNoteExchange)
 * section[resultsSection].entry[diagnosticReport] ^short = "Diagnostic Result Entries (USCDI Data Elements: Laboratory Tests, Laboratory Values/Results, Laboratory Specimen Type, Laboratory Result Status, Clinical Test, Clinical Test Result/Report)"
 
 // Medications Section (USCDI Data Class: Medications)
@@ -214,9 +214,9 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[medicationsSection].entry[medicationAdministration] ^short = "MedicationAdministration Entries (USCDI Data Elements: Medications, Dose)"
 * section[medicationsSection].entry[medicationRequest] only Reference(USCoreMedicationRequestProfile)
 * section[medicationsSection].entry[medicationRequest] ^short = "MedicationRequest Entries (USCDI Data Elements: Medications, Dose, Dose Unit of Measure, Indication)"
-* section[medicationsSection].entry[medicationDispense] only Reference($us-core-medicationdispense)
+* section[medicationsSection].entry[medicationDispense] only Reference(USCoreMedicationDispenseProfile)
 * section[medicationsSection].entry[medicationDispense] ^short = "MedicationDispense Entries (USCDI Data Elements: Medications, Fill Status)"
-* section[medicationsSection].entry[medication] only Reference($us-core-medication)
+* section[medicationsSection].entry[medication] only Reference(USCoreMedicationProfile)
 * section[medicationsSection].entry[medication] ^short = "Medication Entries (USCDI Data Elements: Medications)"
 
 // Coverage Section (USCDI Data Class: Health Insurance Information - consider renaming section to Health Insurance Information Section - LOINC code is "Payment sources Document", either that or rename to Payment Sources Section to match C-CDA)
@@ -247,7 +247,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[immunizationsSection].text 1.. MS
 * section[immunizationsSection].text ^short = "Immunizations narrative"
 * section[immunizationsSection].text ^definition = "Immunizations narrative"
-* section[immunizationsSection].entry only Reference($us-core-immunization)
+* section[immunizationsSection].entry only Reference(USCoreImmunizationProfile)
 * section[immunizationsSection].entry MS
 * section[immunizationsSection].entry ^short = "Immunization Entries (USCDI Data Elements: Immunizations)"
 
@@ -270,9 +270,9 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[clinicalNotesSection].entry contains
     documentReference 0..* MS and
     diagnosticReport 0..* MS
-* section[clinicalNotesSection].entry[documentReference] only Reference($us-core-documentreference)
+* section[clinicalNotesSection].entry[documentReference] only Reference(USCoreDocumentReferenceProfile)
 * section[clinicalNotesSection].entry[documentReference] ^short = "Document Reference Entries (USCDI Data Elements: Consultation Note, Discharge Summary Note, History & Physical, Imaging Narrative, Laboratory Report Narrative, Pathology Report Narrative, Procedure Note, Progress Note)"
-* section[clinicalNotesSection].entry[diagnosticReport] only Reference($us-core-diagnosticreport-note)
+* section[clinicalNotesSection].entry[diagnosticReport] only Reference(USCoreDiagnosticReportProfileNoteExchange)
 * section[clinicalNotesSection].entry[diagnosticReport] ^short = "Diagnostic Report Entries (USCDI Data Elements: Imaging Narrative, Laboratory Report Narrative, Pathology Report Narrative, Procedure Note)"
 
 // Procedures Section (USCDI Data Class: Procedures)
@@ -294,9 +294,9 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[proceduresSection].entry contains
     procedure 0..* MS and
     procedureOrder 0..* MS
-* section[proceduresSection].entry[procedure] only Reference($us-core-procedure)
+* section[proceduresSection].entry[procedure] only Reference(USCoreProcedureProfile)
 * section[proceduresSection].entry[procedure] ^short = "Procedure Entries (USCDI Data Elements: Procedure, SDOH Interventions)"
-* section[proceduresSection].entry[procedureOrder] only Reference($us-core-servicerequest)
+* section[proceduresSection].entry[procedureOrder] only Reference(USCoreServiceRequestProfile)
 * section[proceduresSection].entry[procedureOrder] ^short = "Procedure Order Entries (USCDI Data Elements: Reason for Referral, SDOH Interventions)"
 
 // Vital Signs Section (USCDI Data Class: Vital Signs)
@@ -327,25 +327,25 @@ Description: "This Composition profile is used to organize the healthcare survey
     pediatricBMIForAge 0..* MS and
     bodyTemperature 0..* MS and
     respiratoryRate 0..* MS
-* section[vitalSignsSection].entry[bloodPressure] only Reference($us-core-blood-pressure)
+* section[vitalSignsSection].entry[bloodPressure] only Reference(USCoreBloodPressureProfile)
 * section[vitalSignsSection].entry[bloodPressure] ^short = "Blood Pressure Entries (USCDI Data Elements: Systolic Blood Pressure, Diastolic Blood Pressure)"
-* section[vitalSignsSection].entry[bodyWeight] only Reference($us-core-body-weight)
+* section[vitalSignsSection].entry[bodyWeight] only Reference(USCoreBodyWeightProfile)
 * section[vitalSignsSection].entry[bodyWeight] ^short = "Body Weight Entries (USCDI Data Elements: Body Weight)"
-* section[vitalSignsSection].entry[bodyHeight] only Reference($us-core-body-height)
+* section[vitalSignsSection].entry[bodyHeight] only Reference(USCoreBodyHeightProfile)
 * section[vitalSignsSection].entry[bodyHeight] ^short = "Body Height Entries (USCDI Data Elements: Body Height)"
-* section[vitalSignsSection].entry[heartRate] only Reference($us-core-heart-rate)
+* section[vitalSignsSection].entry[heartRate] only Reference(USCoreHeartRateProfile)
 * section[vitalSignsSection].entry[heartRate] ^short = "Heart Rate Entries (USCDI Data Elements: Heart Rate)"
-* section[vitalSignsSection].entry[pulseOximetry] only Reference($us-core-pulse-oximetry)
+* section[vitalSignsSection].entry[pulseOximetry] only Reference(USCorePulseOximetryProfile)
 * section[vitalSignsSection].entry[pulseOximetry] ^short = "Pulse Oximetry Entries (USCDI Data Elements: Pulse Oximetry)"
-* section[vitalSignsSection].entry[pediatricWeightForHeight] only Reference($pediatric-weight-for-height)
+* section[vitalSignsSection].entry[pediatricWeightForHeight] only Reference(USCorePediatricWeightForHeightObservationProfile)
 * section[vitalSignsSection].entry[pediatricWeightForHeight] ^short = "Pediatric Weight For Height Entries (USCDI Data Elements: Pediatric Weight For Length Percentile (Birth to 36 months))"
-* section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumference] only Reference($head-occipital-frontal-circumference-percentile)
+* section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumference] only Reference(USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile)
 * section[vitalSignsSection].entry[pediatricHeadOccipitalFrontalCircumference] ^short = "Pediatric Head Occipital Frontal Circumference Percentile Entries (USCDI Data Elements: Occipital Frontal Head Circumference Percentile (Birth to 36 months))"
-* section[vitalSignsSection].entry[pediatricBMIForAge] only Reference($pediatric-bmi-for-age)
+* section[vitalSignsSection].entry[pediatricBMIForAge] only Reference(USCorePediatricBMIforAgeObservationProfile)
 * section[vitalSignsSection].entry[pediatricBMIForAge] ^short = "Pediatric BMI For Age Entries (USCDI Data Elements: BMI Percentile (2-20 years old))"
-* section[vitalSignsSection].entry[bodyTemperature] only Reference($us-core-body-temperature)
+* section[vitalSignsSection].entry[bodyTemperature] only Reference(USCoreBodyTemperatureProfile)
 * section[vitalSignsSection].entry[bodyTemperature] ^short = "Body Temperature Entries (USCDI Data Elements: Body Temperature)"
-* section[vitalSignsSection].entry[respiratoryRate] only Reference($us-core-respiratory-rate)
+* section[vitalSignsSection].entry[respiratoryRate] only Reference(USCoreRespiratoryRateProfile)
 * section[vitalSignsSection].entry[respiratoryRate] ^short = "Respiratory Rate Entries (USCDI Data Elements: Respiratory Rate)"
 
 // Social History Section (USCDI Data Class: Health Status/Assessments - Smoking Status, Patient Demographics/Information - Occupation, Occupation Industry)
@@ -367,9 +367,9 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[socialHistorySection].entry contains
     smokingStatus 0..* MS and
     occupation 0..* MS
-* section[socialHistorySection].entry[smokingStatus] only Reference($us-core-smokingstatus)
+* section[socialHistorySection].entry[smokingStatus] only Reference(USCoreSmokingStatusProfile)
 * section[socialHistorySection].entry[smokingStatus] ^short = "Smoking Status Entries (USCDI Data Elements: Smoking Status)"
-* section[socialHistorySection].entry[occupation] only Reference($us-core-observation-occupation)
+* section[socialHistorySection].entry[occupation] only Reference(USCoreObservationOccupationProfile)
 * section[socialHistorySection].entry[occupation] ^short = "Occupation Entries (USCDI Data Elements: Occupation, Occupation Industry)"
 
 // Medical Equipment Section (USCDI Data Class: Unique Device Identifier(s) for a Patient's Implantable Device(s))
@@ -384,7 +384,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[medicalEquipmentSection].text 1.. MS
 * section[medicalEquipmentSection].text ^short = "Medical Equipment Section narrative"
 * section[medicalEquipmentSection].text ^definition = "Medical Equipment Section narrative"
-* section[medicalEquipmentSection].entry only Reference($us-core-implantable-device)
+* section[medicalEquipmentSection].entry only Reference(USCoreImplantableDeviceProfile)
 * section[medicalEquipmentSection].entry MS
 * section[medicalEquipmentSection].entry ^short = "Implantable Device Entries (USCDI Data Elements: Unique Device Identifier(s) for a patient's implantable device(s))"
 
@@ -407,7 +407,7 @@ Description: "This Composition profile is used to organize the healthcare survey
 * section[pregnancySection].entry contains
     pregnancyStatusObservation 0..* MS and
     pregnancyIntent 0..* MS
-* section[pregnancySection].entry[pregnancyStatusObservation] only Reference($us-core-observation-pregnancystatus)
+* section[pregnancySection].entry[pregnancyStatusObservation] only Reference(USCoreObservationPregnancyStatusProfile)
 * section[pregnancySection].entry[pregnancyStatusObservation] ^short = "Pregnancy Status Entries (USCDI Data Elements: Pregnancy Status)"
-* section[pregnancySection].entry[pregnancyIntent] only Reference($us-core-observation-pregnancyintent)
+* section[pregnancySection].entry[pregnancyIntent] only Reference(USCoreObservationPregnancyIntentProfile)
 * section[pregnancySection].entry[pregnancyIntent] ^short = "Pregnancy Intent Entries (USCDI Data Elements: Pregnancy Status)"
