@@ -1,6 +1,6 @@
 // Diagnostic Report - Note
 Instance: diagnosticreport-note-example
-InstanceOf:  USCoreDiagnosticReportProfileNoteExchange
+InstanceOf: $USCoreDiagnosticReportProfileNoteExchange
 Title: "DiagnosticReport - Chest X-ray Radiology Note"
 Description: "Example radiology diagnostic report for chest PA and lateral x-ray showing no acute abnormality."
 Usage: #example

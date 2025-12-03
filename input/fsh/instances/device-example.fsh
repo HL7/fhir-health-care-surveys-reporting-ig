@@ -1,6 +1,6 @@
 // Device Example
 Instance: device-example
-InstanceOf:  USCoreImplantableDeviceProfile
+InstanceOf: $USCoreImplantableDeviceProfile
 Title: "Device - Cardiac Pacemaker"
 Description: "Example implantable cardiac pacemaker device (Model X1000) for healthcare surveys reporting."
 Usage: #example
