@@ -172,7 +172,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * §HCS-42:When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.
 
-* §HCS-43:The NCSH Data Store **SHALL** implement the PHA requirements 
+* §HCS-43:The NCHS Data Store **SHALL** implement the PHA requirements 
 
 ### Conformance Statements in this Guide
 
