@@ -3,7 +3,7 @@ This section defines the specific requirements for systems wishing to conform to
 ### Context
 
 #### Pre-reading
-Before reading this formal specification, implementers should first be familiar with the [Use Cases](usecases.html) page which provides the business context and general process flow.
+Before reading this formal specification, implementers should first be familiar with the [Background](background.html) page which provides the business context and general process flow.
 
 
 #### Conventions
