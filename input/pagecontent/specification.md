@@ -1,12 +1,10 @@
 This section defines the specific requirements for systems wishing to conform to actors specified in this Health Care Surveys Content Implementation Guide (IG).  The specification focuses on using the eCR Now FHIR App-Health Care Surveys to report the health care survey data to National Center for Health Statistics (NCHS) data stores.
 
-### Context
-
-#### Pre-reading
+### Pre-reading
 Before reading this formal specification, implementers should first be familiar with the [Background](background.html) page which provides the business context and general process flow.
 
 
-#### Conventions
+### Conventions
 This IG uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
 * **SHALL** indicates requirements that must be met to be conformant with the specification.
@@ -16,11 +14,11 @@ This IG uses specific terminology to flag statements that have relevance for the
 * **MAY** describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.
 
 
-#### Claiming Conformance 
+### Claiming Conformance 
 
 Actors and Systems asserting conformance to this IG must implement the requirements outlined in the corresponding capability statements. The following definition of Must Support is to be used in the implementation of the requirements.
 
-##### Must Support Definition
+#### Must Support Definition
 
 * Systems **SHALL** be capable of populating data elements as specified by the profiles and data elements are returned using the specified APIs in the capability statement.
 * Systems **SHALL** be capable of processing resource instances containing the Must Support data elements without generating an error or causing the application to fail. 
@@ -30,22 +28,22 @@ Actors and Systems asserting conformance to this IG must implement the requireme
 * When data is not available for any of the mandatory elements specified in the IG, a data absent reason extension should be added to satisfy the requirement along with an appropriate value from the [data-absent-reason value set](http://hl7.org/fhir/ValueSet/data-absent-reason).
 
 
-#### Profiles and Other IGs Used by the Specification
+### Profiles and Other IGs Used by the Specification
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions, and terminology artifacts to describe the content to be shared as part of Health Care Surveys Content IG workflows. The IG is based on [FHIR R4]({{site.data.fhir.path}}) and profiles are listed for each interaction.
 
 The full set of profiles defined in this IG can be found by following the links on the [FHIR Artifacts](artifacts.html) page.
 
-##### US Core Usage
+#### US Core Usage
 
-This IG leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}) set of profiles defined by HL7 for sharing non-veterinary electronic medical record (EMR) individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
+This IG leverages the [US Core]({{site.data.fhir.ver.hl7fhiruscore}}/index.html) set of profiles defined by HL7 for sharing non-veterinary electronic medical record (EMR) individual health data in the U.S.  Where US Core profiles exist, this IG either leverages them directly or uses them as a base for any additional constraints needed to support the research use cases.  If no constraints are needed, this IG does not define any profiles.
 
-##### SMART App Launch IG Usage
+#### SMART App Launch IG Usage
 
 This IG leverages the [SMART App Launch IG]({{site.data.fhir.ver.smartapplaunch}}/index.html) defined by HL7 Infrastructure WG for enabling authentication and authorization between various actors involved in the workflows. This IG leverages Substitutable Medical Applications, Reusable Technologies (SMART) on FHIR Backend Services Authorization requirements.
 
-#### Implementation Requirements
+### Implementation Requirements
 
-##### SMART on FHIR Backend Services Requirements
+#### SMART on FHIR Backend Services Requirements
 
 This section outlines how the SMART on FHIR Backend Services Authorization will be used by the Health Care Surveys Content IG.
 
@@ -71,7 +69,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * The health care organization's existing processes along with the Data Source's authorization server **SHALL** verify any organizational policy requirements (for example, registration of the eCR Now FHIR App-Health Care Surveys, authorizing requested scopes, testing and verification of eCR Now FHIR App-Health Care Surveys implementation in sandbox environment prior to production) before allowing the eCR Now FHIR App-Health Care Surveys to access the data to be included in the health care survey report. 
  
 
-##### Knowledge Artifact and Knowledge Artifact Repository Requirements 
+#### Knowledge Artifact and Knowledge Artifact Repository Requirements 
 
 * The NCHS Data Store **SHALL** create a Knowledge Artifact 
 
@@ -84,16 +82,16 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * The NCHS Data Store **SHALL** implement the Knowledge Artifact Repository requirements
 
 
-##### Data Source Requirements
+#### Data Source Requirements
 
 * The Data Source (e.g., EHR, clinical data repository) **SHALL** support the requirements as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).
 
-###### Authorization Requirements 
+##### Authorization Requirements 
 
 * The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a Server. 
  
 
-###### Subscription Requirements
+##### Subscription Requirements
 
 * The Data Source **SHALL** support the creation of Subscriptions 
 
@@ -106,32 +104,32 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * The Data Source **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).
 
 
-###### Data API Requirements
+##### Data API Requirements
 
 * The Data Source **SHALL** support the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) for the eCR Now FHIR App-Health Care Surveys to access patient data.
 
  
-##### eCR Now FHIR App-Health Care Surveys Requirements 
+#### eCR Now FHIR App-Health Care Surveys Requirements 
 
 
-###### Authorization Requirements
+##### Authorization Requirements
 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a client. 
 
 
-###### Subscription Requirements
+##### Subscription Requirements
 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** create Subscriptions 
 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the Data Source.
 
 
-###### Subscription Notification API 
+##### Subscription Notification API 
 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** support a POST API <BSA Base URL>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source. 
 
 
-###### Knowledge Artifact Processing Requirements 
+##### Knowledge Artifact Processing Requirements 
 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** allow the health care organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the health care organization.
 
@@ -148,12 +146,12 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a health care organization.
 
 
-###### Data API Requirements 
+##### Data API Requirements 
 
 * The eCR Now FHIR App-Health Care Surveys acting as a client **SHALL** use the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) to access patient data from the Data Source.
 
 
-###### Report Generation Requirements 
+##### Report Generation Requirements 
 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** create a health care survey report following the constraints identified in [Health Care Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).
 
@@ -161,12 +159,12 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 * The eCR Now FHIR App-Health Care Surveys **SHALL** submit the message containing the health care survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.
 
-###### Use of Non-FHIR Based Approaches to Submit the Health Care Surveys Report
+##### Use of Non-FHIR Based Approaches to Submit the Health Care Surveys Report
 
 * The eCR Now FHIR App-Health Care Surveys **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.
 
 
-###### Message Receiving and Processing Requirements
+##### Message Receiving and Processing Requirements
 
 * The NCHS Data Store **SHALL** implement the $process-message operation on the ROOT URL of the FHIR Server to receive reports from the Backend Service App using the POST operation.
 
@@ -175,5 +173,3 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 * When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.
 
 * The NCSH Data Store **SHALL** implement the PHA requirements 
-
-
