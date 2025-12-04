@@ -39,7 +39,7 @@ The above data to be populated by the implementers of the DataSource actor.
  
 ### USCDI Mappings
 
-USCDI V3.1 mappings are noted in the Descriptions & Constraints section of the profile below. For comprehensive mappings see [US Core USCDI Guidance]({{site.data.fhir.ver.hl7fhiruscore}}/uscdi.html).
+[USCDI V3.1](https://www.healthit.gov/isp/united-states-core-data-interoperability-uscdi#uscdi-v3-1) mappings are noted in the Descriptions & Constraints section of the profile below. For comprehensive mappings see [US Core USCDI Guidance]({{site.data.fhir.ver.hl7fhiruscore}}/uscdi.html) (note that US Core 6.1.0 was published prior to USCDI V3.1 so the mappings are to USCDI V3.0).
 
 The following two profiles are not specifically constrained in the Composition but can be used or are referenced as stated below:
 
