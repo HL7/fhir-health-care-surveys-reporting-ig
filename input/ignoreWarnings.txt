@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 
-# 01: This IG is aligning with USCDI V3 and US Core 6.1.0 is the version that aligns with USCDI V3
+# 01: This IG is aligning with USCDI V3.1 and US Core 6.1.0 aligns with USCDI V3.
 The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
 # 02: Inherited from US Core Slicing
