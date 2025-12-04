@@ -1,5 +1,3 @@
-### Background
-
 The National Center for Health Statistics (NCHS) conduct a family of surveys that provide comprehensive information about healthcare organizations and providers, the services they deliver, and the patients they serve across diverse healthcare settings. These data enable researchers, policymakers, and health professionals to understand healthcare providers, patient populations, and the management and delivery of patient care throughout the United States.
 
 This implementation guide focuses on two key surveys: the **National Ambulatory Medical Care Survey (NAMCS)** and the **National Hospital Care Survey (NHCS)**.

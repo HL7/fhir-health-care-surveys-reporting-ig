@@ -98,13 +98,15 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="changelog" name="Changelog"/>
+<page key="background" name="Background"/>
+<page key="changelog" name="Change Log"/>
 <page deprecated="true" key="changes" name="Changes"/>
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="index" name="Home"/>
-<page key="spec" name="Spec"/>
+<page deprecated="true" key="spec" name="Spec"/>
+<page key="specification" name="Specification"/>
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="usecase" name="Usecase"/>
-<page key="usecases" name="Usecases"/>
+<page deprecated="true" key="usecases" name="Usecases"/>
 </specification>

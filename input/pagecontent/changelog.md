@@ -22,7 +22,26 @@
 |[FHIR-52966](https://jira.hl7.org/browse/FHIR-52966) | Remove MedicationRequest profile and use US Core MedicationRequest |
 |[FHIR-53095](https://jira.hl7.org/browse/FHIR-53095) | Add reference to US Core Observation Occupation profile from the Composition Social History Section |
 
+#### Other Changes
 
+<table border="1">
+    <thead>
+       <tr style="background-color:#DCDCDC">
+            <th style="text-align: center; vertical-align: middle;">Artifact</th>
+            <th style="text-align: center; vertical-align: middle;">Change Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="StructureDefinition-hcs-composition.html">Health Care Survey Report Composition</a></td>
+            <td>Added mappings to USCDI Data Classes/Elements in the introduction to the profile and in the "Description & Constraints" column of the constraints table</td>
+        </tr>
+        <tr>
+            <td>Menu Bar</td>
+            <td>Update top menu bar so that dropdowns containing only one item are no longer dropdowns</td>
+        </tr>
+    </tbody>
+</table>
 
 
 ### STU 2 - Ballot
@@ -33,7 +52,7 @@
 |---------|----------|
 |[FHIR-43293](https://jira.hl7.org/browse/FHIR-43293) | Remove Trust Service Provider from Actors and Systems diagram |
 
-#### Detailed Description of Changes
+#### Other Changes
 
 <table border="1">
     <thead>

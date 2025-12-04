@@ -49,3 +49,25 @@ dependencies:
     version: 3.0.0
     uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc#3.0.0
     id: sdcIg
+
+menu:
+  Home: index.html
+  Background: background.html
+  Specification: specification.html
+  Artifact Index: artifacts.html  
+  Change Log: changelog.html
+  Downloads: downloads.html
+
+pages:
+  index.md:
+    title: Home
+  background.md:
+    title: Background
+  specification.md:
+    title: Specification
+  changelog.md:
+    title: Change Log
+  downloads.md:
+    title: Downloads
+  credits.md:
+    title: Credits
