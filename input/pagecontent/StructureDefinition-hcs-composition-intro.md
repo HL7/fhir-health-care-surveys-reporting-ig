@@ -39,7 +39,7 @@ The above data to be populated by the implementers of the DataSource actor.
  
 ### USCDI Mappings
 
-USCDI V3.1 mappings are noted in the Descriptions & Constraints section of the profile below. For comprehensive mappings see [US Core USCDI Guidance](https://hl7.org/fhir/us/core/STU6.1/uscdi.html).
+USCDI V3.1 mappings are noted in the Descriptions & Constraints section of the profile below. For comprehensive mappings see [US Core USCDI Guidance]({{site.data.fhir.ver.hl7fhiruscore}}/uscdi.html).
 
 The following two profiles are not specifically constrained in the Composition but can be used or are referenced as stated below:
 
