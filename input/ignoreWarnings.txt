@@ -57,13 +57,12 @@ INFORMATION: StructureDefinition/hcs-composition: StructureDefinition.snapshot.e
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# 08: We will investigate adding conformance clauses in the next release
+# 08: These are not conformance clauses, they are statements explaining what SHALL, SHOULD, and MAY mean
 The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
 
 # 09: ERROR: The Subscriptions backport IG was mistakenly released as FHIR 4.0.0 instead of 4.0.1. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Subscriptions.20backport.20issue
 This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
-
 
 # 11: ERROR: This will be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build)
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
