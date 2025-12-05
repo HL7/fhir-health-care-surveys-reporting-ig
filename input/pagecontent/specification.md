@@ -126,7 +126,7 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
 
 ##### Subscription Notification API 
 
-* §HCS-29:The eCR Now FHIR App-Health Care Surveys **SHALL** support a POST API <BSA Base URL>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source.§
+* §HCS-29:The eCR Now FHIR App-Health Care Surveys **SHALL** support a POST API \<BSA Base URL\>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source.§
 
 
 ##### Knowledge Artifact Processing Requirements 
