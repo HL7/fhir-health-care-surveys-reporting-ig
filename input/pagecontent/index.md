@@ -36,3 +36,24 @@ The main sections of this IG are:
 * [Downloads](downloads.html) - Allows downloading a copy of this implementation guide and other useful information.
 
 **Note:** Value sets in this Implementation Guide are developed by outside entities (e.g., HL7) and cannot be altered by NCHS. In compliance with Executive Order 14168 (January 20, 2025), the National Health Care Surveys will only publish patient encounter records where the "patient sex" or "gender" variable options are "male" or "female." In addition, we will not publish any data related to structured evaluation of risk for the social determinants of health domains. These actions will be implemented pending further direction by the Assistant Secretary for Technology Policy/Office of the National Coordinator for Health IT.
+
+### Authors
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email/URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HL7 International - Public Health</td>
+<td><a href="http://www.hl7.org/Special/committees/pher" target="_new">http://www.hl7.org/Special/committees/pher</a></td>
+</tr>
+<tr>
+<td>Prachi Mehta, Health Scientist (Informatics), CDC/National Center for Health Statistics</td>
+<td><a href="mailto:pnm9@cdc.gov">pnm9@cdc.gov</a></td>
+</tr>
+</tbody>
+</table>
