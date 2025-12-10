@@ -101,7 +101,7 @@
 <page key="background" name="Background"/>
 <page key="changelog" name="Change Log"/>
 <page deprecated="true" key="changes" name="Changes"/>
-<page key="credits" name="Credits"/>
+<page deprecated="true" key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="spec" name="Spec"/>

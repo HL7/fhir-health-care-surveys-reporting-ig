@@ -9,7 +9,7 @@ Usage: #definition
 * version = "1.0.1"
 * name = "HealthcareSurveysReportingEHRCapabilityStatement"
 * title = "Health Care Surveys EHR Capability Statement"
-* status = #draft
+* status = #active
 * date = "2020-12-06"
 * publisher = "HL7 International - Public Health Work Group"
 * contact.telecom.system = #url
