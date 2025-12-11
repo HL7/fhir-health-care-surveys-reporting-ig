@@ -18,7 +18,7 @@ To support reduction in Bundle sizes and limit duplicate data, in most cases dat
 * Medications: Medications referenced by MedicationRequests and MedicationAdministration.
 * Vital Signs: Vital signs for the encounter with status = final or status = amended.
 * Allergies: Allergies associated with the patient with status = active; verificationStatus = confirmed.
-* Procedures: All interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. 
+* Procedures: All interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. The section should include notable procedures, but can contain all procedures for the period of time being summarized. 
 * ServiceRequest: Procedures ordered during the encounter.
 * Immunizations: Immunizations associated with the patient.
 * LabResults: Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 72 hours) after the encounter closes with status = final or status = preliminary.
