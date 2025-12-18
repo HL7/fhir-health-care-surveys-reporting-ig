@@ -21,10 +21,10 @@ To support reduction in Bundle sizes and limit duplicate data, in most cases dat
 * Procedures: All interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated. The section should include notable procedures, but can contain all procedures for the period of time being summarized. 
 * ServiceRequest: Procedures ordered during the encounter.
 * Immunizations: Immunizations associated with the patient.
-* LabResults: Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 72 hours) after the encounter closes with status = final or status = preliminary.
-* Lab Reporting: Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 72 hours) after the encounter closes with status = final or status = preliminary. 
+* LabResults: Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 48 - 72 hours) after the encounter closes with status = final or status = preliminary.
+* Lab Reporting: Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 48 - 72 hours) after the encounter closes with status = final or status = preliminary. 
 * Diagnostic Report Notes: 
-  * Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 72 hours) after the encounter closes with status = final or status = preliminary. 
+  * Results linked to the encounter, ordered during the encounter, received during the encounter, or received within a specified timeframe (e.g., 48 - 72 hours) after the encounter closes with status = final or status = preliminary. 
   * Procedure Notes. 
   * Imaging data is NOT to be sent.
 * Clinical Notes: All notes created during the encounter.
