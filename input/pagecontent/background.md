@@ -2,7 +2,7 @@ The National Center for Health Statistics (NCHS) conducts a family of surveys th
 
 This implementation guide focuses on two key surveys: the **National Ambulatory Medical Care Survey (NAMCS)** and the **National Hospital Care Survey (NHCS)**.
 
-The **NAMCS** provides objective, reliable information about the provision and use of ambulatory medical care services in the United States. Historically, NAMCS has been based on a representative sample of visits to non-federally employed, office-based physicians, as well as visits to health centers.
+The **NAMCS** collects objective, reliable information about the provision and use of ambulatory medical care services in the United States. Findings are based on visits to health care providers at sampled health centers. Previously, sample visits to non-federally employed, office-based physicians were also included.
 
 The **NHCS** enables the collection of reliable and timely healthcare utilization data for hospital-based settings. Through a stratified random sample of non-federal, non-institutional hospitals with six or more staffed inpatient beds, the survey provides nationally representative data on hospital utilization. Participating hospitals submit data for all inpatient discharges and emergency department visits over a 12-month period.
 

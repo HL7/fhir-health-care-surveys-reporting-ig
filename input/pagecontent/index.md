@@ -5,7 +5,7 @@ These surveys produce nationally representative data to answer key questions abo
 
 This IG supports interoperability between FHIR-enabled electronic health record (EHR) systems and NCHS recipient systems for three settings:
 
-* Emergency department encounter, for data collected by NHCS (NHCD-ED)
+* Emergency department encounter, for data collected by NHCS (NCHS-ED)
 * Inpatient encounter, for data collected by NHCS (NHCS-IP)
 * Outpatient encounter, for data collected by NHCS (NHCS-OPD) and NAMCS
 
