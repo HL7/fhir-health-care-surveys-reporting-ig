@@ -18,6 +18,7 @@
 |[FHIR-52474](https://jira.hl7.org/browse/FHIR-52474) | Add reference to Encounter from all Observations and Conditions where it was missing |
 |[FHIR-52475](https://jira.hl7.org/browse/FHIR-52475) | Add reference to Encounter from Lab Observation instance |
 |[FHIR-52479](https://jira.hl7.org/browse/FHIR-52479) | Delete duplicate MedicationRequest instance |
+|[FHIR-52482](https://jira.hl7.org/browse/FHIR-52482) | Add text guidance on limiting included data to the current encounter |
 |[FHIR-52850](https://jira.hl7.org/browse/FHIR-52850) | Standardize profile names |
 |[FHIR-52966](https://jira.hl7.org/browse/FHIR-52966) | Remove MedicationRequest profile and use US Core MedicationRequest |
 |[FHIR-53095](https://jira.hl7.org/browse/FHIR-53095) | Add reference to US Core Observation Occupation profile from the Composition Social History Section |
