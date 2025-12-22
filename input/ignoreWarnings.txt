@@ -69,3 +69,6 @@ No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureD
 
 # 12: The following code system is not discoverable because it is a code systems in THO, but THO doesn't define the codes. They have been checked and the identifiers are correct
 A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH' could not be found, so the code cannot be validated
+
+# 13: Refers to an example that doesn't exist (http://example.org/fhir/Library/RuleFilters) for illustration purposes
+WARNING: /scratch/repo/fsh-generated/resources/PlanDefinition-hcs-plandefinition-example.json: Artifact library could not be found so no data requirements were inferred.
