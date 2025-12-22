@@ -2,10 +2,10 @@ Profile: HealthCareSurveysPlanDefinition
 Parent: USPublicHealthPlanDefinition
 Id: hcs-plandefinition
 Title: "Health Care Surveys PlanDefinition"
-Description: "This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."
+Description: "This PlanDefinition profile defines the logic and rules around determining whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."
 
 * . ^short = "Health Care Surveys Knowledge Artifact"
-* . ^definition = "This PlanDefinition profile defines the logic and rules around determining: whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."
+* . ^definition = "This PlanDefinition profile defines the logic and rules around determining whether or not data from an encounter is reportable to National Center for Health Statistics (NCHS)."
 
 // 1) Define slicing on PlanDefinition.action
 * action ^slicing.discriminator.type = #value

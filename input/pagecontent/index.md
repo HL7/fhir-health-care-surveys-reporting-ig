@@ -1,17 +1,17 @@
 ### Introduction
 
 This US-specific implementation guide (IG) provides guidance on the exchange of information for the National Center for Health Statistics (NCHS) [National Health Care Surveys (NHCS)](https://www.cdc.gov/nchs/healthcare-surveys/about/index.html). The data are collected through surveys of ambulatory, inpatient, and outpatient care services in the United States: the [National Ambulatory Medical Care Survey (NAMCS)](https://www.cdc.gov/nchs/namcs/about/index.html) and the [National Hospital Care Survey (NHCS)](https://www.cdc.gov/nchs/nhcs/index.html).
-These surveys produce nationally representative data to answer key questions about health care usage, quality, and disparities for public health professionals, researchers, and health care policy makers.
+These surveys produce nationally representative data to answer key questions about health care utilization for public health professionals, researchers, and health care policy makers.
 
 This IG supports interoperability between FHIR-enabled electronic health record (EHR) systems and NCHS recipient systems for three settings:
 
-* Emergency department encounter, for data collected by NHCS
-* Inpatient encounter, for data collected by NHCS
-* Outpatient encounter, for data collected by NHCS and NAMCS
+* Emergency department encounter, for data collected by NHCS (NHCD-ED)
+* Inpatient encounter, for data collected by NHCS (NHCS-IP)
+* Outpatient encounter, for data collected by NHCS (NHCS-OPD) and NAMCS
 
 This Implementation Guide (IG) improves the process of gathering data for national health surveys by automating the extraction of information from electronic health records (EHRs) and securely transmitting it to the National Center for Health Statistics (NCHS). The IG utilizes the Fast Healthcare Interoperability Resources (FHIR) standard along with US Core profiles, which specify how common clinical concepts are represented in FHIR. It also leverages a Reference Architecture (RA) framework for automated reporting and the electronic Case Reporting (eCR) Now FHIR application, customized to accommodate the Health Care Surveys' content and structural requirements.
 
-From a regulatory alignment standpoint, this IG is closely aligned with [USCDI V3.1](https://www.healthit.gov/isp/united-states-core-data-interoperability-uscdi#uscdi-v3-1) and [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/) as specified in the Assistant Secretary for Technology Policy (ASTP)'s Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule. While this NHCS FHIR IG aligns with USCDI V3.1/US Core 6.1.0 to the greatest extent possible, there is one exception. Since medications administered during encounters have been collected in the National Health Care Surveys for decades, and to avoid gaps in collection years, the IG includes the HCS Medication Administration Profile as the only deviation from standard US Core Profiles. Future releases will continue to align with ASTP's Health IT Certification Program regulations, the Standards Version Advancement Process (SVAP), USCDI, and other relevant digital standards for healthcare interoperability.
+From a regulatory alignment standpoint, this IG is closely aligned with [USCDI V3.1](https://www.healthit.gov/isp/united-states-core-data-interoperability-uscdi#uscdi-v3-1) and [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/) as specified in the Assistant Secretary for Technology Policy (ASTP)'s Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule. While this NHCS FHIR IG aligns with USCDI V3.1/US Core 6.1.0 to the greatest extent possible, there is one exception. Since medications administered during encounters have been collected in the National Health Care Surveys for decades, and to avoid gaps in collection years, the IG includes the Health Care Surveys Medication Administration Profile as the only deviation from standard US Core Profiles. Future releases will continue to align with ASTP's Health IT Certification Program regulations, the Standards Version Advancement Process (SVAP), USCDI, and other relevant digital standards for healthcare interoperability.
 
 The Health Care Surveys Content Implementation Guide (IG) specifies how to enable health care organizations to implement [Health Care Surveys Use Cases](background.html#use-cases) outlined in the IG.
 
