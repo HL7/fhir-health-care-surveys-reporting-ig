@@ -66,8 +66,9 @@ The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.s
 # 11: ERROR: This will be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build)
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
 
-# 12: The following code system is not discoverable because it is a code systems in THO, but THO doesn't define the codes. They have been checked and the identifiers are correct
+# 12: The following code system is not discoverable because it is a code systems in THO, but THO doesn't define the codes. It has been checked and the identifier is correct
 A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH' could not be found, so the code cannot be validated
+Unable to check whether the code is in the value set '' because the code system http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH was not found
 
 # 13: Refers to an example that doesn't exist (http://example.org/fhir/Library/RuleFilters) for illustration purposes
 WARNING: /scratch/repo/fsh-generated/resources/PlanDefinition-hcs-plandefinition-example.json: Artifact library could not be found so no data requirements were inferred.
