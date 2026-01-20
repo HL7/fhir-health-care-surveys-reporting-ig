@@ -25,7 +25,7 @@ Actors and Systems asserting conformance to this IG must implement the requireme
 * §HCS-3:Systems **SHOULD** be capable of displaying the Must Support data elements for human use or storing them for other purposes.§
 * §HCS-4:In situations where information on a particular data element is not present and the reason for absence is unknown, Systems **SHALL NOT** include the data elements in the resource instance returned from executing the API requests.§
 * §HCS-5:When accessing Health Care Surveys Content IG data, Systems **SHALL** interpret missing data elements within resource instances returned from API requests as data not present.§
-* When data is not available for any of the mandatory elements specified in the IG, a data absent reason extension **SHOULD** be added to satisfy the requirement along with an appropriate value from the [data-absent-reason value set](http://hl7.org/fhir/ValueSet/data-absent-reason).
+* §HCS-6:When data is not available for any of the mandatory elements specified in the IG, a data absent reason extension **SHOULD** be added to satisfy the requirement along with an appropriate value from the [data-absent-reason value set](http://hl7.org/fhir/ValueSet/data-absent-reason).§
 
 
 ### Profiles and Other IGs Used by the Specification
@@ -54,125 +54,125 @@ This section outlines how the SMART on FHIR Backend Services Authorization will 
     * eCR Now FHIR App-Health Care Surveys posting data to the NCHS Data Store acting as a Data Receiver with FHIR capabilities
     
 
-* §HCS-6:System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART on FHIR Backend Services by hosting Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
+* §HCS-7:System actors acting as servers (e.g., electronic health record (EHR) and NCHS Data Store) **SHALL** advertise conformance to SMART on FHIR Backend Services by hosting Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
 
-* §HCS-7:System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
+* §HCS-8:System actors acting as servers **SHALL** include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
 
-* §HCS-8:When System actors act as clients (e.g., eCR Now FHIR App-Health Care Surveys), they **SHALL** share their JSON Web Key Set (JWKS) with the server System actors (e.g., EHR and NCHS Data Store) using Uniform Resource Locators (URLs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
+* §HCS-9:When System actors act as clients (e.g., eCR Now FHIR App-Health Care Surveys), they **SHALL** share their JSON Web Key Set (JWKS) with the server System actors (e.g., EHR and NCHS Data Store) using Uniform Resource Locators (URLs) as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
 
-* §HCS-9:System actors acting as clients **SHALL** obtain the access token as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
+* §HCS-10:System actors acting as clients **SHALL** obtain the access token as defined in the [SMART App Launch IG Backend Services]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.§
 
-* §HCS-10:For the Health Care Survey use cases, Data Sources **SHALL** support the system/*.read scopes.§
+* §HCS-11:For the Health Care Survey use cases, Data Sources **SHALL** support the system/*.read scopes.§
 
-* §HCS-11:The NCHS Data Store **SHALL** support the system/*.read and system/*.write scopes.§
+* §HCS-12:The NCHS Data Store **SHALL** support the system/*.read and system/*.write scopes.§
 
-* §HCS-12:The health care organization's existing processes along with the Data Source's authorization server **SHALL** verify any organizational policy requirements (for example, registration of the eCR Now FHIR App-Health Care Surveys, authorizing requested scopes, testing and verification of eCR Now FHIR App-Health Care Surveys implementation in sandbox environment prior to production) before allowing the eCR Now FHIR App-Health Care Surveys to access the data to be included in the health care survey report.§
+* §HCS-13:The health care organization's existing processes along with the Data Source's authorization server **SHALL** verify any organizational policy requirements (for example, registration of the eCR Now FHIR App-Health Care Surveys, authorizing requested scopes, testing and verification of eCR Now FHIR App-Health Care Surveys implementation in sandbox environment prior to production) before allowing the eCR Now FHIR App-Health Care Surveys to access the data to be included in the health care survey report.§
  
 
-#### Knowledge Artifact and Knowledge Artifact Repository Requirements 
+#### Knowledge Artifact and Knowledge Artifact Repository Requirements
 
-* §HCS-13:The NCHS Data Store **SHALL** create a Knowledge Artifact§
+* §HCS-14:The NCHS Data Store **SHALL** create a Knowledge Artifact§
 
-* §HCS-14:The NCHS Data Store **SHALL** publish the Group Resource containing the list of all the Practitioners participating in the health care survey. This can be published in the NCHS Data Store FHIR Server or a separate Knowledge Artifact Repository.§
+* §HCS-15:The NCHS Data Store **SHALL** publish the Group Resource containing the list of all the Practitioners participating in the health care survey. This can be published in the NCHS Data Store FHIR Server or a separate Knowledge Artifact Repository.§
 
-* §HCS-15:The NCHS Data Store **SHALL** republish the Group Resource when the list of all the Practitioners participating in the health care survey changes.§
+* §HCS-16:The NCHS Data Store **SHALL** republish the Group Resource when the list of all the Practitioners participating in the health care survey changes.§
 
-* §HCS-16:The NCHS Data Store **SHALL** create the Knowledge Artifact following the constraints.§
+* §HCS-17:The NCHS Data Store **SHALL** create the Knowledge Artifact following the constraints.§
 
-* §HCS-17:The NCHS Data Store **SHALL** implement the Knowledge Artifact Repository requirements.§
+* §HCS-18:The NCHS Data Store **SHALL** implement the Knowledge Artifact Repository requirements.§
 
 
 #### Data Source Requirements
 
-* §HCS-18:The Data Source (e.g., EHR, clinical data repository) **SHALL** support the requirements as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).§
+* §HCS-19:The Data Source (e.g., EHR, clinical data repository) **SHALL** support the requirements as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).§
 
-##### Authorization Requirements 
+##### Authorization Requirements
 
-* §HCS-19:The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a Server.§
- 
+* §HCS-20:The Data Source **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a Server.§
+
 
 ##### Subscription Requirements
 
-* §HCS-20:The Data Source **SHALL** support the creation of Subscriptions.§
+* §HCS-21:The Data Source **SHALL** support the creation of Subscriptions.§
 
-* §HCS-21:The Data Source **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to notify the eCR Now FHIR App-Health Care Surveys.§
+* §HCS-22:The Data Source **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to notify the eCR Now FHIR App-Health Care Surveys.§
 
-* §HCS-22:The Data Source **SHALL** support Notification Bundles with [``full resource payload``]({{site.data.fhir.ver.subscriptionsIg}}/payloads.html#full-resource) as outlined in the Backport Subscriptions IG.§
+* §HCS-23:The Data Source **SHALL** support Notification Bundles with [``full resource payload``]({{site.data.fhir.ver.subscriptionsIg}}/payloads.html#full-resource) as outlined in the Backport Subscriptions IG.§
 
-* §HCS-23:For the Health Care Surveys Content IG, the Data Source **SHALL** include the Encounter resource which was closed as part of the Notification Bundle.§
+* §HCS-24:For the Health Care Surveys Content IG, the Data Source **SHALL** include the Encounter resource which was closed as part of the Notification Bundle.§
 
-* §HCS-24:The Data Source **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).§
+* §HCS-25:The Data Source **SHALL** support operations and APIs for Subscription, Notification Bundle, Subscription status resources as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html).§
 
 
 ##### Data API Requirements
 
-* §HCS-25:The Data Source **SHALL** support the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) for the eCR Now FHIR App-Health Care Surveys to access patient data.§
+* §HCS-26:The Data Source **SHALL** support the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [EHR Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) for the eCR Now FHIR App-Health Care Surveys to access patient data.§
 
  
-#### eCR Now FHIR App-Health Care Surveys Requirements 
+#### eCR Now FHIR App-Health Care Surveys Requirements
 
 
 ##### Authorization Requirements
 
-* §HCS-26:The eCR Now FHIR App-Health Care Surveys **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a client.§
+* §HCS-27:The eCR Now FHIR App-Health Care Surveys **SHALL** support the [SMART on FHIR Backend Services Authorization](specification.html#smart-on-fhir-backend-services-requirements) outlined above as a client.§
 
 
 ##### Subscription Requirements
 
-* §HCS-27:The eCR Now FHIR App-Health Care Surveys **SHALL** create Subscriptions.§ 
+* §HCS-28:The eCR Now FHIR App-Health Care Surveys **SHALL** create Subscriptions.§
 
-* §HCS-28:The eCR Now FHIR App-Health Care Surveys **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the Data Source.§
-
-
-##### Subscription Notification API 
-
-* §HCS-29:The eCR Now FHIR App-Health Care Surveys **SHALL** support a POST API \<BSA Base URL\>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source.§
+* §HCS-29:The eCR Now FHIR App-Health Care Surveys **SHALL** support [``rest-hook``]({{site.data.fhir.path}}subscription.html#2.46.7.1) Subscription channel to receive notifications from the Data Source.§
 
 
-##### Knowledge Artifact Processing Requirements 
+##### Subscription Notification API
 
-* §HCS-30:The eCR Now FHIR App-Health Care Surveys **SHALL** allow the health care organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the health care organization.§
-
-* §HCS-31:The eCR Now FHIR App-Health Care Surveys **SHALL** process the Health Care Surveys Knowledge Artifact and create Subscription resources in the Data Source for each trigger event.§
-
-* §HCS-32:For the health care surveys, the eCR Now FHIR App-Health Care Surveys **SHALL** create the Subscription.§
-
-* §HCS-33:Upon deactivation of a Knowledge Artifact, The eCR Now FHIR App-Health Care Surveys **SHALL** delete the Subscriptions previously created by the eCR Now FHIR App-Health Care Surveys for the Knowledge Artifact (e.g., delete the Subscription created for encounter-end trigger event).§
-
-* §HCS-34:The eCR Now FHIR App-Health Care Surveys **SHALL** implement FhirPath expression processing to process the Health Care Surveys Knowledge Artifact actions.§
-
-* §HCS-35:The eCR Now FHIR App-Health Care Surveys **SHALL** use the default queries outlined by the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.§
-
-* §HCS-36:The eCR Now FHIR App-Health Care Surveys **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a health care organization.§
+* §HCS-30:The eCR Now FHIR App-Health Care Surveys **SHALL** support a POST API \<BSA Base URL\>/receive-notification with a payload of the Subscription Notification Bundle to receive the notifications from the Data Source.§
 
 
-##### Data API Requirements 
+##### Knowledge Artifact Processing Requirements
 
-* §HCS-37:The eCR Now FHIR App-Health Care Surveys acting as a client **SHALL** use the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) to access patient data from the Data Source.§
+* §HCS-31:The eCR Now FHIR App-Health Care Surveys **SHALL** allow the health care organization to activate/deactivate a specific Knowledge Artifact. Activation indicates applying the Knowledge Artifact and deactivation indicates not applying the Knowledge Artifact for events occurring within the health care organization.§
+
+* §HCS-32:The eCR Now FHIR App-Health Care Surveys **SHALL** process the Health Care Surveys Knowledge Artifact and create Subscription resources in the Data Source for each trigger event.§
+
+* §HCS-33:For the health care surveys, the eCR Now FHIR App-Health Care Surveys **SHALL** create the Subscription.§
+
+* §HCS-34:Upon deactivation of a Knowledge Artifact, The eCR Now FHIR App-Health Care Surveys **SHALL** delete the Subscriptions previously created by the eCR Now FHIR App-Health Care Surveys for the Knowledge Artifact (e.g., delete the Subscription created for encounter-end trigger event).§
+
+* §HCS-35:The eCR Now FHIR App-Health Care Surveys **SHALL** implement FhirPath expression processing to process the Health Care Surveys Knowledge Artifact actions.§
+
+* §HCS-36:The eCR Now FHIR App-Health Care Surveys **SHALL** use the default queries outlined by the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.§
+
+* §HCS-37:The eCR Now FHIR App-Health Care Surveys **SHALL** ensure no duplicate reports are submitted for the same patient and encounter occurring within a health care organization.§
 
 
-##### Report Generation Requirements 
+##### Data API Requirements
 
-* §HCS-38:The eCR Now FHIR App-Health Care Surveys **SHALL** create a health care survey report following the constraints identified in [Health Care Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).§
+* §HCS-38:The eCR Now FHIR App-Health Care Surveys acting as a client **SHALL** use the [US Core Server APIs](http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server) and MedicationAdministration APIs as outlined in the [Data Source Capability Statement](CapabilityStatement-health-care-surveys-reporting-data-source.html) to access patient data from the Data Source.§
 
-* §HCS-39:The eCR Now FHIR App-Health Care Surveys **SHALL** package the health care survey report following the constraints identified in [Health Care Survey Reporting Bundle](StructureDefinition-hcs-reporting-bundle.html).§
 
-* §HCS-40:The eCR Now FHIR App-Health Care Surveys **SHALL** submit the message containing the health care survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.§
+##### Report Generation Requirements
+
+* §HCS-39:The eCR Now FHIR App-Health Care Surveys **SHALL** create a health care survey report following the constraints identified in [Health Care Survey Content Bundle](StructureDefinition-hcs-content-bundle.html).§
+
+* §HCS-40:The eCR Now FHIR App-Health Care Surveys **SHALL** package the health care survey report following the constraints identified in [Health Care Survey Reporting Bundle](StructureDefinition-hcs-reporting-bundle.html).§
+
+* §HCS-41:The eCR Now FHIR App-Health Care Surveys **SHALL** submit the message containing the health care survey report to the endpoint identified in the Health Care Surveys Knowledge Artifact unless overridden by the health care organization.§
 
 ##### Use of Non-FHIR Based Approaches to Submit the Health Care Surveys Report
 
-* §HCS-41:The eCR Now FHIR App-Health Care Surveys **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.§
+* §HCS-42:The eCR Now FHIR App-Health Care Surveys **MAY** use other transport methods such as Direct Transport to submit the Health Care Survey Report created when appropriate.§
 
 
 ##### Message Receiving and Processing Requirements
 
-* §HCS-42:The NCHS Data Store **SHALL** implement the $process-message operation on the ROOT URL of the FHIR Server to receive reports from the Backend Service App using the POST operation.§
+* §HCS-43:The NCHS Data Store **SHALL** implement the $process-message operation on the ROOT URL of the FHIR Server to receive reports from the Backend Service App using the POST operation.§
 
-* §HCS-43:Upon receipt of the message, the NCHS Data Store **SHALL** validate the message before accepting the message.§
+* §HCS-44:Upon receipt of the message, the NCHS Data Store **SHALL** validate the message before accepting the message.§
 
-* §HCS-44:When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.§
+* §HCS-45:When there are validation failures, the NCHS Data Store **SHALL** return a Operation Outcome response with the details of the validations as part of the POST response.§
 
-* §HCS-45:The NCHS Data Store **SHALL** implement the PHA requirements.§
+* §HCS-46:The NCHS Data Store **SHALL** implement the PHA requirements.§
 
 ### Conformance Statements in this Guide
 
