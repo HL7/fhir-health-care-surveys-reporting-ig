@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 
-# 01: This IG is aligning with USCDI V3.1 and US Core 6.1.0 aligns with USCDI V3.
+# 01: This IG is aligning with USCDI V3.1 and US Core 6.1.0 aligns with USCDI V3
 The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered
 
 # 02: Reference to draft value set acknowledeged
@@ -46,7 +46,7 @@ Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 fr
 INFORMATION: MessageHeader/messageheader-example-reportheader: MessageHeader.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[0].resource/*MessageHeader/messageheader-example-reportheader*/.extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-messageheader|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# 05: The binding for PlanDefinition.action.action.condition.expression.language includes IETF BCP 13 (MIME-type registry).
+# 05: The binding for PlanDefinition.action.action.condition.expression.language includes IETF BCP 13 (MIME-type registry)
 A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 
 # 06: Inherited through Composition Parent Composition.language - Composition.language element binding in FHIR R4 with HL7 Terminology 5.2.0 contains the deprecated extension
@@ -65,10 +65,10 @@ INFORMATION: en/specification.html: The html source contains the word 'MAY' but 
 This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 
-# 11: ERROR: This will be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build)
+# 11: [ERROR] This will be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build)
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
 
-# 12: The following code system is not discoverable because it is a code systems in THO, but THO doesn't define the codes. It has been checked and the identifier is correct
+# 12: The following code system is not discoverable because it is a code system in THO, but THO doesn't define the codes. It has been checked and the identifier is correct
 A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH' could not be found, so the code cannot be validated
 Unable to check whether the code is in the value set '' because the code system http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH was not found
 
