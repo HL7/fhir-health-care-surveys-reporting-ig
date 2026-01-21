@@ -57,9 +57,9 @@ INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[2]: This e
 INFORMATION: Bundle/healthcare-surveys-reporting-bundle: Bundle.entry[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # 08: These are not conformance clauses, they are statements explaining what SHALL, SHOULD, and MAY mean
-The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' SHALL indicates requirements that must be met to be conformant with the specification. '
-The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: ' SHOULD indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance. '
-The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: ' MAY describes optional behaviors that are free to consider but where there is no recommendation for or against adoption. '
+INFORMATION: en/specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: '     SHALL indicates requirements that must be met to be conformant with the specification.   '
+INFORMATION: en/specification.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: '     SHOULD indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance.   '
+INFORMATION: en/specification.html: The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: '     MAY describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.   '
 
 # 09: The Subscriptions backport IG was mistakenly released as FHIR 4.0.0 instead of 4.0.1. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Subscriptions.20backport.20issue
 This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
